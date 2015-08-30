@@ -1,0 +1,564 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
+		1010794A1B8FF5E300B3AADB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079491B8FF5E300B3AADB /* SecondViewController.swift */; };
+		1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; };
+		1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1010794E1B8FF5E300B3AADB /* Assets.xcassets */; };
+		101079521B8FF5E300B3AADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101079501B8FF5E300B3AADB /* LaunchScreen.storyboard */; };
+		1010795D1B8FF5E300B3AADB /* TruckFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010795C1B8FF5E300B3AADB /* TruckFeedTests.swift */; };
+		101079681B8FF5E300B3AADB /* TruckFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079671B8FF5E300B3AADB /* TruckFeedUITests.swift */; };
+		101079761B8FFF2600B3AADB /* TruckTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079751B8FFF2600B3AADB /* TruckTableViewControllerTests.swift */; };
+		101079781B90008300B3AADB /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079771B90008300B3AADB /* Truck.swift */; };
+		1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
+		1010797C1B912D9D00B3AADB /* TruckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010797B1B912D9D00B3AADB /* TruckTableViewController.swift */; };
+		1010797E1B92776F00B3AADB /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010797D1B92776F00B3AADB /* Palette.swift */; };
+		101079821B929C3600B3AADB /* powered_by_fries.png in Resources */ = {isa = PBXBuildFile; fileRef = 101079811B929C3600B3AADB /* powered_by_fries.png */; };
+		101079841B92A00D00B3AADB /* the_outside_scoop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079831B92A00D00B3AADB /* the_outside_scoop.jpg */; };
+		101079861B92A07600B3AADB /* the_spot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079851B92A07600B3AADB /* the_spot.jpg */; };
+		101079881B92A17E00B3AADB /* street_eats_dsm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079871B92A17E00B3AADB /* street_eats_dsm.jpg */; };
+		1010798A1B92A1BA00B3AADB /* lets_toast.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079891B92A1BA00B3AADB /* lets_toast.jpg */; };
+		1010798C1B92A24F00B3AADB /* parlo_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */; };
+		1010798E1B92A2FA00B3AADB /* ferinheit_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */; };
+		101079901B92A31100B3AADB /* karams_grill.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798F1B92A31100B3AADB /* karams_grill.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		101079591B8FF5E300B3AADB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1010793A1B8FF5E300B3AADB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 101079411B8FF5E300B3AADB;
+			remoteInfo = TruckFeed;
+		};
+		101079641B8FF5E300B3AADB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1010793A1B8FF5E300B3AADB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 101079411B8FF5E300B3AADB;
+			remoteInfo = TruckFeed;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		101079421B8FF5E300B3AADB /* TruckFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruckFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		101079451B8FF5E300B3AADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		101079491B8FF5E300B3AADB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		1010794C1B8FF5E300B3AADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1010794E1B8FF5E300B3AADB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		101079511B8FF5E300B3AADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		101079531B8FF5E300B3AADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		101079581B8FF5E300B3AADB /* TruckFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TruckFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1010795C1B8FF5E300B3AADB /* TruckFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckFeedTests.swift; sourceTree = "<group>"; };
+		1010795E1B8FF5E300B3AADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		101079631B8FF5E300B3AADB /* TruckFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TruckFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		101079671B8FF5E300B3AADB /* TruckFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckFeedUITests.swift; sourceTree = "<group>"; };
+		101079691B8FF5E300B3AADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		101079751B8FFF2600B3AADB /* TruckTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckTableViewControllerTests.swift; sourceTree = "<group>"; };
+		101079771B90008300B3AADB /* Truck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Truck.swift; sourceTree = "<group>"; };
+		101079791B912B7A00B3AADB /* TruckCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckCell.swift; sourceTree = "<group>"; };
+		1010797B1B912D9D00B3AADB /* TruckTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TruckTableViewController.swift; path = ../TruckTableViewController.swift; sourceTree = "<group>"; };
+		1010797D1B92776F00B3AADB /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		101079811B929C3600B3AADB /* powered_by_fries.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powered_by_fries.png; sourceTree = "<group>"; };
+		101079831B92A00D00B3AADB /* the_outside_scoop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = the_outside_scoop.jpg; sourceTree = "<group>"; };
+		101079851B92A07600B3AADB /* the_spot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = the_spot.jpg; sourceTree = "<group>"; };
+		101079871B92A17E00B3AADB /* street_eats_dsm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = street_eats_dsm.jpg; sourceTree = "<group>"; };
+		101079891B92A1BA00B3AADB /* lets_toast.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lets_toast.jpg; sourceTree = "<group>"; };
+		1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = parlo_pizza.jpg; sourceTree = "<group>"; };
+		1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ferinheit_pizza.jpg; sourceTree = "<group>"; };
+		1010798F1B92A31100B3AADB /* karams_grill.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = karams_grill.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1010793F1B8FF5E300B3AADB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		101079551B8FF5E300B3AADB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		101079601B8FF5E300B3AADB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		101079391B8FF5E300B3AADB = {
+			isa = PBXGroup;
+			children = (
+				101079441B8FF5E300B3AADB /* TruckFeed */,
+				1010795B1B8FF5E300B3AADB /* TruckFeedTests */,
+				101079661B8FF5E300B3AADB /* TruckFeedUITests */,
+				101079431B8FF5E300B3AADB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		101079431B8FF5E300B3AADB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				101079421B8FF5E300B3AADB /* TruckFeed.app */,
+				101079581B8FF5E300B3AADB /* TruckFeedTests.xctest */,
+				101079631B8FF5E300B3AADB /* TruckFeedUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		101079441B8FF5E300B3AADB /* TruckFeed */ = {
+			isa = PBXGroup;
+			children = (
+				101079801B929C2300B3AADB /* Resources */,
+				1010797B1B912D9D00B3AADB /* TruckTableViewController.swift */,
+				101079451B8FF5E300B3AADB /* AppDelegate.swift */,
+				101079491B8FF5E300B3AADB /* SecondViewController.swift */,
+				1010794B1B8FF5E300B3AADB /* Main.storyboard */,
+				1010797D1B92776F00B3AADB /* Palette.swift */,
+				1010794E1B8FF5E300B3AADB /* Assets.xcassets */,
+				101079501B8FF5E300B3AADB /* LaunchScreen.storyboard */,
+				101079531B8FF5E300B3AADB /* Info.plist */,
+				101079771B90008300B3AADB /* Truck.swift */,
+				101079791B912B7A00B3AADB /* TruckCell.swift */,
+			);
+			path = TruckFeed;
+			sourceTree = "<group>";
+		};
+		1010795B1B8FF5E300B3AADB /* TruckFeedTests */ = {
+			isa = PBXGroup;
+			children = (
+				1010795C1B8FF5E300B3AADB /* TruckFeedTests.swift */,
+				1010795E1B8FF5E300B3AADB /* Info.plist */,
+				101079751B8FFF2600B3AADB /* TruckTableViewControllerTests.swift */,
+			);
+			path = TruckFeedTests;
+			sourceTree = "<group>";
+		};
+		101079661B8FF5E300B3AADB /* TruckFeedUITests */ = {
+			isa = PBXGroup;
+			children = (
+				101079671B8FF5E300B3AADB /* TruckFeedUITests.swift */,
+				101079691B8FF5E300B3AADB /* Info.plist */,
+			);
+			path = TruckFeedUITests;
+			sourceTree = "<group>";
+		};
+		101079801B929C2300B3AADB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1010798F1B92A31100B3AADB /* karams_grill.jpg */,
+				1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */,
+				1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */,
+				101079891B92A1BA00B3AADB /* lets_toast.jpg */,
+				101079871B92A17E00B3AADB /* street_eats_dsm.jpg */,
+				101079851B92A07600B3AADB /* the_spot.jpg */,
+				101079831B92A00D00B3AADB /* the_outside_scoop.jpg */,
+				101079811B929C3600B3AADB /* powered_by_fries.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		101079411B8FF5E300B3AADB /* TruckFeed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1010796C1B8FF5E300B3AADB /* Build configuration list for PBXNativeTarget "TruckFeed" */;
+			buildPhases = (
+				1010793E1B8FF5E300B3AADB /* Sources */,
+				1010793F1B8FF5E300B3AADB /* Frameworks */,
+				101079401B8FF5E300B3AADB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TruckFeed;
+			productName = TruckFeed;
+			productReference = 101079421B8FF5E300B3AADB /* TruckFeed.app */;
+			productType = "com.apple.product-type.application";
+		};
+		101079571B8FF5E300B3AADB /* TruckFeedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1010796F1B8FF5E300B3AADB /* Build configuration list for PBXNativeTarget "TruckFeedTests" */;
+			buildPhases = (
+				101079541B8FF5E300B3AADB /* Sources */,
+				101079551B8FF5E300B3AADB /* Frameworks */,
+				101079561B8FF5E300B3AADB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1010795A1B8FF5E300B3AADB /* PBXTargetDependency */,
+			);
+			name = TruckFeedTests;
+			productName = TruckFeedTests;
+			productReference = 101079581B8FF5E300B3AADB /* TruckFeedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		101079621B8FF5E300B3AADB /* TruckFeedUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 101079721B8FF5E300B3AADB /* Build configuration list for PBXNativeTarget "TruckFeedUITests" */;
+			buildPhases = (
+				1010795F1B8FF5E300B3AADB /* Sources */,
+				101079601B8FF5E300B3AADB /* Frameworks */,
+				101079611B8FF5E300B3AADB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				101079651B8FF5E300B3AADB /* PBXTargetDependency */,
+			);
+			name = TruckFeedUITests;
+			productName = TruckFeedUITests;
+			productReference = 101079631B8FF5E300B3AADB /* TruckFeedUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1010793A1B8FF5E300B3AADB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = LoveLeJess;
+				TargetAttributes = {
+					101079411B8FF5E300B3AADB = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					101079571B8FF5E300B3AADB = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 101079411B8FF5E300B3AADB;
+					};
+					101079621B8FF5E300B3AADB = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 101079411B8FF5E300B3AADB;
+					};
+				};
+			};
+			buildConfigurationList = 1010793D1B8FF5E300B3AADB /* Build configuration list for PBXProject "TruckFeed" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 101079391B8FF5E300B3AADB;
+			productRefGroup = 101079431B8FF5E300B3AADB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				101079411B8FF5E300B3AADB /* TruckFeed */,
+				101079571B8FF5E300B3AADB /* TruckFeedTests */,
+				101079621B8FF5E300B3AADB /* TruckFeedUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		101079401B8FF5E300B3AADB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				101079841B92A00D00B3AADB /* the_outside_scoop.jpg in Resources */,
+				1010798E1B92A2FA00B3AADB /* ferinheit_pizza.jpg in Resources */,
+				101079861B92A07600B3AADB /* the_spot.jpg in Resources */,
+				101079521B8FF5E300B3AADB /* LaunchScreen.storyboard in Resources */,
+				101079881B92A17E00B3AADB /* street_eats_dsm.jpg in Resources */,
+				1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */,
+				101079901B92A31100B3AADB /* karams_grill.jpg in Resources */,
+				1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */,
+				101079821B929C3600B3AADB /* powered_by_fries.png in Resources */,
+				1010798A1B92A1BA00B3AADB /* lets_toast.jpg in Resources */,
+				1010798C1B92A24F00B3AADB /* parlo_pizza.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		101079561B8FF5E300B3AADB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		101079611B8FF5E300B3AADB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1010793E1B8FF5E300B3AADB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1010794A1B8FF5E300B3AADB /* SecondViewController.swift in Sources */,
+				101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */,
+				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
+				1010797E1B92776F00B3AADB /* Palette.swift in Sources */,
+				1010797C1B912D9D00B3AADB /* TruckTableViewController.swift in Sources */,
+				101079781B90008300B3AADB /* Truck.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		101079541B8FF5E300B3AADB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1010795D1B8FF5E300B3AADB /* TruckFeedTests.swift in Sources */,
+				101079761B8FFF2600B3AADB /* TruckTableViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1010795F1B8FF5E300B3AADB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				101079681B8FF5E300B3AADB /* TruckFeedUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1010795A1B8FF5E300B3AADB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 101079411B8FF5E300B3AADB /* TruckFeed */;
+			targetProxy = 101079591B8FF5E300B3AADB /* PBXContainerItemProxy */;
+		};
+		101079651B8FF5E300B3AADB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 101079411B8FF5E300B3AADB /* TruckFeed */;
+			targetProxy = 101079641B8FF5E300B3AADB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1010794B1B8FF5E300B3AADB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1010794C1B8FF5E300B3AADB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		101079501B8FF5E300B3AADB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				101079511B8FF5E300B3AADB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1010796A1B8FF5E300B3AADB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1010796B1B8FF5E300B3AADB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1010796D1B8FF5E300B3AADB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TruckFeed/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1010796E1B8FF5E300B3AADB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TruckFeed/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		101079701B8FF5E300B3AADB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TruckFeedTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TruckFeed.app/TruckFeed";
+			};
+			name = Debug;
+		};
+		101079711B8FF5E300B3AADB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TruckFeedTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TruckFeed.app/TruckFeed";
+			};
+			name = Release;
+		};
+		101079731B8FF5E300B3AADB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TruckFeedUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TruckFeed;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		101079741B8FF5E300B3AADB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TruckFeedUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TruckFeed;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1010793D1B8FF5E300B3AADB /* Build configuration list for PBXProject "TruckFeed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1010796A1B8FF5E300B3AADB /* Debug */,
+				1010796B1B8FF5E300B3AADB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1010796C1B8FF5E300B3AADB /* Build configuration list for PBXNativeTarget "TruckFeed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1010796D1B8FF5E300B3AADB /* Debug */,
+				1010796E1B8FF5E300B3AADB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1010796F1B8FF5E300B3AADB /* Build configuration list for PBXNativeTarget "TruckFeedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				101079701B8FF5E300B3AADB /* Debug */,
+				101079711B8FF5E300B3AADB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		101079721B8FF5E300B3AADB /* Build configuration list for PBXNativeTarget "TruckFeedUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				101079731B8FF5E300B3AADB /* Debug */,
+				101079741B8FF5E300B3AADB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1010793A1B8FF5E300B3AADB /* Project object */;
+}
