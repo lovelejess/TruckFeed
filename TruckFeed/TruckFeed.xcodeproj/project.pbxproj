@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
-		1010794A1B8FF5E300B3AADB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079491B8FF5E300B3AADB /* SecondViewController.swift */; };
 		1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; };
 		1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1010794E1B8FF5E300B3AADB /* Assets.xcassets */; };
 		101079521B8FF5E300B3AADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101079501B8FF5E300B3AADB /* LaunchScreen.storyboard */; };
@@ -49,7 +48,6 @@
 /* Begin PBXFileReference section */
 		101079421B8FF5E300B3AADB /* TruckFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruckFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		101079451B8FF5E300B3AADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		101079491B8FF5E300B3AADB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		1010794C1B8FF5E300B3AADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1010794E1B8FF5E300B3AADB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		101079511B8FF5E300B3AADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 				101079801B929C2300B3AADB /* Resources */,
 				1010797B1B912D9D00B3AADB /* TruckTableViewController.swift */,
 				101079451B8FF5E300B3AADB /* AppDelegate.swift */,
-				101079491B8FF5E300B3AADB /* SecondViewController.swift */,
 				1010794B1B8FF5E300B3AADB /* Main.storyboard */,
 				1010797D1B92776F00B3AADB /* Palette.swift */,
 				1010794E1B8FF5E300B3AADB /* Assets.xcassets */,
@@ -310,7 +307,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1010794A1B8FF5E300B3AADB /* SecondViewController.swift in Sources */,
 				101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */,
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
 				1010797E1B92776F00B3AADB /* Palette.swift in Sources */,
