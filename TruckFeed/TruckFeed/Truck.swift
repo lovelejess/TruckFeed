@@ -14,11 +14,13 @@ class Truck: NSObject {
     var name: String
     var type: String
     var defaultImage: UIImage?
+    var price: String
     
-    init(name: String, type:String, defaultImage: UIImage){
+    init(name: String, type:String, defaultImage: UIImage, price: String){
         self.name = name
         self.type = type
         self.defaultImage = defaultImage
+        self.price = price
         super.init()
         
     }
