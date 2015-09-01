@@ -25,16 +25,10 @@ class TruckTableViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.bringSubviewToFront(view)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -47,6 +41,18 @@ class TruckTableViewController: UIViewController, UITableViewDataSource {
         return truckList.count
     }
     
+    func resizeImageView(truckCell: TruckCell, truck: Truck) -> UIImage {
+        let newSize:CGSize = CGSize(width: 80 ,height: 80)
+        let rect = CGRectMake(0,0, newSize.width, newSize.height)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        truck.defaultImage!.drawInRect(rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        truckCell.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
+        
+        return newImage;
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let truckCell = tableView.dequeueReusableCellWithIdentifier("TruckCell", forIndexPath: indexPath) as! TruckCell
         
@@ -54,19 +60,7 @@ class TruckTableViewController: UIViewController, UITableViewDataSource {
         truckCell.nameLabel?.text = truck.name
         truckCell.nameLabel?.textColor = secondaryColor
         truckCell.typeLabel?.text = truck.type
-        
-        let newSize:CGSize = CGSize(width: 80 ,height: 80)
-        let rect = CGRectMake(0,0, newSize.width, newSize.height)
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        
-        truck.defaultImage!.drawInRect(rect)
-        
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        truckCell.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
-        truckCell.imageView?.image = newImage
-        
+        truckCell.imageView?.image = resizeImageView(truckCell, truck: truck)
         truckCell.price?.text = truck.price
         
         return truckCell
