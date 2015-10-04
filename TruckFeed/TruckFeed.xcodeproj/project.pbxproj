@@ -10,9 +10,7 @@
 		101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
 		1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; };
 		1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1010794E1B8FF5E300B3AADB /* Assets.xcassets */; };
-		101079521B8FF5E300B3AADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 101079501B8FF5E300B3AADB /* LaunchScreen.storyboard */; };
 		1010795D1B8FF5E300B3AADB /* TruckFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010795C1B8FF5E300B3AADB /* TruckFeedTests.swift */; };
-		101079681B8FF5E300B3AADB /* TruckFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079671B8FF5E300B3AADB /* TruckFeedUITests.swift */; };
 		101079761B8FFF2600B3AADB /* TruckTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079751B8FFF2600B3AADB /* TruckTableViewControllerTests.swift */; };
 		101079781B90008300B3AADB /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079771B90008300B3AADB /* Truck.swift */; };
 		1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
@@ -26,17 +24,13 @@
 		1010798C1B92A24F00B3AADB /* parlo_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */; };
 		1010798E1B92A2FA00B3AADB /* ferinheit_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */; };
 		101079901B92A31100B3AADB /* karams_grill.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798F1B92A31100B3AADB /* karams_grill.jpg */; };
+		10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
+		10AED1D71BC0C478004FD47B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
+		10AED1DD1BC1BE4C004FD47B /* LoginModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		101079591B8FF5E300B3AADB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1010793A1B8FF5E300B3AADB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 101079411B8FF5E300B3AADB;
-			remoteInfo = TruckFeed;
-		};
-		101079641B8FF5E300B3AADB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1010793A1B8FF5E300B3AADB /* Project object */;
 			proxyType = 1;
@@ -50,12 +44,10 @@
 		101079451B8FF5E300B3AADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1010794C1B8FF5E300B3AADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1010794E1B8FF5E300B3AADB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		101079511B8FF5E300B3AADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		101079531B8FF5E300B3AADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		101079581B8FF5E300B3AADB /* TruckFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TruckFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1010795C1B8FF5E300B3AADB /* TruckFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckFeedTests.swift; sourceTree = "<group>"; };
 		1010795E1B8FF5E300B3AADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		101079631B8FF5E300B3AADB /* TruckFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TruckFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		101079671B8FF5E300B3AADB /* TruckFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckFeedUITests.swift; sourceTree = "<group>"; };
 		101079691B8FF5E300B3AADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		101079751B8FFF2600B3AADB /* TruckTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckTableViewControllerTests.swift; sourceTree = "<group>"; };
@@ -71,6 +63,9 @@
 		1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = parlo_pizza.jpg; sourceTree = "<group>"; };
 		1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ferinheit_pizza.jpg; sourceTree = "<group>"; };
 		1010798F1B92A31100B3AADB /* karams_grill.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = karams_grill.jpg; sourceTree = "<group>"; };
+		10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		10AED1D61BC0C478004FD47B /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
+		10AED1DC1BC1BE4C004FD47B /* LoginModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,13 +77,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		101079551B8FF5E300B3AADB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		101079601B8FF5E300B3AADB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -113,7 +101,6 @@
 			children = (
 				101079421B8FF5E300B3AADB /* TruckFeed.app */,
 				101079581B8FF5E300B3AADB /* TruckFeedTests.xctest */,
-				101079631B8FF5E300B3AADB /* TruckFeedUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,10 +114,11 @@
 				1010794B1B8FF5E300B3AADB /* Main.storyboard */,
 				1010797D1B92776F00B3AADB /* Palette.swift */,
 				1010794E1B8FF5E300B3AADB /* Assets.xcassets */,
-				101079501B8FF5E300B3AADB /* LaunchScreen.storyboard */,
 				101079531B8FF5E300B3AADB /* Info.plist */,
 				101079771B90008300B3AADB /* Truck.swift */,
 				101079791B912B7A00B3AADB /* TruckCell.swift */,
+				10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */,
+				10AED1DC1BC1BE4C004FD47B /* LoginModalViewController.swift */,
 			);
 			path = TruckFeed;
 			sourceTree = "<group>";
@@ -157,6 +145,7 @@
 		101079801B929C2300B3AADB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				10AED1D61BC0C478004FD47B /* truck.png */,
 				1010798F1B92A31100B3AADB /* karams_grill.jpg */,
 				1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */,
 				1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */,
@@ -207,24 +196,6 @@
 			productReference = 101079581B8FF5E300B3AADB /* TruckFeedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		101079621B8FF5E300B3AADB /* TruckFeedUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 101079721B8FF5E300B3AADB /* Build configuration list for PBXNativeTarget "TruckFeedUITests" */;
-			buildPhases = (
-				1010795F1B8FF5E300B3AADB /* Sources */,
-				101079601B8FF5E300B3AADB /* Frameworks */,
-				101079611B8FF5E300B3AADB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				101079651B8FF5E300B3AADB /* PBXTargetDependency */,
-			);
-			name = TruckFeedUITests;
-			productName = TruckFeedUITests;
-			productReference = 101079631B8FF5E300B3AADB /* TruckFeedUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -238,10 +209,6 @@
 						CreatedOnToolsVersion = 7.0;
 					};
 					101079571B8FF5E300B3AADB = {
-						CreatedOnToolsVersion = 7.0;
-						TestTargetID = 101079411B8FF5E300B3AADB;
-					};
-					101079621B8FF5E300B3AADB = {
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = 101079411B8FF5E300B3AADB;
 					};
@@ -262,7 +229,6 @@
 			targets = (
 				101079411B8FF5E300B3AADB /* TruckFeed */,
 				101079571B8FF5E300B3AADB /* TruckFeedTests */,
-				101079621B8FF5E300B3AADB /* TruckFeedUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -275,25 +241,19 @@
 				101079841B92A00D00B3AADB /* the_outside_scoop.jpg in Resources */,
 				1010798E1B92A2FA00B3AADB /* ferinheit_pizza.jpg in Resources */,
 				101079861B92A07600B3AADB /* the_spot.jpg in Resources */,
-				101079521B8FF5E300B3AADB /* LaunchScreen.storyboard in Resources */,
 				101079881B92A17E00B3AADB /* street_eats_dsm.jpg in Resources */,
 				1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */,
+				10AED1D71BC0C478004FD47B /* truck.png in Resources */,
 				101079901B92A31100B3AADB /* karams_grill.jpg in Resources */,
 				1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */,
 				101079821B929C3600B3AADB /* powered_by_fries.png in Resources */,
 				1010798A1B92A1BA00B3AADB /* lets_toast.jpg in Resources */,
+				10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */,
 				1010798C1B92A24F00B3AADB /* parlo_pizza.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		101079561B8FF5E300B3AADB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		101079611B8FF5E300B3AADB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -307,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10AED1DD1BC1BE4C004FD47B /* LoginModalViewController.swift in Sources */,
 				101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */,
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
 				1010797E1B92776F00B3AADB /* Palette.swift in Sources */,
@@ -324,14 +285,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1010795F1B8FF5E300B3AADB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				101079681B8FF5E300B3AADB /* TruckFeedUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -339,11 +292,6 @@
 			isa = PBXTargetDependency;
 			target = 101079411B8FF5E300B3AADB /* TruckFeed */;
 			targetProxy = 101079591B8FF5E300B3AADB /* PBXContainerItemProxy */;
-		};
-		101079651B8FF5E300B3AADB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 101079411B8FF5E300B3AADB /* TruckFeed */;
-			targetProxy = 101079641B8FF5E300B3AADB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -354,14 +302,6 @@
 				1010794C1B8FF5E300B3AADB /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		101079501B8FF5E300B3AADB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				101079511B8FF5E300B3AADB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -453,6 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TruckFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -464,6 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TruckFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -475,6 +417,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TruckFeedTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,34 +430,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TruckFeedTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TruckFeed.app/TruckFeed";
-			};
-			name = Release;
-		};
-		101079731B8FF5E300B3AADB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = TruckFeedUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = TruckFeed;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		101079741B8FF5E300B3AADB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = TruckFeedUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = TruckFeed;
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -537,6 +457,7 @@
 				1010796E1B8FF5E300B3AADB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1010796F1B8FF5E300B3AADB /* Build configuration list for PBXNativeTarget "TruckFeedTests" */ = {
 			isa = XCConfigurationList;
@@ -545,14 +466,7 @@
 				101079711B8FF5E300B3AADB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		101079721B8FF5E300B3AADB /* Build configuration list for PBXNativeTarget "TruckFeedUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				101079731B8FF5E300B3AADB /* Debug */,
-				101079741B8FF5E300B3AADB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

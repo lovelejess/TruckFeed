@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import TruckFeed
+import TruckFeed
 
 class TruckFeedTests: XCTestCase {
     
