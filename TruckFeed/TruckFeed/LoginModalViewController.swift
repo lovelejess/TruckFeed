@@ -8,19 +8,29 @@
 
 import UIKit
 
-class LoginModalViewController: UIViewController {
+public class LoginModalViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     @IBAction func loginCancelButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {});
     }
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        // Do any additional setup after loading the view.
+        let fbLoginView : FBSDKLoginButton = FBSDKLoginButton()
+        self.view.addSubview(fbLoginView)
+        fbLoginView.center = self.view.center
+        fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
+        fbLoginView.delegate = self
+    }
+    
+    public func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        println("User Logged In")
+    }
+    
+    public func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        println("User Logged Out")
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

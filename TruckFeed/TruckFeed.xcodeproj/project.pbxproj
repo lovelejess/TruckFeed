@@ -27,6 +27,10 @@
 		10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10AED1D71BC0C478004FD47B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
 		10AED1DD1BC1BE4C004FD47B /* LoginModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginModalViewController.swift */; };
+		10E51B271BC36B34009FE7F2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E51B261BC36B34009FE7F2 /* FBSDKLoginKit.framework */; };
+		10E51B291BC36BF9009FE7F2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E51B281BC36BF9009FE7F2 /* FBSDKCoreKit.framework */; };
+		10E51B2B1BC36E77009FE7F2 /* LoginModalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E51B2A1BC36E77009FE7F2 /* LoginModalTests.swift */; };
+		10E51B2C1BC36E95009FE7F2 /* LoginModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,10 @@
 		10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		10AED1D61BC0C478004FD47B /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
 		10AED1DC1BC1BE4C004FD47B /* LoginModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModalViewController.swift; sourceTree = "<group>"; };
+		10E51B171BC364C5009FE7F2 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		10E51B261BC36B34009FE7F2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-20150813/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		10E51B281BC36BF9009FE7F2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-20150813/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		10E51B2A1BC36E77009FE7F2 /* LoginModalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModalTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10E51B291BC36BF9009FE7F2 /* FBSDKCoreKit.framework in Frameworks */,
+				10E51B271BC36B34009FE7F2 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +99,8 @@
 		101079391B8FF5E300B3AADB = {
 			isa = PBXGroup;
 			children = (
+				10E51B281BC36BF9009FE7F2 /* FBSDKCoreKit.framework */,
+				10E51B261BC36B34009FE7F2 /* FBSDKLoginKit.framework */,
 				101079441B8FF5E300B3AADB /* TruckFeed */,
 				1010795B1B8FF5E300B3AADB /* TruckFeedTests */,
 				101079661B8FF5E300B3AADB /* TruckFeedUITests */,
@@ -119,6 +131,7 @@
 				101079791B912B7A00B3AADB /* TruckCell.swift */,
 				10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */,
 				10AED1DC1BC1BE4C004FD47B /* LoginModalViewController.swift */,
+				10E51B171BC364C5009FE7F2 /* Bridging-Header.h */,
 			);
 			path = TruckFeed;
 			sourceTree = "<group>";
@@ -129,6 +142,7 @@
 				1010795C1B8FF5E300B3AADB /* TruckFeedTests.swift */,
 				1010795E1B8FF5E300B3AADB /* Info.plist */,
 				101079751B8FFF2600B3AADB /* TruckTableViewControllerTests.swift */,
+				10E51B2A1BC36E77009FE7F2 /* LoginModalTests.swift */,
 			);
 			path = TruckFeedTests;
 			sourceTree = "<group>";
@@ -282,6 +296,8 @@
 			files = (
 				1010795D1B8FF5E300B3AADB /* TruckFeedTests.swift in Sources */,
 				101079761B8FFF2600B3AADB /* TruckTableViewControllerTests.swift in Sources */,
+				10E51B2C1BC36E95009FE7F2 /* LoginModalViewController.swift in Sources */,
+				10E51B2B1BC36E77009FE7F2 /* LoginModalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,11 +408,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/TruckFeed",
+					"/Users/jessicale/Downloads/FacebookSDKs-iOS-20150910",
+					"/Users/jessicale/Downloads/FacebookSDKs-iOS-20150813",
+				);
 				INFOPLIST_FILE = TruckFeed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TruckFeed/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -404,11 +428,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/TruckFeed",
+					"/Users/jessicale/Downloads/FacebookSDKs-iOS-20150910",
+					"/Users/jessicale/Downloads/FacebookSDKs-iOS-20150813",
+				);
 				INFOPLIST_FILE = TruckFeed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TruckFeed/Bridging-Header.h";
 			};
 			name = Release;
 		};
