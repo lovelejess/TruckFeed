@@ -31,6 +31,13 @@ class TruckTableViewControllerTests: XCTestCase {
     }
     
     func testIfNotLoggedInThenDisplayLoginModal() {
+       var testUser = User()
+        testUser.isLoggedIn = false
+        
+        var loginViewController = LoginModalViewController()
+        // do something here to press the fb login button
+        
+        XCTAssertTrue(testUser.isLoggedIn)
         
     }
     
