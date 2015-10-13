@@ -32,6 +32,7 @@
 		10E51B2C1BC36E95009FE7F2 /* LoginModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginModalViewController.swift */; };
 		10E51B361BC61555009FE7F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E51B351BC61555009FE7F2 /* User.swift */; };
 		10E51B371BC61555009FE7F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E51B351BC61555009FE7F2 /* User.swift */; };
+		D37CF37FEBCA7ED420262B11 /* libPods-TruckFeedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA919C40A5A01A525B1FE52 /* libPods-TruckFeedTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +77,10 @@
 		10E51B2A1BC36E77009FE7F2 /* LoginModalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModalTests.swift; sourceTree = "<group>"; };
 		10E51B351BC61555009FE7F2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		443B0851ABEFCC1B086F9EDA /* libPods-TruckFeed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruckFeed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60C62C7E9AF29DD8AC8BC09B /* Pods-TruckFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedTests/Pods-TruckFeedTests.release.xcconfig"; sourceTree = "<group>"; };
 		6321F900B9B42BD32201CE2A /* Pods-TruckFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeed/Pods-TruckFeed.debug.xcconfig"; sourceTree = "<group>"; };
+		66F26F82831BFDA08FB17A79 /* Pods-TruckFeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedTests/Pods-TruckFeedTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AAA919C40A5A01A525B1FE52 /* libPods-TruckFeedTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruckFeedTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D37CF37FEBCA7ED420262B11 /* libPods-TruckFeedTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +185,8 @@
 			children = (
 				6321F900B9B42BD32201CE2A /* Pods-TruckFeed.debug.xcconfig */,
 				03B62D40F32CB1BCC4A95A16 /* Pods-TruckFeed.release.xcconfig */,
+				66F26F82831BFDA08FB17A79 /* Pods-TruckFeedTests.debug.xcconfig */,
+				60C62C7E9AF29DD8AC8BC09B /* Pods-TruckFeedTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -188,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				443B0851ABEFCC1B086F9EDA /* libPods-TruckFeed.a */,
+				AAA919C40A5A01A525B1FE52 /* libPods-TruckFeedTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1010796F1B8FF5E300B3AADB /* Build configuration list for PBXNativeTarget "TruckFeedTests" */;
 			buildPhases = (
+				107A3A1321B889BE1520052F /* Check Pods Manifest.lock */,
 				101079541B8FF5E300B3AADB /* Sources */,
 				101079551B8FF5E300B3AADB /* Frameworks */,
 				101079561B8FF5E300B3AADB /* Resources */,
+				890D4D8482ADED5AC35AF382 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,6 +309,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		107A3A1321B889BE1520052F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		71C7D52F32A6BB92BBD80CB3 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +337,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		890D4D8482ADED5AC35AF382 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TruckFeedTests/Pods-TruckFeedTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EFCF0B3058DAE13A3B7E15F2 /* Copy Pods Resources */ = {
@@ -507,6 +547,7 @@
 		};
 		101079701B8FF5E300B3AADB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66F26F82831BFDA08FB17A79 /* Pods-TruckFeedTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -519,12 +560,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TruckFeed/Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TruckFeed.app/TruckFeed";
 			};
 			name = Debug;
 		};
 		101079711B8FF5E300B3AADB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60C62C7E9AF29DD8AC8BC09B /* Pods-TruckFeedTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -537,6 +580,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TruckFeed/Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TruckFeed.app/TruckFeed";
 			};
 			name = Release;

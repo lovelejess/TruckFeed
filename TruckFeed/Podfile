@@ -8,6 +8,8 @@ target 'TruckFeed' do
 end
 
 target 'TruckFeedTests' do
-
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
 end
 
