@@ -1,5 +1,5 @@
 //
-//  LoginModalViewController.swift
+//  LoginViewController.swift
 //  TruckFeed
 //
 //  Created by Jessica Le on 10/4/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class LoginModalViewController: UIViewController, FBSDKLoginButtonDelegate {
+public class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     @IBAction func loginCancelButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {});
@@ -23,11 +23,11 @@ public class LoginModalViewController: UIViewController, FBSDKLoginButtonDelegat
     }
     
     public func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        println("User Logged In")
+        print("User Logged In")
     }
     
     public func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        println("User Logged Out")
+        print("User Logged Out")
     }
 
     override public func didReceiveMemoryWarning() {

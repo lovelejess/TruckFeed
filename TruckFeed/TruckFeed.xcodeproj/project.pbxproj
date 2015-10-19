@@ -11,11 +11,10 @@
 		101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
 		1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; };
 		1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1010794E1B8FF5E300B3AADB /* Assets.xcassets */; };
-		1010795D1B8FF5E300B3AADB /* TruckFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010795C1B8FF5E300B3AADB /* TruckFeedTests.swift */; };
-		101079761B8FFF2600B3AADB /* TruckTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079751B8FFF2600B3AADB /* TruckTableViewControllerTests.swift */; };
+		101079761B8FFF2600B3AADB /* MasterViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079751B8FFF2600B3AADB /* MasterViewControllerTests.swift */; };
 		101079781B90008300B3AADB /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079771B90008300B3AADB /* Truck.swift */; };
 		1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
-		1010797C1B912D9D00B3AADB /* TruckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010797B1B912D9D00B3AADB /* TruckTableViewController.swift */; };
+		1010797C1B912D9D00B3AADB /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010797B1B912D9D00B3AADB /* MasterViewController.swift */; };
 		1010797E1B92776F00B3AADB /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010797D1B92776F00B3AADB /* Palette.swift */; };
 		101079821B929C3600B3AADB /* powered_by_fries.png in Resources */ = {isa = PBXBuildFile; fileRef = 101079811B929C3600B3AADB /* powered_by_fries.png */; };
 		101079841B92A00D00B3AADB /* the_outside_scoop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079831B92A00D00B3AADB /* the_outside_scoop.jpg */; };
@@ -27,9 +26,8 @@
 		101079901B92A31100B3AADB /* karams_grill.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798F1B92A31100B3AADB /* karams_grill.jpg */; };
 		10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10AED1D71BC0C478004FD47B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
-		10AED1DD1BC1BE4C004FD47B /* LoginModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginModalViewController.swift */; };
-		10E51B2B1BC36E77009FE7F2 /* LoginModalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E51B2A1BC36E77009FE7F2 /* LoginModalTests.swift */; };
-		10E51B2C1BC36E95009FE7F2 /* LoginModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginModalViewController.swift */; };
+		10AED1DD1BC1BE4C004FD47B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */; };
+		10E51B2C1BC36E95009FE7F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */; };
 		10E51B361BC61555009FE7F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E51B351BC61555009FE7F2 /* User.swift */; };
 		10E51B371BC61555009FE7F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E51B351BC61555009FE7F2 /* User.swift */; };
 		D37CF37FEBCA7ED420262B11 /* libPods-TruckFeedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA919C40A5A01A525B1FE52 /* libPods-TruckFeedTests.a */; };
@@ -53,14 +51,13 @@
 		1010794E1B8FF5E300B3AADB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		101079531B8FF5E300B3AADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		101079581B8FF5E300B3AADB /* TruckFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TruckFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1010795C1B8FF5E300B3AADB /* TruckFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckFeedTests.swift; sourceTree = "<group>"; };
 		1010795E1B8FF5E300B3AADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		101079671B8FF5E300B3AADB /* TruckFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckFeedUITests.swift; sourceTree = "<group>"; };
 		101079691B8FF5E300B3AADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		101079751B8FFF2600B3AADB /* TruckTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckTableViewControllerTests.swift; sourceTree = "<group>"; };
+		101079751B8FFF2600B3AADB /* MasterViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewControllerTests.swift; sourceTree = "<group>"; };
 		101079771B90008300B3AADB /* Truck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Truck.swift; sourceTree = "<group>"; };
 		101079791B912B7A00B3AADB /* TruckCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckCell.swift; sourceTree = "<group>"; };
-		1010797B1B912D9D00B3AADB /* TruckTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TruckTableViewController.swift; path = ../TruckTableViewController.swift; sourceTree = "<group>"; };
+		1010797B1B912D9D00B3AADB /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterViewController.swift; path = ../MasterViewController.swift; sourceTree = "<group>"; };
 		1010797D1B92776F00B3AADB /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		101079811B929C3600B3AADB /* powered_by_fries.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powered_by_fries.png; sourceTree = "<group>"; };
 		101079831B92A00D00B3AADB /* the_outside_scoop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = the_outside_scoop.jpg; sourceTree = "<group>"; };
@@ -72,9 +69,8 @@
 		1010798F1B92A31100B3AADB /* karams_grill.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = karams_grill.jpg; sourceTree = "<group>"; };
 		10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		10AED1D61BC0C478004FD47B /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
-		10AED1DC1BC1BE4C004FD47B /* LoginModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModalViewController.swift; sourceTree = "<group>"; };
+		10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		10E51B171BC364C5009FE7F2 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		10E51B2A1BC36E77009FE7F2 /* LoginModalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModalTests.swift; sourceTree = "<group>"; };
 		10E51B351BC61555009FE7F2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		443B0851ABEFCC1B086F9EDA /* libPods-TruckFeed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruckFeed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C62C7E9AF29DD8AC8BC09B /* Pods-TruckFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedTests/Pods-TruckFeedTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				101079801B929C2300B3AADB /* Resources */,
-				1010797B1B912D9D00B3AADB /* TruckTableViewController.swift */,
+				1010797B1B912D9D00B3AADB /* MasterViewController.swift */,
 				101079451B8FF5E300B3AADB /* AppDelegate.swift */,
 				1010794B1B8FF5E300B3AADB /* Main.storyboard */,
 				1010797D1B92776F00B3AADB /* Palette.swift */,
@@ -137,7 +133,7 @@
 				101079771B90008300B3AADB /* Truck.swift */,
 				101079791B912B7A00B3AADB /* TruckCell.swift */,
 				10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */,
-				10AED1DC1BC1BE4C004FD47B /* LoginModalViewController.swift */,
+				10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */,
 				10E51B171BC364C5009FE7F2 /* Bridging-Header.h */,
 				10E51B351BC61555009FE7F2 /* User.swift */,
 			);
@@ -147,10 +143,8 @@
 		1010795B1B8FF5E300B3AADB /* TruckFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				1010795C1B8FF5E300B3AADB /* TruckFeedTests.swift */,
 				1010795E1B8FF5E300B3AADB /* Info.plist */,
-				101079751B8FFF2600B3AADB /* TruckTableViewControllerTests.swift */,
-				10E51B2A1BC36E77009FE7F2 /* LoginModalTests.swift */,
+				101079751B8FFF2600B3AADB /* MasterViewControllerTests.swift */,
 			);
 			path = TruckFeedTests;
 			sourceTree = "<group>";
@@ -376,11 +370,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10AED1DD1BC1BE4C004FD47B /* LoginModalViewController.swift in Sources */,
+				10AED1DD1BC1BE4C004FD47B /* LoginViewController.swift in Sources */,
 				101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */,
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
 				1010797E1B92776F00B3AADB /* Palette.swift in Sources */,
-				1010797C1B912D9D00B3AADB /* TruckTableViewController.swift in Sources */,
+				1010797C1B912D9D00B3AADB /* MasterViewController.swift in Sources */,
 				101079781B90008300B3AADB /* Truck.swift in Sources */,
 				10E51B361BC61555009FE7F2 /* User.swift in Sources */,
 			);
@@ -390,11 +384,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1010795D1B8FF5E300B3AADB /* TruckFeedTests.swift in Sources */,
-				101079761B8FFF2600B3AADB /* TruckTableViewControllerTests.swift in Sources */,
-				10E51B2C1BC36E95009FE7F2 /* LoginModalViewController.swift in Sources */,
+				101079761B8FFF2600B3AADB /* MasterViewControllerTests.swift in Sources */,
+				10E51B2C1BC36E95009FE7F2 /* LoginViewController.swift in Sources */,
 				10E51B371BC61555009FE7F2 /* User.swift in Sources */,
-				10E51B2B1BC36E77009FE7F2 /* LoginModalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

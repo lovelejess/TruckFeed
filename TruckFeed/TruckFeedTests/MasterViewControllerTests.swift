@@ -1,5 +1,5 @@
 //
-//  TruckTableViewControllerTests.swift
+//  MasterViewControllerTests.swift
 //  TruckFeed
 //
 //  Created by Jessica Le on 8/27/15.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class TruckTableViewControllerTests: XCTestCase {
+class MasterViewControllerTests: XCTestCase {
         
     override func setUp() {
         super.setUp()
@@ -34,7 +34,7 @@ class TruckTableViewControllerTests: XCTestCase {
        var testUser = User()
         testUser.isLoggedIn = false
         
-        var loginViewController = LoginModalViewController()
+        var loginViewController = LoginViewController()
         // do something here to press the fb login button
         
         XCTAssertTrue(testUser.isLoggedIn)

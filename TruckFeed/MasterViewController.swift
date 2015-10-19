@@ -1,5 +1,5 @@
 //
-//  TruckTableViewController.swift
+//  MasterViewController.swift
 //  TruckFeed
 //
 //  Created by Jessica Le on 8/28/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TruckTableViewController: UIViewController, UITableViewDataSource {
+class MasterViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
