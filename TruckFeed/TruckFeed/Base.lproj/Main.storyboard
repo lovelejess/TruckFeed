@@ -40,10 +40,11 @@
             </objects>
             <point key="canvasLocation" x="467" y="-738"/>
         </scene>
-        <!--Login View Controller-->
+        <!--LoginViewController-->
         <scene sceneID="ytG-ia-cEE">
             <objects>
-                <viewController id="7dT-mf-6Mv" customClass="LoginViewController" customModule="TruckFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Km-nb-52W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7dT-mf-6Mv" customClass="LoginViewController" customModule="TruckFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L0o-AV-RCe"/>
                         <viewControllerLayoutGuide type="bottom" id="5R4-tl-l4H"/>
@@ -73,11 +74,10 @@
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Km-nb-52W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1123" y="-1368"/>
         </scene>
-        <!--TruckFeed-->
+        <!--Master View Controller-->
         <scene sceneID="pvE-sB-d3d">
             <objects>
                 <viewController id="hyq-UR-qU8" customClass="MasterViewController" customModule="TruckFeed" customModuleProvider="target" sceneMemberID="viewController">
@@ -162,14 +162,7 @@
                             <constraint firstItem="sK5-cw-eXP" firstAttribute="bottom" secondItem="pIm-GD-XqD" secondAttribute="top" constant="44" id="wTn-ef-bvw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TruckFeed" id="Hry-kV-b7a">
-                        <barButtonItem key="leftBarButtonItem" image="truck.png" style="done" id="7C3-gV-oOt">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="7dT-mf-6Mv" kind="presentation" id="67V-mC-hKW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Hry-kV-b7a"/>
                     <connections>
                         <outlet property="tableView" destination="sK5-cw-eXP" id="MOE-co-MdT"/>
                     </connections>
@@ -179,7 +172,4 @@
             <point key="canvasLocation" x="1130" y="-710"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="truck.png" width="32" height="32"/>
-    </resources>
 </document>

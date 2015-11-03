@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
-class MasterViewController: UIViewController, UITableViewDataSource {
+class MasterViewController: UIViewController, UITableViewDataSource, UINavigationBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    var user = [NSManagedObject]()
     
     let truckList: [Truck] = [Truck(name: "Powered By Fries", type: "Belgian fries", defaultImage: UIImage(named: "powered_by_fries.png")!, price: "$"),
                               Truck(name: "Outside Scoop", type: "Dessert", defaultImage: UIImage(named: "the_outside_scoop.jpg")!, price: "$"),
@@ -25,6 +27,29 @@ class MasterViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.bringSubviewToFront(view)
+        self.navigationItem.title = "TruckFeed"
+        displayTruckBarButton()
+        
+    }
+
+    func displayTruckBarButton(){
+        let truckLoginButton: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        truckLoginButton.setImage(UIImage(named: "truck.png"), forState: UIControlState.Normal)
+        truckLoginButton.addTarget(self, action: "presentLoginControllerModally:", forControlEvents: UIControlEvents.TouchUpInside)
+        truckLoginButton.frame = CGRectMake(0, 0, 53, 31)
+        
+        var truckLoginBarButton = UIBarButtonItem(customView: truckLoginButton)
+        truckLoginBarButton.tintColor = UIColor.darkGrayColor()
+        
+        self.navigationItem.leftBarButtonItem = truckLoginBarButton
+
+    }
+
+    func presentLoginControllerModally(sender: AnyObject)
+    {
+        NSLog("Truck Login Button Clicked")
+        let loginViewController:LoginViewController = LoginViewController()
+        self.presentViewController(loginViewController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

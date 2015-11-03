@@ -37,7 +37,7 @@
 			<key>Style</key>
 			<string>UIBarStyleDefault</string>
 			<key>Translucent</key>
-			<false/>
+			<true/>
 		</dict>
 	</dict>
 	<key>UISupportedInterfaceOrientations</key>
@@ -46,18 +46,22 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb693494327453125</string>
-            </array>
-        </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>693494327453125</string>
-    <key>FacebookDisplayName</key>
-    <string>TruckFeed</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb693494327453125</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>693494327453125</string>
+	<key>FacebookDisplayName</key>
+	<string>TruckFeed</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+	</array>
 </dict>
 </plist>
