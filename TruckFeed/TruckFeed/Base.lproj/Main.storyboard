@@ -43,7 +43,6 @@
         <!--LoginViewController-->
         <scene sceneID="ytG-ia-cEE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Km-nb-52W" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7dT-mf-6Mv" customClass="LoginViewController" customModule="TruckFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L0o-AV-RCe"/>
@@ -74,6 +73,7 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Km-nb-52W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1123" y="-1368"/>
         </scene>

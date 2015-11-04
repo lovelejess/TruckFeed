@@ -48,8 +48,9 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
     func presentLoginControllerModally(sender: AnyObject)
     {
         NSLog("Truck Login Button Clicked")
-        let loginViewController:LoginViewController = LoginViewController()
-        self.presentViewController(loginViewController, animated: true, completion: nil)
+        if let loginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewController") as? LoginViewController {
+            self.presentViewController(loginViewController, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
