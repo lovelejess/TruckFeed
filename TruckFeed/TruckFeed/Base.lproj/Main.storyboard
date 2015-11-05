@@ -51,26 +51,7 @@
                     <view key="view" contentMode="scaleToFill" id="Gal-9b-5jy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFQ-d1-B5z">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Login Your Truck!" id="QP6-Dz-sQ6">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ZqI-Pz-BRg">
-                                            <connections>
-                                                <action selector="loginCancelButton:" destination="7dT-mf-6Mv" id="tv9-o1-Tps"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="CFQ-d1-B5z" firstAttribute="leading" secondItem="Gal-9b-5jy" secondAttribute="leading" id="6LH-FM-7Ll"/>
-                            <constraint firstItem="CFQ-d1-B5z" firstAttribute="top" secondItem="L0o-AV-RCe" secondAttribute="bottom" id="jjB-89-Kz5"/>
-                            <constraint firstAttribute="trailing" secondItem="CFQ-d1-B5z" secondAttribute="trailing" id="oJz-ya-hCH"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Km-nb-52W" userLabel="First Responder" sceneMemberID="firstResponder"/>

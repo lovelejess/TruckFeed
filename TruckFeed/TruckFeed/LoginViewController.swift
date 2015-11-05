@@ -8,27 +8,52 @@
 
 import UIKit
 
-public class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+public class LoginViewController: UIViewController, UINavigationBarDelegate {
 
-    @IBAction func loginCancelButton(sender: AnyObject) {
+    func loginCancelButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {});
+    }
+    
+    func createTextField(placeholderText: String, frame: CGRect ) -> UITextField {
+        let textField = UITextField(frame: frame)
+        textField.placeholder = placeholderText
+        textField.font = UIFont.systemFontOfSize(15)
+        textField.borderStyle = UITextBorderStyle.RoundedRect
+        textField.autocorrectionType = UITextAutocorrectionType.No
+        textField.keyboardType = UIKeyboardType.Default
+        textField.returnKeyType = UIReturnKeyType.Done
+        textField.clearButtonMode = UITextFieldViewMode.WhileEditing;
+        textField.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
+        
+        return textField
+    }
+    
+    func createBarButtonItem() -> UIBarButtonItem {
+        let barButtonItem: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        barButtonItem.setTitle("Cancel", forState: UIControlState.Normal)
+        barButtonItem.addTarget(self, action: "loginCancelButton:", forControlEvents: UIControlEvents.TouchUpInside)
+        barButtonItem.frame = CGRectMake(0, 0, 53, 31)
+        
+        var barButton = UIBarButtonItem(customView: barButtonItem)
+        barButton.tintColor = UIColor.darkGrayColor()
+        
+        return barButton
     }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        let fbLoginView : FBSDKLoginButton = FBSDKLoginButton()
-        self.view.addSubview(fbLoginView)
-        fbLoginView.center = self.view.center
-        fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
-        fbLoginView.delegate = self
-    }
-    
-    public func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        println("Logged in for user: \(FBSDKAccessToken.currentAccessToken())")
-    }
-    
-    public func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        println("User Logged Out")
+        
+        let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 54))
+        navigationBar.delegate = self;
+        let navigationItem = UINavigationItem()
+        navigationItem.title = "Food Truck User Login"
+        navigationItem.leftBarButtonItem = createBarButtonItem()
+        navigationBar.items = [navigationItem]
+        let userNameTextField = createTextField("Username", frame: CGRectMake(20, 100, 300, 40))
+        let passWordTextField = createTextField("Password", frame: CGRectMake(20, 150, 300, 40))
+        self.view.addSubview(userNameTextField)
+        self.view.addSubview(passWordTextField)
+        self.view.addSubview(navigationBar)
     }
 
     override public func didReceiveMemoryWarning() {
