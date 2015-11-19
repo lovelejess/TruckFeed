@@ -29,12 +29,12 @@ public class LoginViewController: UIViewController, UINavigationBarDelegate {
     }
     
     func createBarButtonItem() -> UIBarButtonItem {
-        let barButtonItem: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let barButtonItem: UIButton = UIButton(type:UIButtonType.Custom)
         barButtonItem.setTitle("Cancel", forState: UIControlState.Normal)
         barButtonItem.addTarget(self, action: "loginCancelButton:", forControlEvents: UIControlEvents.TouchUpInside)
-        barButtonItem.frame = CGRectMake(0, 0, 53, 31)
+        barButtonItem.frame = CGRectMake(0, 0, 60, 31)
         
-        var barButton = UIBarButtonItem(customView: barButtonItem)
+        let barButton = UIBarButtonItem(customView: barButtonItem)
         barButton.tintColor = UIColor.darkGrayColor()
         
         return barButton

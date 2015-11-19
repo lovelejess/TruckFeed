@@ -525,8 +525,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/TruckFeed",
-					"/Users/jessicale/Downloads/FacebookSDKs-iOS-20150910",
-					"/Users/jessicale/Downloads/FacebookSDKs-iOS-20150813",
 					/Users/jessicale,
 				);
 				INFOPLIST_FILE = TruckFeed/Info.plist;
@@ -547,8 +545,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/TruckFeed",
-					"/Users/jessicale/Downloads/FacebookSDKs-iOS-20150910",
-					"/Users/jessicale/Downloads/FacebookSDKs-iOS-20150813",
 					/Users/jessicale,
 				);
 				INFOPLIST_FILE = TruckFeed/Info.plist;
@@ -567,7 +563,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/jessicale/Downloads/FacebookSDKs-iOS-20150813",
 					/Users/jessicale,
 				);
 				INFOPLIST_FILE = TruckFeedTests/Info.plist;
@@ -586,7 +581,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/jessicale/Downloads/FacebookSDKs-iOS-20150813",
 					/Users/jessicale,
 				);
 				INFOPLIST_FILE = TruckFeedTests/Info.plist;

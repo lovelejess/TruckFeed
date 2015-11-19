@@ -33,12 +33,12 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
     }
 
     func displayTruckBarButton(){
-        let truckLoginButton: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        let truckLoginButton: UIButton = UIButton(type:UIButtonType.Custom)
         truckLoginButton.setImage(UIImage(named: "truck.png"), forState: UIControlState.Normal)
         truckLoginButton.addTarget(self, action: "presentLoginControllerModally:", forControlEvents: UIControlEvents.TouchUpInside)
         truckLoginButton.frame = CGRectMake(0, 0, 53, 31)
         
-        var truckLoginBarButton = UIBarButtonItem(customView: truckLoginButton)
+        let truckLoginBarButton = UIBarButtonItem(customView: truckLoginButton)
         truckLoginBarButton.tintColor = UIColor.darkGrayColor()
         
         self.navigationItem.leftBarButtonItem = truckLoginBarButton
