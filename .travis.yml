@@ -4,5 +4,5 @@ branches:
  only:
  - master
 script:
-  - xctool -project Truckfeed/TruckFeed.xcodeproj -scheme Truckfeed 
-  - xctool test -project Truckfeed/TruckFeed.xcodeproj -scheme TruckFeedTests
+  - xctool -project Truckfeed/TruckFeed.xcodeproj -scheme TruckFeed -sdk iphonesimulator 
+  - xctool -project Truckfeed/TruckFeed.xcodeproj -scheme TruckFeedTests -sdk iphonesimulator 

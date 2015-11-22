@@ -21,6 +21,7 @@
 		1010798C1B92A24F00B3AADB /* parlo_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */; };
 		1010798E1B92A2FA00B3AADB /* ferinheit_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */; };
 		101079901B92A31100B3AADB /* karams_grill.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798F1B92A31100B3AADB /* karams_grill.jpg */; };
+		106F519A1C022FD100DA30C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */; };
 		10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10AED1D71BC0C478004FD47B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
 		10AED1DD1BC1BE4C004FD47B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */; };
@@ -528,6 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				106F519A1C022FD100DA30C6 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

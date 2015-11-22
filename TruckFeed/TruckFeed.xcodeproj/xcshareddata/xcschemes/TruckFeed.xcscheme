@@ -20,6 +20,20 @@
                ReferencedContainer = "container:TruckFeed.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "101079571B8FF5E300B3AADB"
+               BuildableName = "TruckFeedTests.xctest"
+               BlueprintName = "TruckFeedTests"
+               ReferencedContainer = "container:TruckFeed.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
