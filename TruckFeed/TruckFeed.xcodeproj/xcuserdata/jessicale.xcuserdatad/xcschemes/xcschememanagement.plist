@@ -4,10 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>TruckFeed.xcscheme</key>
+		<key>TruckFeed.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>TruckFeedUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>101079621B8FF5E300B3AADB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>10D950461BFD7D4E00EC435B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

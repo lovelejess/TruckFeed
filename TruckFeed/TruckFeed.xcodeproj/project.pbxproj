@@ -24,9 +24,27 @@
 		10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10AED1D71BC0C478004FD47B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
 		10AED1DD1BC1BE4C004FD47B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */; };
+		10D950491BFD7D4E00EC435B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */; };
+		10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
+		10D9504B1BFD7D4E00EC435B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* MasterViewController.swift */; };
+		10D9504C1BFD7D4E00EC435B /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
+		10D9504D1BFD7D4E00EC435B /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010797D1B92776F00B3AADB /* Palette.swift */; };
+		10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079771B90008300B3AADB /* Truck.swift */; };
+		10D950511BFD7D4E00EC435B /* the_outside_scoop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079831B92A00D00B3AADB /* the_outside_scoop.jpg */; };
+		10D950521BFD7D4E00EC435B /* ferinheit_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */; };
+		10D950531BFD7D4E00EC435B /* the_spot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079851B92A07600B3AADB /* the_spot.jpg */; };
+		10D950541BFD7D4E00EC435B /* street_eats_dsm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079871B92A17E00B3AADB /* street_eats_dsm.jpg */; };
+		10D950551BFD7D4E00EC435B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1010794E1B8FF5E300B3AADB /* Assets.xcassets */; };
+		10D950561BFD7D4E00EC435B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */; };
+		10D950571BFD7D4E00EC435B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
+		10D950581BFD7D4E00EC435B /* karams_grill.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798F1B92A31100B3AADB /* karams_grill.jpg */; };
+		10D950591BFD7D4E00EC435B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; };
+		10D9505A1BFD7D4E00EC435B /* powered_by_fries.png in Resources */ = {isa = PBXBuildFile; fileRef = 101079811B929C3600B3AADB /* powered_by_fries.png */; };
+		10D9505B1BFD7D4E00EC435B /* lets_toast.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079891B92A1BA00B3AADB /* lets_toast.jpg */; };
+		10D9505C1BFD7D4E00EC435B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
+		10D9505D1BFD7D4E00EC435B /* parlo_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */; };
 		10DC618A1BE863A60021B2D3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* MasterViewController.swift */; };
 		10DC618C1BE8661E0021B2D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */; };
-		10E51B2C1BC36E95009FE7F2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +82,8 @@
 		10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		10AED1D61BC0C478004FD47B /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
 		10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		10D950631BFD7D4E00EC435B /* TruckFeedUITests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruckFeedUITests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10D950641BFD7D4F00EC435B /* TruckFeed copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TruckFeed copy-Info.plist"; path = "/Users/jessicale/Repositories/TruckFeed/TruckFeed/TruckFeed copy-Info.plist"; sourceTree = "<absolute>"; };
 		10DC61891BE863A60021B2D3 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		443B0851ABEFCC1B086F9EDA /* libPods-TruckFeed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruckFeed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +108,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		10D9504F1BFD7D4E00EC435B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -100,6 +127,7 @@
 				101079431B8FF5E300B3AADB /* Products */,
 				3C37454694ADD4529A0A74F2 /* Pods */,
 				AA7DC550C5D9247F9BEF5586 /* Frameworks */,
+				10D950641BFD7D4F00EC435B /* TruckFeed copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +136,7 @@
 			children = (
 				101079421B8FF5E300B3AADB /* TruckFeed.app */,
 				101079581B8FF5E300B3AADB /* TruckFeedTests.xctest */,
+				10D950631BFD7D4E00EC435B /* TruckFeedUITests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -228,6 +257,26 @@
 			productReference = 101079581B8FF5E300B3AADB /* TruckFeedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		10D950461BFD7D4E00EC435B /* TruckFeedUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10D950601BFD7D4E00EC435B /* Build configuration list for PBXNativeTarget "TruckFeedUITests" */;
+			buildPhases = (
+				10D950471BFD7D4E00EC435B /* Check Pods Manifest.lock */,
+				10D950481BFD7D4E00EC435B /* Sources */,
+				10D9504F1BFD7D4E00EC435B /* Frameworks */,
+				10D950501BFD7D4E00EC435B /* Resources */,
+				10D9505E1BFD7D4E00EC435B /* Copy Pods Resources */,
+				10D9505F1BFD7D4E00EC435B /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TruckFeedUITests;
+			productName = TruckFeed;
+			productReference = 10D950631BFD7D4E00EC435B /* TruckFeedUITests.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -261,6 +310,7 @@
 			targets = (
 				101079411B8FF5E300B3AADB /* TruckFeed */,
 				101079571B8FF5E300B3AADB /* TruckFeedTests */,
+				10D950461BFD7D4E00EC435B /* TruckFeedUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -293,6 +343,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		10D950501BFD7D4E00EC435B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10D950511BFD7D4E00EC435B /* the_outside_scoop.jpg in Resources */,
+				10D950521BFD7D4E00EC435B /* ferinheit_pizza.jpg in Resources */,
+				10D950531BFD7D4E00EC435B /* the_spot.jpg in Resources */,
+				10D950541BFD7D4E00EC435B /* street_eats_dsm.jpg in Resources */,
+				10D950551BFD7D4E00EC435B /* Assets.xcassets in Resources */,
+				10D950561BFD7D4E00EC435B /* Default-568h@2x.png in Resources */,
+				10D950571BFD7D4E00EC435B /* truck.png in Resources */,
+				10D950581BFD7D4E00EC435B /* karams_grill.jpg in Resources */,
+				10D950591BFD7D4E00EC435B /* Main.storyboard in Resources */,
+				10D9505A1BFD7D4E00EC435B /* powered_by_fries.png in Resources */,
+				10D9505B1BFD7D4E00EC435B /* lets_toast.jpg in Resources */,
+				10D9505C1BFD7D4E00EC435B /* LaunchScreen.xib in Resources */,
+				10D9505D1BFD7D4E00EC435B /* parlo_pizza.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -304,6 +374,54 @@
 			inputPaths = (
 			);
 			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+			showEnvVarsInLog = 0;
+		};
+		10D950471BFD7D4E00EC435B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+			showEnvVarsInLog = 0;
+		};
+		10D9505E1BFD7D4E00EC435B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+			showEnvVarsInLog = 0;
+		};
+		10D9505F1BFD7D4E00EC435B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,7 +528,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10E51B2C1BC36E95009FE7F2 /* LoginViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10D950481BFD7D4E00EC435B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10D950491BFD7D4E00EC435B /* LoginViewController.swift in Sources */,
+				10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */,
+				10D9504B1BFD7D4E00EC435B /* MasterViewController.swift in Sources */,
+				10D9504C1BFD7D4E00EC435B /* TruckCell.swift in Sources */,
+				10D9504D1BFD7D4E00EC435B /* Palette.swift in Sources */,
+				10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,7 +700,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TruckFeed/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TruckFeed.app/TruckFeed";
 			};
 			name = Debug;
@@ -588,8 +718,48 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "TruckFeed/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TruckFeed.app/TruckFeed";
+			};
+			name = Release;
+		};
+		10D950611BFD7D4E00EC435B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/TruckFeed",
+					/Users/jessicale,
+				);
+				INFOPLIST_FILE = "TruckFeed copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+			};
+			name = Debug;
+		};
+		10D950621BFD7D4E00EC435B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/TruckFeed",
+					/Users/jessicale,
+				);
+				INFOPLIST_FILE = "TruckFeed copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 			};
 			name = Release;
 		};
@@ -619,6 +789,15 @@
 			buildConfigurations = (
 				101079701B8FF5E300B3AADB /* Debug */,
 				101079711B8FF5E300B3AADB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10D950601BFD7D4E00EC435B /* Build configuration list for PBXNativeTarget "TruckFeedUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10D950611BFD7D4E00EC435B /* Debug */,
+				10D950621BFD7D4E00EC435B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
