@@ -10,6 +10,52 @@ import UIKit
 
 public class LoginViewController: UIViewController, UINavigationBarDelegate {
 
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let navigationBar = createNavigationBar()
+        let userNameTextField = createTextField("Username", frame: CGRectMake(20, 100, 300, 40))
+        let passWordTextField = createTextField("Password", frame: CGRectMake(20, 150, 300, 40))
+        passWordTextField.secureTextEntry = true
+
+        let loginButton = createButton("Login", target: "", frame: CGRectMake(10, 200, 80, 50))
+        let forgotPasswordLabel = UILabel(frame: CGRectMake(20, 240, 300, 40))
+        forgotPasswordLabel.text = "Forgot Password?"
+        forgotPasswordLabel.textColor = secondaryColor
+        let signUpButton = createButton("Sign Up", target: "", frame: CGRectMake(10, 260, 80, 50))
+
+        
+        self.view.addSubview(userNameTextField)
+        self.view.addSubview(passWordTextField)
+        self.view.addSubview(navigationBar)
+        self.view.addSubview(loginButton)
+        self.view.addSubview(signUpButton)
+        self.view.addSubview(forgotPasswordLabel)
+        
+    }
+    
+    func createNavigationBar() -> UINavigationBar {
+        let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 54))
+        navigationBar.delegate = self;
+        let navigationItem = UINavigationItem()
+        navigationItem.title = "Food Truck User Login"
+        navigationItem.leftBarButtonItem = createBarButtonItem()
+        navigationBar.items = [navigationItem]
+
+        return navigationBar
+    }
+    
+    func createButton(title: String, target: Selector, frame: CGRect) -> UIButton {
+        let button = UIButton(type: UIButtonType.System)
+        button.setTitle(title, forState: UIControlState.Normal)
+        button.titleLabel?.font = UIFont(name: "Arial", size: 16)
+        button.tintColor = secondaryColor
+        button.addTarget(self, action: target, forControlEvents: UIControlEvents.TouchUpInside)
+        button.frame = frame
+        
+        return button
+    }
+    
     func loginCancelButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {});
     }
@@ -38,22 +84,6 @@ public class LoginViewController: UIViewController, UINavigationBarDelegate {
         barButton.tintColor = UIColor.darkGrayColor()
         
         return barButton
-    }
-    
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 54))
-        navigationBar.delegate = self;
-        let navigationItem = UINavigationItem()
-        navigationItem.title = "Food Truck User Login"
-        navigationItem.leftBarButtonItem = createBarButtonItem()
-        navigationBar.items = [navigationItem]
-        let userNameTextField = createTextField("Username", frame: CGRectMake(20, 100, 300, 40))
-        let passWordTextField = createTextField("Password", frame: CGRectMake(20, 150, 300, 40))
-        self.view.addSubview(userNameTextField)
-        self.view.addSubview(passWordTextField)
-        self.view.addSubview(navigationBar)
     }
 
     override public func didReceiveMemoryWarning() {
