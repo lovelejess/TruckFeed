@@ -19,26 +19,20 @@ public class LoginViewController: UIViewController, UINavigationBarDelegate {
         passWordTextField.secureTextEntry = true
 
         let loginButton = createButton("Login", target: "", frame: CGRectMake(10, 200, 80, 50))
-        let forgotPasswordLabel = UILabel(frame: CGRectMake(20, 240, 300, 40))
-        forgotPasswordLabel.text = "Forgot Password?"
-        forgotPasswordLabel.textColor = secondaryColor
-        let signUpButton = createButton("Sign Up", target: "", frame: CGRectMake(10, 260, 80, 50))
-
+        let signUpButton = createButton("I'm a new foodie! Sign Me Up", target: "", frame: CGRectMake(10, 230, 250, 50))
         
         self.view.addSubview(userNameTextField)
         self.view.addSubview(passWordTextField)
         self.view.addSubview(navigationBar)
         self.view.addSubview(loginButton)
         self.view.addSubview(signUpButton)
-        self.view.addSubview(forgotPasswordLabel)
-        
     }
     
     func createNavigationBar() -> UINavigationBar {
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 54))
         navigationBar.delegate = self;
         let navigationItem = UINavigationItem()
-        navigationItem.title = "Food Truck User Login"
+        navigationItem.title = "User Login"
         navigationItem.leftBarButtonItem = createBarButtonItem()
         navigationBar.items = [navigationItem]
 

@@ -29,7 +29,19 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
         view.bringSubviewToFront(view)
         self.navigationItem.title = "TruckFeed"
         displayTruckBarButton()
+    }
+    
+//    prompts user to log in if not logged in already
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
         
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if defaults.objectForKey("userLoggedIn") == nil {
+            if let loginController = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController") as? LoginViewController {
+                self.navigationController?.presentViewController(loginController, animated: true, completion: nil)
+            }
+        }
     }
 
     func displayTruckBarButton(){
