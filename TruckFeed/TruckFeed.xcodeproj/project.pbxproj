@@ -21,11 +21,14 @@
 		1010798C1B92A24F00B3AADB /* parlo_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */; };
 		1010798E1B92A2FA00B3AADB /* ferinheit_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */; };
 		101079901B92A31100B3AADB /* karams_grill.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798F1B92A31100B3AADB /* karams_grill.jpg */; };
-		106F519A1C022FD100DA30C6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */; };
+		10674DE21C45CE92000D3E4C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DDF1C45CE92000D3E4C /* FBSDKCoreKit.framework */; };
+		10674DE31C45CE92000D3E4C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DE01C45CE92000D3E4C /* FBSDKLoginKit.framework */; };
+		10674DE41C45CE92000D3E4C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DE11C45CE92000D3E4C /* FBSDKShareKit.framework */; };
+		106F519A1C022FD100DA30C6 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */; };
 		10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10AED1D71BC0C478004FD47B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
-		10AED1DD1BC1BE4C004FD47B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */; };
-		10D950491BFD7D4E00EC435B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */; };
+		10AED1DD1BC1BE4C004FD47B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */; };
+		10D950491BFD7D4E00EC435B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */; };
 		10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
 		10D9504B1BFD7D4E00EC435B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* MasterViewController.swift */; };
 		10D9504C1BFD7D4E00EC435B /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
@@ -80,9 +83,13 @@
 		1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = parlo_pizza.jpg; sourceTree = "<group>"; };
 		1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ferinheit_pizza.jpg; sourceTree = "<group>"; };
 		1010798F1B92A31100B3AADB /* karams_grill.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = karams_grill.jpg; sourceTree = "<group>"; };
+		10674DDF1C45CE92000D3E4C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = TruckFeed/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		10674DE01C45CE92000D3E4C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = TruckFeed/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		10674DE11C45CE92000D3E4C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = TruckFeed/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		10674DE51C45CF97000D3E4C /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		10AED1D61BC0C478004FD47B /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
-		10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		10D950631BFD7D4E00EC435B /* TruckFeedUITests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruckFeedUITests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D950641BFD7D4F00EC435B /* TruckFeed copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TruckFeed copy-Info.plist"; path = "/Users/jessicale/Repositories/TruckFeed/TruckFeed/TruckFeed copy-Info.plist"; sourceTree = "<absolute>"; };
 		10DC61891BE863A60021B2D3 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +106,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10674DE31C45CE92000D3E4C /* FBSDKLoginKit.framework in Frameworks */,
+				10674DE21C45CE92000D3E4C /* FBSDKCoreKit.framework in Frameworks */,
+				10674DE41C45CE92000D3E4C /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +165,8 @@
 				101079771B90008300B3AADB /* Truck.swift */,
 				101079791B912B7A00B3AADB /* TruckCell.swift */,
 				10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */,
-				10AED1DC1BC1BE4C004FD47B /* LoginViewController.swift */,
+				10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */,
+				10674DE51C45CF97000D3E4C /* Bridging-Header.h */,
 			);
 			path = TruckFeed;
 			sourceTree = "<group>";
@@ -208,6 +219,9 @@
 		AA7DC550C5D9247F9BEF5586 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10674DDF1C45CE92000D3E4C /* FBSDKCoreKit.framework */,
+				10674DE01C45CE92000D3E4C /* FBSDKLoginKit.framework */,
+				10674DE11C45CE92000D3E4C /* FBSDKShareKit.framework */,
 				443B0851ABEFCC1B086F9EDA /* libPods-TruckFeed.a */,
 				AAA919C40A5A01A525B1FE52 /* libPods-TruckFeedTests.a */,
 			);
@@ -516,7 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10AED1DD1BC1BE4C004FD47B /* LoginViewController.swift in Sources */,
+				10AED1DD1BC1BE4C004FD47B /* DashboardViewController.swift in Sources */,
 				101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */,
 				10DC618A1BE863A60021B2D3 /* MasterViewController.swift in Sources */,
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
@@ -529,7 +543,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				106F519A1C022FD100DA30C6 /* LoginViewController.swift in Sources */,
+				106F519A1C022FD100DA30C6 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10D950491BFD7D4E00EC435B /* LoginViewController.swift in Sources */,
+				10D950491BFD7D4E00EC435B /* DashboardViewController.swift in Sources */,
 				10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */,
 				10D9504B1BFD7D4E00EC435B /* MasterViewController.swift in Sources */,
 				10D9504C1BFD7D4E00EC435B /* TruckCell.swift in Sources */,

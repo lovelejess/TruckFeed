@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import FBSDKLoginKit 
 
 class MasterViewController: UIViewController, UITableViewDataSource, UINavigationBarDelegate {
     
@@ -30,24 +31,14 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
         self.navigationItem.title = "TruckFeed"
         displayTruckBarButton()
     }
-    
-//    prompts user to log in if not logged in already
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
-        if defaults.objectForKey("userLoggedIn") == nil {
-            if let loginController = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController") as? LoginViewController {
-                self.navigationController?.presentViewController(loginController, animated: true, completion: nil)
-            }
-        }
     }
 
     func displayTruckBarButton(){
         let truckLoginButton: UIButton = UIButton(type:UIButtonType.Custom)
         truckLoginButton.setImage(UIImage(named: "truck.png"), forState: UIControlState.Normal)
-        truckLoginButton.addTarget(self, action: "presentLoginControllerModally:", forControlEvents: UIControlEvents.TouchUpInside)
+        truckLoginButton.addTarget(self, action: "presentFacebookLoginWebView:", forControlEvents: UIControlEvents.TouchUpInside)
         truckLoginButton.frame = CGRectMake(0, 0, 53, 31)
         
         let truckLoginBarButton = UIBarButtonItem(customView: truckLoginButton)
@@ -57,12 +48,25 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
 
     }
 
-    func presentLoginControllerModally(sender: AnyObject)
+    func presentFacebookLoginWebView(sender: AnyObject)
     {
-        NSLog("Truck Login Button Clicked")
-        if let loginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("LoginViewController") as? LoginViewController {
-            self.presentViewController(loginViewController, animated: true, completion: nil)
-        }
+        let FBLoginManager = FBSDKLoginManager()
+        
+        FBLoginManager.logInWithPublishPermissions(nil, handler: { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
+            if(error != nil){
+                print(error)
+            }
+            else if(response.isCancelled){
+                // Authorization has been canceled by user
+            }
+            else {
+                print(FBSDKAccessToken.currentAccessToken())
+                print(response.token.tokenString)
+                if let dashboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DashboardViewController") as? DashboardViewController {
+                    self.presentViewController(dashboardViewController, animated: true, completion: nil)
+                }
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {

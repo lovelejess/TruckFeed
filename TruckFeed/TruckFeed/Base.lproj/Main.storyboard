@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="467" y="-738"/>
         </scene>
-        <!--LoginViewController-->
+        <!--DashboardViewController-->
         <scene sceneID="ytG-ia-cEE">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7dT-mf-6Mv" customClass="LoginViewController" customModule="TruckFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardViewController" title="DashboardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7dT-mf-6Mv" customClass="DashboardViewController" customModule="TruckFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L0o-AV-RCe"/>
                         <viewControllerLayoutGuide type="bottom" id="5R4-tl-l4H"/>
