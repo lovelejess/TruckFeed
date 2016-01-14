@@ -23,24 +23,25 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
         navigationBar.delegate = self;
         let navigationItem = UINavigationItem()
         navigationItem.title = "Hello Truck Feeder!"
-        navigationItem.leftBarButtonItem = createBarButtonItem()
+        navigationItem.leftBarButtonItem = createBarButtonItem("Cancel", onClick:"dismissViewController:",frame:CGRectMake(0, 0, 60, 31))
+        navigationItem.rightBarButtonItem = createBarButtonItem("Log Out", onClick:"facebookLogout", frame:CGRectMake(0, 0, 100, 31))
         navigationBar.items = [navigationItem]
 
         return navigationBar
     }
     
-    func createButton(title: String, target: Selector, frame: CGRect) -> UIButton {
+    func createButton(title: String, onClick: Selector, frame: CGRect) -> UIButton {
         let button = UIButton(type: UIButtonType.System)
         button.setTitle(title, forState: UIControlState.Normal)
         button.titleLabel?.font = UIFont(name: "Arial", size: 16)
         button.tintColor = secondaryColor
-        button.addTarget(self, action: target, forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
         button.frame = frame
         
         return button
     }
     
-    func loginCancelButton(sender: AnyObject) {
+    func dismissViewController(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {});
     }
     
@@ -58,16 +59,23 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
         return textField
     }
     
-    func createBarButtonItem() -> UIBarButtonItem {
+    func createBarButtonItem(title: String, onClick: Selector, frame: CGRect) -> UIBarButtonItem {
         let barButtonItem: UIButton = UIButton(type:UIButtonType.Custom)
-        barButtonItem.setTitle("Cancel", forState: UIControlState.Normal)
-        barButtonItem.addTarget(self, action: "loginCancelButton:", forControlEvents: UIControlEvents.TouchUpInside)
-        barButtonItem.frame = CGRectMake(0, 0, 60, 31)
+        barButtonItem.setTitle(title, forState: UIControlState.Normal)
+        barButtonItem.addTarget(self, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
+        barButtonItem.frame = frame
         
         let barButton = UIBarButtonItem(customView: barButtonItem)
         barButton.tintColor = UIColor.darkGrayColor()
         
         return barButton
+    }
+    
+    func facebookLogout(){
+        FBSDKAccessToken.setCurrentAccessToken(nil)
+        dismissViewController(self)
+        
+        print("Logged Out")
     }
 
     override public func didReceiveMemoryWarning() {

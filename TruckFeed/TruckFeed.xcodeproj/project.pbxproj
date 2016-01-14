@@ -24,6 +24,7 @@
 		10674DE21C45CE92000D3E4C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DDF1C45CE92000D3E4C /* FBSDKCoreKit.framework */; };
 		10674DE31C45CE92000D3E4C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DE01C45CE92000D3E4C /* FBSDKLoginKit.framework */; };
 		10674DE41C45CE92000D3E4C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DE11C45CE92000D3E4C /* FBSDKShareKit.framework */; };
+		10674DE71C473BD4000D3E4C /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10674DE61C473BD4000D3E4C /* TruckOwner.swift */; };
 		106F519A1C022FD100DA30C6 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */; };
 		10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10AED1D71BC0C478004FD47B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
@@ -87,6 +88,7 @@
 		10674DE01C45CE92000D3E4C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = TruckFeed/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		10674DE11C45CE92000D3E4C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = TruckFeed/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		10674DE51C45CF97000D3E4C /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		10674DE61C473BD4000D3E4C /* TruckOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckOwner.swift; sourceTree = "<group>"; };
 		10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		10AED1D61BC0C478004FD47B /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
 		10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */,
 				10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */,
 				10674DE51C45CF97000D3E4C /* Bridging-Header.h */,
+				10674DE61C473BD4000D3E4C /* TruckOwner.swift */,
 			);
 			path = TruckFeed;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
 				1010797E1B92776F00B3AADB /* Palette.swift in Sources */,
 				101079781B90008300B3AADB /* Truck.swift in Sources */,
+				10674DE71C473BD4000D3E4C /* TruckOwner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,12 +8,13 @@
 
 import UIKit
 import CoreData
-import FBSDKLoginKit 
+import FBSDKLoginKit
 
 class MasterViewController: UIViewController, UITableViewDataSource, UINavigationBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var user = [NSManagedObject]()
+    var truckFeedOwner = TruckOwner()
+    let FBLoginManager = FBSDKLoginManager()
     
     let truckList: [Truck] = [Truck(name: "Powered By Fries", type: "Belgian fries", defaultImage: UIImage(named: "powered_by_fries.png")!, price: "$"),
                               Truck(name: "Outside Scoop", type: "Dessert", defaultImage: UIImage(named: "the_outside_scoop.jpg")!, price: "$"),
@@ -38,7 +39,6 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
     func displayTruckBarButton(){
         let truckLoginButton: UIButton = UIButton(type:UIButtonType.Custom)
         truckLoginButton.setImage(UIImage(named: "truck.png"), forState: UIControlState.Normal)
-        truckLoginButton.addTarget(self, action: "presentFacebookLoginWebView:", forControlEvents: UIControlEvents.TouchUpInside)
         truckLoginButton.frame = CGRectMake(0, 0, 53, 31)
         
         let truckLoginBarButton = UIBarButtonItem(customView: truckLoginButton)
@@ -46,11 +46,21 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
         
         self.navigationItem.leftBarButtonItem = truckLoginBarButton
 
+//        if (FBSDKAccessToken.currentAccessToken().isEqualToAccessToken(truckFeedOwner.accessToken) == false)
+        if(FBSDKAccessToken.currentAccessToken()?.tokenString == truckFeedOwner.accessToken)
+        {
+            truckLoginButton.addTarget(self, action: "presentFacebookLoginWebView:", forControlEvents: UIControlEvents.TouchUpInside)
+        }
+        else
+        {
+            truckLoginButton.addTarget(self, action: "presentDashboardViewController:", forControlEvents: UIControlEvents.TouchUpInside)
+        }
     }
-
+    
+// PRIVATE HELPERS
+    
     func presentFacebookLoginWebView(sender: AnyObject)
     {
-        let FBLoginManager = FBSDKLoginManager()
         
         FBLoginManager.logInWithPublishPermissions(nil, handler: { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
             if(error != nil){
@@ -60,13 +70,18 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
                 // Authorization has been canceled by user
             }
             else {
-                print(FBSDKAccessToken.currentAccessToken())
+                self.truckFeedOwner.accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                print(self.truckFeedOwner.accessToken)
                 print(response.token.tokenString)
-                if let dashboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DashboardViewController") as? DashboardViewController {
-                    self.presentViewController(dashboardViewController, animated: true, completion: nil)
-                }
+                self.presentDashboardViewController(self)
             }
         })
+    }
+    
+    func presentDashboardViewController(sender: AnyObject){
+        if let dashboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DashboardViewController") as? DashboardViewController {
+            self.presentViewController(dashboardViewController, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
