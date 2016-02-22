@@ -13,7 +13,8 @@ import FBSDKLoginKit
 class MasterViewController: UIViewController, UITableViewDataSource, UINavigationBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var truckFeedOwner = TruckOwner()
+    let truckOwner = NSUserDefaults.standardUserDefaults()
+
     let FBLoginManager = FBSDKLoginManager()
     
     let truckList: [Truck] = [Truck(name: "Powered By Fries", type: "Belgian fries", defaultImage: UIImage(named: "powered_by_fries.png")!, price: "$"),
@@ -30,30 +31,38 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
         super.viewDidLoad()
         view.bringSubviewToFront(view)
         self.navigationItem.title = "TruckFeed"
-        displayTruckBarButton()
+        let truckLoginButton = createBarButtonItem("", onClick:"truckBarButtonAction", frame:CGRectMake(0, 0, 53, 31), image: UIImage(named: "truck.png")!)
+        navigationItem.leftBarButtonItem = truckLoginButton
+
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
     }
-
-    func displayTruckBarButton(){
-        let truckLoginButton: UIButton = UIButton(type:UIButtonType.Custom)
-        truckLoginButton.setImage(UIImage(named: "truck.png"), forState: UIControlState.Normal)
-        truckLoginButton.frame = CGRectMake(0, 0, 53, 31)
+    
+    
+    func createBarButtonItem(title: String, onClick: Selector, frame: CGRect, image: UIImage) -> UIBarButtonItem {
+        let barButtonItem: UIButton = UIButton(type:UIButtonType.Custom)
+        barButtonItem.setTitle(title, forState: UIControlState.Normal)
+        barButtonItem.addTarget(self, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
+        barButtonItem.frame = frame
+        barButtonItem.setImage(image, forState: UIControlState.Normal)
         
-        let truckLoginBarButton = UIBarButtonItem(customView: truckLoginButton)
-        truckLoginBarButton.tintColor = UIColor.darkGrayColor()
+        let barButton = UIBarButtonItem(customView: barButtonItem)
+        barButton.tintColor = UIColor.darkGrayColor()
         
-        self.navigationItem.leftBarButtonItem = truckLoginBarButton
-
-//        if (FBSDKAccessToken.currentAccessToken().isEqualToAccessToken(truckFeedOwner.accessToken) == false)
-        if(FBSDKAccessToken.currentAccessToken()?.tokenString == truckFeedOwner.accessToken)
+        return barButton
+    }
+    
+    func truckBarButtonAction(){
+        let accessToken = truckOwner.objectForKey("accessToken")?.tokenString
+        if(FBSDKAccessToken.currentAccessToken()?.tokenString != accessToken || accessToken == nil)
         {
-            truckLoginButton.addTarget(self, action: "presentFacebookLoginWebView:", forControlEvents: UIControlEvents.TouchUpInside)
+            self.presentFacebookLoginWebView(self)
         }
         else
         {
-            truckLoginButton.addTarget(self, action: "presentDashboardViewController:", forControlEvents: UIControlEvents.TouchUpInside)
+            self.presentDashboardViewController(self)
+
         }
     }
     
@@ -61,8 +70,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
     
     func presentFacebookLoginWebView(sender: AnyObject)
     {
-        
-        FBLoginManager.logInWithPublishPermissions(nil, handler: { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
+        FBLoginManager.logInWithPublishPermissions(["publish_actions"], fromViewController: self, handler: { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
             if(error != nil){
                 print(error)
             }
@@ -70,9 +78,9 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
                 // Authorization has been canceled by user
             }
             else {
-                self.truckFeedOwner.accessToken = FBSDKAccessToken.currentAccessToken().tokenString
-                print(self.truckFeedOwner.accessToken)
-                print(response.token.tokenString)
+                let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                self.truckOwner.setObject(accessToken, forKey:"accessToken")
+                print("present login view: " + accessToken)
                 self.presentDashboardViewController(self)
             }
         })

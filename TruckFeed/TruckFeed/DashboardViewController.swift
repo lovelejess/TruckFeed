@@ -73,6 +73,8 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
     
     func facebookLogout(){
         FBSDKAccessToken.setCurrentAccessToken(nil)
+        let truckOwner = NSUserDefaults.standardUserDefaults()
+        truckOwner.setObject("", forKey: "accessToken")
         dismissViewController(self)
         
         print("Logged Out")
