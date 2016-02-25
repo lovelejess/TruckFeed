@@ -13,10 +13,9 @@ import FBSDKLoginKit
 class MasterViewController: UIViewController, UITableViewDataSource, UINavigationBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    let truckOwner = NSUserDefaults.standardUserDefaults()
 
     let FBLoginManager = FBSDKLoginManager()
-    
+    var truckOwner: NSUserDefaults!
     let truckList: [Truck] = [Truck(name: "Powered By Fries", type: "Belgian fries", defaultImage: UIImage(named: "powered_by_fries.png")!, price: "$"),
                               Truck(name: "Outside Scoop", type: "Dessert", defaultImage: UIImage(named: "the_outside_scoop.jpg")!, price: "$"),
                               Truck(name: "The Spot", type: " Fresh, made-to-order sandwiches", defaultImage: UIImage(named: "the_spot.jpg")!, price: "$"),
@@ -30,6 +29,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
     override func viewDidLoad() {
         super.viewDidLoad()
         view.bringSubviewToFront(view)
+        truckOwner = NSUserDefaults.standardUserDefaults()
         self.navigationItem.title = "TruckFeed"
         let truckLoginButton = createBarButtonItem("", onClick:"truckBarButtonAction", frame:CGRectMake(0, 0, 53, 31), image: UIImage(named: "truck.png")!)
         navigationItem.leftBarButtonItem = truckLoginButton
@@ -54,8 +54,8 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
     }
     
     func truckBarButtonAction(){
-        let accessToken = truckOwner.objectForKey("accessToken")?.tokenString
-        if(FBSDKAccessToken.currentAccessToken()?.tokenString != accessToken || accessToken == nil)
+        let accessToken = truckOwner.stringForKey("accessToken")
+        if( accessToken == nil)
         {
             self.presentFacebookLoginWebView(self)
         }
@@ -79,8 +79,9 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
             }
             else {
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
-                self.truckOwner.setObject(accessToken, forKey:"accessToken")
                 print("present login view: " + accessToken)
+                self.truckOwner.setObject(accessToken, forKey:"accessToken")
+                self.truckOwner.synchronize()
                 self.presentDashboardViewController(self)
             }
         })
