@@ -49,6 +49,7 @@
 		10D9505D1BFD7D4E00EC435B /* parlo_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */; };
 		10DC618A1BE863A60021B2D3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* MasterViewController.swift */; };
 		10DC618C1BE8661E0021B2D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */; };
+		10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		10D950641BFD7D4F00EC435B /* TruckFeed copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TruckFeed copy-Info.plist"; path = "/Users/jessicale/Repositories/TruckFeed/TruckFeed/TruckFeed copy-Info.plist"; sourceTree = "<absolute>"; };
 		10DC61891BE863A60021B2D3 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckOwner.swift; sourceTree = "<group>"; };
 		443B0851ABEFCC1B086F9EDA /* libPods-TruckFeed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruckFeed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C62C7E9AF29DD8AC8BC09B /* Pods-TruckFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedTests/Pods-TruckFeedTests.release.xcconfig"; sourceTree = "<group>"; };
 		6321F900B9B42BD32201CE2A /* Pods-TruckFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeed/Pods-TruckFeed.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */,
 				10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */,
 				10674DE51C45CF97000D3E4C /* Bridging-Header.h */,
+				10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */,
 			);
 			path = TruckFeed;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */,
 				10AED1DD1BC1BE4C004FD47B /* DashboardViewController.swift in Sources */,
 				101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */,
 				10DC618A1BE863A60021B2D3 /* MasterViewController.swift in Sources */,

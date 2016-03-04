@@ -15,7 +15,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
     @IBOutlet weak var tableView: UITableView!
 
     let FBLoginManager = FBSDKLoginManager()
-    var truckOwner: NSUserDefaults!
+    var truckOwner:TruckOwner?
     let truckList: [Truck] = [Truck(name: "Powered By Fries", type: "Belgian fries", defaultImage: UIImage(named: "powered_by_fries.png")!, price: "$"),
                               Truck(name: "Outside Scoop", type: "Dessert", defaultImage: UIImage(named: "the_outside_scoop.jpg")!, price: "$"),
                               Truck(name: "The Spot", type: " Fresh, made-to-order sandwiches", defaultImage: UIImage(named: "the_spot.jpg")!, price: "$"),
@@ -23,39 +23,25 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
                               Truck(name: "Let's Toast", type: "Spanish Tapas", defaultImage: UIImage(named: "lets_toast.jpg")!, price: "$"),
                               Truck(name: "Parlo Pizza", type: "Authentic Neapolitan pizzas", defaultImage: UIImage(named: "parlo_pizza.jpg")!, price: "$"),
                               Truck(name: "Karam's Grill", type: "Mediterranean", defaultImage: UIImage(named: "karams_grill.jpg")!, price: "$"),
-                              Truck(name: "Street Eats DSM", type: "Stuffed sammiches with hand-cut fries", defaultImage: UIImage(named: "street_eats_dsm.jpg")!, price: "$"),]
+                              Truck(name: "Street Eats DSM", type: "Stuffed sammiches with hand-cut fries", defaultImage: UIImage(named: "street_eats_dsm.jpg")!, price: "$")]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.bringSubviewToFront(view)
-        truckOwner = NSUserDefaults.standardUserDefaults()
+        truckOwner?.userDefaults = NSUserDefaults.standardUserDefaults()
         self.navigationItem.title = "TruckFeed"
         let truckLoginButton = createBarButtonItem("", onClick:"truckBarButtonAction", frame:CGRectMake(0, 0, 53, 31), image: UIImage(named: "truck.png")!)
         navigationItem.leftBarButtonItem = truckLoginButton
+        self.truckOwner = TruckOwner()
 
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
     }
-    
-    
-    func createBarButtonItem(title: String, onClick: Selector, frame: CGRect, image: UIImage) -> UIBarButtonItem {
-        let barButtonItem: UIButton = UIButton(type:UIButtonType.Custom)
-        barButtonItem.setTitle(title, forState: UIControlState.Normal)
-        barButtonItem.addTarget(self, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
-        barButtonItem.frame = frame
-        barButtonItem.setImage(image, forState: UIControlState.Normal)
-        
-        let barButton = UIBarButtonItem(customView: barButtonItem)
-        barButton.tintColor = UIColor.darkGrayColor()
-        
-        return barButton
-    }
-    
+
     func truckBarButtonAction(){
-        let accessToken = truckOwner.stringForKey("accessToken")
-        if( accessToken == nil)
+        if( truckOwner?.fbAccessToken == "")
         {
             self.presentFacebookLoginWebView(self)
         }
@@ -79,9 +65,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
             }
             else {
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
-                print("present login view: " + accessToken)
-                self.truckOwner.setObject(accessToken, forKey:"accessToken")
-                self.truckOwner.synchronize()
+                self.truckOwner?.setFBAccessToken(accessToken)
                 self.presentDashboardViewController(self)
             }
         })
@@ -89,9 +73,26 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
     
     func presentDashboardViewController(sender: AnyObject){
         if let dashboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DashboardViewController") as? DashboardViewController {
-            self.presentViewController(dashboardViewController, animated: true, completion: nil)
+            self.presentViewController(dashboardViewController, animated: true, completion:
+            {
+                dashboardViewController.truckOwner = self.truckOwner
+            })
         }
     }
+
+    func createBarButtonItem(title: String, onClick: Selector, frame: CGRect, image: UIImage) -> UIBarButtonItem {
+        let barButtonItem: UIButton = UIButton(type:UIButtonType.Custom)
+        barButtonItem.setTitle(title, forState: UIControlState.Normal)
+        barButtonItem.addTarget(self, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
+        barButtonItem.frame = frame
+        barButtonItem.setImage(image, forState: UIControlState.Normal)
+
+        let barButton = UIBarButtonItem(customView: barButtonItem)
+        barButton.tintColor = UIColor.darkGrayColor()
+
+        return barButton
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

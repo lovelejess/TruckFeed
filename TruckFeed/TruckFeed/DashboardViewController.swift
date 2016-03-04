@@ -11,13 +11,25 @@ import FBSDKLoginKit
 
 public class DashboardViewController: UIViewController, UINavigationBarDelegate {
 
+    var truckOwner: TruckOwner?
+
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
         let navigationBar = createNavigationBar()
-
         self.view.addSubview(navigationBar)
     }
+    
+    override public func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    func facebookLogout(){
+        FBSDKAccessToken.setCurrentAccessToken(nil)
+        truckOwner?.setFBAccessToken("")
+        dismissViewController(self)
+    }
+
     func createNavigationBar() -> UINavigationBar {
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 54))
         navigationBar.delegate = self;
@@ -71,21 +83,7 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
         return barButton
     }
     
-    func facebookLogout(){
-        FBSDKAccessToken.setCurrentAccessToken(nil)
-        let truckOwner = NSUserDefaults.standardUserDefaults()
-        truckOwner.setObject(nil, forKey: "accessToken")
-        truckOwner.synchronize()
-        dismissViewController(self)
-        
-        print("Logged Out")
-    }
 
-    override public func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
