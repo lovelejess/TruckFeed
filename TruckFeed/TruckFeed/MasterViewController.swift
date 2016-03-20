@@ -56,17 +56,19 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
     
     func presentFacebookLoginWebView(sender: AnyObject)
     {
-        FBLoginManager.logInWithPublishPermissions(["publish_actions"], fromViewController: self, handler: { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
-            if(error != nil){
-                print(error)
-            }
+        FBLoginManager.logInWithPublishPermissions(["publish_actions"],
+                            fromViewController: self, handler: { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
+                if(error != nil){
+                    print(error)
+                }
             else if(response.isCancelled){
                 // Authorization has been canceled by user
             }
             else {
-                let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
-                self.truckOwner?.setFBAccessToken(accessToken)
-                self.presentDashboardViewController(self)
+                if let accessToken = FBSDKAccessToken.currentAccessToken().tokenString {
+                    self.truckOwner?.setFBAccessToken(accessToken)
+                    self.presentDashboardViewController(self)
+                }
             }
         })
     }
