@@ -79,7 +79,8 @@ public class TruckOwner: NSObject {
                 }
                 else {
                     userAccessInfo = result as! NSDictionary
-                    NSLog("retrieveUserAccessInfoFromFBRequest - retrieved result successfully. ID:  \(result.valueForKey("id") as! String)")
+                    let stringId = result.valueForKey("id") as! String
+                    NSLog("retrieveUserAccessInfoFromFBRequest - retrieved result successfully. ID:  \(stringId)")
                 }
         })
         return userAccessInfo
