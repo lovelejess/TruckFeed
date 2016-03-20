@@ -21,26 +21,13 @@ public class TruckOwner: NSObject {
         self.userDefaults = NSUserDefaults()
         self.fbAccessToken = ""
         self.fbPageId = ""
-        self.fbAccessUserInfo = TruckOwner.retrieveUserAccessInfoFromFBRequest()
+        self.fbAccessUserInfo = NSDictionary()
         super.init()
     }
     
-    class func retrieveUserAccessInfoFromFBRequest() -> NSDictionary {
-        NSLog("getUserAccessInfo - getting facebook page id")
-        var userAccessInfo = NSDictionary()
-        let request = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "name, email, friends, id"] , HTTPMethod: "GET")
-        request.startWithCompletionHandler(
-            {
-                (connection, result, error) in
-                if(error != nil){
-                    NSLog(error.localizedDescription)
-                }
-                else {
-                    userAccessInfo = result as! NSDictionary
-                    NSLog("getUserAccessInfo - retrieved result successfully: \((result.valueForKey("id")) as! String)")
-                }
-        })
-        return userAccessInfo
+    public func setUserAccessInfoFromFBRequest()
+    {
+        self.fbAccessUserInfo = self.retrieveUserAccessInfoFromFBRequest()
     }
     
     public func getUserAccessInfo() -> NSDictionary {
@@ -56,4 +43,23 @@ public class TruckOwner: NSObject {
     public func getFBAccessToken() -> String{
         return self.fbAccessToken!
     }
+    
+    func retrieveUserAccessInfoFromFBRequest() -> NSDictionary {
+        NSLog("retrieveUserAccessInfoFromFBRequest - getting facebook page id")
+        var userAccessInfo = NSDictionary()
+        let request = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "name, email, friends, id"] , HTTPMethod: "GET")
+        request.startWithCompletionHandler(
+            {
+                (connection, result, error) in
+                if(error != nil){
+                    NSLog("retrieveUserAccessInfoFromFBRequest - Error retrieving fb graph request:  \(error.localizedDescription)")
+                }
+                else {
+                    userAccessInfo = result as! NSDictionary
+                    NSLog("retrieveUserAccessInfoFromFBRequest - retrieved result successfully. ID:  \((result.valueForKey("id")) as! String)")
+                }
+        })
+        return userAccessInfo
+    }
+
 }

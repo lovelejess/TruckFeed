@@ -59,17 +59,19 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
         FBLoginManager.logInWithPublishPermissions(["publish_actions"],
                             fromViewController: self, handler: { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
                 if(error != nil){
-                    print(error)
+                    NSLog("An error occured logging in: \(error)")
                 }
-            else if(response.isCancelled){
-                // Authorization has been canceled by user
-            }
-            else {
-                if let accessToken = FBSDKAccessToken.currentAccessToken().tokenString {
-                    self.truckOwner?.setFBAccessToken(accessToken)
-                    self.presentDashboardViewController(self)
+                else if(response.isCancelled){
+                   NSLog("Facebook Login was cancelled")
                 }
-            }
+                else {
+                    if let accessToken = FBSDKAccessToken.currentAccessToken().tokenString {
+                        NSLog("Retrieving access token: \(accessToken)")
+                        self.truckOwner?.setFBAccessToken(accessToken)
+                        self.truckOwner?.setUserAccessInfoFromFBRequest()
+                        self.presentDashboardViewController(self)
+                    }
+                }
         })
     }
     
