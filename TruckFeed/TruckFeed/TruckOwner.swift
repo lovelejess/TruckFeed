@@ -27,7 +27,10 @@ public class TruckOwner: NSObject {
     
     public func setUserAccessInfoFromFBRequest()
     {
-        self.fbAccessUserInfo = self.retrieveUserAccessInfoFromFBRequest()
+        let fbAccessUserInfo = retrieveUserAccessInfoFromFBRequest()
+        userDefaults.setObject(fbAccessUserInfo, forKey:"fbAccessUserInfo")
+        userDefaults.synchronize()
+        self.fbAccessUserInfo = fbAccessUserInfo
     }
     
     public func getUserAccessInfo() -> NSDictionary {
@@ -44,8 +47,28 @@ public class TruckOwner: NSObject {
         return self.fbAccessToken!
     }
     
+    public func getFBPageID() -> String {
+        NSLog("getFBPageID - getting facebook page id")
+        var id = String()
+        let fbId  = self.fbAccessUserInfo.valueForKey("id") as! String
+        let request = FBSDKGraphRequest(graphPath:"\(fbId)/accounts", parameters: nil , HTTPMethod: "GET")
+        request.startWithCompletionHandler(
+            {
+                (connection, result, error) in
+                if(error != nil){
+                    NSLog("getFBPageID - Error retrieving fb graph request:  \(error.localizedDescription)")
+                }
+                else {
+                    NSLog("result: \(result)")
+                    id = result.valueForKey("id") as! String
+                    NSLog("getFBPageID - retrieved result successfully. ID:  \(id)")
+            }
+        })
+        return id
+    }
+    
     func retrieveUserAccessInfoFromFBRequest() -> NSDictionary {
-        NSLog("retrieveUserAccessInfoFromFBRequest - getting facebook page id")
+        NSLog("retrieveUserAccessInfoFromFBRequest - getting facebook user access info")
         var userAccessInfo = NSDictionary()
         let request = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "name, email, friends, id"] , HTTPMethod: "GET")
         request.startWithCompletionHandler(

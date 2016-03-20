@@ -69,6 +69,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
                         NSLog("Retrieving access token: \(accessToken)")
                         self.truckOwner?.setFBAccessToken(accessToken)
                         self.truckOwner?.setUserAccessInfoFromFBRequest()
+                        self.truckOwner?.getFBPageID()
                         self.presentDashboardViewController(self)
                     }
                 }
