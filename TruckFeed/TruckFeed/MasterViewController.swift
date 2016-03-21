@@ -68,7 +68,8 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
                     if let accessToken = FBSDKAccessToken.currentAccessToken().tokenString {
                         NSLog("Retrieving access token: \(accessToken)")
                         self.truckOwner?.setFBAccessToken(accessToken)
-                        self.truckOwner?.setUserAccessInfoFromFBRequest()
+                        self.truckOwner?.retrieveUserAccessInfoFromFBRequest()
+                        NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner!.fbAccessUserID) :: \(self.truckOwner!.getUserAccessInfo())")
                         self.truckOwner?.getFBPageID()
                         self.presentDashboardViewController(self)
                     }
