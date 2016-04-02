@@ -60,7 +60,7 @@ public class TruckOwner: NSObject {
     public func getFBPageID() -> String {
         NSLog("getFBPageID - getting facebook page id")
         var id = String()
-        let request = FBSDKGraphRequest(graphPath:"\(self.getUserAccessInfo())/accounts", parameters: ["fields": "page"] , HTTPMethod: "GET")
+        let request = FBSDKGraphRequest(graphPath:"\(self.getUserAccessInfo())/accounts", parameters: nil , HTTPMethod: "GET")
         request.startWithCompletionHandler(
             {
                 (connection, result, error) in
@@ -68,9 +68,11 @@ public class TruckOwner: NSObject {
                     NSLog("getFBPageID - Error retrieving fb graph request:  \(error.localizedDescription)")
                 }
                 else {
-                    NSLog("result: \(result)")
-                    id = result.valueForKey("id") as! String
-                    NSLog("getFBPageID - retrieved result successfully. ID:  \(id)")
+                    let data = result.valueForKey("data") as! NSArray
+                    if let tempId = data[0].valueForKey("id") as? String {
+                        NSLog("getFBPageID - retrieved result successfully. ID:  \(tempId)")
+                        id = tempId
+                    }
             }
         })
         return id

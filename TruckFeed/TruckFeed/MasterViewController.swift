@@ -56,7 +56,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
     
     func presentFacebookLoginWebView(sender: AnyObject)
     {
-        FBLoginManager.logInWithPublishPermissions(["publish_actions"],
+        FBLoginManager.logInWithPublishPermissions(["publish_actions", "manage_pages"],
                             fromViewController: self, handler: { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
                 if(error != nil){
                     NSLog("An error occured logging in: \(error)")
