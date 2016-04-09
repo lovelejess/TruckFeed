@@ -31,7 +31,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
         view.bringSubviewToFront(view)
         truckOwner?.userDefaults = NSUserDefaults.standardUserDefaults()
         self.navigationItem.title = "TruckFeed"
-        let truckLoginButton = createBarButtonItem("", onClick:"truckBarButtonAction", frame:CGRectMake(0, 0, 53, 31), image: UIImage(named: "truck.png")!)
+        let truckLoginButton = createBarButtonItem("", onClick:#selector(MasterViewController.truckBarButtonAction), frame:CGRectMake(0, 0, 53, 31), image: UIImage(named: "truck.png")!)
         navigationItem.leftBarButtonItem = truckLoginButton
         self.truckOwner = TruckOwner()
 
@@ -70,7 +70,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
                         self.truckOwner?.setFBAccessToken(accessToken)
                         self.truckOwner?.retrieveUserAccessInfoFromFBRequest()
                         NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner!.fbAccessUserID) :: \(self.truckOwner!.getUserAccessInfo())")
-                        self.truckOwner?.getFBPageID()
+                        self.truckOwner?.retrieveFBPageIDFromFBRequest()
                         self.presentDashboardViewController(self)
                     }
                 }

@@ -34,9 +34,9 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 54))
         navigationBar.delegate = self;
         let navigationItem = UINavigationItem()
-        navigationItem.title = "Hello Truck Feeder!"
-        navigationItem.leftBarButtonItem = createBarButtonItem("Cancel", onClick:"dismissViewController:",frame:CGRectMake(0, 0, 60, 31))
-        navigationItem.rightBarButtonItem = createBarButtonItem("Log Out", onClick:"facebookLogout", frame:CGRectMake(0, 0, 100, 31))
+        navigationItem.title = truckOwner?.getTruckOwnerName()
+        NSLog("Navigation Item Name: \(truckOwner?.getTruckOwnerName())")
+        navigationItem.rightBarButtonItem = createBarButtonItemWithImage(#selector(DashboardViewController.facebookLogout), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "gear.png")!)
         navigationBar.items = [navigationItem]
 
         return navigationBar
@@ -45,7 +45,7 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
     func createButton(title: String, onClick: Selector, frame: CGRect) -> UIButton {
         let button = UIButton(type: UIButtonType.System)
         button.setTitle(title, forState: UIControlState.Normal)
-        button.titleLabel?.font = UIFont(name: "Arial", size: 16)
+        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 16)
         button.tintColor = secondaryColor
         button.addTarget(self, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
         button.frame = frame
@@ -82,6 +82,21 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
         
         return barButton
     }
+    
+    func createBarButtonItemWithImage(onClick: Selector, frame: CGRect, image: UIImage) -> UIBarButtonItem {
+        let barButtonItem: UIButton = UIButton(type:UIButtonType.Custom)
+        barButtonItem.addTarget(self, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
+        barButtonItem.frame = frame
+        barButtonItem.setImage(image, forState: UIControlState.Normal)
+        
+        let barButton = UIBarButtonItem(customView: barButtonItem)
+        barButton.tintColor = UIColor.darkGrayColor()
+        
+        return barButton
+    }
+    
+    
+    
     
 
 
