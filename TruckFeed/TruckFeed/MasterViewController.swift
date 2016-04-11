@@ -33,7 +33,6 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
         self.navigationItem.title = "TruckFeed"
         let truckLoginButton = createBarButtonItem("", onClick:#selector(MasterViewController.truckBarButtonAction), frame:CGRectMake(0, 0, 53, 31), image: UIImage(named: "truck.png")!)
         navigationItem.leftBarButtonItem = truckLoginButton
-        self.truckOwner = TruckOwner()
 
     }
     override func viewDidAppear(animated: Bool) {
@@ -68,7 +67,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
                     if let accessToken = FBSDKAccessToken.currentAccessToken().tokenString {
                         NSLog("Retrieving access token: \(accessToken)")
                         self.truckOwner?.setFBAccessToken(accessToken)
-                        self.truckOwner?.retrieveUserAccessInfoFromFBRequest()
+                        self.truckOwner?.requestFacebookCredentials()
                         NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner!.fbAccessUserID) :: \(self.truckOwner!.getUserAccessInfo())")
                         self.truckOwner?.retrieveFBPageIDFromFBRequest()
                         self.presentDashboardViewController(self)
@@ -81,7 +80,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
         if let dashboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DashboardViewController") as? DashboardViewController {
             self.presentViewController(dashboardViewController, animated: true, completion:
             {
-                dashboardViewController.truckOwner = self.truckOwner
+                dashboardViewController.truckOwner = self.truckOwner!
             })
         }
     }

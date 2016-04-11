@@ -11,7 +11,7 @@ import FBSDKLoginKit
 
 public class DashboardViewController: UIViewController, UINavigationBarDelegate {
 
-    var truckOwner: TruckOwner?
+    var truckOwner = TruckOwner.sharedInstance
 
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
 
     func facebookLogout(){
         FBSDKAccessToken.setCurrentAccessToken(nil)
-        truckOwner?.setFBAccessToken("")
+        self.truckOwner.setFBAccessToken("")
         dismissViewController(self)
     }
 
@@ -34,8 +34,8 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 54))
         navigationBar.delegate = self;
         let navigationItem = UINavigationItem()
-        navigationItem.title = truckOwner?.getTruckOwnerName()
-        NSLog("Navigation Item Name: \(truckOwner?.getTruckOwnerName())")
+        navigationItem.title = self.truckOwner.getTruckOwnerName()
+        NSLog("Navigation Item Name: \(self.truckOwner.getTruckOwnerName())")
         navigationItem.rightBarButtonItem = createBarButtonItemWithImage(#selector(DashboardViewController.facebookLogout), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "gear.png")!)
         navigationBar.items = [navigationItem]
 

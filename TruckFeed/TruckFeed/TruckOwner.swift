@@ -26,7 +26,19 @@ public class TruckOwner: NSObject {
         self.name = ""
         super.init()
     }
-    public func retrieveUserAccessInfoFromFBRequest() -> String {
+    
+    class var sharedInstance : TruckOwner {
+        struct Static {
+            static var onceToken : dispatch_once_t = 0
+            static var instance : TruckOwner? = nil
+        }
+        dispatch_once(&Static.onceToken) {
+            Static.instance = TruckOwner()
+        }
+        return Static.instance!
+    }
+    
+    public func requestFacebookCredentials(){
         NSLog("retrieveUserAccessInfoFromFBRequest - getting facebook user access info")
         var fbAccessUserID = String()
         let request = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "name, email, friends, id"] , HTTPMethod: "GET")
@@ -40,26 +52,12 @@ public class TruckOwner: NSObject {
                     fbAccessUserID = result.valueForKey("id") as! String
                     NSLog("retrieveUserAccessInfoFromFBRequest - retrieved result successfully. ID:  \(fbAccessUserID)")
                     self.setUserAccessInfoFromFBRequest(fbAccessUserID)
+                    self.retrieveFBPageIDFromFBRequest()
                 }
         })
-        return fbAccessUserID
     }
     
-    public func getUserAccessInfo() -> String {
-        return userDefaults.valueForKey("fbAccessUserID") as! String
-    }
-    
-    public func setFBAccessToken(accessToken:String){
-        userDefaults.setObject(accessToken, forKey:"accessToken")
-        userDefaults.synchronize()
-        self.fbAccessToken = accessToken
-    }
-
-    public func getFBAccessToken() -> String{
-        return userDefaults.valueForKey("accessToken") as! String
-    }
-    
-    public func retrieveFBPageIDFromFBRequest() -> String {
+    public func retrieveFBPageIDFromFBRequest(completionBlock: ()){
         NSLog("getFBPageID - getting facebook page id")
         let request = FBSDKGraphRequest(graphPath:"\(self.getUserAccessInfo())/accounts", parameters: nil , HTTPMethod: "GET")
         request.startWithCompletionHandler(
@@ -78,9 +76,22 @@ public class TruckOwner: NSObject {
                         NSLog("getFBPageID - retrieved name successfully. name:  \(name)")
                         self.setTruckOwnerName(name)
                     }
-            }
+                }
         })
-        return self.getFBPageID()
+    }
+    
+    public func getUserAccessInfo() -> String {
+        return userDefaults.valueForKey("fbAccessUserID") as! String
+    }
+    
+    public func setFBAccessToken(accessToken:String){
+        userDefaults.setObject(accessToken, forKey:"accessToken")
+        userDefaults.synchronize()
+        self.fbAccessToken = accessToken
+    }
+
+    public func getFBAccessToken() -> String{
+        return userDefaults.valueForKey("accessToken") as! String
     }
     
     func setFBPageID(id: String)
