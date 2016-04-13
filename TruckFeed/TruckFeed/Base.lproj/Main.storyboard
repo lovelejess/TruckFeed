@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KwD-Z8-NCl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -9,7 +9,7 @@
         <!--Main Login Screen-->
         <scene sceneID="LAW-FU-2Cz">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="KwD-Z8-NCl" customClass="MainLoginScreen" customModule="TruckFeed" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainLoginScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KwD-Z8-NCl" customClass="MainLoginScreen" customModule="TruckFeed" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RUZ-Yp-Yj9"/>
                         <viewControllerLayoutGuide type="bottom" id="E2f-UN-2RY"/>
@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="49e-Tb-3d3" kind="show" id="4wy-07-UdF"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="MainLoginScreen" id="4wy-07-UdF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uh1-nf-PHe" userLabel="First Responder" sceneMemberID="firstResponder"/>

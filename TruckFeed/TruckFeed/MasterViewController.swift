@@ -40,41 +40,10 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
     }
 
     func truckBarButtonAction(){
-        if( truckOwner?.fbAccessToken == "")
-        {
-            self.presentFacebookLoginWebView(self)
-        }
-        else
-        {
-            self.presentDashboardViewController(self)
-
-        }
+        self.presentDashboardViewController(self)
     }
     
 // PRIVATE HELPERS
-    
-    func presentFacebookLoginWebView(sender: AnyObject)
-    {
-        FBLoginManager.logInWithPublishPermissions(["publish_actions", "manage_pages"],
-                            fromViewController: self, handler: { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
-                if(error != nil){
-                    NSLog("An error occured logging in: \(error)")
-                }
-                else if(response.isCancelled){
-                   NSLog("Facebook Login was cancelled")
-                }
-                else {
-                    if let accessToken = FBSDKAccessToken.currentAccessToken().tokenString {
-                        NSLog("Retrieving access token: \(accessToken)")
-                        self.truckOwner?.setFBAccessToken(accessToken)
-                        self.truckOwner?.requestFacebookCredentials()
-                        NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner!.fbAccessUserID) :: \(self.truckOwner!.getUserAccessInfo())")
-                        self.truckOwner?.retrieveFBPageIDFromFBRequest()
-                        self.presentDashboardViewController(self)
-                    }
-                }
-        })
-    }
     
     func presentDashboardViewController(sender: AnyObject){
         if let dashboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DashboardViewController") as? DashboardViewController {
