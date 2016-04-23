@@ -52,6 +52,7 @@ class MainLoginScreen: UIViewController {
                                                                 NSLog("Retrieving access token: \(accessToken)")
                                                                 self.truckOwner.setFBAccessToken(accessToken)
                                                                 self.executeFacebookRequestOperations()
+                                                                self.setFacebookLoggedIn()
                                                             }
                                                         }
                                                     })
@@ -72,7 +73,7 @@ class MainLoginScreen: UIViewController {
     }
 
     func presentDashboardViewController(sender: AnyObject){
-        NSLog("presentDashboardViewController: \(self.truckOwner.getTruckOwnerName())")
+        NSLog("presentDashboardViewController: for user: \(self.truckOwner.getTruckOwnerName())")
         if let dashboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DashboardViewController") as? DashboardViewController {
             self.presentViewController(dashboardViewController, animated: true, completion:
                 {
@@ -81,6 +82,13 @@ class MainLoginScreen: UIViewController {
             })
         }
     }
-
     
+    func setFacebookLoggedIn()
+    {
+        let path = NSBundle.mainBundle().pathForResource("App", ofType: "plist")
+        let dict = NSMutableDictionary(contentsOfFile: path!)
+        dict?.setValue(true, forKey: "LoggedIn")
+        dict?.writeToFile(path!, atomically: false)
+        NSLog("Setting App.plist file to :\(NSMutableDictionary(contentsOfFile: path!)))")
+    }
 }

@@ -24,12 +24,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance();
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainLoginScreen: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MainLoginScreen") as! MainLoginScreen
-        self.window?.rootViewController = mainLoginScreen
+        
+        self.window?.rootViewController = loadFacebookData()
         self.window?.makeKeyAndVisible()
         
         return true
+    }
+    
+    func loadFacebookData() -> UIViewController {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let path = NSBundle.mainBundle().pathForResource("App", ofType: "plist")
+        let dict = NSMutableDictionary(contentsOfFile: path!)
+        if let loggedIn = dict?.valueForKey("LoggedIn") as? Bool {
+            NSLog("LoggedIn value from App.plist is : \(loggedIn)")
+            if loggedIn == false
+            {
+                let mainLoginScreen: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MainLoginScreen") as! MainLoginScreen
+                return mainLoginScreen
+            }
+        }
+        
+        let dashboardViewController: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("DashboardViewController") as! DashboardViewController
+        return dashboardViewController
     }
     
     func didFinishLaunchingWithOptions(application: UIApplication){

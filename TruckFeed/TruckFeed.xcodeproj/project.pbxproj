@@ -27,6 +27,7 @@
 		106F519A1C022FD100DA30C6 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */; };
 		10738F4B1CB5FC1800BAC3CE /* MainLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738F4A1CB5FC1800BAC3CE /* MainLoginScreen.swift */; };
 		10738F571CB8781800BAC3CE /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 10738F561CB8781800BAC3CE /* gear.png */; };
+		10738F5B1CBF290900BAC3CE /* App.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10738F5A1CBF290900BAC3CE /* App.plist */; };
 		10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10AED1D71BC0C478004FD47B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
 		10AED1DD1BC1BE4C004FD47B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */; };
@@ -92,6 +93,7 @@
 		10674DE51C45CF97000D3E4C /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		10738F4A1CB5FC1800BAC3CE /* MainLoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLoginScreen.swift; sourceTree = "<group>"; };
 		10738F561CB8781800BAC3CE /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		10738F5A1CBF290900BAC3CE /* App.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = App.plist; sourceTree = "<group>"; };
 		10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		10AED1D61BC0C478004FD47B /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
 		10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				1010797D1B92776F00B3AADB /* Palette.swift */,
 				1010794E1B8FF5E300B3AADB /* Assets.xcassets */,
 				101079531B8FF5E300B3AADB /* Info.plist */,
+				10738F5A1CBF290900BAC3CE /* App.plist */,
 				101079771B90008300B3AADB /* Truck.swift */,
 				101079791B912B7A00B3AADB /* TruckCell.swift */,
 				10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */,
@@ -354,6 +357,7 @@
 				101079901B92A31100B3AADB /* karams_grill.jpg in Resources */,
 				1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */,
 				101079821B929C3600B3AADB /* powered_by_fries.png in Resources */,
+				10738F5B1CBF290900BAC3CE /* App.plist in Resources */,
 				1010798A1B92A1BA00B3AADB /* lets_toast.jpg in Resources */,
 				10738F571CB8781800BAC3CE /* gear.png in Resources */,
 				10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */,
