@@ -85,10 +85,12 @@ class MainLoginScreen: UIViewController {
     
     func setFacebookLoggedIn()
     {
-        let path = NSBundle.mainBundle().pathForResource("App", ofType: "plist")
-        let dict = NSMutableDictionary(contentsOfFile: path!)
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let documentsDirectory = paths.objectAtIndex(0) as! NSString
+        let path = documentsDirectory.stringByAppendingPathComponent("App.plist")
+        let dict = NSMutableDictionary(contentsOfFile: path)
         dict?.setValue(true, forKey: "LoggedIn")
-        dict?.writeToFile(path!, atomically: false)
-        NSLog("Setting App.plist file to :\(NSMutableDictionary(contentsOfFile: path!)))")
+        dict?.writeToFile(path, atomically: false)
+        NSLog("Setting App.plist file to :\(NSMutableDictionary(contentsOfFile: path)))")
     }
 }

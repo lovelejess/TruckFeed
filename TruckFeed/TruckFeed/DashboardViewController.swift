@@ -27,7 +27,18 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
     func facebookLogout(){
         FBSDKAccessToken.setCurrentAccessToken(nil)
         self.truckOwner.setFBAccessToken("")
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let documentsDirectory = paths.objectAtIndex(0) as! NSString
+        let path = documentsDirectory.stringByAppendingPathComponent("App.plist")
+        let dict = NSMutableDictionary(contentsOfFile: path)
+        dict?.setValue(false, forKey: "LoggedIn")
+        dict?.writeToFile(path, atomically: false)
+        NSLog("Setting App.plist file to :\(NSMutableDictionary(contentsOfFile: path)))")
+
+        // TODO::: present mainloginviewcontroller
         dismissViewController(self)
+        
     }
 
     func createNavigationBar() -> UINavigationBar {
