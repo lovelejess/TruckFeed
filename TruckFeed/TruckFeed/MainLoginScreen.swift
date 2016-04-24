@@ -15,23 +15,10 @@ class MainLoginScreen: UIViewController {
     var truckOwner = TruckOwner.sharedInstance
     let FBLoginManager = FBSDKLoginManager()
     
-    func createButton(title: String, onClick: Selector, frame: CGRect) -> UIButton {
-        let button = UIButton(type: UIButtonType.System)
-        button.setTitle(title, forState: UIControlState.Normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 14)
-        button.tintColor = lightColor
-        button.backgroundColor = darkColor
-        button.addTarget(self, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
-        button.frame = frame
-        button.setImage(UIImage(named: "facebookLogo.svg"), forState: UIControlState.Normal)
-        
-        return button
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "TruckFeed"
-        self.view.addSubview(createButton("LOG IN WITH FACEBOOK", onClick: #selector(MainLoginScreen.loginWithFacebookButton), frame: CGRect(x: 90, y: 500, width: 200, height: 50)))
+        self.view.addSubview(ViewControllerItems.createButton("LOG IN WITH FACEBOOK", onClick: #selector(MainLoginScreen.loginWithFacebookButton), frame: CGRect(x: 90, y: 500, width: 200, height: 50), target: self))
     }
     
     func loginWithFacebookButton()

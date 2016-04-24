@@ -31,7 +31,7 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
         view.bringSubviewToFront(view)
         truckOwner?.userDefaults = NSUserDefaults.standardUserDefaults()
         self.navigationItem.title = "TruckFeed"
-        let truckLoginButton = createBarButtonItem("", onClick:#selector(MasterViewController.truckBarButtonAction), frame:CGRectMake(0, 0, 53, 31), image: UIImage(named: "truck.png")!)
+        let truckLoginButton = ViewControllerItems.createBarButtonItem("", onClick:#selector(MasterViewController.truckBarButtonAction), frame:CGRectMake(0, 0, 53, 31), target: self, image: UIImage(named: "truck.png")!)
         navigationItem.leftBarButtonItem = truckLoginButton
 
     }
@@ -53,20 +53,6 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
             })
         }
     }
-
-    func createBarButtonItem(title: String, onClick: Selector, frame: CGRect, image: UIImage) -> UIBarButtonItem {
-        let barButtonItem: UIButton = UIButton(type:UIButtonType.Custom)
-        barButtonItem.setTitle(title, forState: UIControlState.Normal)
-        barButtonItem.addTarget(self, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
-        barButtonItem.frame = frame
-        barButtonItem.setImage(image, forState: UIControlState.Normal)
-
-        let barButton = UIBarButtonItem(customView: barButtonItem)
-        barButton.tintColor = UIColor.darkGrayColor()
-
-        return barButton
-    }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

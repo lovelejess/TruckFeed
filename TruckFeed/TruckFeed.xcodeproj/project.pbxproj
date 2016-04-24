@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100055B41CCD790300984B35 /* ViewControllerItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B31CCD790300984B35 /* ViewControllerItems.swift */; };
 		101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
 		1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; };
 		1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1010794E1B8FF5E300B3AADB /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		03B62D40F32CB1BCC4A95A16 /* Pods-TruckFeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeed.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeed/Pods-TruckFeed.release.xcconfig"; sourceTree = "<group>"; };
+		100055B31CCD790300984B35 /* ViewControllerItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerItems.swift; sourceTree = "<group>"; };
 		101079421B8FF5E300B3AADB /* TruckFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruckFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		101079451B8FF5E300B3AADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1010794C1B8FF5E300B3AADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */,
 				10674DE51C45CF97000D3E4C /* Bridging-Header.h */,
 				10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */,
+				100055B31CCD790300984B35 /* ViewControllerItems.swift */,
 			);
 			path = TruckFeed;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */,
+				100055B41CCD790300984B35 /* ViewControllerItems.swift in Sources */,
 				10AED1DD1BC1BE4C004FD47B /* DashboardViewController.swift in Sources */,
 				101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */,
 				10DC618A1BE863A60021B2D3 /* MasterViewController.swift in Sources */,

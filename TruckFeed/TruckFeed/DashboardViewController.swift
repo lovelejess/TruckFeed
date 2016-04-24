@@ -15,7 +15,10 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        let navigationBar = createNavigationBar()
+        let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
+        let rightBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(DashboardViewController.facebookLogout), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "gear.png")!, target: self)
+        let navigationBar = ViewControllerItems.createNavigationBar(frame, title: self.truckOwner.getTruckOwnerName(), rightBarButton: rightBarButtonItem)
+        navigationBar.delegate = self;
         self.view.addSubview(navigationBar)
     }
     
@@ -39,72 +42,11 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
         presentMainLoginScreen(self)
         
     }
-
-    func createNavigationBar() -> UINavigationBar {
-        let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 54))
-        navigationBar.delegate = self;
-        let navigationItem = UINavigationItem()
-        navigationItem.title = self.truckOwner.getTruckOwnerName()
-        NSLog("Navigation Item Name: \(self.truckOwner.getTruckOwnerName())")
-        navigationItem.rightBarButtonItem = createBarButtonItemWithImage(#selector(DashboardViewController.facebookLogout), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "gear.png")!)
-        navigationBar.items = [navigationItem]
-
-        return navigationBar
-    }
-    
-    func createButton(title: String, onClick: Selector, frame: CGRect) -> UIButton {
-        let button = UIButton(type: UIButtonType.System)
-        button.setTitle(title, forState: UIControlState.Normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 16)
-        button.tintColor = secondaryColor
-        button.addTarget(self, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
-        button.frame = frame
-        
-        return button
-    }
     
     func dismissViewController(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {});
     }
-    
-    func createTextField(placeholderText: String, frame: CGRect ) -> UITextField {
-        let textField = UITextField(frame: frame)
-        textField.placeholder = placeholderText
-        textField.font = UIFont.systemFontOfSize(15)
-        textField.borderStyle = UITextBorderStyle.RoundedRect
-        textField.autocorrectionType = UITextAutocorrectionType.No
-        textField.keyboardType = UIKeyboardType.Default
-        textField.returnKeyType = UIReturnKeyType.Done
-        textField.clearButtonMode = UITextFieldViewMode.WhileEditing;
-        textField.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
-        
-        return textField
-    }
-    
-    func createBarButtonItem(title: String, onClick: Selector, frame: CGRect) -> UIBarButtonItem {
-        let barButtonItem: UIButton = UIButton(type:UIButtonType.Custom)
-        barButtonItem.setTitle(title, forState: UIControlState.Normal)
-        barButtonItem.addTarget(self, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
-        barButtonItem.frame = frame
-        
-        let barButton = UIBarButtonItem(customView: barButtonItem)
-        barButton.tintColor = UIColor.darkGrayColor()
-        
-        return barButton
-    }
-    
-    func createBarButtonItemWithImage(onClick: Selector, frame: CGRect, image: UIImage) -> UIBarButtonItem {
-        let barButtonItem: UIButton = UIButton(type:UIButtonType.Custom)
-        barButtonItem.addTarget(self, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
-        barButtonItem.frame = frame
-        barButtonItem.setImage(image, forState: UIControlState.Normal)
-        
-        let barButton = UIBarButtonItem(customView: barButtonItem)
-        barButton.tintColor = UIColor.darkGrayColor()
-        
-        return barButton
-    }
-    
+
     func presentMainLoginScreen(sender: AnyObject){
         NSLog("presentMainLoginScreen")
         if let MainLoginScreenController = self.storyboard!.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreen {
