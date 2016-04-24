@@ -36,8 +36,7 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
         dict?.writeToFile(path, atomically: false)
         NSLog("Setting App.plist file to :\(NSMutableDictionary(contentsOfFile: path)))")
 
-        // TODO::: present mainloginviewcontroller
-        dismissViewController(self)
+        presentMainLoginScreen(self)
         
     }
 
@@ -106,7 +105,15 @@ public class DashboardViewController: UIViewController, UINavigationBarDelegate 
         return barButton
     }
     
-    
+    func presentMainLoginScreen(sender: AnyObject){
+        NSLog("presentMainLoginScreen")
+        if let MainLoginScreenController = self.storyboard!.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreen {
+            self.presentViewController(MainLoginScreenController, animated: true, completion:
+                {
+                    NSLog("Presenting MainLoginScreen")
+            })
+        }
+    }
     
     
 
