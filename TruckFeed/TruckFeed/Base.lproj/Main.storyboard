@@ -65,7 +65,7 @@
         <!--DashboardViewController-->
         <scene sceneID="ytG-ia-cEE">
             <objects>
-                <viewController storyboardIdentifier="DashboardViewController" title="DashboardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7dT-mf-6Mv" customClass="DashboardViewController" customModule="TruckFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardViewController" title="DashboardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7dT-mf-6Mv" customClass="DashboardViewController" customModule="TruckFeed" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L0o-AV-RCe"/>
                         <viewControllerLayoutGuide type="bottom" id="5R4-tl-l4H"/>
@@ -83,7 +83,7 @@
         <!--Master View Controller-->
         <scene sceneID="pvE-sB-d3d">
             <objects>
-                <viewController id="hyq-UR-qU8" customClass="MasterViewController" customModule="TruckFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MasterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hyq-UR-qU8" customClass="MasterViewController" customModule="TruckFeed" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nSQ-nY-W1k"/>
                         <viewControllerLayoutGuide type="bottom" id="pIm-GD-XqD"/>

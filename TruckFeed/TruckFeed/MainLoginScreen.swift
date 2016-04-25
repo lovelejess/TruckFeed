@@ -19,6 +19,7 @@ class MainLoginScreen: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "TruckFeed"
         self.view.addSubview(ViewControllerItems.createButton("LOG IN WITH FACEBOOK", onClick: #selector(MainLoginScreen.loginWithFacebookButton), frame: CGRect(x: 90, y: 500, width: 200, height: 50), target: self))
+        self.view.addSubview(ViewControllerItems.createButton("CONTINUE AS A GUEST", onClick: #selector(MainLoginScreen.presentViewController(_:)), frame: CGRect(x: 90, y: 570, width: 200, height: 50), target: self))
     }
     
     func loginWithFacebookButton()
@@ -60,7 +61,6 @@ class MainLoginScreen: UIViewController {
     }
 
     func presentDashboardViewController(sender: AnyObject){
-        NSLog("presentDashboardViewController: for user: \(self.truckOwner.getTruckOwnerName())")
         if let dashboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DashboardViewController") as? DashboardViewController {
             self.presentViewController(dashboardViewController, animated: true, completion:
                 {
@@ -69,6 +69,16 @@ class MainLoginScreen: UIViewController {
             })
         }
     }
+    
+    func presentViewController(sender: AnyObject){
+        if let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("MasterViewController") as? MasterViewController {
+            self.presentViewController(viewController, animated: true, completion:
+                {
+                    NSLog("Presenting Master View Controller")
+            })
+        }
+    }
+
     
     func setFacebookLoggedIn()
     {
