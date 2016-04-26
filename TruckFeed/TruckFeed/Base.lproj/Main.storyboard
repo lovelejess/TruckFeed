@@ -80,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="1123" y="-1368"/>
         </scene>
-        <!--Master View Controller-->
+        <!--Truck Feed Controller-->
         <scene sceneID="pvE-sB-d3d">
             <objects>
-                <viewController storyboardIdentifier="MasterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hyq-UR-qU8" customClass="MasterViewController" customModule="TruckFeed" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TruckFeedController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hyq-UR-qU8" customClass="TruckFeedController" customModule="TruckFeed" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nSQ-nY-W1k"/>
                         <viewControllerLayoutGuide type="bottom" id="pIm-GD-XqD"/>

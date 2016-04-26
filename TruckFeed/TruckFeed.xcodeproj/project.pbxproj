@@ -34,7 +34,7 @@
 		10AED1DD1BC1BE4C004FD47B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */; };
 		10D950491BFD7D4E00EC435B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */; };
 		10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
-		10D9504B1BFD7D4E00EC435B /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* MasterViewController.swift */; };
+		10D9504B1BFD7D4E00EC435B /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
 		10D9504C1BFD7D4E00EC435B /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
 		10D9504D1BFD7D4E00EC435B /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010797D1B92776F00B3AADB /* Palette.swift */; };
 		10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079771B90008300B3AADB /* Truck.swift */; };
@@ -51,7 +51,7 @@
 		10D9505B1BFD7D4E00EC435B /* lets_toast.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079891B92A1BA00B3AADB /* lets_toast.jpg */; };
 		10D9505C1BFD7D4E00EC435B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10D9505D1BFD7D4E00EC435B /* parlo_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */; };
-		10DC618A1BE863A60021B2D3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* MasterViewController.swift */; };
+		10DC618A1BE863A60021B2D3 /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
 		10DC618C1BE8661E0021B2D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */; };
 		10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */; };
 /* End PBXBuildFile section */
@@ -101,7 +101,7 @@
 		10AED1DC1BC1BE4C004FD47B /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		10D950631BFD7D4E00EC435B /* TruckFeedUITests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruckFeedUITests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D950641BFD7D4F00EC435B /* TruckFeed copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TruckFeed copy-Info.plist"; path = "/Users/jessicale/Repositories/TruckFeed/TruckFeed/TruckFeed copy-Info.plist"; sourceTree = "<absolute>"; };
-		10DC61891BE863A60021B2D3 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		10DC61891BE863A60021B2D3 /* TruckFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedController.swift; sourceTree = "<group>"; };
 		10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckOwner.swift; sourceTree = "<group>"; };
 		443B0851ABEFCC1B086F9EDA /* libPods-TruckFeed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruckFeed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				10738F4A1CB5FC1800BAC3CE /* MainLoginScreen.swift */,
-				10DC61891BE863A60021B2D3 /* MasterViewController.swift */,
+				10DC61891BE863A60021B2D3 /* TruckFeedController.swift */,
 				101079801B929C2300B3AADB /* Resources */,
 				101079451B8FF5E300B3AADB /* AppDelegate.swift */,
 				1010794B1B8FF5E300B3AADB /* Main.storyboard */,
@@ -551,7 +551,7 @@
 				100055B41CCD790300984B35 /* ViewControllerItems.swift in Sources */,
 				10AED1DD1BC1BE4C004FD47B /* DashboardViewController.swift in Sources */,
 				101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */,
-				10DC618A1BE863A60021B2D3 /* MasterViewController.swift in Sources */,
+				10DC618A1BE863A60021B2D3 /* TruckFeedController.swift in Sources */,
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
 				1010797E1B92776F00B3AADB /* Palette.swift in Sources */,
 				10738F4B1CB5FC1800BAC3CE /* MainLoginScreen.swift in Sources */,
@@ -573,7 +573,7 @@
 			files = (
 				10D950491BFD7D4E00EC435B /* DashboardViewController.swift in Sources */,
 				10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */,
-				10D9504B1BFD7D4E00EC435B /* MasterViewController.swift in Sources */,
+				10D9504B1BFD7D4E00EC435B /* TruckFeedController.swift in Sources */,
 				10D9504C1BFD7D4E00EC435B /* TruckCell.swift in Sources */,
 				10D9504D1BFD7D4E00EC435B /* Palette.swift in Sources */,
 				10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */,
