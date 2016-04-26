@@ -30,9 +30,11 @@ class MasterViewController: UIViewController, UITableViewDataSource, UINavigatio
         super.viewDidLoad()
         view.bringSubviewToFront(view)
         truckOwner?.userDefaults = NSUserDefaults.standardUserDefaults()
-        self.navigationItem.title = "TruckFeed"
+        let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
         let truckLoginButton = ViewControllerItems.createBarButtonItem("", onClick:#selector(MasterViewController.truckBarButtonAction), frame:CGRectMake(0, 0, 53, 31), target: self, image: UIImage(named: "truck.png")!)
-        navigationItem.leftBarButtonItem = truckLoginButton
+        let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "TruckFeed", rightBarButton: truckLoginButton)
+        view.addSubview(navigationBar)
+//        navigationItem.leftBarButtonItem = truckLoginButton
 
     }
     override func viewDidAppear(animated: Bool) {
