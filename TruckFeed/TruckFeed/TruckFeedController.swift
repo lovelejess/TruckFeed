@@ -41,6 +41,17 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UINavigation
     }
 
     func truckBarButtonAction(){
+        if let loggedIn = AppPlistHelpers.getAppPlistDictionary().objectForKey("LoggedIn") as? Bool {
+            NSLog("LoggedIn value from App.plist is : \(loggedIn)")
+            if loggedIn != true
+            {
+                presentMainLoginController(self)
+            }
+            else
+            {
+               presentDashboardViewController(self)
+            }
+        }
     }
     
 // PRIVATE HELPERS
@@ -51,6 +62,12 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UINavigation
             {
                 dashboardViewController.truckOwner = self.truckOwner!
             })
+        }
+    }
+    
+    func presentMainLoginController(sender: AnyObject){
+        if let mainLoginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreen {
+            self.presentViewController(mainLoginViewController, animated: true, completion: nil)
         }
     }
 
