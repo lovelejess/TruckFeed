@@ -10,9 +10,9 @@ import UIKit
 import CoreData
 import FBSDKLoginKit
 
-class TruckFeedController: UIViewController, UITableViewDataSource, UINavigationBarDelegate {
+class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationBarDelegate {
     
-    @IBOutlet weak var tableView: UITableView!
+    var tableView: UITableView  =   UITableView()
 
     let FBLoginManager = FBSDKLoginManager()
     var truckOwner:TruckOwner?
@@ -28,53 +28,24 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UINavigation
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.bringSubviewToFront(view)
+        tableView.registerClass(TruckCell.self, forCellReuseIdentifier: "TruckCell")
         truckOwner?.userDefaults = NSUserDefaults.standardUserDefaults()
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
         let truckLoginButton = ViewControllerItems.createBarButtonItem("", onClick:#selector(TruckFeedController.truckBarButtonAction), frame:CGRectMake(0, 0, 53, 31), target: self, image: UIImage(named: "truck.png")!)
         let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "TruckFeed", rightBarButton: truckLoginButton)
-        view.addSubview(navigationBar)
+        
+        self.view.addSubview(createTableView(tableView))
+        self.view.addSubview(navigationBar)
 
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
     }
-
-    func truckBarButtonAction(){
-        if let loggedIn = AppPlistHelpers.getAppPlistDictionary().objectForKey("LoggedIn") as? Bool {
-            NSLog("LoggedIn value from App.plist is : \(loggedIn)")
-            if loggedIn != true
-            {
-                presentMainLoginController(self)
-            }
-            else
-            {
-               presentDashboardViewController(self)
-            }
-        }
-    }
     
-// PRIVATE HELPERS
-    
-    func presentDashboardViewController(sender: AnyObject){
-        if let dashboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DashboardViewController") as? DashboardViewController {
-            self.presentViewController(dashboardViewController, animated: true, completion:
-            {
-                dashboardViewController.truckOwner = self.truckOwner!
-            })
-        }
-    }
-    
-    func presentMainLoginController(sender: AnyObject){
-        if let mainLoginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreen {
-            self.presentViewController(mainLoginViewController, animated: true, completion: nil)
-        }
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -97,17 +68,63 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UINavigation
         return newImage;
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 75.0;
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let truckCell = tableView.dequeueReusableCellWithIdentifier("TruckCell", forIndexPath: indexPath) as! TruckCell
-        
+        let truckCell = tableView.dequeueReusableCellWithIdentifier("TruckCell", forIndexPath: indexPath) as!TruckCell
+//        let truckCell = TruckCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TruckCell")
         let truck = truckList[indexPath.row] as Truck
-        truckCell.nameLabel?.text = truck.name
-        truckCell.nameLabel?.textColor = secondaryColor
-        truckCell.typeLabel?.text = truck.type
-        truckCell.imageView?.image = resizeImageView(truckCell, truck: truck)
-        truckCell.price?.text = truck.price
+        truckCell.nameLabel.text = truck.name
+        truckCell.nameLabel.textColor = secondaryColor
+        truckCell.typeLabel.text = truck.type
+        truckCell.imageView!.image = resizeImageView(truckCell, truck: truck)
+        truckCell.price.text = truck.price
         
         return truckCell
     }
+  
+    // PRIVATE HELPERS
+    
+    func truckBarButtonAction(){
+        if let loggedIn = AppPlistHelpers.getAppPlistDictionary().objectForKey("LoggedIn") as? Bool {
+            NSLog("LoggedIn value from App.plist is : \(loggedIn)")
+            if loggedIn != true
+            {
+                presentMainLoginController(self)
+            }
+            else
+            {
+                presentDashboardViewController(self)
+            }
+        }
+    }
 
+    func presentDashboardViewController(sender: AnyObject){
+        if let dashboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DashboardViewController") as? DashboardViewController {
+            self.presentViewController(dashboardViewController, animated: true, completion:
+                {
+                    dashboardViewController.truckOwner = self.truckOwner!
+            })
+        }
+    }
+    
+    func presentMainLoginController(sender: AnyObject){
+        if let mainLoginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreen {
+            self.presentViewController(mainLoginViewController, animated: true, completion: nil)
+        }
+    }
+    
+    func createTableView(tableView: UITableView) -> UITableView
+    {
+        tableView.frame = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height);
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.registerClass(TruckCell.self, forCellReuseIdentifier: "TruckCell")
+        
+        return tableView
+    }
 }

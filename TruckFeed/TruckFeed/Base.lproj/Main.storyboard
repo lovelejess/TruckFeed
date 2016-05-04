@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main Login Screen-->
@@ -91,84 +90,9 @@
                     <view key="view" contentMode="scaleToFill" id="M2W-r6-IJb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sK5-cw-eXP">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="595"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TruckCell" rowHeight="100" id="Pn1-k6-oaV" customClass="TruckCell" customModule="TruckFeed" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="86" width="600" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pn1-k6-oaV" id="Arm-IM-U6v">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sa3-2z-0ey">
-                                                    <rect key="frame" x="18" y="2" width="80" height="80"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="ZGs-Pj-B50"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" placeholderIntrinsicWidth="172" placeholderIntrinsicHeight="21" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDp-ZZ-RSW">
-                                                    <rect key="frame" x="128" y="15" width="172" height="21"/>
-                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" placeholderIntrinsicWidth="172" placeholderIntrinsicHeight="18" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C78-mb-Kev">
-                                                    <rect key="frame" x="128" y="41" width="172" height="18"/>
-                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="13"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVB-9M-vPh">
-                                                    <rect key="frame" x="538" y="19" width="54" height="16"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="54" id="mT2-9E-t9a"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="13"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Sa3-2z-0ey" firstAttribute="leading" secondItem="Arm-IM-U6v" secondAttribute="leadingMargin" constant="10" id="Chf-lc-lwg"/>
-                                                <constraint firstItem="eDp-ZZ-RSW" firstAttribute="top" secondItem="Arm-IM-U6v" secondAttribute="topMargin" constant="7" id="GKo-80-bg1"/>
-                                                <constraint firstItem="C78-mb-Kev" firstAttribute="leading" secondItem="eDp-ZZ-RSW" secondAttribute="leading" id="Lb7-g2-zBJ"/>
-                                                <constraint firstItem="OVB-9M-vPh" firstAttribute="trailing" secondItem="Arm-IM-U6v" secondAttribute="trailingMargin" id="Ulj-dQ-fv7"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Sa3-2z-0ey" secondAttribute="bottom" constant="9" id="ajv-8q-cNS"/>
-                                                <constraint firstItem="OVB-9M-vPh" firstAttribute="bottom" secondItem="eDp-ZZ-RSW" secondAttribute="bottom" constant="-1" id="cHw-9S-qlN"/>
-                                                <constraint firstItem="C78-mb-Kev" firstAttribute="top" secondItem="eDp-ZZ-RSW" secondAttribute="bottom" constant="5" id="gco-9M-pTE"/>
-                                                <constraint firstItem="Sa3-2z-0ey" firstAttribute="top" secondItem="Arm-IM-U6v" secondAttribute="topMargin" constant="-6" id="hOx-Mx-Oas"/>
-                                                <constraint firstItem="eDp-ZZ-RSW" firstAttribute="leading" secondItem="Sa3-2z-0ey" secondAttribute="trailing" constant="30" id="i2J-3x-70d"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="default_image" destination="Sa3-2z-0ey" id="wou-5K-y45"/>
-                                            <outlet property="nameLabel" destination="eDp-ZZ-RSW" id="srt-o6-uPf"/>
-                                            <outlet property="price" destination="OVB-9M-vPh" id="aKt-RO-XzB"/>
-                                            <outlet property="typeLabel" destination="C78-mb-Kev" id="4oA-Bo-TmM"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="hyq-UR-qU8" id="Oq2-cV-w4Z"/>
-                                    <outlet property="delegate" destination="hyq-UR-qU8" id="jgS-cI-WkG"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="sK5-cw-eXP" firstAttribute="top" secondItem="nSQ-nY-W1k" secondAttribute="bottom" constant="-64" id="0LX-ur-m3m"/>
-                            <constraint firstAttribute="trailing" secondItem="sK5-cw-eXP" secondAttribute="trailing" id="6hD-YR-5v6"/>
-                            <constraint firstItem="sK5-cw-eXP" firstAttribute="leading" secondItem="M2W-r6-IJb" secondAttribute="leading" id="EaL-k2-2ut"/>
-                            <constraint firstItem="sK5-cw-eXP" firstAttribute="bottom" secondItem="pIm-GD-XqD" secondAttribute="top" constant="44" id="wTn-ef-bvw"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hry-kV-b7a"/>
-                    <connections>
-                        <outlet property="tableView" destination="sK5-cw-eXP" id="MOE-co-MdT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijl-GI-DYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
