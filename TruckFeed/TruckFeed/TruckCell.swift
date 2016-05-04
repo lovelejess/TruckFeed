@@ -22,25 +22,25 @@ class TruckCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
+        nameLabel = UILabel()
+        nameLabel.textColor = secondaryColor
+        nameLabel.font =  UIFont.boldSystemFontOfSize(14)
+        
+        typeLabel = UILabel()
+        typeLabel.textColor = mainColor
+        typeLabel.font =  UIFont.italicSystemFontOfSize(11)
+        
+        default_image = UIImageView()
+        
         self.contentView.addSubview(nameLabel)
         self.contentView.addSubview(typeLabel)
         self.contentView.addSubview(default_image)
-        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        nameLabel = UILabel()
-        nameLabel.frame = CGRect(x: 20, y: 0, width: 70, height: 30)
-        nameLabel.textColor = secondaryColor
-        
-        typeLabel = UILabel()
-        typeLabel.frame = CGRect(x: 0, y: 10, width: 20,height: 20)
-        typeLabel.textColor = secondaryColor
-
-        default_image = UIImageView()
-        default_image.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        
+        nameLabel.frame = CGRect(x: 100, y: 30, width: 250, height: 15)
+        typeLabel.frame = CGRect(x: 100, y: 50, width: 250, height: 15)
     }
 }

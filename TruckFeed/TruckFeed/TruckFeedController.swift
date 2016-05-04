@@ -28,7 +28,6 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerClass(TruckCell.self, forCellReuseIdentifier: "TruckCell")
         truckOwner?.userDefaults = NSUserDefaults.standardUserDefaults()
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
         let truckLoginButton = ViewControllerItems.createBarButtonItem("", onClick:#selector(TruckFeedController.truckBarButtonAction), frame:CGRectMake(0, 0, 53, 31), target: self, image: UIImage(named: "truck.png")!)
@@ -58,7 +57,7 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
     
     func resizeImageView(truckCell: TruckCell, truck: Truck) -> UIImage {
         let newSize:CGSize = CGSize(width: 80 ,height: 80)
-        let rect = CGRectMake(0,0, newSize.width, newSize.height)
+        let rect = CGRectMake(0, 0, newSize.width, newSize.height)
         UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
         truck.defaultImage!.drawInRect(rect)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -78,7 +77,6 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
         let truckCell = TruckCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TruckCell")
         let truck = truckList[indexPath.row] as Truck
         truckCell.nameLabel.text = truck.name
-        truckCell.nameLabel.textColor = secondaryColor
         truckCell.typeLabel.text = truck.type
         truckCell.imageView!.image = resizeImageView(truckCell, truck: truck)
         truckCell.price.text = truck.price
