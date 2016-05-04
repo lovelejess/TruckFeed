@@ -24,11 +24,11 @@ class TruckCell: UITableViewCell {
 
         nameLabel = UILabel()
         nameLabel.textColor = secondaryColor
-        nameLabel.font =  UIFont.boldSystemFontOfSize(14)
+        nameLabel.font =  UIFont.boldSystemFontOfSize(17)
         
         typeLabel = UILabel()
         typeLabel.textColor = mainColor
-        typeLabel.font =  UIFont.italicSystemFontOfSize(11)
+        typeLabel.font =  UIFont.italicSystemFontOfSize(15)
         
         default_image = UIImageView()
         
@@ -40,7 +40,7 @@ class TruckCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        nameLabel.frame = CGRect(x: 100, y: 30, width: 250, height: 15)
-        typeLabel.frame = CGRect(x: 100, y: 50, width: 250, height: 15)
+        nameLabel.frame = CGRect(x: 100, y: 25, width: 250, height: 20)
+        typeLabel.frame = CGRect(x: 100, y: 45, width: 250, height: 20)
     }
 }
