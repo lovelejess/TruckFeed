@@ -30,8 +30,7 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         truckOwner?.userDefaults = NSUserDefaults.standardUserDefaults()
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
-        let truckLoginButton = ViewControllerItems.createBarButtonItem("", onClick:#selector(TruckFeedController.truckBarButtonAction), frame:CGRectMake(0, 0, 53, 31), target: self, image: UIImage(named: "truck.png")!)
-        let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "TruckFeed", rightBarButton: truckLoginButton)
+        let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "TruckFeed")
         
         self.view.addSubview(createTableView(tableView))
         self.view.addSubview(navigationBar)
@@ -73,7 +72,6 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let truckCell = tableView.dequeueReusableCellWithIdentifier("TruckCell", forIndexPath: indexPath) as!TruckCell
         let truckCell = TruckCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TruckCell")
         let truck = truckList[indexPath.row] as Truck
         truckCell.nameLabel.text = truck.name
@@ -85,36 +83,7 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
     }
   
     // PRIVATE HELPERS
-    
-    func truckBarButtonAction(){
-        if let loggedIn = AppPlistHelpers.getAppPlistDictionary().objectForKey("LoggedIn") as? Bool {
-            NSLog("LoggedIn value from App.plist is : \(loggedIn)")
-            if loggedIn != true
-            {
-                presentMainLoginController(self)
-            }
-            else
-            {
-                presentDashboardViewController(self)
-            }
-        }
-    }
-
-    func presentDashboardViewController(sender: AnyObject){
-        if let dashboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DashboardViewController") as? DashboardViewController {
-            self.presentViewController(dashboardViewController, animated: true, completion:
-                {
-                    dashboardViewController.truckOwner = self.truckOwner!
-            })
-        }
-    }
-    
-    func presentMainLoginController(sender: AnyObject){
-        if let mainLoginViewController = self.storyboard!.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreen {
-            self.presentViewController(mainLoginViewController, animated: true, completion: nil)
-        }
-    }
-    
+   
     func createTableView(tableView: UITableView) -> UITableView
     {
         tableView.frame = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height);

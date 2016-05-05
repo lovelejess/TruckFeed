@@ -71,7 +71,7 @@ class MainLoginScreen: UIViewController {
     }
     
     func presentViewController(sender: AnyObject){
-        if let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("TruckFeedController") as? TruckFeedController {
+        if let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("MasterTabViewController") as? MasterTabViewController {
             self.presentViewController(viewController, animated: true, completion:
                 {
                     NSLog("Presenting Master View Controller")

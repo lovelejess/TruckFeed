@@ -5,6 +5,62 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Item 2-->
+        <scene sceneID="E9i-Rz-AhN">
+            <objects>
+                <viewController id="PkK-85-zsM" customClass="TruckFeedController" customModule="TruckFeed" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ds0-Jb-V1g"/>
+                        <viewControllerLayoutGuide type="bottom" id="4TZ-wy-wtQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TkR-Mh-QhL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="iDq-oQ-bSC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ti6-eA-mhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1099" y="-221"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="71k-wH-9Oz">
+            <objects>
+                <viewController storyboardIdentifier="DashboardViewController" id="9bv-wC-U2D" customClass="DashboardViewController" customModule="TruckFeed" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xmm-2o-62x"/>
+                        <viewControllerLayoutGuide type="bottom" id="gqG-LI-MCt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pf4-ML-ecB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="fdg-Qi-TCq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sow-WK-5ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1129" y="-903"/>
+        </scene>
+        <!--Master Tab View Controller-->
+        <scene sceneID="fXR-Dz-MVM">
+            <objects>
+                <tabBarController storyboardIdentifier="MasterTabViewController" id="Rjf-BO-QCf" customClass="MasterTabViewController" customModule="TruckFeed" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="aw9-lc-59a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9bv-wC-U2D" kind="relationship" relationship="viewControllers" id="utJ-2F-Ig0"/>
+                        <segue destination="PkK-85-zsM" kind="relationship" relationship="viewControllers" id="jAm-tc-UuL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7f-8F-O3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1891" y="-595"/>
+        </scene>
         <!--Main Login Screen-->
         <scene sceneID="LAW-FU-2Cz">
             <objects>
@@ -21,44 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uh1-nf-PHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-483" y="-624"/>
-        </scene>
-        <!--DashboardViewController-->
-        <scene sceneID="ytG-ia-cEE">
-            <objects>
-                <viewController storyboardIdentifier="DashboardViewController" title="DashboardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7dT-mf-6Mv" customClass="DashboardViewController" customModule="TruckFeed" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L0o-AV-RCe"/>
-                        <viewControllerLayoutGuide type="bottom" id="5R4-tl-l4H"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Gal-9b-5jy">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Km-nb-52W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="813" y="-624"/>
-        </scene>
-        <!--Truck Feed Controller-->
-        <scene sceneID="pvE-sB-d3d">
-            <objects>
-                <viewController storyboardIdentifier="TruckFeedController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hyq-UR-qU8" customClass="TruckFeedController" customModule="TruckFeed" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nSQ-nY-W1k"/>
-                        <viewControllerLayoutGuide type="bottom" id="pIm-GD-XqD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="M2W-r6-IJb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Hry-kV-b7a"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ijl-GI-DYW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="164" y="-624"/>
+            <point key="canvasLocation" x="-2521" y="-560"/>
         </scene>
     </scenes>
 </document>

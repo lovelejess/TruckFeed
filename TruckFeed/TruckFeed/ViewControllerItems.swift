@@ -11,7 +11,7 @@ import UIKit
 
 public struct ViewControllerItems {
     
-    static func createNavigationBar(frame: CGRect, title: String, rightBarButton: UIBarButtonItem) -> UINavigationBar {
+    static func createNavigationBarWithRightButton(frame: CGRect, title: String, rightBarButton: UIBarButtonItem) -> UINavigationBar {
         let navigationBar = UINavigationBar(frame:frame)
         let navigationItem = UINavigationItem()
         navigationItem.title = title
@@ -19,6 +19,15 @@ public struct ViewControllerItems {
         navigationItem.rightBarButtonItem = rightBarButton
         navigationBar.items = [navigationItem]
         
+        return navigationBar
+    }
+    
+    static func createNavigationBar(frame: CGRect, title: String) -> UINavigationBar {
+        let navigationBar = UINavigationBar(frame:frame)
+        let navigationItem = UINavigationItem()
+        navigationItem.title = title
+        NSLog("Navigation Item Name: \(title)")
+        navigationBar.items = [navigationItem]
         return navigationBar
     }
     
