@@ -44,8 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        let dashboardViewController: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("DashboardViewController") as! DashboardViewController
-        return dashboardViewController
+        let userViewController: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("UserViewController") as! UserViewController
+        return userViewController
     }
     
     func didFinishLaunchingWithOptions(application: UIApplication){

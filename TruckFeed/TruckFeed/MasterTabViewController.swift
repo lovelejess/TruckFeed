@@ -22,7 +22,7 @@ class MasterTabViewController : UITabBarController, UITabBarControllerDelegate {
         truckFeedIcon.setTitleTextAttributes([NSForegroundColorAttributeName: mainColor], forState: UIControlState.Normal)
         truckFeedController.tabBarItem = truckFeedIcon
         
-        let userViewController = DashboardViewController()
+        let userViewController = UserViewController()
         let userViewIcon = UITabBarItem(title: "Guest", image: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysOriginal), selectedImage: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysOriginal))
         userViewIcon.setTitleTextAttributes([NSForegroundColorAttributeName: mainColor], forState: UIControlState.Normal)
         userViewController.tabBarItem = userViewIcon

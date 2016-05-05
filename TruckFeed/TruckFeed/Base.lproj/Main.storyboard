@@ -27,7 +27,7 @@
         <!--Item 1-->
         <scene sceneID="71k-wH-9Oz">
             <objects>
-                <viewController storyboardIdentifier="DashboardViewController" id="9bv-wC-U2D" customClass="DashboardViewController" customModule="TruckFeed" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserViewController" id="9bv-wC-U2D" customClass="UserViewController" customModule="TruckFeed" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xmm-2o-62x"/>
                         <viewControllerLayoutGuide type="bottom" id="gqG-LI-MCt"/>

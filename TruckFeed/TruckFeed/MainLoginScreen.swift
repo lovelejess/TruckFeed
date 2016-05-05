@@ -52,20 +52,20 @@ class MainLoginScreen: UIViewController {
             self.truckOwner.requestFacebookCredentials()
             NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner.fbAccessUserID) :: \(self.truckOwner.getUserAccessInfo())")
         })
-        let presentDashboardViewOperation = NSBlockOperation(block: {
-            self.presentDashboardViewController(self)
+        let presentUserViewOperation = NSBlockOperation(block: {
+            self.presentUserViewController(self)
         })
-        presentDashboardViewOperation.addDependency(facebookRequestOperation)
+        presentUserViewOperation.addDependency(facebookRequestOperation)
         queue.addOperation(facebookRequestOperation)
-        queue.addOperation(presentDashboardViewOperation)
+        queue.addOperation(presentUserViewOperation)
     }
 
-    func presentDashboardViewController(sender: AnyObject){
-        if let dashboardViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DashboardViewController") as? DashboardViewController {
-            self.presentViewController(dashboardViewController, animated: true, completion:
+    func presentUserViewController(sender: AnyObject){
+        if let userViewController = self.storyboard!.instantiateViewControllerWithIdentifier("UserViewController") as? UserViewController {
+            self.presentViewController(userViewController, animated: true, completion:
                 {
-                    NSLog("Presenting Dashboard View Controller for user: \(self.truckOwner.getTruckOwnerName())")
-                    dashboardViewController.truckOwner = self.truckOwner
+                    NSLog("Presenting User View Controller for user: \(self.truckOwner.getTruckOwnerName())")
+                    userViewController.truckOwner = self.truckOwner
             })
         }
     }

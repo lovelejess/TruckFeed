@@ -1,5 +1,5 @@
 //
-//  DashboardViewController.swift
+//  UserViewController.swift
 //  TruckFeed
 //
 //  Created by Jessica Le on 10/4/15.
@@ -9,14 +9,14 @@
 import UIKit
 import FBSDKLoginKit
 
-public class DashboardViewController: UIViewController, UINavigationBarDelegate {
+public class UserViewController: UIViewController, UINavigationBarDelegate {
 
     var truckOwner = TruckOwner.sharedInstance
 
     override public func viewDidLoad() {
         super.viewDidLoad()
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
-        let rightBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(DashboardViewController.facebookLogout), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "gear.png")!, target: self)
+        let rightBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(UserViewController.facebookLogout), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "gear.png")!, target: self)
         let navigationBar = ViewControllerItems.createNavigationBarWithRightButton(frame, title: self.truckOwner.getTruckOwnerName(), rightBarButton: rightBarButtonItem)
         navigationBar.delegate = self;
         self.view.addSubview(navigationBar)
