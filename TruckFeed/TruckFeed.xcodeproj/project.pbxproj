@@ -12,7 +12,6 @@
 		100055B81CDAC67700984B35 /* MasterTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B71CDAC67700984B35 /* MasterTabViewController.swift */; };
 		100055BC1CDAE17600984B35 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 100055B91CDAE17600984B35 /* home.png */; };
 		100055BD1CDAE17600984B35 /* map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 100055BA1CDAE17600984B35 /* map-marker.png */; };
-		100055BE1CDAE17600984B35 /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = 100055BB1CDAE17600984B35 /* people.png */; };
 		101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
 		1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; };
 		1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1010794E1B8FF5E300B3AADB /* Assets.xcassets */; };
@@ -37,6 +36,7 @@
 		10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10AED1D71BC0C478004FD47B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
 		10AED1DD1BC1BE4C004FD47B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */; };
+		10B1E5FA1CF544B100C7FBE4 /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B1E5F91CF544B100C7FBE4 /* people.png */; };
 		10D950491BFD7D4E00EC435B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */; };
 		10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
 		10D9504B1BFD7D4E00EC435B /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
@@ -78,7 +78,6 @@
 		100055B71CDAC67700984B35 /* MasterTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTabViewController.swift; sourceTree = "<group>"; };
 		100055B91CDAE17600984B35 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		100055BA1CDAE17600984B35 /* map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-marker.png"; sourceTree = "<group>"; };
-		100055BB1CDAE17600984B35 /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
 		101079421B8FF5E300B3AADB /* TruckFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruckFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		101079451B8FF5E300B3AADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1010794C1B8FF5E300B3AADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +108,7 @@
 		10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		10AED1D61BC0C478004FD47B /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
 		10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		10B1E5F91CF544B100C7FBE4 /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
 		10D950631BFD7D4E00EC435B /* TruckFeedUITests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruckFeedUITests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D950641BFD7D4F00EC435B /* TruckFeed copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TruckFeed copy-Info.plist"; path = "/Users/jessicale/Repositories/TruckFeed/TruckFeed/TruckFeed copy-Info.plist"; sourceTree = "<absolute>"; };
 		10DC61891BE863A60021B2D3 /* TruckFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedController.swift; sourceTree = "<group>"; };
@@ -217,9 +217,9 @@
 		101079801B929C2300B3AADB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				10B1E5F91CF544B100C7FBE4 /* people.png */,
 				100055B91CDAE17600984B35 /* home.png */,
 				100055BA1CDAE17600984B35 /* map-marker.png */,
-				100055BB1CDAE17600984B35 /* people.png */,
 				10738F561CB8781800BAC3CE /* gear.png */,
 				10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */,
 				10AED1D61BC0C478004FD47B /* truck.png */,
@@ -377,7 +377,7 @@
 				101079901B92A31100B3AADB /* karams_grill.jpg in Resources */,
 				1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */,
 				101079821B929C3600B3AADB /* powered_by_fries.png in Resources */,
-				100055BE1CDAE17600984B35 /* people.png in Resources */,
+				10B1E5FA1CF544B100C7FBE4 /* people.png in Resources */,
 				10738F5B1CBF290900BAC3CE /* App.plist in Resources */,
 				1010798A1B92A1BA00B3AADB /* lets_toast.jpg in Resources */,
 				10738F571CB8781800BAC3CE /* gear.png in Resources */,

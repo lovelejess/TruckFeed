@@ -49,8 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func didFinishLaunchingWithOptions(application: UIApplication){
-        
-        
+        self.window?.tintColor = UIColor.whiteColor();
     }
     
     func applicationWillResignActive(application: UIApplication) {

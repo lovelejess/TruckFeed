@@ -18,16 +18,19 @@ class MasterTabViewController : UITabBarController, UITabBarControllerDelegate {
     
     override func viewWillAppear(animated: Bool) {
         let truckFeedController = TruckFeedController()
-        let truckFeedIcon = UITabBarItem(title: "TruckFeed", image: UIImage(named: "truck.png")?.imageWithRenderingMode(.AlwaysOriginal), selectedImage: UIImage(named: "truck.png")?.imageWithRenderingMode(.AlwaysOriginal))
+        let truckFeedIcon = UITabBarItem(title: "TruckFeed", image: UIImage(named: "truck.png")?.imageWithRenderingMode(.AlwaysTemplate), selectedImage: UIImage(named: "truck.png")?.imageWithRenderingMode(.AlwaysTemplate))
         truckFeedIcon.setTitleTextAttributes([NSForegroundColorAttributeName: mainColor], forState: UIControlState.Normal)
+        
         truckFeedController.tabBarItem = truckFeedIcon
         
         let userViewController = UserViewController()
-        let userViewIcon = UITabBarItem(title: "Guest", image: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysOriginal), selectedImage: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysOriginal))
+        let userViewIcon = UITabBarItem(title: "Guest", image: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysTemplate), selectedImage: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysTemplate))
         userViewIcon.setTitleTextAttributes([NSForegroundColorAttributeName: mainColor], forState: UIControlState.Normal)
         userViewController.tabBarItem = userViewIcon
         let controllers = [truckFeedController, userViewController]
         self.viewControllers = controllers
+        self.view.tintColor = mainColor;
+        
     }
     
     //Delegate methods

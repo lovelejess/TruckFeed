@@ -49,7 +49,7 @@ public class UserViewController: UIViewController, UINavigationBarDelegate {
 
     func presentMainLoginScreen(sender: AnyObject){
         NSLog("presentMainLoginScreen")
-        if let MainLoginScreenController = self.storyboard!.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreen {
+        if let MainLoginScreenController = self.storyboard?.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreen {
             self.presentViewController(MainLoginScreenController, animated: true, completion:
                 {
                     NSLog("Presenting MainLoginScreen")
