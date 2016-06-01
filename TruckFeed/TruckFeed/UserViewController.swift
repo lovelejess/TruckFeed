@@ -18,7 +18,10 @@ public class UserViewController: UIViewController, UINavigationBarDelegate {
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
         let rightBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(UserViewController.facebookLogout), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "gear.png")!, target: self)
         let navigationBar = ViewControllerItems.createNavigationBarWithRightButton(frame, title: self.truckOwner.getTruckOwnerName(), rightBarButton: rightBarButtonItem)
-        navigationBar.delegate = self;
+        let viewWindow = UserView()
+        self.view.opaque = false
+        self.view.tintColor = mainColor;
+        self.view.addSubview(viewWindow)
         self.view.addSubview(navigationBar)
     }
     

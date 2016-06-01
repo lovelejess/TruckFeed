@@ -8,7 +8,7 @@
         <!--Item 2-->
         <scene sceneID="E9i-Rz-AhN">
             <objects>
-                <viewController id="PkK-85-zsM" customClass="TruckFeedController" customModule="TruckFeed" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TruckFeedController" id="PkK-85-zsM" customClass="TruckFeedController" customModule="TruckFeed" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ds0-Jb-V1g"/>
                         <viewControllerLayoutGuide type="bottom" id="4TZ-wy-wtQ"/>
