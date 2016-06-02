@@ -49,7 +49,7 @@ class MasterTabViewController : UITabBarController, UITabBarControllerDelegate {
     {
         let userViewController: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("UserViewController") as! UserViewController
         
-        let userViewIcon = UITabBarItem(title: "Guest", image: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysTemplate), selectedImage: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysTemplate))
+        let userViewIcon = UITabBarItem(title: "My Truck", image: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysTemplate), selectedImage: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysTemplate))
         userViewIcon.setTitleTextAttributes([NSForegroundColorAttributeName: mainColor], forState: UIControlState.Normal)
         userViewController.tabBarItem = userViewIcon
         
