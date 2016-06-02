@@ -44,8 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        let userViewController: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("UserViewController") as! UserViewController
-        return userViewController
+        let masterTabViewController: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MasterTabViewController") as! MasterTabViewController
+        return masterTabViewController
     }
     
     func didFinishLaunchingWithOptions(application: UIApplication){

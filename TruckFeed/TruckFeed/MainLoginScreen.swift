@@ -19,7 +19,7 @@ class MainLoginScreen: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "TruckFeed"
         self.view.addSubview(ViewControllerItems.createButton("LOG IN WITH FACEBOOK", onClick: #selector(MainLoginScreen.loginWithFacebookButton), frame: CGRect(x: 90, y: 500, width: 200, height: 50), target: self))
-        self.view.addSubview(ViewControllerItems.createButton("CONTINUE AS A GUEST", onClick: #selector(MainLoginScreen.presentViewController(_:)), frame: CGRect(x: 90, y: 570, width: 200, height: 50), target: self))
+        self.view.addSubview(ViewControllerItems.createButton("CONTINUE AS A GUEST", onClick: #selector(MainLoginScreen.presentTruckFeedController(_:)), frame: CGRect(x: 90, y: 570, width: 200, height: 50), target: self))
     }
     
     func loginWithFacebookButton()
@@ -53,19 +53,18 @@ class MainLoginScreen: UIViewController {
             NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner.fbAccessUserID) :: \(self.truckOwner.getUserAccessInfo())")
         })
         let presentUserViewOperation = NSBlockOperation(block: {
-            self.presentUserViewController(self)
+            self.presentViewController(self)
         })
         presentUserViewOperation.addDependency(facebookRequestOperation)
         queue.addOperation(facebookRequestOperation)
         queue.addOperation(presentUserViewOperation)
     }
 
-    func presentUserViewController(sender: AnyObject){
-        if let userViewController = self.storyboard!.instantiateViewControllerWithIdentifier("UserViewController") as? UserViewController {
-            self.presentViewController(userViewController, animated: true, completion:
+    func presentTruckFeedController(sender: AnyObject){
+        if let truckFeedController = self.storyboard!.instantiateViewControllerWithIdentifier("TruckFeedController") as? TruckFeedController {
+            self.presentViewController(truckFeedController, animated: true, completion:
                 {
-                    NSLog("Presenting User View Controller for user: \(self.truckOwner.getTruckOwnerName())")
-                    userViewController.truckOwner = self.truckOwner
+                    NSLog("Presenting Truck Feed Controller")
             })
         }
     }
