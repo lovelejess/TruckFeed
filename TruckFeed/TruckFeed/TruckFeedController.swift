@@ -13,6 +13,8 @@ import FBSDKLoginKit
 class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationBarDelegate {
     
     var tableView: UITableView  =   UITableView()
+//    let kServerUrl = "http://localhost:5000/";
+    let kServerUrl = "https://damp-escarpment-86736.herokuapp.com/";
 
     let FBLoginManager = FBSDKLoginManager()
     var truckOwner:TruckOwner?
@@ -28,6 +30,7 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getTruckFeedList()
         truckOwner?.userDefaults = NSUserDefaults.standardUserDefaults()
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
         let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "TruckFeed")
@@ -94,4 +97,45 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
         
         return tableView
     }
+    
+
+    func getTruckFeedList()
+    {
+        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        var sessionDataTask: NSURLSessionDataTask?
+        var truckListUrl = NSURL(string: kServerUrl)
+        truckListUrl = truckListUrl?.URLByAppendingPathComponent("trucks.json")
+        NSLog("getTruckFeedList - url: \(truckListUrl)")
+        sessionDataTask = session.dataTaskWithURL(truckListUrl!) {
+            data, response, error in
+            dispatch_async(dispatch_get_main_queue()) {
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            }
+            if let error = error {
+                NSLog("getTruckFeedList\(error.localizedDescription)")
+            } else if let httpResponse = response as? NSHTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    self.parseJSON(data!)
+                }
+            }
+        }
+        sessionDataTask?.resume()
+    }
+    
+    func parseJSON(data: NSData) -> AnyObject?
+    {
+        var json: AnyObject?
+        do {
+            json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String:AnyObject]
+            NSLog("parseJSON - json : \(json)")
+            if let trucks = json!["trucks"] as? [String] {
+                NSLog("parseJSON - Trucks \(trucks)")
+            }
+        } catch {
+            NSLog("parseJSON - error: \(error)")
+            json = nil
+        }
+        return json
+    }
+    
 }
