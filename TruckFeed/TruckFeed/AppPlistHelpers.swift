@@ -22,19 +22,19 @@ public struct AppPlistHelpers
         if(!fileManager.fileExistsAtPath(path)) {
             if let bundlePath = NSBundle.mainBundle().pathForResource("App", ofType: "plist") {
                 let resultDictionary = NSMutableDictionary(contentsOfFile: bundlePath)
-                print("Bundle App.plist file is --> \(resultDictionary?.description)")
+                NSLog("getAppPlistDictionary - Bundle App.plist file is --> \(resultDictionary?.description)")
                 do {
                     try fileManager.copyItemAtPath(bundlePath, toPath: path)
                 }
                 catch {
-                    print("App.plist not found. Please, make sure it is part of the bundle.")
+                    NSLog("getAppPlistDictionary - App.plist not found. Please, make sure it is part of the bundle.")
                 }
             }
         } else {
-            print("App.plist already exits at path.")
+            NSLog("getAppPlistDictionary - App.plist already exits at path.")
         }
         
-        print("Loaded App.plist file is: \(dict.description)")
+        NSLog("getAppPlistDictionary - Loaded App.plist file is: \(dict.description)")
         
         return dict
     }

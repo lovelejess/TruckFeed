@@ -40,7 +40,7 @@ public class UserViewController: UIViewController, UINavigationBarDelegate {
         let dict = NSMutableDictionary(contentsOfFile: path)
         dict?.setValue(false, forKey: "LoggedIn")
         dict?.writeToFile(path, atomically: false)
-        NSLog("Setting App.plist file to :\(NSMutableDictionary(contentsOfFile: path)))")
+        NSLog("facebookLogout - Setting App.plist file to :\(NSMutableDictionary(contentsOfFile: path)))")
 
         presentMainLoginScreen(self)
         
@@ -51,11 +51,11 @@ public class UserViewController: UIViewController, UINavigationBarDelegate {
     }
 
     func presentMainLoginScreen(sender: AnyObject){
-        NSLog("presentMainLoginScreen")
+        NSLog(" facebookLogout - entering presentMainLoginScreen")
         if let MainLoginScreenController = self.storyboard?.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreen {
             self.presentViewController(MainLoginScreenController, animated: true, completion:
                 {
-                    NSLog("Presenting MainLoginScreen")
+                    NSLog("facebookLogout - Presenting MainLoginScreen")
             })
         }
     }

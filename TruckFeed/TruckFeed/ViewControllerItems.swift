@@ -15,7 +15,7 @@ public struct ViewControllerItems {
         let navigationBar = UINavigationBar(frame:frame)
         let navigationItem = UINavigationItem()
         navigationItem.title = title
-        NSLog("Navigation Item Name: \(title)")
+        NSLog("createNavigationBarWithRightButton - Navigation Item Name: \(title)")
         navigationItem.rightBarButtonItem = rightBarButton
         navigationBar.items = [navigationItem]
         
@@ -26,7 +26,7 @@ public struct ViewControllerItems {
         let navigationBar = UINavigationBar(frame:frame)
         let navigationItem = UINavigationItem()
         navigationItem.title = title
-        NSLog("Navigation Item Name: \(title)")
+        NSLog("createNavigationBarWithRightButton - Navigation Item Name: \(title)")
         navigationBar.items = [navigationItem]
         return navigationBar
     }
