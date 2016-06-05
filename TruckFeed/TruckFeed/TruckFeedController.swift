@@ -18,19 +18,22 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
 
     let FBLoginManager = FBSDKLoginManager()
     var truckOwner:TruckOwner?
-    let truckList: [Truck] = [Truck(name: "Powered By Fries", type: "Belgian fries", defaultImage: UIImage(named: "powered_by_fries.png")!, price: "$"),
-                              Truck(name: "Outside Scoop", type: "Dessert", defaultImage: UIImage(named: "the_outside_scoop.jpg")!, price: "$"),
-                              Truck(name: "The Spot", type: " Fresh, made-to-order sandwiches", defaultImage: UIImage(named: "the_spot.jpg")!, price: "$"),
-                              Truck(name: "Ferinheit Wood Oven Pizza", type: "Wood Oven Pizza", defaultImage: UIImage(named: "ferinheit_pizza.jpg")!, price: "$"),
-                              Truck(name: "Let's Toast", type: "Spanish Tapas", defaultImage: UIImage(named: "lets_toast.jpg")!, price: "$"),
-                              Truck(name: "Parlo Pizza", type: "Authentic Neapolitan pizzas", defaultImage: UIImage(named: "parlo_pizza.jpg")!, price: "$"),
-                              Truck(name: "Karam's Grill", type: "Mediterranean", defaultImage: UIImage(named: "karams_grill.jpg")!, price: "$"),
-                              Truck(name: "Street Eats DSM", type: "Stuffed sammiches with hand-cut fries", defaultImage: UIImage(named: "street_eats_dsm.jpg")!, price: "$")]
-    
+    var truckList: [Truck] = []
+
+//    let truckList: [Truck] = [Truck(name: "Powered By Fries", type: "Belgian fries", defaultImage: UIImage(named: "powered_by_fries.png")!, price: "$"),
+//                              Truck(name: "Outside Scoop", type: "Ice Cream", defaultImage: UIImage(named: "the_outside_scoop.jpg")!, price: "$"),
+//                              Truck(name: "The Spot", type: " Fresh, made-to-order sandwiches", defaultImage: UIImage(named: "the_spot.jpg")!, price: "$"),
+//                              Truck(name: "Ferinheit Wood Oven Pizza", type: "Wood Oven Pizza", defaultImage: UIImage(named: "ferinheit_pizza.jpg")!, price: "$"),
+//                              Truck(name: "Let's Toast", type: "Spanish Tapas", defaultImage: UIImage(named: "lets_toast.jpg")!, price: "$"),
+//                              Truck(name: "Parlo Pizza", type: "Authentic Neapolitan pizzas", defaultImage: UIImage(named: "parlo_pizza.jpg")!, price: "$"),
+//                              Truck(name: "Karam's Grill", type: "Mediterranean", defaultImage: UIImage(named: "karams_grill.jpg")!, price: "$"),
+//                              Truck(name: "Street Eats DSM", type: "Stuffed sammiches with hand-cut fries", defaultImage: UIImage(named: "street_eats_dsm.jpg")!, price: "$")]
+//    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getTruckFeedList()
+        truckList = self.intializeTruckFeedList()
+        
         truckOwner?.userDefaults = NSUserDefaults.standardUserDefaults()
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
         let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "TruckFeed")
@@ -99,12 +102,23 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
 
+    func intializeTruckFeedList() -> [Truck]
+    {
+//        var truckList: [Truck]
+        let truckList = [Truck]()
+        self.getTruckFeedList()
+//        let responseData = self.getTruckFeedList()
+//        let truckJSON = self.parseJSON(responseData)
+//        truckList = self.translateToTruckObject(truckJSON!)
+        return truckList
+    }
+    
     func getTruckFeedList()
     {
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
         var sessionDataTask: NSURLSessionDataTask?
         var truckListUrl = NSURL(string: kServerUrl)
-        truckListUrl = truckListUrl?.URLByAppendingPathComponent("trucks.json")
+        truckListUrl = truckListUrl?.URLByAppendingPathComponent("truck_list.json")
         NSLog("getTruckFeedList - url: \(truckListUrl)")
         sessionDataTask = session.dataTaskWithURL(truckListUrl!) {
             data, response, error in
@@ -136,6 +150,11 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
             json = nil
         }
         return json
+    }
+    
+    func translateToTruckObject(json: AnyObject) -> [Truck]
+    {
+        return Array<Truck>()
     }
     
 }
