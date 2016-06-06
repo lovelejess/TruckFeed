@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-@objc
-class Truck: NSObject {
+struct Truck {
     var name: String
     var type: String
     var defaultImage: UIImage?
@@ -21,7 +20,7 @@ class Truck: NSObject {
         self.type = type
         self.defaultImage = defaultImage
         self.price = price
-        super.init()
-        
     }
+    
+
 }

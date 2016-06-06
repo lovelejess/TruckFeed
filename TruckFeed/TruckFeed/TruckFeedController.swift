@@ -118,7 +118,7 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
         var sessionDataTask: NSURLSessionDataTask?
         var truckListUrl = NSURL(string: kServerUrl)
-        truckListUrl = truckListUrl?.URLByAppendingPathComponent("truck_list.json")
+        truckListUrl = truckListUrl?.URLByAppendingPathComponent("trucks.json")
         NSLog("getTruckFeedList - url: \(truckListUrl)")
         sessionDataTask = session.dataTaskWithURL(truckListUrl!) {
             data, response, error in
@@ -136,25 +136,40 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
         sessionDataTask?.resume()
     }
     
-    func parseJSON(data: NSData) -> AnyObject?
+    func parseJSON(data: NSData) -> Truck
     {
         var json: AnyObject?
+        var mappedJson = Truck(name: "", type: "", defaultImage: UIImage(named:"powered_by_fries.png")!, price: "")
         do {
             json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String:AnyObject]
             NSLog("parseJSON - json : \(json)")
-            if let trucks = json!["trucks"] as? [String] {
-                NSLog("parseJSON - Trucks \(trucks)")
+            if let trucksDictionary = json as? NSDictionary {
+//                NSLog("parseJSON - Truck List: \(trucksDictionary["trucks"])")
+//                NSLog("parseJSON - Trucks: \(trucksDictionary["trucks"]![0]!["truck"])")
+                let truckArray = trucksDictionary["trucks"] as? NSArray
+//                NSLog("parseJSON - Trucks: \(truckArray)")
+                let oneTruck = truckArray![0] as? NSDictionary
+                mappedJson = oneTruck.map({ (item) -> Truck  in
+                    return self.translateToTruckObject(item)
+                })!
             }
         } catch {
             NSLog("parseJSON - error: \(error)")
-            json = nil
+//            mappedJson = Truck(name: "", type: "", defaultImage: UIImage(named:"no_image.PNG")!, price: "")
         }
-        return json
+        return mappedJson
     }
     
-    func translateToTruckObject(json: AnyObject) -> [Truck]
+    func translateToTruckObject(json: AnyObject) -> Truck
     {
-        return Array<Truck>()
+        NSLog("translateToTruckObject - : \(json)")
+        let truck = json["truck"] as! NSDictionary
+        let name = truck["name"] as! String
+        let type = truck["type"] as! String
+        let image = UIImage(named: truck["image"] as! String)
+        let price = truck["price"] as! String
+        let truckObject = Truck(name: name, type: type, defaultImage: image!, price: price)
+        return truckObject
     }
     
 }
