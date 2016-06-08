@@ -17,20 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var truckList: [Truck]?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        FBSDKApplicationDelegate.sharedInstance();
+        self.truckList = TruckHelpers.getTruckFeedList()
+        
         UINavigationBar.appearance().backgroundColor = mainColor
         UINavigationBar.appearance().barTintColor = mainColor
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
-        FBSDKApplicationDelegate.sharedInstance();
-        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.truckList = TruckHelpers.getTruckFeedList()
         self.window?.rootViewController = self.determineUIViewToPresent(self.truckList!)
         self.window?.makeKeyAndVisible()
         
         return true
     }
+    
     func isFacebookLoggedIn() -> Bool {
         if let loggedIn = AppPlistHelpers.getAppPlistDictionary().objectForKey("LoggedIn") as? Bool {
             NSLog("LoggedIn value from App.plist is : \(loggedIn)")

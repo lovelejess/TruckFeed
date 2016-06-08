@@ -77,7 +77,6 @@ class MainLoginScreen: UIViewController {
             })
         }
     }
-
     
     func setFacebookLoggedIn()
     {

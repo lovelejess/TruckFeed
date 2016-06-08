@@ -31,7 +31,6 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         truckOwner?.userDefaults = NSUserDefaults.standardUserDefaults()
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
         let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "TruckFeed")

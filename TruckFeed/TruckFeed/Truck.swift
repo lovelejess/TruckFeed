@@ -25,16 +25,12 @@ struct Truck {
 
 public struct TruckHelpers {
     
-    static func getTruckFeedList() -> [Truck]
-    {
-        var trucks:[Truck]?
+    static func generateSessionDataWithURL(url: NSURL) {
+        
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
         var sessionDataTask: NSURLSessionDataTask?
-        let kServerUrl = "https://damp-escarpment-86736.herokuapp.com/";
-        var truckListUrl = NSURL(string: kServerUrl)
-        truckListUrl = truckListUrl?.URLByAppendingPathComponent("trucks.json")
-        NSLog("getTruckFeedList - url: \(truckListUrl)")
-        sessionDataTask = session.dataTaskWithURL(truckListUrl!) {
+        
+        sessionDataTask = session.dataTaskWithURL(url) {
             data, response, error in
             dispatch_async(dispatch_get_main_queue()) {
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -43,11 +39,21 @@ public struct TruckHelpers {
                 NSLog("getTruckFeedList\(error.localizedDescription)")
             } else if let httpResponse = response as? NSHTTPURLResponse {
                 if httpResponse.statusCode == 200 {
-                    trucks = self.parseJSON(data!)
+                    //TODO: insert callback here or make synchronous?
+                    self.parseJSON(data!)
                 }
             }
         }
         sessionDataTask?.resume()
+    }
+    
+    static func getTruckFeedList() -> [Truck]
+    {
+        var trucks:[Truck]?
+        let truckListUrl = TruckHelpers.createURLWithEndPoint("trucks.json")
+        TruckHelpers.generateSessionDataWithURL(truckListUrl)
+        
+        //TODO: return truck list from generateSessionDataWithURL
         if (trucks == nil)
         {
             trucks = [Truck]()
@@ -88,5 +94,13 @@ public struct TruckHelpers {
         return truckObject
     }
     
+    static func createURLWithEndPoint(endpoint: String) -> NSURL
+    {
+        let kServerUrl = "https://damp-escarpment-86736.herokuapp.com/";
+        var truckListUrl = NSURL(string: kServerUrl)
+        truckListUrl = truckListUrl?.URLByAppendingPathComponent(endpoint)
+        NSLog("getTruckFeedList - url: \(truckListUrl)")
+        return truckListUrl!
+    }
 
 }
