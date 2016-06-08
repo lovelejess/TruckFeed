@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let truckOwner = TruckOwner.sharedInstance;
+    var truckList: [Truck]?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -24,28 +25,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBSDKApplicationDelegate.sharedInstance();
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
-        self.window?.rootViewController = loadFacebookData()
+        self.truckList = TruckHelpers.getTruckFeedList()
+        self.window?.rootViewController = self.determineUIViewToPresent(self.truckList!)
         self.window?.makeKeyAndVisible()
         
         return true
     }
-    
-    
-    func loadFacebookData() -> UIViewController {
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-
+    func isFacebookLoggedIn() -> Bool {
         if let loggedIn = AppPlistHelpers.getAppPlistDictionary().objectForKey("LoggedIn") as? Bool {
             NSLog("LoggedIn value from App.plist is : \(loggedIn)")
-            if loggedIn != true
-            {
-                let mainLoginScreen: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MainLoginScreen") as! MainLoginScreen
-                return mainLoginScreen
-            }
+            return loggedIn
         }
-        
-        let masterTabViewController: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MasterTabViewController") as! MasterTabViewController
-        return masterTabViewController
+        return false
+    }
+    
+    func determineUIViewToPresent(truckList: [Truck]) -> UIViewController
+    {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if(self.isFacebookLoggedIn())
+        {
+            let masterTabViewController: MasterTabViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MasterTabViewController") as! MasterTabViewController
+            return masterTabViewController
+        }
+        let mainLoginScreen: MainLoginScreen = mainStoryboard.instantiateViewControllerWithIdentifier("MainLoginScreen") as! MainLoginScreen
+        return mainLoginScreen
     }
     
     func didFinishLaunchingWithOptions(application: UIApplication){

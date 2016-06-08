@@ -18,21 +18,19 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
 
     let FBLoginManager = FBSDKLoginManager()
     var truckOwner:TruckOwner?
-    var truckList: [Truck] = []
 
-//    let truckList: [Truck] = [Truck(name: "Powered By Fries", type: "Belgian fries", defaultImage: UIImage(named: "powered_by_fries.png")!, price: "$"),
-//                              Truck(name: "Outside Scoop", type: "Ice Cream", defaultImage: UIImage(named: "the_outside_scoop.jpg")!, price: "$"),
-//                              Truck(name: "The Spot", type: " Fresh, made-to-order sandwiches", defaultImage: UIImage(named: "the_spot.jpg")!, price: "$"),
-//                              Truck(name: "Ferinheit Wood Oven Pizza", type: "Wood Oven Pizza", defaultImage: UIImage(named: "ferinheit_pizza.jpg")!, price: "$"),
-//                              Truck(name: "Let's Toast", type: "Spanish Tapas", defaultImage: UIImage(named: "lets_toast.jpg")!, price: "$"),
-//                              Truck(name: "Parlo Pizza", type: "Authentic Neapolitan pizzas", defaultImage: UIImage(named: "parlo_pizza.jpg")!, price: "$"),
-//                              Truck(name: "Karam's Grill", type: "Mediterranean", defaultImage: UIImage(named: "karams_grill.jpg")!, price: "$"),
-//                              Truck(name: "Street Eats DSM", type: "Stuffed sammiches with hand-cut fries", defaultImage: UIImage(named: "street_eats_dsm.jpg")!, price: "$")]
-//    
+    let truckList: [Truck] = [Truck(name: "Powered By Fries", type: "Belgian fries", defaultImage: UIImage(named: "powered_by_fries.png")!, price: "$"),
+                              Truck(name: "Outside Scoop", type: "Ice Cream", defaultImage: UIImage(named: "the_outside_scoop.jpg")!, price: "$"),
+                              Truck(name: "The Spot", type: " Fresh, made-to-order sandwiches", defaultImage: UIImage(named: "the_spot.jpg")!, price: "$"),
+                              Truck(name: "Ferinheit Wood Oven Pizza", type: "Wood Oven Pizza", defaultImage: UIImage(named: "ferinheit_pizza.jpg")!, price: "$"),
+                              Truck(name: "Let's Toast", type: "Spanish Tapas", defaultImage: UIImage(named: "lets_toast.jpg")!, price: "$"),
+                              Truck(name: "Parlo Pizza", type: "Authentic Neapolitan pizzas", defaultImage: UIImage(named: "parlo_pizza.jpg")!, price: "$"),
+                              Truck(name: "Karam's Grill", type: "Mediterranean", defaultImage: UIImage(named: "karams_grill.jpg")!, price: "$"),
+                              Truck(name: "Street Eats DSM", type: "Stuffed sammiches with hand-cut fries", defaultImage: UIImage(named: "street_eats_dsm.jpg")!, price: "$")]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        truckList = self.intializeTruckFeedList()
         
         truckOwner?.userDefaults = NSUserDefaults.standardUserDefaults()
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
@@ -102,74 +100,4 @@ class TruckFeedController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
 
-    func intializeTruckFeedList() -> [Truck]
-    {
-//        var truckList: [Truck]
-        let truckList = [Truck]()
-        self.getTruckFeedList()
-//        let responseData = self.getTruckFeedList()
-//        let truckJSON = self.parseJSON(responseData)
-//        truckList = self.translateToTruckObject(truckJSON!)
-        return truckList
-    }
-    
-    func getTruckFeedList()
-    {
-        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-        var sessionDataTask: NSURLSessionDataTask?
-        var truckListUrl = NSURL(string: kServerUrl)
-        truckListUrl = truckListUrl?.URLByAppendingPathComponent("trucks.json")
-        NSLog("getTruckFeedList - url: \(truckListUrl)")
-        sessionDataTask = session.dataTaskWithURL(truckListUrl!) {
-            data, response, error in
-            dispatch_async(dispatch_get_main_queue()) {
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            }
-            if let error = error {
-                NSLog("getTruckFeedList\(error.localizedDescription)")
-            } else if let httpResponse = response as? NSHTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    self.parseJSON(data!)
-                }
-            }
-        }
-        sessionDataTask?.resume()
-    }
-    
-    func parseJSON(data: NSData) -> Truck
-    {
-        var json: AnyObject?
-        var mappedJson = Truck(name: "", type: "", defaultImage: UIImage(named:"powered_by_fries.png")!, price: "")
-        do {
-            json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String:AnyObject]
-            NSLog("parseJSON - json : \(json)")
-            if let trucksDictionary = json as? NSDictionary {
-//                NSLog("parseJSON - Truck List: \(trucksDictionary["trucks"])")
-//                NSLog("parseJSON - Trucks: \(trucksDictionary["trucks"]![0]!["truck"])")
-                let truckArray = trucksDictionary["trucks"] as? NSArray
-//                NSLog("parseJSON - Trucks: \(truckArray)")
-                let oneTruck = truckArray![0] as? NSDictionary
-                mappedJson = oneTruck.map({ (item) -> Truck  in
-                    return self.translateToTruckObject(item)
-                })!
-            }
-        } catch {
-            NSLog("parseJSON - error: \(error)")
-//            mappedJson = Truck(name: "", type: "", defaultImage: UIImage(named:"no_image.PNG")!, price: "")
-        }
-        return mappedJson
-    }
-    
-    func translateToTruckObject(json: AnyObject) -> Truck
-    {
-        NSLog("translateToTruckObject - : \(json)")
-        let truck = json["truck"] as! NSDictionary
-        let name = truck["name"] as! String
-        let type = truck["type"] as! String
-        let image = UIImage(named: truck["image"] as! String)
-        let price = truck["price"] as! String
-        let truckObject = Truck(name: name, type: type, defaultImage: image!, price: price)
-        return truckObject
-    }
-    
 }

@@ -39,14 +39,14 @@ class MainLoginScreen: UIViewController {
                                                             if let accessToken = FBSDKAccessToken.currentAccessToken().tokenString {
                                                                 NSLog("Retrieving access token: \(accessToken)")
                                                                 self.truckOwner.setFBAccessToken(accessToken)
-                                                                self.executeFacebookRequestOperations()
+                                                                self.setFacebookRequestOperationsQueue()
                                                                 self.setFacebookLoggedIn()
                                                             }
                                                         }
                                                     })
     }
     
-    func executeFacebookRequestOperations() {
+    func setFacebookRequestOperationsQueue() {
         let queue = NSOperationQueue()
         let facebookRequestOperation = NSBlockOperation(block: {
             self.truckOwner.requestFacebookCredentials()

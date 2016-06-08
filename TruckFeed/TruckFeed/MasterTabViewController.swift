@@ -34,7 +34,7 @@ class MasterTabViewController : UITabBarController, UITabBarControllerDelegate {
     
     func setUpTruckFeedController() -> UIViewController
     {
-        let truckFeedController: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("TruckFeedController") as! TruckFeedController
+        let truckFeedController: TruckFeedController = mainStoryboard.instantiateViewControllerWithIdentifier("TruckFeedController") as! TruckFeedController
         
         let truckFeedIcon = UITabBarItem(title: "TruckFeed", image: UIImage(named: "truck.png")?.imageWithRenderingMode(.AlwaysTemplate), selectedImage: UIImage(named: "truck.png")?.imageWithRenderingMode(.AlwaysTemplate))
         truckFeedIcon.setTitleTextAttributes([NSForegroundColorAttributeName: mainColor], forState: UIControlState.Normal)
@@ -47,7 +47,7 @@ class MasterTabViewController : UITabBarController, UITabBarControllerDelegate {
     
     func setUpUserViewController() -> UIViewController
     {
-        let userViewController: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("UserViewController") as! UserViewController
+        let userViewController: UserViewController = mainStoryboard.instantiateViewControllerWithIdentifier("UserViewController") as! UserViewController
         
         let userViewIcon = UITabBarItem(title: "My Truck", image: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysTemplate), selectedImage: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysTemplate))
         userViewIcon.setTitleTextAttributes([NSForegroundColorAttributeName: mainColor], forState: UIControlState.Normal)
