@@ -14,18 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let truckOwner = TruckOwner.sharedInstance;
-    var truckList: [Truck]?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         FBSDKApplicationDelegate.sharedInstance();
-        self.truckList = TruckHelpers.getTruckFeedList()
         
         UINavigationBar.appearance().backgroundColor = mainColor
         UINavigationBar.appearance().barTintColor = mainColor
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.rootViewController = self.determineUIViewToPresent(self.truckList!)
+        
+        self.window?.rootViewController = self.determineUIViewToPresent()
         self.window?.makeKeyAndVisible()
         
         return true
@@ -39,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return false
     }
     
-    func determineUIViewToPresent(truckList: [Truck]) -> UIViewController
+    func determineUIViewToPresent() -> UIViewController
     {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if(self.isFacebookLoggedIn())
