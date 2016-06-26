@@ -42,5 +42,6 @@ class TruckCell: UITableViewCell {
         
         nameLabel.frame = CGRect(x: 100, y: 25, width: 250, height: 20)
         typeLabel.frame = CGRect(x: 100, y: 45, width: 250, height: 20)
+        default_image.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
     }
 }

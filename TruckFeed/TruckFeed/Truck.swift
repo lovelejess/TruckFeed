@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Truck {
+public struct Truck {
     var name: String
     var type: String
     var defaultImage: UIImage?

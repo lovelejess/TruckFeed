@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
         self.window?.rootViewController = self.determineUIViewToPresent()
         self.window?.makeKeyAndVisible()
         

@@ -45,6 +45,10 @@
 		10738F4B1CB5FC1800BAC3CE /* MainLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738F4A1CB5FC1800BAC3CE /* MainLoginScreen.swift */; };
 		10738F571CB8781800BAC3CE /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 10738F561CB8781800BAC3CE /* gear.png */; };
 		10738F5B1CBF290900BAC3CE /* App.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10738F5A1CBF290900BAC3CE /* App.plist */; };
+		10AD73FE1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */; };
+		10AD73FF1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */; };
+		10AD74011D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */; };
+		10AD74021D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */; };
 		10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10AED1D71BC0C478004FD47B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
 		10AED1DD1BC1BE4C004FD47B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */; };
@@ -117,6 +121,8 @@
 		10738F4A1CB5FC1800BAC3CE /* MainLoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLoginScreen.swift; sourceTree = "<group>"; };
 		10738F561CB8781800BAC3CE /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		10738F5A1CBF290900BAC3CE /* App.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = App.plist; sourceTree = "<group>"; };
+		10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedDataProvider.swift; sourceTree = "<group>"; };
+		10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedDataProviderProtocol.swift; sourceTree = "<group>"; };
 		10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		10AED1D61BC0C478004FD47B /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
 		10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -188,8 +194,8 @@
 		101079441B8FF5E300B3AADB /* TruckFeed */ = {
 			isa = PBXGroup;
 			children = (
+				10AD73FC1D18C9F900CDE2AF /* TruckFeedData */,
 				10738F4A1CB5FC1800BAC3CE /* MainLoginScreen.swift */,
-				10DC61891BE863A60021B2D3 /* TruckFeedController.swift */,
 				101079801B929C2300B3AADB /* Resources */,
 				101079451B8FF5E300B3AADB /* AppDelegate.swift */,
 				1010794B1B8FF5E300B3AADB /* Main.storyboard */,
@@ -247,6 +253,16 @@
 				101079811B929C3600B3AADB /* powered_by_fries.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		10AD73FC1D18C9F900CDE2AF /* TruckFeedData */ = {
+			isa = PBXGroup;
+			children = (
+				10DC61891BE863A60021B2D3 /* TruckFeedController.swift */,
+				10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */,
+				10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */,
+			);
+			name = TruckFeedData;
 			sourceTree = "<group>";
 		};
 		3C37454694ADD4529A0A74F2 /* Pods */ = {
@@ -589,6 +605,8 @@
 				10B1E5FE1CFE59D700C7FBE4 /* UserView.swift in Sources */,
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
 				1010797E1B92776F00B3AADB /* Palette.swift in Sources */,
+				10AD74011D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */,
+				10AD73FE1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */,
 				10738F4B1CB5FC1800BAC3CE /* MainLoginScreen.swift in Sources */,
 				101079781B90008300B3AADB /* Truck.swift in Sources */,
 			);
@@ -608,6 +626,8 @@
 				100E15611D05036D00B3BC9A /* Palette.swift in Sources */,
 				100E15601D05036800B3BC9A /* AppDelegate.swift in Sources */,
 				100E15681D05038A00B3BC9A /* UserView.swift in Sources */,
+				10AD74021D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */,
+				10AD73FF1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */,
 				100E15671D05038400B3BC9A /* MasterTabViewController.swift in Sources */,
 				100E15621D05037000B3BC9A /* Truck.swift in Sources */,
 			);
