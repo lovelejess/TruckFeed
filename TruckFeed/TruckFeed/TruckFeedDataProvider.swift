@@ -9,9 +9,10 @@
 import UIKit
 import CoreData
 
-public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol {
+public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol,UITableViewDataSource, UITableViewDelegate {
     public var truckList = [Truck]()
     weak public var tableView: UITableView!
+    private var mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     public func getTruckFeedList() -> [Truck]
     {
@@ -96,11 +97,11 @@ public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol {
         truckCell.imageView!.image = resizeImageView(truckCell, truck: truck)
         truckCell.price.text = truck.price
     }
-}
+//}
 
 
 // MARK: - Table view data source
-extension TruckFeedDataProvider: UITableViewDataSource {
+//extension TruckFeedDataProvider: UITableViewDataSource, UITableViewDelegate {
 
     public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -131,5 +132,12 @@ extension TruckFeedDataProvider: UITableViewDataSource {
         let truckCell = TruckCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TruckCell")
         self.configureCell(truckCell, atIndexPath: indexPath)
         return truckCell
+    }
+    
+    public func tableView(tableView: UITableView,didSelectRowAtIndexPath indexPath: NSIndexPath){
+        NSLog("You selected cell #\(indexPath.row)!")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//        truckCellDelegate.foodTruckCellSelected("FoodTruckName")
+        
     }
 }

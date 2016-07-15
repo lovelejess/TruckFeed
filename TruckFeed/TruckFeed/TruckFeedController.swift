@@ -10,23 +10,24 @@ import UIKit
 import CoreData
 import FBSDKLoginKit
 
-public class TruckFeedController: UIViewController, UITableViewDelegate, UINavigationBarDelegate {
+public class TruckFeedController: UIViewController, UINavigationBarDelegate {
     
-    var tableView: UITableView  =   UITableView()
+    @IBOutlet var tableView: UITableView?
     public var dataProvider: TruckFeedDataProviderProtocol?
+    
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        tableView = createTableView(UITableView())
         dataProvider = TruckFeedDataProvider()
-//        assert(dataProvider != nil, "dataProvider is not allowed to be nil at this point")
+        tableView!.delegate = dataProvider
+        tableView!.dataSource = dataProvider
         dataProvider!.getTruckFeedList();
-        tableView.dataSource = dataProvider
-        tableView.delegate = dataProvider
         dataProvider?.tableView = tableView
         
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
         let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "TruckFeed")
-        self.view.addSubview(createTableView(tableView))
+        self.view.addSubview(tableView!)
         self.view.addSubview(navigationBar)
 
     }
@@ -49,6 +50,19 @@ public class TruckFeedController: UIViewController, UITableViewDelegate, UINavig
         return tableView
     }
     
+    // TruckCellDelegateMethod 
+    func foodTruckCellSelected(name: String)
+    {
+        
+    }
     
+    func presentTruckScheduleController(sender: AnyObject){
+        if let truckScheduleController = self.storyboard!.instantiateViewControllerWithIdentifier("TruckScheduleController") as? TruckScheduleController {
+            self.presentViewController(truckScheduleController, animated: true, completion:
+                {
+                    NSLog("Presenting Truck Schedule Controller")
+            })
+        }
+    }
 
 }

@@ -12,6 +12,9 @@
 		100055B81CDAC67700984B35 /* MasterTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B71CDAC67700984B35 /* MasterTabViewController.swift */; };
 		100055BC1CDAE17600984B35 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 100055B91CDAE17600984B35 /* home.png */; };
 		100055BD1CDAE17600984B35 /* map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 100055BA1CDAE17600984B35 /* map-marker.png */; };
+		100CE6761D2F40B000E2F53C /* TruckScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6751D2F40B000E2F53C /* TruckScheduleController.swift */; };
+		100CE6781D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6771D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift */; };
+		100CE67A1D2F415C00E2F53C /* ScheduleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6791D2F415C00E2F53C /* ScheduleDataProvider.swift */; };
 		100E155C1D05017800B3BC9A /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
 		100E155D1D05017A00B3BC9A /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
 		100E155F1D05036100B3BC9A /* MainLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738F4A1CB5FC1800BAC3CE /* MainLoginScreen.swift */; };
@@ -94,6 +97,9 @@
 		100055B71CDAC67700984B35 /* MasterTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTabViewController.swift; sourceTree = "<group>"; };
 		100055B91CDAE17600984B35 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		100055BA1CDAE17600984B35 /* map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-marker.png"; sourceTree = "<group>"; };
+		100CE6751D2F40B000E2F53C /* TruckScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckScheduleController.swift; sourceTree = "<group>"; };
+		100CE6771D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDataProviderProtocol.swift; sourceTree = "<group>"; };
+		100CE6791D2F415C00E2F53C /* ScheduleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDataProvider.swift; sourceTree = "<group>"; };
 		101079421B8FF5E300B3AADB /* TruckFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruckFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		101079451B8FF5E300B3AADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1010794C1B8FF5E300B3AADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -261,6 +267,9 @@
 				10DC61891BE863A60021B2D3 /* TruckFeedController.swift */,
 				10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */,
 				10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */,
+				100CE6751D2F40B000E2F53C /* TruckScheduleController.swift */,
+				100CE6771D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift */,
+				100CE6791D2F415C00E2F53C /* ScheduleDataProvider.swift */,
 			);
 			name = TruckFeedData;
 			sourceTree = "<group>";
@@ -604,7 +613,10 @@
 				10DC618A1BE863A60021B2D3 /* TruckFeedController.swift in Sources */,
 				10B1E5FE1CFE59D700C7FBE4 /* UserView.swift in Sources */,
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
+				100CE6761D2F40B000E2F53C /* TruckScheduleController.swift in Sources */,
+				100CE6781D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift in Sources */,
 				1010797E1B92776F00B3AADB /* Palette.swift in Sources */,
+				100CE67A1D2F415C00E2F53C /* ScheduleDataProvider.swift in Sources */,
 				10AD74011D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */,
 				10AD73FE1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */,
 				10738F4B1CB5FC1800BAC3CE /* MainLoginScreen.swift in Sources */,

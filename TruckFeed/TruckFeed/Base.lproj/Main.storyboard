@@ -28,20 +28,29 @@
         <scene sceneID="71k-wH-9Oz">
             <objects>
                 <viewController storyboardIdentifier="UserViewController" id="9bv-wC-U2D" customClass="UserViewController" customModule="TruckFeed" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xmm-2o-62x"/>
-                        <viewControllerLayoutGuide type="bottom" id="gqG-LI-MCt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pf4-ML-ecB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="fdg-Qi-TCq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sow-WK-5ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1129" y="-903"/>
+            <point key="canvasLocation" x="-1133" y="-863"/>
+        </scene>
+        <!--Truck Schedule Controller-->
+        <scene sceneID="J8f-5r-SN7">
+            <objects>
+                <viewController storyboardIdentifier="TruckScheduleController" id="7pV-LN-q1f" customClass="TruckScheduleController" customModule="TruckFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y5K-t1-ech"/>
+                        <viewControllerLayoutGuide type="bottom" id="ofe-hN-W5X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fho-kV-dYh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uvc-63-sgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-479" y="-1030"/>
         </scene>
         <!--Master Tab View Controller-->
         <scene sceneID="fXR-Dz-MVM">
