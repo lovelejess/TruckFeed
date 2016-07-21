@@ -15,8 +15,6 @@
 		100CE6761D2F40B000E2F53C /* TruckScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6751D2F40B000E2F53C /* TruckScheduleController.swift */; };
 		100CE6781D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6771D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift */; };
 		100CE67A1D2F415C00E2F53C /* ScheduleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6791D2F415C00E2F53C /* ScheduleDataProvider.swift */; };
-		100E155C1D05017800B3BC9A /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
-		100E155D1D05017A00B3BC9A /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
 		100E155F1D05036100B3BC9A /* MainLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738F4A1CB5FC1800BAC3CE /* MainLoginScreen.swift */; };
 		100E15601D05036800B3BC9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
 		100E15611D05036D00B3BC9A /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010797D1B92776F00B3AADB /* Palette.swift */; };
@@ -44,6 +42,22 @@
 		10674DE21C45CE92000D3E4C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DDF1C45CE92000D3E4C /* FBSDKCoreKit.framework */; };
 		10674DE31C45CE92000D3E4C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DE01C45CE92000D3E4C /* FBSDKLoginKit.framework */; };
 		10674DE41C45CE92000D3E4C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DE11C45CE92000D3E4C /* FBSDKShareKit.framework */; };
+		106C8A0E1D406049007DD2CF /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
+		106C8A0F1D406049007DD2CF /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
+		106C8A101D40604C007DD2CF /* TruckFeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */; };
+		106C8A111D40604F007DD2CF /* TruckFeedDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */; };
+		106C8A121D406052007DD2CF /* TruckScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6751D2F40B000E2F53C /* TruckScheduleController.swift */; };
+		106C8A131D406052007DD2CF /* TruckScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6751D2F40B000E2F53C /* TruckScheduleController.swift */; };
+		106C8A141D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6771D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift */; };
+		106C8A151D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6771D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift */; };
+		106C8A161D40605A007DD2CF /* ScheduleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6791D2F415C00E2F53C /* ScheduleDataProvider.swift */; };
+		106C8A171D40605A007DD2CF /* ScheduleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6791D2F415C00E2F53C /* ScheduleDataProvider.swift */; };
+		106C8A181D406061007DD2CF /* MainLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738F4A1CB5FC1800BAC3CE /* MainLoginScreen.swift */; };
+		106C8A191D406073007DD2CF /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */; };
+		106C8A1A1D406076007DD2CF /* ViewControllerItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B31CCD790300984B35 /* ViewControllerItems.swift */; };
+		106C8A1B1D406079007DD2CF /* AppPlistHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B51CD04F6800984B35 /* AppPlistHelpers.swift */; };
+		106C8A1C1D40607C007DD2CF /* MasterTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B71CDAC67700984B35 /* MasterTabViewController.swift */; };
+		106C8A1D1D406080007DD2CF /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */; };
 		106F519A1C022FD100DA30C6 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */; };
 		10738F4B1CB5FC1800BAC3CE /* MainLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738F4A1CB5FC1800BAC3CE /* MainLoginScreen.swift */; };
 		10738F571CB8781800BAC3CE /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 10738F561CB8781800BAC3CE /* gear.png */; };
@@ -628,10 +642,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				106C8A121D406052007DD2CF /* TruckScheduleController.swift in Sources */,
 				106F519A1C022FD100DA30C6 /* UserViewController.swift in Sources */,
-				100E155C1D05017800B3BC9A /* TruckFeedController.swift in Sources */,
 				100E155F1D05036100B3BC9A /* MainLoginScreen.swift in Sources */,
 				100E15641D05037B00B3BC9A /* TruckOwner.swift in Sources */,
+				106C8A0F1D406049007DD2CF /* TruckFeedController.swift in Sources */,
+				106C8A161D40605A007DD2CF /* ScheduleDataProvider.swift in Sources */,
+				106C8A141D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */,
 				100E15631D05037400B3BC9A /* TruckCell.swift in Sources */,
 				100E15651D05037E00B3BC9A /* ViewControllerItems.swift in Sources */,
 				100E15661D05038100B3BC9A /* AppPlistHelpers.swift in Sources */,
@@ -649,12 +666,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				106C8A131D406052007DD2CF /* TruckScheduleController.swift in Sources */,
 				10D950491BFD7D4E00EC435B /* UserViewController.swift in Sources */,
-				100E155D1D05017A00B3BC9A /* TruckFeedController.swift in Sources */,
+				106C8A171D40605A007DD2CF /* ScheduleDataProvider.swift in Sources */,
+				106C8A0E1D406049007DD2CF /* TruckFeedController.swift in Sources */,
+				106C8A111D40604F007DD2CF /* TruckFeedDataProviderProtocol.swift in Sources */,
+				106C8A101D40604C007DD2CF /* TruckFeedDataProvider.swift in Sources */,
+				106C8A191D406073007DD2CF /* TruckOwner.swift in Sources */,
+				106C8A1B1D406079007DD2CF /* AppPlistHelpers.swift in Sources */,
+				106C8A181D406061007DD2CF /* MainLoginScreen.swift in Sources */,
 				10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */,
+				106C8A1C1D40607C007DD2CF /* MasterTabViewController.swift in Sources */,
+				106C8A1A1D406076007DD2CF /* ViewControllerItems.swift in Sources */,
 				10D9504C1BFD7D4E00EC435B /* TruckCell.swift in Sources */,
+				106C8A1D1D406080007DD2CF /* UserView.swift in Sources */,
 				10D9504D1BFD7D4E00EC435B /* Palette.swift in Sources */,
 				10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */,
+				106C8A151D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
