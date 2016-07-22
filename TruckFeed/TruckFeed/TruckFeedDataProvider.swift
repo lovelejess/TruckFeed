@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol,UITableViewDataSource, UITableViewDelegate {
+public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol {
     public var truckList = [Truck]()
     weak public var tableView: UITableView!
     private var mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -90,18 +90,11 @@ public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol,UITa
         return truckObject
     }
     
-    func configureCell(truckCell: TruckCell, atIndexPath indexPath: NSIndexPath) {
-        let truck = truckList[indexPath.row] as Truck
-        truckCell.nameLabel.text = truck.name
-        truckCell.typeLabel.text = truck.type
-        truckCell.imageView!.image = resizeImageView(truckCell, truck: truck)
-        truckCell.price.text = truck.price
-    }
-//}
+}
 
 
 // MARK: - Table view data source
-//extension TruckFeedDataProvider: UITableViewDataSource, UITableViewDelegate {
+extension TruckFeedDataProvider: UITableViewDataSource, UITableViewDelegate {
 
     public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -109,6 +102,19 @@ public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol,UITa
 
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return truckList.count
+    }
+    
+    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
+        let truckCell = cell as! TruckCell
+        let truck = truckList[indexPath.row] as Truck
+        truckCell.nameLabel.text = truck.name
+        truckCell.nameLabel!.textColor = secondaryColor
+        truckCell.nameLabel!.font =  UIFont.boldSystemFontOfSize(17)
+        truckCell.typeLabel.text = truck.type
+        truckCell.typeLabel!.textColor = mainColor
+        truckCell.typeLabel!.font =  UIFont.italicSystemFontOfSize(15)
+        truckCell.imageView!.image = resizeImageView(truckCell, truck: truck)
+        
     }
 
     func resizeImageView(truckCell: TruckCell, truck: Truck) -> UIImage {
@@ -129,15 +135,16 @@ public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol,UITa
     }
 
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let truckCell = TruckCell(style: UITableViewCellStyle.Default, reuseIdentifier: "TruckCell")
-        self.configureCell(truckCell, atIndexPath: indexPath)
-        return truckCell
+        
+        var truckCell = tableView.dequeueReusableCellWithIdentifier("TruckCell")
+        self.configureCell(truckCell!, atIndexPath: indexPath)
+        
+        return truckCell!
     }
     
     public func tableView(tableView: UITableView,didSelectRowAtIndexPath indexPath: NSIndexPath){
         NSLog("You selected cell #\(indexPath.row)!")
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-//        truckCellDelegate.foodTruckCellSelected("FoodTruckName")
         
     }
 }

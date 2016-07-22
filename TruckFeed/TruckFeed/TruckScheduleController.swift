@@ -29,7 +29,7 @@ public class TruckScheduleController: UIViewController, UITableViewDelegate {
     func createTableView(tableView: UITableView) -> UITableView
     {
         tableView.frame = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height);
-        tableView.registerClass(TruckCell.self, forCellReuseIdentifier: "TruckCell")
+//        tableView.registerClass(TruckCell.self, forCellReuseIdentifier: "TruckCell")
         
         return tableView
     }

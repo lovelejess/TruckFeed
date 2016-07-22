@@ -18,7 +18,6 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        tableView = createTableView(UITableView())
         dataProvider = TruckFeedDataProvider()
         tableView!.delegate = dataProvider
         tableView!.dataSource = dataProvider
@@ -27,7 +26,6 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
         
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
         let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "TruckFeed")
-        self.view.addSubview(tableView!)
         self.view.addSubview(navigationBar)
 
     }
@@ -39,30 +37,12 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
         super.didReceiveMemoryWarning()
     }
     
-  
-    // PRIVATE HELPERS
-   
-    func createTableView(tableView: UITableView) -> UITableView
-    {
-        tableView.frame = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height);
-        tableView.registerClass(TruckCell.self, forCellReuseIdentifier: "TruckCell")
-        
-        return tableView
-    }
-    
-    // TruckCellDelegateMethod 
-    func foodTruckCellSelected(name: String)
-    {
-        
-    }
-    
-    func presentTruckScheduleController(sender: AnyObject){
-        if let truckScheduleController = self.storyboard!.instantiateViewControllerWithIdentifier("TruckScheduleController") as? TruckScheduleController {
-            self.presentViewController(truckScheduleController, animated: true, completion:
-                {
-                    NSLog("Presenting Truck Schedule Controller")
-            })
+    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        NSLog("Presenting")
+        if segue.identifier == "DisplayTruckSchedule" {
+            if let destination = segue.destinationViewController as? TruckScheduleController {
+                NSLog("Presenting \(destination.title)")
+            }
         }
     }
-
 }
