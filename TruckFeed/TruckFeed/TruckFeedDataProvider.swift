@@ -94,7 +94,7 @@ public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol {
 
 
 // MARK: - Table view data source
-extension TruckFeedDataProvider: UITableViewDataSource, UITableViewDelegate {
+extension TruckFeedDataProvider: UITableViewDataSource {
 
     public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -102,6 +102,14 @@ extension TruckFeedDataProvider: UITableViewDataSource, UITableViewDelegate {
 
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return truckList.count
+    }
+    
+    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let truckCell = tableView.dequeueReusableCellWithIdentifier("TruckCell")
+        self.configureCell(truckCell!, atIndexPath: indexPath)
+        
+        return truckCell!
     }
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
@@ -116,7 +124,7 @@ extension TruckFeedDataProvider: UITableViewDataSource, UITableViewDelegate {
         truckCell.imageView!.image = resizeImageView(truckCell, truck: truck)
         
     }
-
+    
     func resizeImageView(truckCell: TruckCell, truck: Truck) -> UIImage {
         let newSize:CGSize = CGSize(width: 80 ,height: 80)
         let rect = CGRectMake(0, 0, newSize.width, newSize.height)
@@ -127,24 +135,5 @@ extension TruckFeedDataProvider: UITableViewDataSource, UITableViewDelegate {
         truckCell.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
         
         return newImage;
-    }
-
-    public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
-    {
-        return 75.0;
-    }
-
-    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        var truckCell = tableView.dequeueReusableCellWithIdentifier("TruckCell")
-        self.configureCell(truckCell!, atIndexPath: indexPath)
-        
-        return truckCell!
-    }
-    
-    public func tableView(tableView: UITableView,didSelectRowAtIndexPath indexPath: NSIndexPath){
-        NSLog("You selected cell #\(indexPath.row)!")
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
     }
 }

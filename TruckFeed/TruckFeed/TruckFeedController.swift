@@ -13,16 +13,17 @@ import FBSDKLoginKit
 public class TruckFeedController: UIViewController, UINavigationBarDelegate {
     
     @IBOutlet var tableView: UITableView?
-    public var dataProvider: TruckFeedDataProviderProtocol?
-    
+    private var dataProvider: TruckFeedDataProviderProtocol?
+    private var truckList = [Truck]()
     
     override public func viewDidLoad() {
         super.viewDidLoad()
         dataProvider = TruckFeedDataProvider()
-        tableView!.delegate = dataProvider
+        tableView!.delegate = self
         tableView!.dataSource = dataProvider
-        dataProvider!.getTruckFeedList();
+        self.truckList = dataProvider!.getTruckFeedList();
         dataProvider?.tableView = tableView
+        
         
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
         let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "TruckFeed")
@@ -38,11 +39,37 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
     }
     
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        NSLog("Presenting")
         if segue.identifier == "DisplayTruckSchedule" {
             if let destination = segue.destinationViewController as? TruckScheduleController {
                 NSLog("Presenting \(destination.title)")
+                if let index = self.tableView?.indexPathForSelectedRow {
+                    let navigationBarTitleHeader = "Spotted: "
+                    if let cell = self.tableView?.cellForRowAtIndexPath(index)
+                    {
+                        destination.foodTruckName = navigationBarTitleHeader + (cell.textLabel?.text)!
+                    }
+                    else
+                    {
+                        destination.foodTruckName = navigationBarTitleHeader +  "FoodTruckName"
+                    }
+                }
             }
         }
     }
 }
+
+extension TruckFeedController: UITableViewDelegate
+{
+    
+    public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 75.0;
+    }
+    
+    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        NSLog("You selected cell #\(indexPath.row)!")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.performSegueWithIdentifier("DisplayTruckSchedule", sender: indexPath)
+    }
+}
+

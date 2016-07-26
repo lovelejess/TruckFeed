@@ -11,26 +11,20 @@ import UIKit
 public class TruckScheduleController: UIViewController, UITableViewDelegate {
     
     var tableView: UITableView  =   UITableView()
-    public var dataProvider: ScheduleDataProviderProtocol?
+    private var dataProvider: ScheduleDataProviderProtocol?
+    public var foodTruckName: String?
     
     
     override public func viewDidLoad() {
         super.viewDidLoad()
         dataProvider = ScheduleDataProvider()
-        //        assert(dataProvider != nil, "dataProvider is not allowed to be nil at this point")
         dataProvider!.getSchedule()
         tableView.dataSource = dataProvider
         tableView.delegate = dataProvider
         dataProvider?.tableView = tableView
         
-        self.view.addSubview(createTableView(tableView))
-    }
-    
-    func createTableView(tableView: UITableView) -> UITableView
-    {
-        tableView.frame = CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height);
-//        tableView.registerClass(TruckCell.self, forCellReuseIdentifier: "TruckCell")
-        
-        return tableView
+        let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
+        let navigationBar = ViewControllerItems.createNavigationBar(frame, title: foodTruckName!)
+        self.view.addSubview(navigationBar)
     }
 }
