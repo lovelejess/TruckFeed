@@ -58,6 +58,7 @@
 		106C8A1B1D406079007DD2CF /* AppPlistHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B51CD04F6800984B35 /* AppPlistHelpers.swift */; };
 		106C8A1C1D40607C007DD2CF /* MasterTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B71CDAC67700984B35 /* MasterTabViewController.swift */; };
 		106C8A1D1D406080007DD2CF /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */; };
+		106C8A201D485532007DD2CF /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 106C8A1F1D485531007DD2CF /* back.png */; };
 		106F519A1C022FD100DA30C6 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */; };
 		10738F4B1CB5FC1800BAC3CE /* MainLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738F4A1CB5FC1800BAC3CE /* MainLoginScreen.swift */; };
 		10738F571CB8781800BAC3CE /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 10738F561CB8781800BAC3CE /* gear.png */; };
@@ -138,6 +139,7 @@
 		10674DE01C45CE92000D3E4C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = TruckFeed/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		10674DE11C45CE92000D3E4C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = TruckFeed/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		10674DE51C45CF97000D3E4C /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		106C8A1F1D485531007DD2CF /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		10738F4A1CB5FC1800BAC3CE /* MainLoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLoginScreen.swift; sourceTree = "<group>"; };
 		10738F561CB8781800BAC3CE /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		10738F5A1CBF290900BAC3CE /* App.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = App.plist; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 		101079801B929C2300B3AADB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				106C8A1F1D485531007DD2CF /* back.png */,
 				10B1E5F91CF544B100C7FBE4 /* people.png */,
 				100055B91CDAE17600984B35 /* home.png */,
 				100055BA1CDAE17600984B35 /* map-marker.png */,
@@ -430,6 +433,7 @@
 				101079901B92A31100B3AADB /* karams_grill.jpg in Resources */,
 				1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */,
 				101079821B929C3600B3AADB /* powered_by_fries.png in Resources */,
+				106C8A201D485532007DD2CF /* back.png in Resources */,
 				10B1E5FA1CF544B100C7FBE4 /* people.png in Resources */,
 				10738F5B1CBF290900BAC3CE /* App.plist in Resources */,
 				1010798A1B92A1BA00B3AADB /* lets_toast.jpg in Resources */,

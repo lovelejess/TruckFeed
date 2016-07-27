@@ -22,6 +22,17 @@ public struct ViewControllerItems {
         return navigationBar
     }
     
+    static func createNavigationBarWithLeftButton(frame: CGRect, title: String, leftBarButton: UIBarButtonItem) -> UINavigationBar {
+        let navigationBar = UINavigationBar(frame:frame)
+        let navigationItem = UINavigationItem()
+        navigationItem.title = title
+        NSLog("createNavigationBarWithLeftButton - Navigation Item Name: \(title)")
+        navigationItem.leftBarButtonItem = leftBarButton
+        navigationBar.items = [navigationItem]
+        
+        return navigationBar
+    }
+    
     static func createNavigationBar(frame: CGRect, title: String) -> UINavigationBar {
         let navigationBar = UINavigationBar(frame:frame)
         let navigationItem = UINavigationItem()

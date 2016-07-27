@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TruckScheduleController: UIViewController, UITableViewDelegate {
+public class TruckScheduleController: UIViewController {
     
     var tableView: UITableView  =   UITableView()
     private var dataProvider: ScheduleDataProviderProtocol?
@@ -20,11 +20,27 @@ public class TruckScheduleController: UIViewController, UITableViewDelegate {
         dataProvider = ScheduleDataProvider()
         dataProvider!.getSchedule()
         tableView.dataSource = dataProvider
-        tableView.delegate = dataProvider
+        tableView.delegate = self
         dataProvider?.tableView = tableView
         
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
-        let navigationBar = ViewControllerItems.createNavigationBar(frame, title: foodTruckName!)
+        let leftBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRectMake(0, 0, 30, 30), image: UIImage(named: "back.png")!, target: self)
+        let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: foodTruckName!, leftBarButton: leftBarButtonItem)
         self.view.addSubview(navigationBar)
     }
+    
+    func dismissViewController(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: {});
+    }
 }
+
+extension TruckScheduleController: UITableViewDelegate
+{
+    
+    public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 75.0;
+    }
+    
+}
+
