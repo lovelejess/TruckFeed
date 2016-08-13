@@ -31,14 +31,6 @@
 		101079781B90008300B3AADB /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079771B90008300B3AADB /* Truck.swift */; };
 		1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
 		1010797E1B92776F00B3AADB /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010797D1B92776F00B3AADB /* Palette.swift */; };
-		101079821B929C3600B3AADB /* powered_by_fries.png in Resources */ = {isa = PBXBuildFile; fileRef = 101079811B929C3600B3AADB /* powered_by_fries.png */; };
-		101079841B92A00D00B3AADB /* the_outside_scoop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079831B92A00D00B3AADB /* the_outside_scoop.jpg */; };
-		101079861B92A07600B3AADB /* the_spot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079851B92A07600B3AADB /* the_spot.jpg */; };
-		101079881B92A17E00B3AADB /* street_eats_dsm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079871B92A17E00B3AADB /* street_eats_dsm.jpg */; };
-		1010798A1B92A1BA00B3AADB /* lets_toast.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079891B92A1BA00B3AADB /* lets_toast.jpg */; };
-		1010798C1B92A24F00B3AADB /* parlo_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */; };
-		1010798E1B92A2FA00B3AADB /* ferinheit_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */; };
-		101079901B92A31100B3AADB /* karams_grill.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798F1B92A31100B3AADB /* karams_grill.jpg */; };
 		10674DE21C45CE92000D3E4C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DDF1C45CE92000D3E4C /* FBSDKCoreKit.framework */; };
 		10674DE31C45CE92000D3E4C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DE01C45CE92000D3E4C /* FBSDKLoginKit.framework */; };
 		10674DE41C45CE92000D3E4C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DE11C45CE92000D3E4C /* FBSDKShareKit.framework */; };
@@ -72,24 +64,18 @@
 		10AED1DD1BC1BE4C004FD47B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */; };
 		10B1E5FA1CF544B100C7FBE4 /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B1E5F91CF544B100C7FBE4 /* people.png */; };
 		10B1E5FE1CFE59D700C7FBE4 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */; };
+		10C4E1531D5EA78A00C9E756 /* the_outside_scoop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E1511D5EA78A00C9E756 /* the_outside_scoop.jpg */; };
+		10C4E1541D5EA78A00C9E756 /* the_spot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E1521D5EA78A00C9E756 /* the_spot.jpg */; };
 		10D950491BFD7D4E00EC435B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */; };
 		10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
 		10D9504C1BFD7D4E00EC435B /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
 		10D9504D1BFD7D4E00EC435B /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010797D1B92776F00B3AADB /* Palette.swift */; };
 		10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079771B90008300B3AADB /* Truck.swift */; };
-		10D950511BFD7D4E00EC435B /* the_outside_scoop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079831B92A00D00B3AADB /* the_outside_scoop.jpg */; };
-		10D950521BFD7D4E00EC435B /* ferinheit_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */; };
-		10D950531BFD7D4E00EC435B /* the_spot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079851B92A07600B3AADB /* the_spot.jpg */; };
-		10D950541BFD7D4E00EC435B /* street_eats_dsm.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079871B92A17E00B3AADB /* street_eats_dsm.jpg */; };
 		10D950551BFD7D4E00EC435B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1010794E1B8FF5E300B3AADB /* Assets.xcassets */; };
 		10D950561BFD7D4E00EC435B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */; };
 		10D950571BFD7D4E00EC435B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
-		10D950581BFD7D4E00EC435B /* karams_grill.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798F1B92A31100B3AADB /* karams_grill.jpg */; };
 		10D950591BFD7D4E00EC435B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; };
-		10D9505A1BFD7D4E00EC435B /* powered_by_fries.png in Resources */ = {isa = PBXBuildFile; fileRef = 101079811B929C3600B3AADB /* powered_by_fries.png */; };
-		10D9505B1BFD7D4E00EC435B /* lets_toast.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 101079891B92A1BA00B3AADB /* lets_toast.jpg */; };
 		10D9505C1BFD7D4E00EC435B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
-		10D9505D1BFD7D4E00EC435B /* parlo_pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */; };
 		10DC618A1BE863A60021B2D3 /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
 		10DC618C1BE8661E0021B2D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */; };
 		10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */; };
@@ -127,14 +113,6 @@
 		101079771B90008300B3AADB /* Truck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Truck.swift; sourceTree = "<group>"; };
 		101079791B912B7A00B3AADB /* TruckCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckCell.swift; sourceTree = "<group>"; };
 		1010797D1B92776F00B3AADB /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
-		101079811B929C3600B3AADB /* powered_by_fries.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powered_by_fries.png; sourceTree = "<group>"; };
-		101079831B92A00D00B3AADB /* the_outside_scoop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = the_outside_scoop.jpg; sourceTree = "<group>"; };
-		101079851B92A07600B3AADB /* the_spot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = the_spot.jpg; sourceTree = "<group>"; };
-		101079871B92A17E00B3AADB /* street_eats_dsm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = street_eats_dsm.jpg; sourceTree = "<group>"; };
-		101079891B92A1BA00B3AADB /* lets_toast.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lets_toast.jpg; sourceTree = "<group>"; };
-		1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = parlo_pizza.jpg; sourceTree = "<group>"; };
-		1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ferinheit_pizza.jpg; sourceTree = "<group>"; };
-		1010798F1B92A31100B3AADB /* karams_grill.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = karams_grill.jpg; sourceTree = "<group>"; };
 		10674DDF1C45CE92000D3E4C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = TruckFeed/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		10674DE01C45CE92000D3E4C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = TruckFeed/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		10674DE11C45CE92000D3E4C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = TruckFeed/FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -150,6 +128,8 @@
 		10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		10B1E5F91CF544B100C7FBE4 /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
 		10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		10C4E1511D5EA78A00C9E756 /* the_outside_scoop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = the_outside_scoop.jpg; sourceTree = "<group>"; };
+		10C4E1521D5EA78A00C9E756 /* the_spot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = the_spot.jpg; sourceTree = "<group>"; };
 		10D950631BFD7D4E00EC435B /* TruckFeedUITests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruckFeedUITests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D950641BFD7D4F00EC435B /* TruckFeed copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TruckFeed copy-Info.plist"; path = "/Users/jessicale/Repositories/TruckFeed/TruckFeed/TruckFeed copy-Info.plist"; sourceTree = "<absolute>"; };
 		10DC61891BE863A60021B2D3 /* TruckFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedController.swift; sourceTree = "<group>"; };
@@ -259,6 +239,8 @@
 		101079801B929C2300B3AADB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				10C4E1511D5EA78A00C9E756 /* the_outside_scoop.jpg */,
+				10C4E1521D5EA78A00C9E756 /* the_spot.jpg */,
 				106C8A1F1D485531007DD2CF /* back.png */,
 				10B1E5F91CF544B100C7FBE4 /* people.png */,
 				100055B91CDAE17600984B35 /* home.png */,
@@ -266,14 +248,6 @@
 				10738F561CB8781800BAC3CE /* gear.png */,
 				10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */,
 				10AED1D61BC0C478004FD47B /* truck.png */,
-				1010798F1B92A31100B3AADB /* karams_grill.jpg */,
-				1010798D1B92A2FA00B3AADB /* ferinheit_pizza.jpg */,
-				1010798B1B92A24F00B3AADB /* parlo_pizza.jpg */,
-				101079891B92A1BA00B3AADB /* lets_toast.jpg */,
-				101079871B92A17E00B3AADB /* street_eats_dsm.jpg */,
-				101079851B92A07600B3AADB /* the_spot.jpg */,
-				101079831B92A00D00B3AADB /* the_outside_scoop.jpg */,
-				101079811B929C3600B3AADB /* powered_by_fries.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -421,25 +395,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				101079841B92A00D00B3AADB /* the_outside_scoop.jpg in Resources */,
-				1010798E1B92A2FA00B3AADB /* ferinheit_pizza.jpg in Resources */,
-				101079861B92A07600B3AADB /* the_spot.jpg in Resources */,
-				101079881B92A17E00B3AADB /* street_eats_dsm.jpg in Resources */,
+				10C4E1531D5EA78A00C9E756 /* the_outside_scoop.jpg in Resources */,
 				100055BD1CDAE17600984B35 /* map-marker.png in Resources */,
 				100055BC1CDAE17600984B35 /* home.png in Resources */,
 				1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */,
 				10DC618C1BE8661E0021B2D3 /* Default-568h@2x.png in Resources */,
 				10AED1D71BC0C478004FD47B /* truck.png in Resources */,
-				101079901B92A31100B3AADB /* karams_grill.jpg in Resources */,
 				1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */,
-				101079821B929C3600B3AADB /* powered_by_fries.png in Resources */,
 				106C8A201D485532007DD2CF /* back.png in Resources */,
 				10B1E5FA1CF544B100C7FBE4 /* people.png in Resources */,
 				10738F5B1CBF290900BAC3CE /* App.plist in Resources */,
-				1010798A1B92A1BA00B3AADB /* lets_toast.jpg in Resources */,
+				10C4E1541D5EA78A00C9E756 /* the_spot.jpg in Resources */,
 				10738F571CB8781800BAC3CE /* gear.png in Resources */,
 				10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */,
-				1010798C1B92A24F00B3AADB /* parlo_pizza.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,19 +422,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10D950511BFD7D4E00EC435B /* the_outside_scoop.jpg in Resources */,
-				10D950521BFD7D4E00EC435B /* ferinheit_pizza.jpg in Resources */,
-				10D950531BFD7D4E00EC435B /* the_spot.jpg in Resources */,
-				10D950541BFD7D4E00EC435B /* street_eats_dsm.jpg in Resources */,
 				10D950551BFD7D4E00EC435B /* Assets.xcassets in Resources */,
 				10D950561BFD7D4E00EC435B /* Default-568h@2x.png in Resources */,
 				10D950571BFD7D4E00EC435B /* truck.png in Resources */,
-				10D950581BFD7D4E00EC435B /* karams_grill.jpg in Resources */,
 				10D950591BFD7D4E00EC435B /* Main.storyboard in Resources */,
-				10D9505A1BFD7D4E00EC435B /* powered_by_fries.png in Resources */,
-				10D9505B1BFD7D4E00EC435B /* lets_toast.jpg in Resources */,
 				10D9505C1BFD7D4E00EC435B /* LaunchScreen.xib in Resources */,
-				10D9505D1BFD7D4E00EC435B /* parlo_pizza.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

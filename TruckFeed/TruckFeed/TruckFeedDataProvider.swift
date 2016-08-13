@@ -16,7 +16,7 @@ public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol {
     
     public func getTruckFeedList() -> [Truck]
     {
-        let truckListUrl = self.createURLWithEndPoint("trucks.json")
+        let truckListUrl = self.createURLWithEndPoint("trucks")
         self.generateSessionDataWithURL(truckListUrl)
         
         // generates placeholder list view until data is fetched
@@ -62,16 +62,13 @@ public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol {
         var json: AnyObject?
         var mappedJson = [Truck]()
         do {
-            json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String:AnyObject]
+            json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! [AnyObject]
             NSLog("parseJSON - json : \(json)")
-            if let trucksDictionary = json as? NSDictionary {
-                if let truckArray = trucksDictionary["trucks"] as? NSArray {
-                    for truck in truckArray {
-                        let mappedTruck = self.translateToTruckObject(truck)
-                        mappedJson.append(mappedTruck)
-                    }
+            let truckArray = json as! [AnyObject]
+                for truck in truckArray {
+                    let mappedTruck = self.translateToTruckObject(truck)
+                    mappedJson.append(mappedTruck)
                 }
-            }
         } catch {
             NSLog("parseJSON - error: \(error)")
         }
@@ -81,12 +78,12 @@ public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol {
     func translateToTruckObject(json: AnyObject) -> Truck
     {
         NSLog("translateToTruckObject - : \(json)")
-        let truck = json["truck"] as! NSDictionary
-        let name = truck["name"] as! String
-        let type = truck["type"] as! String
-        let image = UIImage(named: truck["image"] as! String)
-        let price = truck["price"] as! String
-        let truckObject = Truck(name: name, type: type, defaultImage: image!, price: price)
+        let name = json["name"] as! String
+        let type = json["description_type"] as! String
+//        let image_url = json["image_url"] as! String
+        let image_url = "back.png"
+        let image = UIImage(named: image_url)
+        let truckObject = Truck(name: name, type: type, defaultImage: image!, price: "$")
         return truckObject
     }
     
