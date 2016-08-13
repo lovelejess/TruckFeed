@@ -80,8 +80,7 @@ public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol {
         NSLog("translateToTruckObject - : \(json)")
         let name = json["name"] as! String
         let type = json["description_type"] as! String
-//        let image_url = json["image_url"] as! String
-        let image_url = "back.png"
+        let image_url = json["image_url"] as! String
         let image = UIImage(named: image_url)
         let truckObject = Truck(name: name, type: type, defaultImage: image!, price: "$")
         return truckObject
