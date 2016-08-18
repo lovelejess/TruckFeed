@@ -10,17 +10,18 @@ import UIKit
 
 public class TruckScheduleController: UIViewController {
     
-    var tableView: UITableView  =   UITableView()
+    @IBOutlet var tableView: UITableView?
     private var dataProvider: ScheduleDataProviderProtocol?
+    private var truckScheduleList = [TruckSchedule]()
     public var foodTruckName: String?
     
     
     override public func viewDidLoad() {
         super.viewDidLoad()
         dataProvider = ScheduleDataProvider()
-        dataProvider!.getSchedule()
-        tableView.dataSource = dataProvider
-        tableView.delegate = self
+        tableView!.delegate = self
+        tableView!.dataSource = dataProvider
+        self.truckScheduleList = dataProvider!.getSchedule();
         dataProvider?.tableView = tableView
         
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
@@ -39,7 +40,7 @@ extension TruckScheduleController: UITableViewDelegate
     
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        return 75.0;
+        return 120.0;
     }
     
 }

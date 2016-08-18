@@ -66,6 +66,12 @@
 		10B1E5FE1CFE59D700C7FBE4 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */; };
 		10C4E1531D5EA78A00C9E756 /* outside_scoop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E1511D5EA78A00C9E756 /* outside_scoop.jpg */; };
 		10C4E1541D5EA78A00C9E756 /* the_spot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E1521D5EA78A00C9E756 /* the_spot.jpg */; };
+		10C4E1561D6405C600C9E756 /* TruckScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E1551D6405C600C9E756 /* TruckScheduleCell.swift */; };
+		10C4E1571D64080200C9E756 /* TruckScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E1551D6405C600C9E756 /* TruckScheduleCell.swift */; };
+		10C4E1581D64086E00C9E756 /* TruckScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E1551D6405C600C9E756 /* TruckScheduleCell.swift */; };
+		10C4E15A1D64090500C9E756 /* TruckSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E1591D64090500C9E756 /* TruckSchedule.swift */; };
+		10C4E15B1D64090500C9E756 /* TruckSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E1591D64090500C9E756 /* TruckSchedule.swift */; };
+		10C4E15C1D64090500C9E756 /* TruckSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E1591D64090500C9E756 /* TruckSchedule.swift */; };
 		10D950491BFD7D4E00EC435B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */; };
 		10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
 		10D9504C1BFD7D4E00EC435B /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
@@ -130,6 +136,8 @@
 		10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		10C4E1511D5EA78A00C9E756 /* outside_scoop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = outside_scoop.jpg; sourceTree = "<group>"; };
 		10C4E1521D5EA78A00C9E756 /* the_spot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = the_spot.jpg; sourceTree = "<group>"; };
+		10C4E1551D6405C600C9E756 /* TruckScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckScheduleCell.swift; sourceTree = "<group>"; };
+		10C4E1591D64090500C9E756 /* TruckSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckSchedule.swift; sourceTree = "<group>"; };
 		10D950631BFD7D4E00EC435B /* TruckFeedUITests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruckFeedUITests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D950641BFD7D4F00EC435B /* TruckFeed copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TruckFeed copy-Info.plist"; path = "/Users/jessicale/Repositories/TruckFeed/TruckFeed/TruckFeed copy-Info.plist"; sourceTree = "<absolute>"; };
 		10DC61891BE863A60021B2D3 /* TruckFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedController.swift; sourceTree = "<group>"; };
@@ -215,6 +223,7 @@
 				100055B51CD04F6800984B35 /* AppPlistHelpers.swift */,
 				100055B71CDAC67700984B35 /* MasterTabViewController.swift */,
 				10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */,
+				10C4E1551D6405C600C9E756 /* TruckScheduleCell.swift */,
 			);
 			path = TruckFeed;
 			sourceTree = "<group>";
@@ -261,6 +270,7 @@
 				100CE6751D2F40B000E2F53C /* TruckScheduleController.swift */,
 				100CE6771D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift */,
 				100CE6791D2F415C00E2F53C /* ScheduleDataProvider.swift */,
+				10C4E1591D64090500C9E756 /* TruckSchedule.swift */,
 			);
 			name = TruckFeedData;
 			sourceTree = "<group>";
@@ -582,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10C4E1561D6405C600C9E756 /* TruckScheduleCell.swift in Sources */,
 				10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */,
 				100055B81CDAC67700984B35 /* MasterTabViewController.swift in Sources */,
 				100055B41CCD790300984B35 /* ViewControllerItems.swift in Sources */,
@@ -592,6 +603,7 @@
 				10B1E5FE1CFE59D700C7FBE4 /* UserView.swift in Sources */,
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
 				100CE6761D2F40B000E2F53C /* TruckScheduleController.swift in Sources */,
+				10C4E15A1D64090500C9E756 /* TruckSchedule.swift in Sources */,
 				100CE6781D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift in Sources */,
 				1010797E1B92776F00B3AADB /* Palette.swift in Sources */,
 				100CE67A1D2F415C00E2F53C /* ScheduleDataProvider.swift in Sources */,
@@ -606,6 +618,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10C4E1571D64080200C9E756 /* TruckScheduleCell.swift in Sources */,
 				106C8A121D406052007DD2CF /* TruckScheduleController.swift in Sources */,
 				106F519A1C022FD100DA30C6 /* UserViewController.swift in Sources */,
 				100E155F1D05036100B3BC9A /* MainLoginScreen.swift in Sources */,
@@ -616,6 +629,7 @@
 				100E15631D05037400B3BC9A /* TruckCell.swift in Sources */,
 				100E15651D05037E00B3BC9A /* ViewControllerItems.swift in Sources */,
 				100E15661D05038100B3BC9A /* AppPlistHelpers.swift in Sources */,
+				10C4E15B1D64090500C9E756 /* TruckSchedule.swift in Sources */,
 				100E15611D05036D00B3BC9A /* Palette.swift in Sources */,
 				100E15601D05036800B3BC9A /* AppDelegate.swift in Sources */,
 				100E15681D05038A00B3BC9A /* UserView.swift in Sources */,
@@ -630,6 +644,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10C4E1581D64086E00C9E756 /* TruckScheduleCell.swift in Sources */,
 				106C8A131D406052007DD2CF /* TruckScheduleController.swift in Sources */,
 				10D950491BFD7D4E00EC435B /* UserViewController.swift in Sources */,
 				106C8A171D40605A007DD2CF /* ScheduleDataProvider.swift in Sources */,
@@ -640,6 +655,7 @@
 				106C8A1B1D406079007DD2CF /* AppPlistHelpers.swift in Sources */,
 				106C8A181D406061007DD2CF /* MainLoginScreen.swift in Sources */,
 				10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */,
+				10C4E15C1D64090500C9E756 /* TruckSchedule.swift in Sources */,
 				106C8A1C1D40607C007DD2CF /* MasterTabViewController.swift in Sources */,
 				106C8A1A1D406076007DD2CF /* ViewControllerItems.swift in Sources */,
 				10D9504C1BFD7D4E00EC435B /* TruckCell.swift in Sources */,
