@@ -186,8 +186,8 @@
 				101079661B8FF5E300B3AADB /* TruckFeedUITests */,
 				101079431B8FF5E300B3AADB /* Products */,
 				3C37454694ADD4529A0A74F2 /* Pods */,
-				AA7DC550C5D9247F9BEF5586 /* Frameworks */,
 				10D950641BFD7D4F00EC435B /* TruckFeed copy-Info.plist */,
+				AA7DC550C5D9247F9BEF5586 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

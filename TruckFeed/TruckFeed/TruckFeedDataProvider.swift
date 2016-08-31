@@ -16,7 +16,7 @@ public class TruckFeedDataProvider: NSObject, TruckFeedDataProviderProtocol {
     
     public func getTruckFeedList() -> [Truck]
     {
-        let truckListUrl = self.createURLWithEndPoint("trucks")
+        let truckListUrl = self.createURLWithEndPoint("trucks/all")
         self.generateSessionDataWithURL(truckListUrl)
         
         // generates placeholder list view until data is fetched

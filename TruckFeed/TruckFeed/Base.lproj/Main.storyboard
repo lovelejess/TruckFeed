@@ -171,12 +171,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dateNumber" destination="L7Y-5f-YHr" id="5b3-Og-ggq"/>
-                                            <outlet property="location1" destination="bg5-w3-ol0" id="KEi-29-QBA"/>
-                                            <outlet property="location2" destination="S0N-iW-EH5" id="lWG-Zc-LCy"/>
-                                            <outlet property="time1" destination="36t-r8-gMt" id="XYD-Dl-lXr"/>
-                                            <outlet property="time2" destination="3By-bN-k7s" id="Q1y-JK-b8Z"/>
-                                            <outlet property="weekDay" destination="RiD-Kl-1bA" id="HB0-NH-cpk"/>
+                                            <outlet property="dateNumber" destination="L7Y-5f-YHr" id="mRu-MH-d2m"/>
+                                            <outlet property="location" destination="bg5-w3-ol0" id="4Wk-av-2GG"/>
+                                            <outlet property="time" destination="36t-r8-gMt" id="b5m-7U-Vhp"/>
+                                            <outlet property="weekDay" destination="RiD-Kl-1bA" id="rsP-do-BFV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -196,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uvc-63-sgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-492" y="-172"/>
+            <point key="canvasLocation" x="-424" y="-172"/>
         </scene>
         <!--Master Tab View Controller-->
         <scene sceneID="fXR-Dz-MVM">
