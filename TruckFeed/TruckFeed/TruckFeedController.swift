@@ -47,6 +47,7 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
                     if let cell = self.tableView?.cellForRowAtIndexPath(index)
                     {
                         destination.foodTruckName = navigationBarTitleHeader + (cell.textLabel?.text)!
+                        destination.truckId = String(index.row)
                     }
                     else
                     {

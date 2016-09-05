@@ -14,6 +14,7 @@ public class TruckScheduleController: UIViewController {
     private var dataProvider: ScheduleDataProviderProtocol?
     private var truckScheduleList = [TruckSchedule]()
     public var foodTruckName: String?
+    public var truckId: String?
     
     
     override public func viewDidLoad() {
@@ -21,7 +22,7 @@ public class TruckScheduleController: UIViewController {
         dataProvider = ScheduleDataProvider()
         tableView!.delegate = self
         tableView!.dataSource = dataProvider
-        self.truckScheduleList = dataProvider!.getSchedule();
+        self.truckScheduleList = dataProvider!.getScheduleForTruck(truckId!);
         dataProvider?.tableView = tableView
         
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)

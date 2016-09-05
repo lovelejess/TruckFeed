@@ -12,14 +12,9 @@ public class ScheduleDataProvider: NSObject, ScheduleDataProviderProtocol {
     public var truckScheduleList = [TruckSchedule]()
     weak public var tableView: UITableView!
     
-//    public func getTruckScheduleList() -> [TruckSchedule] {
-//        self.truckScheduleList = [TruckSchedule(truckId: 1, truckName: "The Outside Scoop", month: "February", weekDay: "Sunday", dateNumber: "3", time1: "12:00PM", time2: "2:00PM", time3: "4:00PM", location1: "Scuplture Garden Park", location2: "Confluence", location3: "Festival"),TruckSchedule(truckId: 2, truckName: "The Spot", month: "February", weekDay: "Monday", dateNumber: "7", time1: "4:00PM", time2: "9:00PM", time3: "10:00PM", location1: "Western Gateway Park", location2: "515 Brewery", location3: "Mullets")]
-//        return truckScheduleList
-//    }
-    
-    public func getSchedule() -> [TruckSchedule]
+    public func getScheduleForTruck(truckId: String) -> [TruckSchedule]
     {
-        let truckScheduleListUrl = self.createURLWithEndPoint("trucks/schedules/all")
+        let truckScheduleListUrl = self.createURLWithEndPoint("trucks/schedules/\(truckId)")
         self.generateSessionDataWithURL(truckScheduleListUrl)
         
         // generates placeholder list view until data is fetched
