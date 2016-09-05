@@ -109,23 +109,26 @@ extension TruckFeedDataProvider: UITableViewDataSource {
     }
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let truckCell = cell as! TruckCell
-        let truck = truckList[indexPath.row] as Truck
-        truckCell.nameLabel.text = truck.name
-        truckCell.nameLabel!.textColor = secondaryColor
-        truckCell.nameLabel!.font =  UIFont.boldSystemFontOfSize(17)
-        truckCell.typeLabel.text = truck.type
-        truckCell.typeLabel!.textColor = mainColor
-        truckCell.typeLabel!.font =  UIFont.italicSystemFontOfSize(15)
-        truckCell.imageView!.image = resizeImageView(truckCell, truck: truck)
-        
+        if let truckCell = cell as? TruckCell {
+            let truck = truckList[indexPath.row] as Truck
+            truckCell.nameLabel.text = truck.name
+            truckCell.nameLabel.textColor = secondaryColor
+            truckCell.nameLabel.font =  UIFont.boldSystemFontOfSize(17)
+            truckCell.typeLabel.text = truck.type
+            truckCell.typeLabel.textColor = mainColor
+            truckCell.typeLabel.font =  UIFont.italicSystemFontOfSize(15)
+            truckCell.imageView?.image = resizeImageView(truckCell, truck: truck)
+        }
+        else {
+            NSLog("TruckFeedDataProvider - unable to configure cell")
+        }
     }
     
     func resizeImageView(truckCell: TruckCell, truck: Truck) -> UIImage {
         let newSize:CGSize = CGSize(width: 80 ,height: 80)
         let rect = CGRectMake(0, 0, newSize.width, newSize.height)
         UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        truck.defaultImage!.drawInRect(rect)
+        truck.defaultImage.drawInRect(rect)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         truckCell.imageView?.contentMode = UIViewContentMode.ScaleAspectFill

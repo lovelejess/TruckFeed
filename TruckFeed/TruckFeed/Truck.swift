@@ -12,7 +12,7 @@ import UIKit
 public struct Truck {
     var name: String
     var type: String
-    var defaultImage: UIImage?
+    var defaultImage: UIImage
     var price: String
     
     init(name: String, type:String, defaultImage: UIImage, price: String){

@@ -108,18 +108,18 @@ extension ScheduleDataProvider: UITableViewDataSource {
     }
     
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let truckScheduleCell = cell as! TruckScheduleCell
-        let truckSchedule = self.truckScheduleList[indexPath.row] as TruckSchedule
-//        truckScheduleCell.month.text = truckSchedule.month
-        truckScheduleCell.weekDay.text = truckSchedule.weekDay
-        truckScheduleCell.weekDay!.textColor = secondaryColor
-        truckScheduleCell.dateNumber.text = truckSchedule.dateNumber
-        truckScheduleCell.dateNumber.textColor = darkColor
-        truckScheduleCell.time.text = truckSchedule.time
-        truckScheduleCell.location.text = truckSchedule.location
-        
-        print(truckScheduleCell.weekDay.text)
+        if let truckScheduleCell = cell as? TruckScheduleCell {
+            let truckSchedule = self.truckScheduleList[indexPath.row] as TruckSchedule
+            truckScheduleCell.weekDay.text = truckSchedule.weekDay
+            truckScheduleCell.weekDay.textColor = secondaryColor
+            truckScheduleCell.dateNumber.text = truckSchedule.dateNumber
+            truckScheduleCell.dateNumber.textColor = darkColor
+            truckScheduleCell.time.text = truckSchedule.time
+            truckScheduleCell.location.text = truckSchedule.location
+        }
+        else {
+            NSLog("ScheduleDataProvider - unable to configure cell")
+        }
     }
-
 
 }
