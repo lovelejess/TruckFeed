@@ -52,7 +52,7 @@ public class UserViewController: UIViewController, UINavigationBarDelegate {
 
     func presentMainLoginScreen(sender: AnyObject){
         NSLog(" facebookLogout - entering presentMainLoginScreen")
-        if let MainLoginScreenController = self.storyboard?.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreen {
+        if let MainLoginScreenController = self.storyboard?.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreenController {
             self.presentViewController(MainLoginScreenController, animated: true, completion:
                 {
                     NSLog("facebookLogout - Presenting MainLoginScreen")

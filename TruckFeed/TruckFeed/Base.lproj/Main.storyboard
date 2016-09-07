@@ -215,10 +215,10 @@
             </objects>
             <point key="canvasLocation" x="-1891" y="-595"/>
         </scene>
-        <!--Main Login Screen-->
+        <!--Main Login Screen Controller-->
         <scene sceneID="LAW-FU-2Cz">
             <objects>
-                <viewController storyboardIdentifier="MainLoginScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KwD-Z8-NCl" customClass="MainLoginScreen" customModule="TruckFeed" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainLoginScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KwD-Z8-NCl" customClass="MainLoginScreenController" customModule="TruckFeed" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RUZ-Yp-Yj9"/>
                         <viewControllerLayoutGuide type="bottom" id="E2f-UN-2RY"/>

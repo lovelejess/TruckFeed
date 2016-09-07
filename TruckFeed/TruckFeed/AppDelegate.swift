@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let masterTabViewController: MasterTabViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MasterTabViewController") as! MasterTabViewController
             return masterTabViewController
         }
-        let mainLoginScreen: MainLoginScreen = mainStoryboard.instantiateViewControllerWithIdentifier("MainLoginScreen") as! MainLoginScreen
+        let mainLoginScreen: MainLoginScreenController = mainStoryboard.instantiateViewControllerWithIdentifier("MainLoginScreen") as! MainLoginScreenController
         return mainLoginScreen
     }
     
