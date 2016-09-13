@@ -46,12 +46,13 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
                     let navigationBarTitleHeader = "Spotted: "
                     if let cell = self.tableView?.cellForRowAtIndexPath(index)
                     {
-                        destination.foodTruckName = navigationBarTitleHeader + (cell.textLabel?.text)!
-                        destination.truckId = String(index.row)
+                        destination.foodTruckTitleName = navigationBarTitleHeader + (cell.textLabel?.text)!
+                        destination.foodTruckName = (cell.textLabel?.text)!
                     }
                     else
                     {
-                        destination.foodTruckName = navigationBarTitleHeader +  "FoodTruckName"
+                        destination.foodTruckTitleName = navigationBarTitleHeader +  "FoodTruckName"
+                        destination.foodTruckName = "FoodTruckName"
                     }
                 }
             }

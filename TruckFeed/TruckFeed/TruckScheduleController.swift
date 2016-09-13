@@ -14,7 +14,7 @@ public class TruckScheduleController: UIViewController {
     private var dataProvider: ScheduleDataProviderProtocol?
     private var truckScheduleList = [TruckSchedule]()
     public var foodTruckName: String?
-    public var truckId: String?
+    public var foodTruckTitleName: String?
     
     
     override public func viewDidLoad() {
@@ -22,12 +22,12 @@ public class TruckScheduleController: UIViewController {
         dataProvider = ScheduleDataProvider()
         tableView!.delegate = self
         tableView!.dataSource = dataProvider
-        self.truckScheduleList = dataProvider!.getScheduleForTruck(truckId!);
+        self.truckScheduleList = dataProvider!.getScheduleForTruck(foodTruckName!);
         dataProvider?.tableView = tableView
         
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
         let leftBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRectMake(0, 0, 30, 30), image: UIImage(named: "back.png")!, target: self)
-        let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: foodTruckName!, leftBarButton: leftBarButtonItem)
+        let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: foodTruckTitleName!, leftBarButton: leftBarButtonItem)
         self.view.addSubview(navigationBar)
     }
     

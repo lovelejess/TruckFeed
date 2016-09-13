@@ -12,9 +12,9 @@ public class ScheduleDataProvider: NSObject, ScheduleDataProviderProtocol {
     public var truckScheduleList = [TruckSchedule]()
     weak public var tableView: UITableView!
     
-    public func getScheduleForTruck(truckId: String) -> [TruckSchedule]
+    public func getScheduleForTruck(truckName: String) -> [TruckSchedule]
     {
-        let truckScheduleListUrl = self.createURLWithEndPoint("trucks/schedules/\(truckId)")
+        let truckScheduleListUrl = self.createURLWithEndPoint(truckName)
         self.generateSessionDataWithURL(truckScheduleListUrl)
         
         // generates placeholder list view until data is fetched
@@ -27,11 +27,14 @@ public class ScheduleDataProvider: NSObject, ScheduleDataProviderProtocol {
     
     func createURLWithEndPoint(endpoint: String) -> NSURL
     {
-        let kServerUrl = "https://damp-escarpment-86736.herokuapp.com/";
-        var truckScheduleListUrl = NSURL(string: kServerUrl)
-        truckScheduleListUrl = truckScheduleListUrl?.URLByAppendingPathComponent(endpoint)
-        NSLog("getTruckScheduleList - url: \(truckScheduleListUrl)")
-        return truckScheduleListUrl!
+        
+        let queryItems = [NSURLQueryItem(name: "truck_name", value: endpoint)]
+        if let urlComps = NSURLComponents(string: "https://damp-escarpment-86736.herokuapp.com/truck/schedules?"){
+            urlComps.queryItems = queryItems
+            let truckScheduleListUrl = urlComps.URL
+            return truckScheduleListUrl!
+        }
+        return NSURL()
     }
     
     func generateSessionDataWithURL(url: NSURL) {
