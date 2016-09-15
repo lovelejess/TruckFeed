@@ -132,6 +132,6 @@ extension TruckFeedDataProvider: UITableViewDataSource {
         UIGraphicsEndImageContext()
         truckCell.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
         
-        return newImage;
+        return newImage!;
     }
 }

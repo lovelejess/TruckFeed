@@ -84,9 +84,12 @@ public class ScheduleDataProvider: NSObject, ScheduleDataProviderProtocol {
         let month = json["month"] as! String
         let weekDay = json["week_day"] as! String
         let dateNumber = json["date_number"] as! String
-        let time = json["time"] as! String
+        let startTime = json["start_time"] as! String
+        let endTime = json["end_time"] as! String
         let location = json["location"] as! String
-        let truckScheduleObject = TruckSchedule(truckId: truckId, truckName: truckName, month:month, weekDay:weekDay, dateNumber:dateNumber, time:time,location:location)
+        let streetAddress = json["street_address"] as! String
+        let cityState = json["city_state"] as! String
+        let truckScheduleObject = TruckSchedule(truckId: truckId, truckName: truckName, month:month, weekDay:weekDay, dateNumber:dateNumber, startTime:startTime, endTime: endTime, location:location, streetAddress: streetAddress, cityState: cityState)
         return truckScheduleObject
     }
 }
@@ -117,8 +120,11 @@ extension ScheduleDataProvider: UITableViewDataSource {
             truckScheduleCell.weekDay.textColor = secondaryColor
             truckScheduleCell.dateNumber.text = truckSchedule.dateNumber
             truckScheduleCell.dateNumber.textColor = darkColor
-            truckScheduleCell.time.text = truckSchedule.time
+            truckScheduleCell.startTime.text = truckSchedule.startTime
+            truckScheduleCell.endTime.text = truckSchedule.endTime
             truckScheduleCell.location.text = truckSchedule.location
+            truckScheduleCell.streetAddress.text = truckSchedule.streetAddress
+            truckScheduleCell.cityState.text = truckSchedule.cityState
         }
         else {
             NSLog("ScheduleDataProvider - unable to configure cell")

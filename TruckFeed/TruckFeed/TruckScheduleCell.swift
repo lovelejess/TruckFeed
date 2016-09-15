@@ -12,7 +12,10 @@ public class TruckScheduleCell: UITableViewCell {
     @IBOutlet weak var weekDay: UILabel!
     @IBOutlet weak var dateNumber: UILabel!
     @IBOutlet weak var month: UILabel!
-    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var startTime: UILabel!
+    @IBOutlet weak var endTime: UILabel!
     @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var streetAddress: UILabel!
+    @IBOutlet weak var cityState: UILabel!
     
 }
