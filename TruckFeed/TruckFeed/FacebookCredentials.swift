@@ -7,9 +7,30 @@
 //
 
 import CoreData
+import FBSDKLoginKit
 
 public struct FacebookCredentials
 {
+    
+    static func loginWithFacebook(FBLoginManager: FBSDKLoginManager, viewController: UIViewController, handler: () -> ())
+    {
+        FBLoginManager.logInWithPublishPermissions(["publish_actions", "manage_pages"],
+                                                   fromViewController: viewController,
+                                                   handler:
+            
+            { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
+                if(error != nil){
+                    NSLog("An error occured logging in: \(error)")
+                }
+                else if(response.isCancelled){
+                    NSLog("Facebook Login was cancelled")
+                }
+                else {
+                    handler()
+                }
+        })
+    }
+    
     static func isLoggedIn() -> Bool {
         if let loggedIn = AppPlistHelpers.getAppPlistDictionary().objectForKey("LoggedIn") as? Bool {
             NSLog("LoggedIn value from App.plist is : \(loggedIn)")

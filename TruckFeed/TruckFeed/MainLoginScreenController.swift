@@ -24,21 +24,7 @@ class MainLoginScreenController: UIViewController {
     
     func loginWithFacebookButton()
     {
-        FBLoginManager.logInWithPublishPermissions(["publish_actions", "manage_pages"],
-                                                   fromViewController: self,
-                                                   handler:
-            
-                                                    { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
-                                                        if(error != nil){
-                                                            NSLog("An error occured logging in: \(error)")
-                                                        }
-                                                        else if(response.isCancelled){
-                                                            NSLog("Facebook Login was cancelled")
-                                                        }
-                                                        else {
-                                                            self.handleLogin()
-                                                        }
-                                                    })
+        FacebookCredentials.loginWithFacebook(FBLoginManager, viewController: self, handler: handleLogin)
     }
     
     func handleLogin()
