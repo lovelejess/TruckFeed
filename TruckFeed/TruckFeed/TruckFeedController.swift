@@ -26,7 +26,8 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
         
         
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
-        let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "TruckFeed")
+        let rightBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(presentMainLoginScreenController), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "gear.png")!, target: self)
+        let navigationBar = ViewControllerItems.createNavigationBarWithRightButton(frame, title: "TruckFeed", rightBarButton: rightBarButtonItem)
         self.view.addSubview(navigationBar)
 
     }
@@ -58,6 +59,16 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
             }
         }
     }
+    
+    func presentMainLoginScreenController(sender: AnyObject){
+        if let mainLoginScreenController = self.storyboard!.instantiateViewControllerWithIdentifier("MainLoginScreenController") as? MainLoginScreenController {
+            self.presentViewController(mainLoginScreenController, animated: true, completion:
+                {
+                    NSLog("Presenting Main Login Screen Controller")
+            })
+        }
+    }
+
 }
 
 extension TruckFeedController: UITableViewDelegate

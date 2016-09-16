@@ -55,6 +55,9 @@
 		10738F4B1CB5FC1800BAC3CE /* MainLoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738F4A1CB5FC1800BAC3CE /* MainLoginScreenController.swift */; };
 		10738F571CB8781800BAC3CE /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 10738F561CB8781800BAC3CE /* gear.png */; };
 		10738F5B1CBF290900BAC3CE /* App.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10738F5A1CBF290900BAC3CE /* App.plist */; };
+		10A5E1081D8B875300B79702 /* FacebookCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* FacebookCredentials.swift */; };
+		10A5E1091D8B875300B79702 /* FacebookCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* FacebookCredentials.swift */; };
+		10A5E10A1D8B875300B79702 /* FacebookCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* FacebookCredentials.swift */; };
 		10AD73FE1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */; };
 		10AD73FF1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */; };
 		10AD74011D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */; };
@@ -127,6 +130,7 @@
 		10738F4A1CB5FC1800BAC3CE /* MainLoginScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLoginScreenController.swift; sourceTree = "<group>"; };
 		10738F561CB8781800BAC3CE /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		10738F5A1CBF290900BAC3CE /* App.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = App.plist; sourceTree = "<group>"; };
+		10A5E1071D8B875300B79702 /* FacebookCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookCredentials.swift; sourceTree = "<group>"; };
 		10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedDataProvider.swift; sourceTree = "<group>"; };
 		10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedDataProviderProtocol.swift; sourceTree = "<group>"; };
 		10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -208,7 +212,6 @@
 				10C368301D7DF9B800D6831C /* Model */,
 				10C3682F1D7DF99C00D6831C /* Controller */,
 				10AD73FC1D18C9F900CDE2AF /* DataProvider */,
-				10738F4A1CB5FC1800BAC3CE /* MainLoginScreenController.swift */,
 				101079801B929C2300B3AADB /* Resources */,
 				101079451B8FF5E300B3AADB /* AppDelegate.swift */,
 				1010794B1B8FF5E300B3AADB /* Main.storyboard */,
@@ -219,6 +222,7 @@
 				10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */,
 				10674DE51C45CF97000D3E4C /* Bridging-Header.h */,
 				100055B51CD04F6800984B35 /* AppPlistHelpers.swift */,
+				10A5E1071D8B875300B79702 /* FacebookCredentials.swift */,
 			);
 			path = TruckFeed;
 			sourceTree = "<group>";
@@ -270,6 +274,7 @@
 		10C3682F1D7DF99C00D6831C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				10738F4A1CB5FC1800BAC3CE /* MainLoginScreenController.swift */,
 				10DC61891BE863A60021B2D3 /* TruckFeedController.swift */,
 				10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */,
 				100055B71CDAC67700984B35 /* MasterTabViewController.swift */,
@@ -641,6 +646,7 @@
 				100CE67A1D2F415C00E2F53C /* ScheduleDataProvider.swift in Sources */,
 				10AD74011D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */,
 				10AD73FE1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */,
+				10A5E1081D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				10738F4B1CB5FC1800BAC3CE /* MainLoginScreenController.swift in Sources */,
 				101079781B90008300B3AADB /* Truck.swift in Sources */,
 			);
@@ -667,6 +673,7 @@
 				100E15681D05038A00B3BC9A /* UserView.swift in Sources */,
 				10AD74021D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */,
 				10AD73FF1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */,
+				10A5E1091D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				100E15671D05038400B3BC9A /* MasterTabViewController.swift in Sources */,
 				100E15621D05037000B3BC9A /* Truck.swift in Sources */,
 			);
@@ -693,6 +700,7 @@
 				10D9504C1BFD7D4E00EC435B /* TruckCell.swift in Sources */,
 				106C8A1D1D406080007DD2CF /* UserView.swift in Sources */,
 				10D9504D1BFD7D4E00EC435B /* Palette.swift in Sources */,
+				10A5E10A1D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */,
 				106C8A151D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */,
 			);

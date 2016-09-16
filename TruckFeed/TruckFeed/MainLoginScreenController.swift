@@ -36,30 +36,30 @@ class MainLoginScreenController: UIViewController {
                                                             NSLog("Facebook Login was cancelled")
                                                         }
                                                         else {
-                                                            if let accessToken = FBSDKAccessToken.currentAccessToken().tokenString {
-                                                                NSLog("Retrieving access token: \(accessToken)")
-                                                                self.truckOwner.setFBAccessToken(accessToken)
-                                                                self.setFacebookRequestOperationsQueue()
-                                                                self.setFacebookLoggedIn()
-                                                            }
+                                                            self.handleLogin()
                                                         }
                                                     })
     }
     
-    func setFacebookRequestOperationsQueue() {
-        let queue = NSOperationQueue()
-        let facebookRequestOperation = NSBlockOperation(block: {
-            self.truckOwner.requestFacebookCredentials()
-            NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner.fbAccessUserID) :: \(self.truckOwner.getUserAccessInfo())")
-        })
-        let presentUserViewOperation = NSBlockOperation(block: {
-            self.presentViewController(self)
-        })
-        presentUserViewOperation.addDependency(facebookRequestOperation)
-        queue.addOperation(facebookRequestOperation)
-        queue.addOperation(presentUserViewOperation)
+    func handleLogin()
+    {
+        if let accessToken = FBSDKAccessToken.currentAccessToken().tokenString {
+            NSLog("Retrieving access token: \(accessToken)")
+            self.truckOwner.setFBAccessToken(accessToken)
+            
+            let facebookRequestOperation = NSBlockOperation(block: {
+                self.truckOwner.requestFacebookCredentials()
+                NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner.fbAccessUserID) :: \(self.truckOwner.getUserAccessInfo())")
+            })
+            let presentUserViewOperation = NSBlockOperation(block: {
+                self.presentViewController(self)
+            })
+            
+            FacebookCredentials.setFacebookRequestOperationsQueue(facebookRequestOperation, presentUserViewOperation: presentUserViewOperation )
+            FacebookCredentials.setIsLoggedIn()
+        }
     }
-
+    
     func presentTruckFeedController(sender: AnyObject){
         if let truckFeedController = self.storyboard!.instantiateViewControllerWithIdentifier("TruckFeedController") as? TruckFeedController {
             self.presentViewController(truckFeedController, animated: true, completion:
@@ -78,14 +78,4 @@ class MainLoginScreenController: UIViewController {
         }
     }
     
-    func setFacebookLoggedIn()
-    {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
-        let documentsDirectory = paths.objectAtIndex(0) as! NSString
-        let path = documentsDirectory.stringByAppendingPathComponent("App.plist")
-        let dict = NSMutableDictionary(contentsOfFile: path)
-        dict?.setValue(true, forKey: "LoggedIn")
-        dict?.writeToFile(path, atomically: false)
-        NSLog("Setting App.plist file to :\(NSMutableDictionary(contentsOfFile: path)))")
-    }
 }

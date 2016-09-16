@@ -29,18 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func isFacebookLoggedIn() -> Bool {
-        if let loggedIn = AppPlistHelpers.getAppPlistDictionary().objectForKey("LoggedIn") as? Bool {
-            NSLog("LoggedIn value from App.plist is : \(loggedIn)")
-            return loggedIn
-        }
-        return false
-    }
-    
     func determineUIViewToPresent() -> UIViewController
     {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        if(self.isFacebookLoggedIn())
+        if(FacebookCredentials.isLoggedIn())
         {
             let masterTabViewController: MasterTabViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MasterTabViewController") as! MasterTabViewController
             return masterTabViewController
