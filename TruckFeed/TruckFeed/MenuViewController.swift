@@ -38,6 +38,16 @@ public class MenuViewController: UIViewController, UINavigationBarDelegate {
         super.viewDidAppear(true)
     }
 
+    func presentMainLoginViewController(sender: AnyObject){
+        NSLog(" facebookLogout - entering presentMainLoginScreen")
+        if let MainLoginScreenController = self.storyboard?.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreenController {
+            self.presentViewController(MainLoginScreenController, animated: true, completion:
+                {
+                    NSLog("facebookLogout - Presenting MainLoginScreen")
+            })
+        }
+    }
+
 }
 
 
@@ -46,7 +56,13 @@ extension MenuViewController: UITableViewDelegate
     
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        return 40.0;
+        return 42.0;
+    }
+    
+    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        NSLog("You selected cell #\(indexPath.row)!")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.presentMainLoginViewController(self )
     }
     
 }

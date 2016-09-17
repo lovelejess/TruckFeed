@@ -42,41 +42,7 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
             })
         }
     }
-
     
-    func loginWithFacebook()
-    {
-        
-        if(!FacebookCredentials.isLoggedIn())
-        {
-            self.presentMainLoginViewController(self)
-        }
-        
-        else
-        {
-            self.presentMasterTabViewController(self)
-        }
-    }
-    
-    func presentMainLoginViewController(sender: AnyObject){
-        NSLog(" facebookLogout - entering presentMainLoginScreen")
-        if let MainLoginScreenController = self.storyboard?.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreenController {
-            self.presentViewController(MainLoginScreenController, animated: true, completion:
-                {
-                    NSLog("facebookLogout - Presenting MainLoginScreen")
-            })
-        }
-    }
-    
-    func presentMasterTabViewController(sender: AnyObject){
-        NSLog(" facebookLogout - entering presentMainLoginScreen")
-        if let masterTabViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MasterTabViewController") as? MasterTabViewController {
-            self.presentViewController(masterTabViewController, animated: true, completion:
-                {
-                    NSLog("facebookLogout - Presenting MasterTabViewController")
-            })
-        }
-    }
     
     override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
