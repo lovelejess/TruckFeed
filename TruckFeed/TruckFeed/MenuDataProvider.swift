@@ -9,14 +9,13 @@
 import UIKit
 
 public class MenuDataProvider: NSObject, MenuDataProviderProtocol {
-    public var menuList = [Truck]()
+    public var menuList = [MenuListItem]()
     weak public var tableView: UITableView!
-    private var mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
-    public func getMenuList() -> [Truck] {
-        return [Truck]()
+    public func getMenuList() -> [MenuListItem] {
+        self.menuList = [MenuListItem(name: "Logout")]
+        return self.menuList
     }
-    
 }
 
 // MARK: - Table view data source
@@ -28,20 +27,29 @@ extension MenuDataProvider: UITableViewDataSource {
     }
     
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuList.count
+        return self.menuList.count
     }
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let truckCell = tableView.dequeueReusableCellWithIdentifier("TruckCell")
-        self.configureCell(truckCell!, atIndexPath: indexPath)
+        let menuListItemCell = tableView.dequeueReusableCellWithIdentifier("MenuListItemCell")
+        self.configureCell(menuListItemCell!, atIndexPath: indexPath)
         
-        return truckCell!
+        return menuListItemCell!
     }
     
-    public func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-    
+    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
+        if let menuListItemCell = cell as? MenuListItemCell {
+            let menuListItem = self.menuList[indexPath.row] as MenuListItem
+            menuListItemCell.name.text = menuListItem.name
+            print(menuListItem.name)
+            menuListItemCell.name.textColor = secondaryColor
+        }
+        else {
+            NSLog("MenuDataProvider - unable to configure cell")
+        }
     }
+
 }
 
 

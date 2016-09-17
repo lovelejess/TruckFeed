@@ -13,7 +13,7 @@ public class MenuViewController: UIViewController, UINavigationBarDelegate {
     
     @IBOutlet var tableView: UITableView?
     private var dataProvider: MenuDataProvider?
-    private var menuList = [Truck]()
+    private var menuList = [MenuListItem]()
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +28,17 @@ public class MenuViewController: UIViewController, UINavigationBarDelegate {
         let lefttBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "back.png")!, target: self)
         let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: "Settings", leftBarButton: lefttBarButtonItem)
         self.view.addSubview(navigationBar)
-        
     }
     
     func dismissViewController(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {});
     }
-}
+    
+    override public func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+    }
 
+}
 
 
 extension MenuViewController: UITableViewDelegate
@@ -43,7 +46,7 @@ extension MenuViewController: UITableViewDelegate
     
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        return 120.0;
+        return 40.0;
     }
     
 }

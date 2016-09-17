@@ -70,6 +70,12 @@
 		10A5E1181D8CE7B500B79702 /* MenuDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1171D8CE7B500B79702 /* MenuDataProvider.swift */; };
 		10A5E1191D8CE7B500B79702 /* MenuDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1171D8CE7B500B79702 /* MenuDataProvider.swift */; };
 		10A5E11A1D8CE7B500B79702 /* MenuDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1171D8CE7B500B79702 /* MenuDataProvider.swift */; };
+		10A5E11C1D8CF14F00B79702 /* MenuListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E11B1D8CF14F00B79702 /* MenuListItemCell.swift */; };
+		10A5E11D1D8CF14F00B79702 /* MenuListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E11B1D8CF14F00B79702 /* MenuListItemCell.swift */; };
+		10A5E11E1D8CF14F00B79702 /* MenuListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E11B1D8CF14F00B79702 /* MenuListItemCell.swift */; };
+		10A5E1201D8CF16F00B79702 /* MenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E11F1D8CF16F00B79702 /* MenuListItem.swift */; };
+		10A5E1211D8CF16F00B79702 /* MenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E11F1D8CF16F00B79702 /* MenuListItem.swift */; };
+		10A5E1221D8CF16F00B79702 /* MenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E11F1D8CF16F00B79702 /* MenuListItem.swift */; };
 		10AD73FE1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */; };
 		10AD73FF1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */; };
 		10AD74011D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */; };
@@ -147,6 +153,8 @@
 		10A5E10F1D8CE56F00B79702 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		10A5E1131D8CE72100B79702 /* MenuDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDataProviderProtocol.swift; sourceTree = "<group>"; };
 		10A5E1171D8CE7B500B79702 /* MenuDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDataProvider.swift; sourceTree = "<group>"; };
+		10A5E11B1D8CF14F00B79702 /* MenuListItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListItemCell.swift; sourceTree = "<group>"; };
+		10A5E11F1D8CF16F00B79702 /* MenuListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListItem.swift; sourceTree = "<group>"; };
 		10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedDataProvider.swift; sourceTree = "<group>"; };
 		10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedDataProviderProtocol.swift; sourceTree = "<group>"; };
 		10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -311,6 +319,8 @@
 				101079771B90008300B3AADB /* Truck.swift */,
 				10C4E1551D6405C600C9E756 /* TruckScheduleCell.swift */,
 				10C4E1591D64090500C9E756 /* TruckSchedule.swift */,
+				10A5E11B1D8CF14F00B79702 /* MenuListItemCell.swift */,
+				10A5E11F1D8CF16F00B79702 /* MenuListItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -666,6 +676,8 @@
 				10A5E1101D8CE56F00B79702 /* MenuViewController.swift in Sources */,
 				100CE6761D2F40B000E2F53C /* TruckScheduleController.swift in Sources */,
 				10A5E1181D8CE7B500B79702 /* MenuDataProvider.swift in Sources */,
+				10A5E1201D8CF16F00B79702 /* MenuListItem.swift in Sources */,
+				10A5E11C1D8CF14F00B79702 /* MenuListItemCell.swift in Sources */,
 				10C4E15A1D64090500C9E756 /* TruckSchedule.swift in Sources */,
 				100CE6781D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift in Sources */,
 				1010797E1B92776F00B3AADB /* Palette.swift in Sources */,
@@ -696,6 +708,8 @@
 				10A5E1111D8CE56F00B79702 /* MenuViewController.swift in Sources */,
 				100E15661D05038100B3BC9A /* AppPlistHelpers.swift in Sources */,
 				10A5E1191D8CE7B500B79702 /* MenuDataProvider.swift in Sources */,
+				10A5E1211D8CF16F00B79702 /* MenuListItem.swift in Sources */,
+				10A5E11D1D8CF14F00B79702 /* MenuListItemCell.swift in Sources */,
 				10C4E15B1D64090500C9E756 /* TruckSchedule.swift in Sources */,
 				100E15611D05036D00B3BC9A /* Palette.swift in Sources */,
 				100E15601D05036800B3BC9A /* AppDelegate.swift in Sources */,
@@ -726,6 +740,8 @@
 				10A5E1121D8CE56F00B79702 /* MenuViewController.swift in Sources */,
 				10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */,
 				10A5E11A1D8CE7B500B79702 /* MenuDataProvider.swift in Sources */,
+				10A5E1221D8CF16F00B79702 /* MenuListItem.swift in Sources */,
+				10A5E11E1D8CF14F00B79702 /* MenuListItemCell.swift in Sources */,
 				10C4E15C1D64090500C9E756 /* TruckSchedule.swift in Sources */,
 				106C8A1C1D40607C007DD2CF /* MasterTabViewController.swift in Sources */,
 				106C8A1A1D406076007DD2CF /* ViewControllerItems.swift in Sources */,

@@ -12,5 +12,5 @@ import Foundation
 
 public protocol MenuDataProviderProtocol: UITableViewDataSource, UITableViewDelegate {
     weak var tableView: UITableView! { get set }
-    func getMenuList() -> [Truck]
+    func getMenuList() -> [MenuListItem]
 }
