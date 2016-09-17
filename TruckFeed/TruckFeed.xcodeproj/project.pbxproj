@@ -58,6 +58,9 @@
 		10A5E1081D8B875300B79702 /* FacebookCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* FacebookCredentials.swift */; };
 		10A5E1091D8B875300B79702 /* FacebookCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* FacebookCredentials.swift */; };
 		10A5E10A1D8B875300B79702 /* FacebookCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* FacebookCredentials.swift */; };
+		10A5E10C1D8CDE3900B79702 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A5E10B1D8CDE3900B79702 /* menu.png */; };
+		10A5E10D1D8CDE3900B79702 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A5E10B1D8CDE3900B79702 /* menu.png */; };
+		10A5E10E1D8CDE3900B79702 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 10A5E10B1D8CDE3900B79702 /* menu.png */; };
 		10AD73FE1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */; };
 		10AD73FF1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */; };
 		10AD74011D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */; };
@@ -131,6 +134,7 @@
 		10738F561CB8781800BAC3CE /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		10738F5A1CBF290900BAC3CE /* App.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = App.plist; sourceTree = "<group>"; };
 		10A5E1071D8B875300B79702 /* FacebookCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookCredentials.swift; sourceTree = "<group>"; };
+		10A5E10B1D8CDE3900B79702 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedDataProvider.swift; sourceTree = "<group>"; };
 		10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedDataProviderProtocol.swift; sourceTree = "<group>"; };
 		10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 		101079801B929C2300B3AADB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				10A5E10B1D8CDE3900B79702 /* menu.png */,
 				10C4E1511D5EA78A00C9E756 /* outside_scoop.jpg */,
 				10C4E1521D5EA78A00C9E756 /* the_spot.jpg */,
 				106C8A1F1D485531007DD2CF /* back.png */,
@@ -446,6 +451,7 @@
 				100055BD1CDAE17600984B35 /* map-marker.png in Resources */,
 				100055BC1CDAE17600984B35 /* home.png in Resources */,
 				1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */,
+				10A5E10C1D8CDE3900B79702 /* menu.png in Resources */,
 				10DC618C1BE8661E0021B2D3 /* Default-568h@2x.png in Resources */,
 				10AED1D71BC0C478004FD47B /* truck.png in Resources */,
 				1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */,
@@ -462,6 +468,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A5E10D1D8CDE3900B79702 /* menu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +478,7 @@
 			files = (
 				10D950551BFD7D4E00EC435B /* Assets.xcassets in Resources */,
 				10D950561BFD7D4E00EC435B /* Default-568h@2x.png in Resources */,
+				10A5E10E1D8CDE3900B79702 /* menu.png in Resources */,
 				10D950571BFD7D4E00EC435B /* truck.png in Resources */,
 				10D950591BFD7D4E00EC435B /* Main.storyboard in Resources */,
 				10D9505C1BFD7D4E00EC435B /* LaunchScreen.xib in Resources */,

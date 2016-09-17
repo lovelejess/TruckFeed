@@ -15,6 +15,7 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
     @IBOutlet var tableView: UITableView?
     private var dataProvider: TruckFeedDataProviderProtocol?
     private var truckList = [Truck]()
+    let FBLoginManager = FBSDKLoginManager()
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,46 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
         
         
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
-        let rightBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(presentMainLoginScreenController), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "gear.png")!, target: self)
-        let navigationBar = ViewControllerItems.createNavigationBarWithRightButton(frame, title: "TruckFeed", rightBarButton: rightBarButtonItem)
+        let lefttBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(TruckFeedController.loginWithFacebook), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "menu.png")!, target: self)
+        let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: "TruckFeed", leftBarButton: lefttBarButtonItem)
         self.view.addSubview(navigationBar)
 
     }
+    
+    func loginWithFacebook()
+    {
+        
+        if(!FacebookCredentials.isLoggedIn())
+        {
+            self.presentMainLoginViewController(self)
+        }
+        
+        else
+        {
+            self.presentMasterTabViewController(self)
+        }
+    }
+    
+    func presentMainLoginViewController(sender: AnyObject){
+        NSLog(" facebookLogout - entering presentMainLoginScreen")
+        if let MainLoginScreenController = self.storyboard?.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreenController {
+            self.presentViewController(MainLoginScreenController, animated: true, completion:
+                {
+                    NSLog("facebookLogout - Presenting MainLoginScreen")
+            })
+        }
+    }
+    
+    func presentMasterTabViewController(sender: AnyObject){
+        NSLog(" facebookLogout - entering presentMainLoginScreen")
+        if let masterTabViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MasterTabViewController") as? MasterTabViewController {
+            self.presentViewController(masterTabViewController, animated: true, completion:
+                {
+                    NSLog("facebookLogout - Presenting MasterTabViewController")
+            })
+        }
+    }
+    
     override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
     }
@@ -59,16 +95,6 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
             }
         }
     }
-    
-    func presentMainLoginScreenController(sender: AnyObject){
-        if let mainLoginScreenController = self.storyboard!.instantiateViewControllerWithIdentifier("MainLoginScreenController") as? MainLoginScreenController {
-            self.presentViewController(mainLoginScreenController, animated: true, completion:
-                {
-                    NSLog("Presenting Main Login Screen Controller")
-            })
-        }
-    }
-
 }
 
 extension TruckFeedController: UITableViewDelegate

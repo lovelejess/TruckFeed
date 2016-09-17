@@ -18,13 +18,27 @@ class MainLoginScreenController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "TruckFeed"
-        self.view.addSubview(ViewControllerItems.createButton("LOG IN WITH FACEBOOK", onClick: #selector(MainLoginScreenController.loginWithFacebookButton), frame: CGRect(x: 90, y: 500, width: 200, height: 50), target: self))
+        self.view.addSubview(ViewControllerItems.createButton("LOG IN WITH FACEBOOK", onClick: #selector(MainLoginScreenController.loginWithFacebook), frame: CGRect(x: 90, y: 500, width: 200, height: 50), target: self))
         self.view.addSubview(ViewControllerItems.createButton("CONTINUE AS A GUEST", onClick: #selector(MainLoginScreenController.presentTruckFeedController(_:)), frame: CGRect(x: 90, y: 570, width: 200, height: 50), target: self))
     }
     
-    func loginWithFacebookButton()
+    func loginWithFacebook()
     {
-        FacebookCredentials.loginWithFacebook(FBLoginManager, viewController: self, handler: handleLogin)
+        FBLoginManager.logInWithPublishPermissions(["publish_actions", "manage_pages"],
+                                                   fromViewController: self,
+                                                   handler:
+            
+            { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
+                if(error != nil){
+                    NSLog("An error occured logging in: \(error)")
+                }
+                else if(response.isCancelled){
+                    NSLog("Facebook Login was cancelled")
+                }
+                else {
+                    self.handleLogin()
+                }
+        })
     }
     
     func handleLogin()
@@ -38,7 +52,7 @@ class MainLoginScreenController: UIViewController {
                 NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner.fbAccessUserID) :: \(self.truckOwner.getUserAccessInfo())")
             })
             let presentUserViewOperation = NSBlockOperation(block: {
-                self.presentViewController(self)
+                self.presentMasterViewController(self)
             })
             
             FacebookCredentials.setFacebookRequestOperationsQueue(facebookRequestOperation, presentUserViewOperation: presentUserViewOperation )
@@ -55,7 +69,7 @@ class MainLoginScreenController: UIViewController {
         }
     }
     
-    func presentViewController(sender: AnyObject){
+    func presentMasterViewController(sender: AnyObject){
         if let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("MasterTabViewController") as? MasterTabViewController {
             self.presentViewController(viewController, animated: true, completion:
                 {
