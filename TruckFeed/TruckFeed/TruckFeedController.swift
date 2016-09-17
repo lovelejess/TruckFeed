@@ -27,11 +27,22 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
         
         
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
-        let lefttBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(TruckFeedController.loginWithFacebook), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "menu.png")!, target: self)
+        let lefttBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.presentMenuViewController), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "menu.png")!, target: self)
         let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: "TruckFeed", leftBarButton: lefttBarButtonItem)
         self.view.addSubview(navigationBar)
 
     }
+    
+    func presentMenuViewController(sender: AnyObject){
+        NSLog("presentMenuViewController - entering presentMenuViewController")
+        if let menuViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MenuViewController") as? MenuViewController {
+            self.presentViewController(menuViewController, animated: true, completion:
+                {
+                    NSLog("presentMenuViewController - Presenting MenuViewController")
+            })
+        }
+    }
+
     
     func loginWithFacebook()
     {
