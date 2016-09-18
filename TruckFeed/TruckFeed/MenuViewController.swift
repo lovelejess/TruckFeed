@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FBSDKCoreKit
 
 public class MenuViewController: UIViewController, UINavigationBarDelegate {
     
@@ -47,7 +48,20 @@ public class MenuViewController: UIViewController, UINavigationBarDelegate {
             })
         }
     }
-
+    
+    func facebookLogout(){
+        FBSDKAccessToken.setCurrentAccessToken(nil)
+        let truckOwner = TruckOwner.sharedInstance
+        truckOwner.setFBAccessToken("")
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
+        let documentsDirectory = paths.objectAtIndex(0) as! NSString
+        let path = documentsDirectory.stringByAppendingPathComponent("App.plist")
+        let dict = NSMutableDictionary(contentsOfFile: path)
+        dict?.setValue(false, forKey: "LoggedIn")
+        dict?.writeToFile(path, atomically: false)
+        NSLog("facebookLogout - Setting App.plist file to :\(NSMutableDictionary(contentsOfFile: path)))")
+    }
 }
 
 
@@ -62,6 +76,10 @@ extension MenuViewController: UITableViewDelegate
     public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         NSLog("You selected cell #\(indexPath.row)!")
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if(FacebookCredentials.isLoggedIn())
+        {
+            self.facebookLogout()
+        }
         self.presentMainLoginViewController(self )
     }
     
