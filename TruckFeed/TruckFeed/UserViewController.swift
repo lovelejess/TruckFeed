@@ -9,18 +9,37 @@
 import UIKit
 import FBSDKLoginKit
 
-public class UserViewController: UIViewController, UINavigationBarDelegate {
+public class UserViewController: UIViewController, UINavigationBarDelegate, UITextFieldDelegate {
 
-    var truckOwner = TruckOwner.sharedInstance
+    private var truckOwner = TruckOwner.sharedInstance
+    
+    
+    @IBOutlet weak var startTime: UIDatePicker!
+    @IBOutlet weak var endTime: UIDatePicker!
+    @IBOutlet weak var location: UITextField!
+    @IBOutlet weak var address: UITextField!
+    @IBOutlet weak var city: UITextField!
+    @IBOutlet weak var state: UIPickerView!
+    @IBOutlet weak var submit: UIButton!
+    
+    var newTruckScheduleAddress: String?
+    var newTruckScheduleLocation: String?
+    var newTruckScheduleCity: String?
+
 
     override public func viewDidLoad() {
         super.viewDidLoad()
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
         let navigationBar = ViewControllerItems.createNavigationBar(frame, title: self.truckOwner.getTruckOwnerName())
-        let viewWindow = UserView()
+        
+        submit.addTarget(self, action: #selector(onSubmit), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        location.delegate = self
+        address.delegate = self
+        city.delegate = self
+        
         self.view.opaque = false
         self.view.tintColor = mainColor;
-        self.view.addSubview(viewWindow)
         self.view.addSubview(navigationBar)
     }
     
@@ -42,6 +61,50 @@ public class UserViewController: UIViewController, UINavigationBarDelegate {
             })
         }
     }
+    
+    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+    
+    
+    // MARK: UITextFieldDelegate
+    
+    public func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // Hide the keyboard.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    enum TruckScheduleTextFieldTags : Int {
+        case locationTag = 0
+        case addressTag = 1
+        case cityTag = 2
+    }
+
+    
+    public func textFieldDidEndEditing(textField: UITextField) {
+        switch textField.tag {
+            case TruckScheduleTextFieldTags.locationTag.rawValue:
+                newTruckScheduleLocation = textField.text
+                    
+            case TruckScheduleTextFieldTags.addressTag.rawValue:
+                newTruckScheduleAddress = textField.text
+
+            case TruckScheduleTextFieldTags.cityTag.rawValue:
+                newTruckScheduleCity = textField.text
+            
+            default:
+                print("did not match")
+        }
+        
+        
+        
+    }
+    
+    
+   
 
     /*
     // MARK: - Navigation
@@ -53,4 +116,52 @@ public class UserViewController: UIViewController, UINavigationBarDelegate {
     }
     */
 
+    
+    func presentSubmitAlert(title: String, message: String) {
+        if let getModernAlert: AnyClass = NSClassFromString("UIAlertController") { // iOS 8
+            let myAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(myAlert, animated: true, completion: nil)
+        } else { // iOS 7
+            let alert: UIAlertView = UIAlertView()
+            alert.delegate = self
+            
+            alert.title = title
+            alert.message = message
+            alert.addButtonWithTitle("OK")
+            
+            alert.show()
+        }
+    }
+    
+    func onSubmit(sender:UIButton) {
+        print("submitButton pressed")
+        print("newTruckScheduleLocation: \(newTruckScheduleLocation)")
+        print("TruckScheduleTextFieldTags \(newTruckScheduleAddress)")
+        print("newTruckScheduleCity \(newTruckScheduleCity)")
+        presentSubmitAlert("Successfully Submitted", message:"YAY")
+        //        if let values = self.userView
+        //        {
+        //            if let startDate = values.startTime?.date
+        //            {
+        //                print("startDate: \(startDate)")
+        //            }
+        //            if let endDate = values.endTime?.date
+        //            {
+        //                print("endDate: \(endDate)")
+        //            }
+        //            if let location = values.location?.text
+        //            {
+        //                print("location: \(location)")
+        //            }
+        //            if let address = values.address?.text
+        //            {
+        //                print("address: \(address)")
+        //            }
+        //            if let city = values.city?.text
+        //            {
+        //                print("city: \(city)")
+        //            }
+        //        }
+    }
 }

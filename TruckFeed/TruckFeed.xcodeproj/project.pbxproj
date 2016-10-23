@@ -26,7 +26,7 @@
 		100E15671D05038400B3BC9A /* MasterTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B71CDAC67700984B35 /* MasterTabViewController.swift */; };
 		100E15681D05038A00B3BC9A /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */; };
 		101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
-		1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; };
+		1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; settings = {ASSET_TAGS = (0, ); }; };
 		1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1010794E1B8FF5E300B3AADB /* Assets.xcassets */; };
 		101079781B90008300B3AADB /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079771B90008300B3AADB /* Truck.swift */; };
 		1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
@@ -101,7 +101,7 @@
 		10D950551BFD7D4E00EC435B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1010794E1B8FF5E300B3AADB /* Assets.xcassets */; };
 		10D950561BFD7D4E00EC435B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */; };
 		10D950571BFD7D4E00EC435B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
-		10D950591BFD7D4E00EC435B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; };
+		10D950591BFD7D4E00EC435B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; settings = {ASSET_TAGS = (0, ); }; };
 		10D9505C1BFD7D4E00EC435B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10DC618A1BE863A60021B2D3 /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
 		10DC618C1BE8661E0021B2D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */; };
@@ -427,6 +427,9 @@
 		1010793A1B8FF5E300B3AADB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					0,
+				);
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = LoveLeJess;
 				TargetAttributes = {
