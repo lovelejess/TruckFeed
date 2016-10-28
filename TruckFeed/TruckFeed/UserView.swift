@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserView: UIView {
+class UserView: UIScrollView {
     
     
     var truckOwner = TruckOwner.sharedInstance

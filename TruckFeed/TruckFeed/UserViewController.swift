@@ -9,11 +9,12 @@
 import UIKit
 import FBSDKLoginKit
 
-public class UserViewController: UIViewController, UINavigationBarDelegate, UITextFieldDelegate {
+public class UserViewController: UIViewController, UINavigationBarDelegate, UITextFieldDelegate, UIScrollViewDelegate {
 
     private var truckOwner = TruckOwner.sharedInstance
     
-    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var uiView: UIView!
     @IBOutlet weak var startTime: UIDatePicker!
     @IBOutlet weak var endTime: UIDatePicker!
     @IBOutlet weak var location: UITextField!
@@ -31,16 +32,23 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
         super.viewDidLoad()
         let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
         let navigationBar = ViewControllerItems.createNavigationBar(frame, title: self.truckOwner.getTruckOwnerName())
+        scrollView.contentSize = CGSizeMake(self.view.frame.width, self.view.frame.height+100)
+        self.view.opaque = false
+        self.view.tintColor = mainColor
         
-        submit.addTarget(self, action: #selector(onSubmit), forControlEvents: UIControlEvents.TouchUpInside)
         
         location.delegate = self
         address.delegate = self
         city.delegate = self
+        self.scrollView.delegate = self
+        self.hideKeyboard()
         
-        self.view.opaque = false
-        self.view.tintColor = mainColor;
+        submit.addTarget(self, action: #selector(onSubmit), forControlEvents: UIControlEvents.TouchUpInside)
+        self.uiView.addSubview(startTime)
+        self.scrollView.addSubview(uiView)
+        self.view.addSubview(scrollView)
         self.view.addSubview(navigationBar)
+        
     }
     
     override public func didReceiveMemoryWarning() {
@@ -62,48 +70,90 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
         }
     }
     
-    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
-        view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
-    }
     
+    
+    // MARK: UIScroll
+    
+    private func setAutoScrollFocus(offset: CGPoint) {
+        self.scrollView .setContentOffset(offset, animated: true)
+        self .viewDidLayoutSubviews()
+    }
+
     
     // MARK: UITextFieldDelegate
     
     public func textFieldShouldReturn(textField: UITextField) -> Bool {
         // Hide the keyboard.
         textField.resignFirstResponder()
+        determineTextFieldToFocus(textField)
         return true
     }
     
+    public func textFieldDidBeginEditing(textField: UITextField) {
+        switch textField.tag {
+            case TruckScheduleTextFieldTags.locationTag.rawValue:
+                scrollView.contentOffset = textField.frame.origin
+            
+            case TruckScheduleTextFieldTags.addressTag.rawValue:
+                scrollView.contentOffset = textField.frame.origin
+            
+            case TruckScheduleTextFieldTags.cityTag.rawValue:
+                scrollView.contentOffset = textField.frame.origin
+            default:
+                print("did not match")
+            }
+        
+    }
+    
+    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+    
+    public func textFieldDidEndEditing(textField: UITextField) {
+        switch textField.tag {
+            case TruckScheduleTextFieldTags.locationTag.rawValue:
+                setAutoScrollFocus(CGPointMake(0, 0))
+                newTruckScheduleLocation = textField.text
+                    
+            case TruckScheduleTextFieldTags.addressTag.rawValue:
+                setAutoScrollFocus(CGPointMake(0, 0))
+                newTruckScheduleAddress = textField.text
+
+            case TruckScheduleTextFieldTags.cityTag.rawValue:
+                setAutoScrollFocus(CGPointMake(0, 0))
+                newTruckScheduleCity = textField.text
+            
+            default:
+                print("did not match")
+        }
+    }
+    
+    private func determineTextFieldToFocus(textField: UITextField) {
+        switch textField.tag {
+            case TruckScheduleTextFieldTags.locationTag.rawValue:
+                textField.becomeFirstResponder()
+                
+            case TruckScheduleTextFieldTags.addressTag.rawValue:
+                textField.becomeFirstResponder()
+                
+            case TruckScheduleTextFieldTags.cityTag.rawValue:
+                textField.becomeFirstResponder()
+            setAutoScrollFocus(CGPointMake(0, -100))
+            
+        default:
+            print("did not match")
+        }
+
+    }
+    
+    // MARK: TextField Tag Enum
     
     enum TruckScheduleTextFieldTags : Int {
         case locationTag = 0
         case addressTag = 1
         case cityTag = 2
     }
-
-    
-    public func textFieldDidEndEditing(textField: UITextField) {
-        switch textField.tag {
-            case TruckScheduleTextFieldTags.locationTag.rawValue:
-                newTruckScheduleLocation = textField.text
-                    
-            case TruckScheduleTextFieldTags.addressTag.rawValue:
-                newTruckScheduleAddress = textField.text
-
-            case TruckScheduleTextFieldTags.cityTag.rawValue:
-                newTruckScheduleCity = textField.text
-            
-            default:
-                print("did not match")
-        }
-        
-        
-        
-    }
-    
-    
    
 
     /*
@@ -118,7 +168,7 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
 
     
     func presentSubmitAlert(title: String, message: String) {
-        if let getModernAlert: AnyClass = NSClassFromString("UIAlertController") { // iOS 8
+        if let _: AnyClass = NSClassFromString("UIAlertController") { // iOS 8
             let myAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
             myAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
             self.presentViewController(myAlert, animated: true, completion: nil)
@@ -139,29 +189,24 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
         print("newTruckScheduleLocation: \(newTruckScheduleLocation)")
         print("TruckScheduleTextFieldTags \(newTruckScheduleAddress)")
         print("newTruckScheduleCity \(newTruckScheduleCity)")
-        presentSubmitAlert("Successfully Submitted", message:"YAY")
-        //        if let values = self.userView
-        //        {
-        //            if let startDate = values.startTime?.date
-        //            {
-        //                print("startDate: \(startDate)")
-        //            }
-        //            if let endDate = values.endTime?.date
-        //            {
-        //                print("endDate: \(endDate)")
-        //            }
-        //            if let location = values.location?.text
-        //            {
-        //                print("location: \(location)")
-        //            }
-        //            if let address = values.address?.text
-        //            {
-        //                print("address: \(address)")
-        //            }
-        //            if let city = values.city?.text
-        //            {
-        //                print("city: \(city)")
-        //            }
-        //        }
+        presentSubmitAlert("Truck Schedule Submitted", message:"Successfully!")
+    }
+    
+}
+
+extension UIViewController
+{
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard()
+    {
+        view.endEditing(true)
     }
 }
