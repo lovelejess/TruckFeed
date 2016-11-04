@@ -16,6 +16,7 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var uiView: UIView!
     @IBOutlet weak var startTime: UIDatePicker!
+    @IBOutlet weak var startTimeSwitch: UISwitch!
     @IBOutlet weak var endTime: UIDatePicker!
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var address: UITextField!
@@ -44,8 +45,14 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
         self.hideKeyboard()
         
         submit.addTarget(self, action: #selector(onSubmit), forControlEvents: UIControlEvents.TouchUpInside)
-        self.uiView.addSubview(startTime)
-        self.scrollView.addSubview(uiView)
+        startTimeSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), forControlEvents: UIControlEvents.ValueChanged)
+        if (startTimeSwitch.on){
+            self.uiView.hidden = false
+        }
+        else {
+            self.uiView.hidden = true
+        }
+        
         self.view.addSubview(scrollView)
         self.view.addSubview(navigationBar)
         
@@ -167,6 +174,7 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
     */
 
     
+    // MARK: - PRIVATE METHODS
     func presentSubmitAlert(title: String, message: String) {
         if let _: AnyClass = NSClassFromString("UIAlertController") { // iOS 8
             let myAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
@@ -190,6 +198,15 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
         print("TruckScheduleTextFieldTags \(newTruckScheduleAddress)")
         print("newTruckScheduleCity \(newTruckScheduleCity)")
         presentSubmitAlert("Truck Schedule Submitted", message:"Successfully!")
+    }
+    
+    func startTimeSwitchToggled(sender: UISwitch){
+        if (sender.on){
+            self.uiView.hidden = false
+        }
+        else {
+         self.uiView.hidden = true
+        }
     }
     
 }
