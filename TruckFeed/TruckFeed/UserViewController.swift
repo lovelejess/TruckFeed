@@ -14,7 +14,8 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
     private var truckOwner = TruckOwner.sharedInstance
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var uiView: UIView!
+    @IBOutlet weak var startDateView: UIView!
+    @IBOutlet weak var addressView: UIView!
     @IBOutlet weak var startTime: UIDatePicker!
     @IBOutlet weak var startTimeSwitch: UISwitch!
     @IBOutlet weak var endTime: UIDatePicker!
@@ -46,14 +47,11 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
         
         submit.addTarget(self, action: #selector(onSubmit), forControlEvents: UIControlEvents.TouchUpInside)
         startTimeSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), forControlEvents: UIControlEvents.ValueChanged)
-        if (startTimeSwitch.on){
-            self.uiView.hidden = false
-        }
-        else {
-            self.uiView.hidden = true
-        }
+        startTimeSwitchToggled(self.startTimeSwitch)
         
+        self.scrollView.addSubview(addressView)
         self.view.addSubview(scrollView)
+        
         self.view.addSubview(navigationBar)
         
     }
@@ -202,10 +200,13 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
     
     func startTimeSwitchToggled(sender: UISwitch){
         if (sender.on){
-            self.uiView.hidden = false
+            self.addressView.frame = CGRectMake(0, 245, self.view.frame.size.width, self.addressView.frame.size.height)
+            self.startDateView.hidden = false
         }
         else {
-         self.uiView.hidden = true
+            let startViewFrame = self.startDateView.frame
+            self.startDateView.hidden = true
+            self.addressView.frame = startViewFrame
         }
     }
     
