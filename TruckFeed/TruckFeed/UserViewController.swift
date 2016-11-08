@@ -15,9 +15,12 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var startDateView: UIView!
+    @IBOutlet weak var endDateView: UIView!
     @IBOutlet weak var addressView: UIView!
     @IBOutlet weak var startTime: UIDatePicker!
     @IBOutlet weak var startTimeSwitch: UISwitch!
+    @IBOutlet weak var endTimeView: UIView!
+    @IBOutlet weak var endTimeSwitch: UISwitch!
     @IBOutlet weak var endTime: UIDatePicker!
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var address: UITextField!
@@ -47,11 +50,12 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
         
         submit.addTarget(self, action: #selector(onSubmit), forControlEvents: UIControlEvents.TouchUpInside)
         startTimeSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), forControlEvents: UIControlEvents.ValueChanged)
+        endTimeSwitch.addTarget(self, action: #selector(endTimeSwitchToggled), forControlEvents: UIControlEvents.ValueChanged)
         startTimeSwitchToggled(self.startTimeSwitch)
+        endTimeSwitchToggled(self.endTimeSwitch)
         
         self.scrollView.addSubview(addressView)
         self.view.addSubview(scrollView)
-        
         self.view.addSubview(navigationBar)
         
     }
@@ -190,7 +194,7 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
         }
     }
     
-    func onSubmit(sender:UIButton) {
+    func onSubmit(sender: UIButton) {
         print("submitButton pressed")
         print("newTruckScheduleLocation: \(newTruckScheduleLocation)")
         print("TruckScheduleTextFieldTags \(newTruckScheduleAddress)")
@@ -199,8 +203,12 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
     }
     
     func startTimeSwitchToggled(sender: UISwitch){
-        if (sender.on){
-            self.addressView.frame = CGRectMake(0, 245, self.view.frame.size.width, self.addressView.frame.size.height)
+        if (sender.on && self.endTimeSwitch.on){
+            self.addressView.frame = CGRectMake(0, 395, self.view.frame.size.width, self.addressView.frame.size.height)
+            self.startDateView.hidden = false
+        }
+        else if(sender.on && !self.endTimeSwitch.on){
+            self.addressView.frame = CGRectMake(0, 265, self.view.frame.size.width, self.addressView.frame.size.height)
             self.startDateView.hidden = false
         }
         else {
@@ -209,6 +217,24 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
             self.addressView.frame = startViewFrame
         }
     }
+    
+    func endTimeSwitchToggled(sender: UISwitch){
+        if (sender.on && self.startTimeSwitch.on){
+            self.addressView.frame = CGRectMake(0, 395, self.view.frame.size.width, self.addressView.frame.size.height)
+            self.endDateView.hidden = false
+        }
+        else if(sender.on && !self.startTimeSwitch.on){
+            self.endTimeView.frame = CGRectMake(0, 90, self.view.frame.size.width, self.addressView.frame.size.height)
+            self.addressView.frame = CGRectMake(0, 240, self.view.frame.size.width, self.addressView.frame.size.height)
+            self.endDateView.hidden = false
+        }
+        else {
+            let endViewFrame = self.endDateView.frame
+            self.endDateView.hidden = true
+            self.addressView.frame = endViewFrame
+        }
+    }
+
     
 }
 
