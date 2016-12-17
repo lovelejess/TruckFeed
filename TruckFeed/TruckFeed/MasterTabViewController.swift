@@ -17,7 +17,7 @@ class MasterTabViewController : UITabBarController, UITabBarControllerDelegate {
         delegate = self
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
 
         let truckFeedController = setUpTruckFeedController()
         let userViewController = setUpUserViewController()
@@ -28,16 +28,16 @@ class MasterTabViewController : UITabBarController, UITabBarControllerDelegate {
     }
     
     //Delegate methods
-    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         return true;
     }
     
     func setUpTruckFeedController() -> UIViewController
     {
-        let truckFeedController: TruckFeedController = mainStoryboard.instantiateViewControllerWithIdentifier("TruckFeedController") as! TruckFeedController
+        let truckFeedController: TruckFeedController = mainStoryboard.instantiateViewController(withIdentifier: "TruckFeedController") as! TruckFeedController
         
-        let truckFeedIcon = UITabBarItem(title: "TruckFeed", image: UIImage(named: "truck.png")?.imageWithRenderingMode(.AlwaysTemplate), selectedImage: UIImage(named: "truck.png")?.imageWithRenderingMode(.AlwaysTemplate))
-        truckFeedIcon.setTitleTextAttributes([NSForegroundColorAttributeName: mainColor], forState: UIControlState.Normal)
+        let truckFeedIcon = UITabBarItem(title: "TruckFeed", image: UIImage(named: "truck.png")?.withRenderingMode(.alwaysTemplate), selectedImage: UIImage(named: "truck.png")?.withRenderingMode(.alwaysTemplate))
+        truckFeedIcon.setTitleTextAttributes([NSForegroundColorAttributeName: mainColor], for: UIControlState())
         
         truckFeedController.tabBarItem = truckFeedIcon
         
@@ -47,10 +47,10 @@ class MasterTabViewController : UITabBarController, UITabBarControllerDelegate {
     
     func setUpUserViewController() -> UIViewController
     {
-        let userViewController: UserViewController = mainStoryboard.instantiateViewControllerWithIdentifier("UserViewController") as! UserViewController
+        let userViewController: UserViewController = mainStoryboard.instantiateViewController(withIdentifier: "UserViewController") as! UserViewController
         
-        let userViewIcon = UITabBarItem(title: "My Truck", image: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysTemplate), selectedImage: UIImage(named: "people.png")?.imageWithRenderingMode(.AlwaysTemplate))
-        userViewIcon.setTitleTextAttributes([NSForegroundColorAttributeName: mainColor], forState: UIControlState.Normal)
+        let userViewIcon = UITabBarItem(title: "My Truck", image: UIImage(named: "people.png")?.withRenderingMode(.alwaysTemplate), selectedImage: UIImage(named: "people.png")?.withRenderingMode(.alwaysTemplate))
+        userViewIcon.setTitleTextAttributes([NSForegroundColorAttributeName: mainColor], for: UIControlState())
         userViewController.tabBarItem = userViewIcon
         
         return userViewController

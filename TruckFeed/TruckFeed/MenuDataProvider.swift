@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class MenuDataProvider: NSObject, MenuDataProviderProtocol {
-    public var menuList = [MenuListItem]()
-    weak public var tableView: UITableView!
+open class MenuDataProvider: NSObject, MenuDataProviderProtocol {
+    open var menuList = [MenuListItem]()
+    weak open var tableView: UITableView!
     
-    public func getMenuList() -> [MenuListItem] {
+    open func getMenuList() -> [MenuListItem] {
         if(FacebookCredentials.isLoggedIn())
         {
             self.menuList = [MenuListItem(name: "Logout")]
@@ -32,23 +32,23 @@ public class MenuDataProvider: NSObject, MenuDataProviderProtocol {
 
 extension MenuDataProvider: UITableViewDataSource {
     
-    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.menuList.count
     }
     
-    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let menuListItemCell = tableView.dequeueReusableCellWithIdentifier("MenuListItemCell")
+        let menuListItemCell = tableView.dequeueReusableCell(withIdentifier: "MenuListItemCell")
         self.configureCell(menuListItemCell!, atIndexPath: indexPath)
         
         return menuListItemCell!
     }
     
-    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
+    func configureCell(_ cell: UITableViewCell, atIndexPath indexPath: IndexPath) {
         if let menuListItemCell = cell as? MenuListItemCell {
             let menuListItem = self.menuList[indexPath.row] as MenuListItem
             menuListItemCell.name.text = menuListItem.name

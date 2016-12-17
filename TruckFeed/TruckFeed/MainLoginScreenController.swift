@@ -24,8 +24,8 @@ class MainLoginScreenController: UIViewController {
     
     func loginWithFacebook()
     {
-        FBLoginManager.logInWithPublishPermissions(["publish_actions", "manage_pages"],
-                                                   fromViewController: self,
+        FBLoginManager.logIn(withPublishPermissions: ["publish_actions", "manage_pages"],
+                                                   from: self,
                                                    handler:
             
             { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
@@ -43,15 +43,15 @@ class MainLoginScreenController: UIViewController {
     
     func handleLogin()
     {
-        if let accessToken = FBSDKAccessToken.currentAccessToken().tokenString {
+        if let accessToken = FBSDKAccessToken.current().tokenString {
             NSLog("Retrieving access token: \(accessToken)")
             self.truckOwner.setFBAccessToken(accessToken)
             
-            let facebookRequestOperation = NSBlockOperation(block: {
+            let facebookRequestOperation = BlockOperation(block: {
                 self.truckOwner.requestFacebookCredentials()
                 NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner.fbAccessUserID) :: \(self.truckOwner.getUserAccessInfo())")
             })
-            let presentUserViewOperation = NSBlockOperation(block: {
+            let presentUserViewOperation = BlockOperation(block: {
                 self.presentMasterViewController(self)
             })
             
@@ -60,18 +60,18 @@ class MainLoginScreenController: UIViewController {
         }
     }
     
-    func presentTruckFeedController(sender: AnyObject){
-        if let truckFeedController = self.storyboard!.instantiateViewControllerWithIdentifier("TruckFeedController") as? TruckFeedController {
-            self.presentViewController(truckFeedController, animated: true, completion:
+    func presentTruckFeedController(_ sender: AnyObject){
+        if let truckFeedController = self.storyboard!.instantiateViewController(withIdentifier: "TruckFeedController") as? TruckFeedController {
+            self.present(truckFeedController, animated: true, completion:
                 {
                     NSLog("Presenting Truck Feed Controller")
             })
         }
     }
     
-    func presentMasterViewController(sender: AnyObject){
-        if let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("MasterTabViewController") as? MasterTabViewController {
-            self.presentViewController(viewController, animated: true, completion:
+    func presentMasterViewController(_ sender: AnyObject){
+        if let viewController = self.storyboard!.instantiateViewController(withIdentifier: "MasterTabViewController") as? MasterTabViewController {
+            self.present(viewController, animated: true, completion:
                 {
                     NSLog("Presenting Master View Controller")
             })

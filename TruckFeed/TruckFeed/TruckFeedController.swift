@@ -10,14 +10,14 @@ import UIKit
 import CoreData
 import FBSDKLoginKit
 
-public class TruckFeedController: UIViewController, UINavigationBarDelegate {
+open class TruckFeedController: UIViewController, UINavigationBarDelegate {
     
     @IBOutlet var tableView: UITableView?
-    private var dataProvider: TruckFeedDataProviderProtocol?
-    private var truckList = [Truck]()
+    fileprivate var dataProvider: TruckFeedDataProviderProtocol?
+    fileprivate var truckList = [Truck]()
     let FBLoginManager = FBSDKLoginManager()
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         dataProvider = TruckFeedDataProvider()
         tableView!.delegate = self
@@ -26,17 +26,17 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
         dataProvider?.tableView = tableView
         
         
-        let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
-        let lefttBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.presentMenuViewController), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "menu.png")!, target: self)
+        let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 54)
+        let lefttBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.presentMenuViewController), frame:CGRect(x: 0, y: 0, width: 43, height: 31), image: UIImage(named: "menu.png")!, target: self)
         let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: "TruckFeed", leftBarButton: lefttBarButtonItem)
         self.view.addSubview(navigationBar)
 
     }
     
-    func presentMenuViewController(sender: AnyObject){
+    func presentMenuViewController(_ sender: AnyObject){
         NSLog("presentMenuViewController - entering presentMenuViewController")
-        if let menuViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MenuViewController") as? MenuViewController {
-            self.presentViewController(menuViewController, animated: true, completion:
+        if let menuViewController = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController {
+            self.present(menuViewController, animated: true, completion:
                 {
                     NSLog("presentMenuViewController - Presenting MenuViewController")
             })
@@ -44,21 +44,21 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
     }
     
     
-    override public func viewDidAppear(animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
     }
     
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DisplayTruckSchedule" {
-            if let destination = segue.destinationViewController as? TruckScheduleController {
+            if let destination = segue.destination as? TruckScheduleController {
                 NSLog("Presenting \(destination.title)")
                 if let index = self.tableView?.indexPathForSelectedRow {
                     let navigationBarTitleHeader = "Spotted: "
-                    if let cell = self.tableView?.cellForRowAtIndexPath(index)
+                    if let cell = self.tableView?.cellForRow(at: index)
                     {
                         destination.foodTruckTitleName = navigationBarTitleHeader + (cell.textLabel?.text)!
                         destination.foodTruckName = (cell.textLabel?.text)!
@@ -77,15 +77,15 @@ public class TruckFeedController: UIViewController, UINavigationBarDelegate {
 extension TruckFeedController: UITableViewDelegate
 {
     
-    public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 75.0;
     }
     
-    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         NSLog("You selected cell #\(indexPath.row)!")
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.performSegueWithIdentifier("DisplayTruckSchedule", sender: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "DisplayTruckSchedule", sender: indexPath)
     }
 }
 

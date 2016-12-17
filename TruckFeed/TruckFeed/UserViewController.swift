@@ -9,9 +9,9 @@
 import UIKit
 import FBSDKLoginKit
 
-public class UserViewController: UIViewController, UINavigationBarDelegate, UITextFieldDelegate, UIScrollViewDelegate {
+open class UserViewController: UIViewController, UINavigationBarDelegate, UITextFieldDelegate, UIScrollViewDelegate {
 
-    private var truckOwner = TruckOwner.sharedInstance
+    fileprivate var truckOwner = TruckOwner.sharedInstance
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var startDateView: UIView!
@@ -33,12 +33,12 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
     var newTruckScheduleCity: String?
 
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
-        let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
+        let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 54)
         let navigationBar = ViewControllerItems.createNavigationBar(frame, title: self.truckOwner.getTruckOwnerName())
-        scrollView.contentSize = CGSizeMake(self.view.frame.width, self.view.frame.height+100)
-        self.view.opaque = false
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
+        self.view.isOpaque = false
         self.view.tintColor = mainColor
         
         
@@ -48,9 +48,9 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
         self.scrollView.delegate = self
         self.hideKeyboard()
         
-        submit.addTarget(self, action: #selector(onSubmit), forControlEvents: UIControlEvents.TouchUpInside)
-        startTimeSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), forControlEvents: UIControlEvents.ValueChanged)
-        endTimeSwitch.addTarget(self, action: #selector(endTimeSwitchToggled), forControlEvents: UIControlEvents.ValueChanged)
+        submit.addTarget(self, action: #selector(onSubmit), for: UIControlEvents.touchUpInside)
+        startTimeSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), for: UIControlEvents.valueChanged)
+        endTimeSwitch.addTarget(self, action: #selector(endTimeSwitchToggled), for: UIControlEvents.valueChanged)
         startTimeSwitchToggled(self.startTimeSwitch)
         endTimeSwitchToggled(self.endTimeSwitch)
         
@@ -60,19 +60,19 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
         
     }
     
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func dismissViewController(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {});
+    func dismissViewController(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: {});
     }
 
-    func presentMainLoginScreen(sender: AnyObject){
+    func presentMainLoginScreen(_ sender: AnyObject){
         NSLog(" facebookLogout - entering presentMainLoginScreen")
-        if let MainLoginScreenController = self.storyboard?.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreenController {
-            self.presentViewController(MainLoginScreenController, animated: true, completion:
+        if let MainLoginScreenController = self.storyboard?.instantiateViewController(withIdentifier: "MainLoginScreen") as? MainLoginScreenController {
+            self.present(MainLoginScreenController, animated: true, completion:
                 {
                     NSLog("facebookLogout - Presenting MainLoginScreen")
             })
@@ -83,7 +83,7 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
     
     // MARK: UIScroll
     
-    private func setAutoScrollFocus(offset: CGPoint) {
+    fileprivate func setAutoScrollFocus(_ offset: CGPoint) {
         self.scrollView .setContentOffset(offset, animated: true)
         self .viewDidLayoutSubviews()
     }
@@ -91,14 +91,14 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
     
     // MARK: UITextFieldDelegate
     
-    public func textFieldShouldReturn(textField: UITextField) -> Bool {
+    open func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
         textField.resignFirstResponder()
         determineTextFieldToFocus(textField)
         return true
     }
     
-    public func textFieldDidBeginEditing(textField: UITextField) {
+    open func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField.tag {
             case TruckScheduleTextFieldTags.locationTag.rawValue:
                 scrollView.contentOffset = textField.frame.origin
@@ -114,23 +114,23 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
         
     }
     
-    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         view.endEditing(true)
-        super.touchesBegan(touches, withEvent: event)
+        super.touchesBegan(touches, with: event)
     }
     
-    public func textFieldDidEndEditing(textField: UITextField) {
+    open func textFieldDidEndEditing(_ textField: UITextField) {
         switch textField.tag {
             case TruckScheduleTextFieldTags.locationTag.rawValue:
-                setAutoScrollFocus(CGPointMake(0, 0))
+                setAutoScrollFocus(CGPoint(x: 0, y: 0))
                 newTruckScheduleLocation = textField.text
                     
             case TruckScheduleTextFieldTags.addressTag.rawValue:
-                setAutoScrollFocus(CGPointMake(0, 0))
+                setAutoScrollFocus(CGPoint(x: 0, y: 0))
                 newTruckScheduleAddress = textField.text
 
             case TruckScheduleTextFieldTags.cityTag.rawValue:
-                setAutoScrollFocus(CGPointMake(0, 0))
+                setAutoScrollFocus(CGPoint(x: 0, y: 0))
                 newTruckScheduleCity = textField.text
             
             default:
@@ -138,7 +138,7 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
         }
     }
     
-    private func determineTextFieldToFocus(textField: UITextField) {
+    fileprivate func determineTextFieldToFocus(_ textField: UITextField) {
         switch textField.tag {
             case TruckScheduleTextFieldTags.locationTag.rawValue:
                 textField.becomeFirstResponder()
@@ -148,7 +148,7 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
                 
             case TruckScheduleTextFieldTags.cityTag.rawValue:
                 textField.becomeFirstResponder()
-            setAutoScrollFocus(CGPointMake(0, -100))
+            setAutoScrollFocus(CGPoint(x: 0, y: -100))
             
         default:
             print("did not match")
@@ -177,24 +177,24 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
 
     
     // MARK: - PRIVATE METHODS
-    func presentSubmitAlert(title: String, message: String) {
+    func presentSubmitAlert(_ title: String, message: String) {
         if let _: AnyClass = NSClassFromString("UIAlertController") { // iOS 8
-            let myAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-            myAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(myAlert, animated: true, completion: nil)
+            let myAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            myAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(myAlert, animated: true, completion: nil)
         } else { // iOS 7
             let alert: UIAlertView = UIAlertView()
             alert.delegate = self
             
             alert.title = title
             alert.message = message
-            alert.addButtonWithTitle("OK")
+            alert.addButton(withTitle: "OK")
             
             alert.show()
         }
     }
     
-    func onSubmit(sender: UIButton) {
+    func onSubmit(_ sender: UIButton) {
         print("submitButton pressed")
         print("newTruckScheduleLocation: \(newTruckScheduleLocation)")
         print("TruckScheduleTextFieldTags \(newTruckScheduleAddress)")
@@ -202,35 +202,35 @@ public class UserViewController: UIViewController, UINavigationBarDelegate, UITe
         presentSubmitAlert("Truck Schedule Submitted", message:"Successfully!")
     }
     
-    func startTimeSwitchToggled(sender: UISwitch){
-        if (sender.on && self.endTimeSwitch.on){
-            self.addressView.frame = CGRectMake(0, 395, self.view.frame.size.width, self.addressView.frame.size.height)
-            self.startDateView.hidden = false
+    func startTimeSwitchToggled(_ sender: UISwitch){
+        if (sender.isOn && self.endTimeSwitch.isOn){
+            self.addressView.frame = CGRect(x: 0, y: 395, width: self.view.frame.size.width, height: self.addressView.frame.size.height)
+            self.startDateView.isHidden = false
         }
-        else if(sender.on && !self.endTimeSwitch.on){
-            self.addressView.frame = CGRectMake(0, 265, self.view.frame.size.width, self.addressView.frame.size.height)
-            self.startDateView.hidden = false
+        else if(sender.isOn && !self.endTimeSwitch.isOn){
+            self.addressView.frame = CGRect(x: 0, y: 265, width: self.view.frame.size.width, height: self.addressView.frame.size.height)
+            self.startDateView.isHidden = false
         }
         else {
             let startViewFrame = self.startDateView.frame
-            self.startDateView.hidden = true
+            self.startDateView.isHidden = true
             self.addressView.frame = startViewFrame
         }
     }
     
-    func endTimeSwitchToggled(sender: UISwitch){
-        if (sender.on && self.startTimeSwitch.on){
-            self.addressView.frame = CGRectMake(0, 395, self.view.frame.size.width, self.addressView.frame.size.height)
-            self.endDateView.hidden = false
+    func endTimeSwitchToggled(_ sender: UISwitch){
+        if (sender.isOn && self.startTimeSwitch.isOn){
+            self.addressView.frame = CGRect(x: 0, y: 395, width: self.view.frame.size.width, height: self.addressView.frame.size.height)
+            self.endDateView.isHidden = false
         }
-        else if(sender.on && !self.startTimeSwitch.on){
-            self.endTimeView.frame = CGRectMake(0, 90, self.view.frame.size.width, self.addressView.frame.size.height)
-            self.addressView.frame = CGRectMake(0, 240, self.view.frame.size.width, self.addressView.frame.size.height)
-            self.endDateView.hidden = false
+        else if(sender.isOn && !self.startTimeSwitch.isOn){
+            self.endTimeView.frame = CGRect(x: 0, y: 90, width: self.view.frame.size.width, height: self.addressView.frame.size.height)
+            self.addressView.frame = CGRect(x: 0, y: 240, width: self.view.frame.size.width, height: self.addressView.frame.size.height)
+            self.endDateView.isHidden = false
         }
         else {
             let endViewFrame = self.endDateView.frame
-            self.endDateView.hidden = true
+            self.endDateView.isHidden = true
             self.addressView.frame = endViewFrame
         }
     }
