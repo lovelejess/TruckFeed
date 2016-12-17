@@ -28,11 +28,11 @@ class MainLoginScreenController: UIViewController {
                                                    from: self,
                                                    handler:
             
-            { (response:FBSDKLoginManagerLoginResult!, error: NSError!) in
+            { (result, error) in
                 if(error != nil){
                     NSLog("An error occured logging in: \(error)")
                 }
-                else if(response.isCancelled){
+                else if(result! as FBSDKLoginManagerLoginResult).isCancelled == true {
                     NSLog("Facebook Login was cancelled")
                 }
                 else {

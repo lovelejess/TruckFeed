@@ -33,42 +33,51 @@ open class TruckOwner: NSObject {
         NSLog("retrieveUserAccessInfoFromFBRequest - getting facebook user access info")
         var fbAccessUserID = String()
         let request = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "name, email, friends, id"] , httpMethod: "GET")
-        request?.start(
-            completionHandler: {
+        let connection = FBSDKGraphRequestConnection()
+        connection.add(request, completionHandler: {
                 (connection, result, error) in
                 if(error != nil){
                     NSLog("retrieveUserAccessInfoFromFBRequest - Error retrieving fb graph request:  \(error?.localizedDescription)")
                 }
                 else {
-                    fbAccessUserID = result.value(forKey: "id") as! String
-                    NSLog("retrieveUserAccessInfoFromFBRequest - retrieved result successfully. ID:  \(fbAccessUserID)")
-                    self.setUserAccessInfoFromFBRequest(fbAccessUserID)
-                    self.retrieveFBPageIDFromFBRequest()
+                    if let response = result as AnyObject? {
+                        fbAccessUserID = response.value(forKey: "id") as! String
+                        NSLog("retrieveUserAccessInfoFromFBRequest - retrieved result successfully. ID:  \(fbAccessUserID)")
+                        self.setUserAccessInfoFromFBRequest(fbAccessUserID)
+                        self.retrieveFBPageIDFromFBRequest()
+                    }
                 }
         })
+        connection.start()
     }
     
     open func retrieveFBPageIDFromFBRequest(_ completionBlock: ()){
         NSLog("getFBPageID - getting facebook page id")
         let request = FBSDKGraphRequest(graphPath:"\(self.getUserAccessInfo())/accounts", parameters: nil , httpMethod: "GET")
-        request?.start(
-            completionHandler: {
+        let connection = FBSDKGraphRequestConnection()
+        connection.add(request, completionHandler: {
                 (connection, result, error) in
                 if(error != nil){
                     NSLog("getFBPageID - Error retrieving fb graph request:  \(error?.localizedDescription)")
                 }
                 else {
-                    let data = result.value(forKey: "data") as! NSArray
-                    if let id = data[0].value(forKey: "id") as? String {
-                        NSLog("getFBPageID - retrieved id successfully. ID:  \(id)")
-                        self.setFBPageID(id)
-                    }
-                    if let name = data[0].value(forKey: "name") as? String {
-                        NSLog("getFBPageID - retrieved name successfully. name:  \(name)")
-                        self.setTruckOwnerName(name)
+                    if let response = result as AnyObject? {
+                        if let data = response.value(forKey: "data") as? NSArray {
+                            if let id = data.value(forKey: "id") as? String {
+                                NSLog("getFBPageID - retrieved id successfully. ID:  \(id)")
+                                self.setFBPageID(id)
+                            }
+                            if let name = data.firstObject as AnyObject? {
+                                if let nameString = name.value(forKey: "name") as? String {
+                                    NSLog("getFBPageID - retrieved name successfully. name:  \(nameString)")
+                                    self.setTruckOwnerName(nameString)
+                                }
+                            }
+                        }
                     }
                 }
         })
+        connection.start()
     }
     
     open func getUserAccessInfo() -> String {

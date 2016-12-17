@@ -29,12 +29,12 @@ open class ScheduleDataProvider: NSObject, ScheduleDataProviderProtocol {
     {
         
         let queryItems = [URLQueryItem(name: "truck_name", value: endpoint)]
-        if let urlComps = URLComponents(string: "https://damp-escarpment-86736.herokuapp.com/truck/schedules?"){
+        if var urlComps = URLComponents(string: "https://damp-escarpment-86736.herokuapp.com/truck/schedules?"){
             urlComps.queryItems = queryItems
             let truckScheduleListUrl = urlComps.url
             return truckScheduleListUrl!
         }
-        return URL()
+        return URL(string: "")! // TODO: never return Url!
     }
     
     func generateSessionDataWithURL(_ url: URL) {
