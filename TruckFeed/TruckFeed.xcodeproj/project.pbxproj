@@ -430,7 +430,7 @@
 				KnownAssetTags = (
 					0,
 				);
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = LoveLeJess;
 				TargetAttributes = {
 					101079411B8FF5E300B3AADB = {
@@ -862,6 +862,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6321F900B9B42BD32201CE2A /* Pods-TruckFeed.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N993RX34M3;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -885,6 +886,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 03B62D40F32CB1BCC4A95A16 /* Pods-TruckFeed.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N993RX34M3;
 				FRAMEWORK_SEARCH_PATHS = (
