@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import FBSDKCoreKit
 
-public class MenuViewController: UIViewController, UINavigationBarDelegate {
+open class MenuViewController: UIViewController, UINavigationBarDelegate {
     
     @IBOutlet var tableView: UITableView?
-    private var dataProvider: MenuDataProvider?
-    private var menuList = [MenuListItem]()
+    fileprivate var dataProvider: MenuDataProvider?
+    fileprivate var menuList = [MenuListItem]()
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         dataProvider = MenuDataProvider()
         tableView!.delegate = self
@@ -25,24 +25,24 @@ public class MenuViewController: UIViewController, UINavigationBarDelegate {
         dataProvider?.tableView = tableView
         
         
-        let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
-        let lefttBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRectMake(0, 0, 43, 31), image: UIImage(named: "back.png")!, target: self)
+        let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 54)
+        let lefttBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRect(x: 0, y: 0, width: 43, height: 31), image: UIImage(named: "back.png")!, target: self)
         let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: "Settings", leftBarButton: lefttBarButtonItem)
         self.view.addSubview(navigationBar)
     }
     
-    func dismissViewController(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {});
+    func dismissViewController(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: {});
     }
     
-    override public func viewDidAppear(animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
     }
 
-    func presentMainLoginViewController(sender: AnyObject){
+    func presentMainLoginViewController(_ sender: AnyObject){
         NSLog(" facebookLogout - entering presentMainLoginScreen")
-        if let MainLoginScreenController = self.storyboard?.instantiateViewControllerWithIdentifier("MainLoginScreen") as? MainLoginScreenController {
-            self.presentViewController(MainLoginScreenController, animated: true, completion:
+        if let MainLoginScreenController = self.storyboard?.instantiateViewController(withIdentifier: "MainLoginScreen") as? MainLoginScreenController {
+            self.present(MainLoginScreenController, animated: true, completion:
                 {
                     NSLog("facebookLogout - Presenting MainLoginScreen")
             })
@@ -55,14 +55,14 @@ public class MenuViewController: UIViewController, UINavigationBarDelegate {
 extension MenuViewController: UITableViewDelegate
 {
     
-    public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 42.0;
     }
     
-    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         NSLog("You selected cell #\(indexPath.row)!")
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
         if(FacebookCredentials.isLoggedIn())
         {
             FacebookCredentials.facebookLogout()

@@ -10,16 +10,18 @@ import Foundation
 import UIKit
 import FBSDKCoreKit.FBSDKGraphRequest
 
-public class TruckOwner: NSObject {
+open class TruckOwner: NSObject {
+    
+    static let sharedInstance = TruckOwner()
     var fbAccessToken:String
-    var userDefaults:NSUserDefaults
+    var userDefaults:UserDefaults
     var fbPageId:String
     var fbAccessUserID:String
     var name:String
     
     override init()
     {
-        self.userDefaults = NSUserDefaults()
+        self.userDefaults = UserDefaults()
         self.fbAccessToken = ""
         self.fbPageId = ""
         self.fbAccessUserID = String()
@@ -27,108 +29,106 @@ public class TruckOwner: NSObject {
         super.init()
     }
     
-    class var sharedInstance : TruckOwner {
-        struct Static {
-            static var onceToken : dispatch_once_t = 0
-            static var instance : TruckOwner? = nil
-        }
-        dispatch_once(&Static.onceToken) {
-            Static.instance = TruckOwner()
-        }
-        return Static.instance!
-    }
-    
-    public func requestFacebookCredentials(){
+    open func requestFacebookCredentials(){
         NSLog("retrieveUserAccessInfoFromFBRequest - getting facebook user access info")
         var fbAccessUserID = String()
-        let request = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "name, email, friends, id"] , HTTPMethod: "GET")
-        request.startWithCompletionHandler(
-            {
+        let request = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "name, email, friends, id"] , httpMethod: "GET")
+        let connection = FBSDKGraphRequestConnection()
+        connection.add(request, completionHandler: {
                 (connection, result, error) in
                 if(error != nil){
-                    NSLog("retrieveUserAccessInfoFromFBRequest - Error retrieving fb graph request:  \(error.localizedDescription)")
+                    NSLog("retrieveUserAccessInfoFromFBRequest - Error retrieving fb graph request:  \(error?.localizedDescription)")
                 }
                 else {
-                    fbAccessUserID = result.valueForKey("id") as! String
-                    NSLog("retrieveUserAccessInfoFromFBRequest - retrieved result successfully. ID:  \(fbAccessUserID)")
-                    self.setUserAccessInfoFromFBRequest(fbAccessUserID)
-                    self.retrieveFBPageIDFromFBRequest()
+                    if let response = result as AnyObject? {
+                        fbAccessUserID = response.value(forKey: "id") as! String
+                        NSLog("retrieveUserAccessInfoFromFBRequest - retrieved result successfully. ID:  \(fbAccessUserID)")
+                        self.setUserAccessInfoFromFBRequest(fbAccessUserID)
+                        self.retrieveFBPageIDFromFBRequest()
+                    }
                 }
         })
+        connection.start()
     }
     
-    public func retrieveFBPageIDFromFBRequest(completionBlock: ()){
+    open func retrieveFBPageIDFromFBRequest(_ completionBlock: ()){
         NSLog("getFBPageID - getting facebook page id")
-        let request = FBSDKGraphRequest(graphPath:"\(self.getUserAccessInfo())/accounts", parameters: nil , HTTPMethod: "GET")
-        request.startWithCompletionHandler(
-            {
+        let request = FBSDKGraphRequest(graphPath:"\(self.getUserAccessInfo())/accounts", parameters: nil , httpMethod: "GET")
+        let connection = FBSDKGraphRequestConnection()
+        connection.add(request, completionHandler: {
                 (connection, result, error) in
                 if(error != nil){
-                    NSLog("getFBPageID - Error retrieving fb graph request:  \(error.localizedDescription)")
+                    NSLog("getFBPageID - Error retrieving fb graph request:  \(error?.localizedDescription)")
                 }
                 else {
-                    let data = result.valueForKey("data") as! NSArray
-                    if let id = data[0].valueForKey("id") as? String {
-                        NSLog("getFBPageID - retrieved id successfully. ID:  \(id)")
-                        self.setFBPageID(id)
-                    }
-                    if let name = data[0].valueForKey("name") as? String {
-                        NSLog("getFBPageID - retrieved name successfully. name:  \(name)")
-                        self.setTruckOwnerName(name)
+                    if let response = result as AnyObject? {
+                        if let data = response.value(forKey: "data") as? NSArray {
+                            if let id = data.value(forKey: "id") as? String {
+                                NSLog("getFBPageID - retrieved id successfully. ID:  \(id)")
+                                self.setFBPageID(id)
+                            }
+                            if let name = data.firstObject as AnyObject? {
+                                if let nameString = name.value(forKey: "name") as? String {
+                                    NSLog("getFBPageID - retrieved name successfully. name:  \(nameString)")
+                                    self.setTruckOwnerName(nameString)
+                                }
+                            }
+                        }
                     }
                 }
         })
+        connection.start()
     }
     
-    public func getUserAccessInfo() -> String {
-        return userDefaults.valueForKey("fbAccessUserID") as! String
+    open func getUserAccessInfo() -> String {
+        return userDefaults.value(forKey: "fbAccessUserID") as! String
     }
     
-    public func setFBAccessToken(accessToken:String){
-        userDefaults.setObject(accessToken, forKey:"accessToken")
+    open func setFBAccessToken(_ accessToken:String){
+        userDefaults.set(accessToken, forKey:"accessToken")
         userDefaults.synchronize()
         self.fbAccessToken = accessToken
     }
 
-    public func getFBAccessToken() -> String{
-        return userDefaults.valueForKey("accessToken") as! String
+    open func getFBAccessToken() -> String{
+        return userDefaults.value(forKey: "accessToken") as! String
     }
     
-    func setFBPageID(id: String)
+    func setFBPageID(_ id: String)
     {
-        userDefaults.setObject(id, forKey:"fbPageId")
+        userDefaults.set(id, forKey:"fbPageId")
         userDefaults.synchronize()
         self.fbPageId = id
         NSLog("setFbPageId - id: \(self.fbPageId)")
     }
     
-    public func getFBPageID() -> String {
-        if let id = userDefaults.valueForKey("fbPageId") as? String
+    open func getFBPageID() -> String {
+        if let id = userDefaults.value(forKey: "fbPageId") as? String
         {
             return id as String
         }
         return ""
     }
     
-    public func getTruckOwnerName() -> String {
-        if let name = userDefaults.valueForKey("name") as? String
+    open func getTruckOwnerName() -> String {
+        if let name = userDefaults.value(forKey: "name") as? String
         {
             return name as String
         }
         return "Truck Feeder"
     }
     
-    func setTruckOwnerName(name: String)
+    func setTruckOwnerName(_ name: String)
     {
-        userDefaults.setObject(name, forKey:"name")
+        userDefaults.set(name, forKey:"name")
         userDefaults.synchronize()
         self.name = name
         NSLog("setTruckOwnerName - name: \(self.name)")
     }
     
-    func setUserAccessInfoFromFBRequest(fbAccessUserID: String)
+    func setUserAccessInfoFromFBRequest(_ fbAccessUserID: String)
     {
-        userDefaults.setObject(fbAccessUserID, forKey:"fbAccessUserID")
+        userDefaults.set(fbAccessUserID, forKey:"fbAccessUserID")
         userDefaults.synchronize()
         self.fbAccessUserID = fbAccessUserID
         NSLog("setUserAccessInfoFromFBRequest - fbAccessUserId: \(self.fbAccessUserID)")

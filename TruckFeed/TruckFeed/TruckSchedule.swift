@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class TruckSchedule: NSObject {
+open class TruckSchedule: NSObject {
     var truckId: NSInteger
     var truckName: String
     var month: String

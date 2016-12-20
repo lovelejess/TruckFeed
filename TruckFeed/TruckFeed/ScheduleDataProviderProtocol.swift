@@ -11,5 +11,5 @@ import UIKit
 
 public protocol ScheduleDataProviderProtocol: UITableViewDataSource, UITableViewDelegate {
     weak var tableView: UITableView! { get set }
-    func getScheduleForTruck(truckId: String) -> [TruckSchedule]
+    func getScheduleForTruck(_ truckId: String) -> [TruckSchedule]
 }

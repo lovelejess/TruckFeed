@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TruckScheduleCell: UITableViewCell {
+open class TruckScheduleCell: UITableViewCell {
     @IBOutlet weak var weekDay: UILabel!
     @IBOutlet weak var dateNumber: UILabel!
     @IBOutlet weak var month: UILabel!

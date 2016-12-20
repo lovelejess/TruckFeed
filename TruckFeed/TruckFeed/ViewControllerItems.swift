@@ -11,7 +11,7 @@ import UIKit
 
 public struct ViewControllerItems {
     
-    static func createNavigationBarWithRightButton(frame: CGRect, title: String, rightBarButton: UIBarButtonItem) -> UINavigationBar {
+    static func createNavigationBarWithRightButton(_ frame: CGRect, title: String, rightBarButton: UIBarButtonItem) -> UINavigationBar {
         let navigationBar = UINavigationBar(frame:frame)
         let navigationItem = UINavigationItem()
         navigationItem.title = title
@@ -22,7 +22,7 @@ public struct ViewControllerItems {
         return navigationBar
     }
     
-    static func createNavigationBarWithLeftButton(frame: CGRect, title: String, leftBarButton: UIBarButtonItem) -> UINavigationBar {
+    static func createNavigationBarWithLeftButton(_ frame: CGRect, title: String, leftBarButton: UIBarButtonItem) -> UINavigationBar {
         let navigationBar = UINavigationBar(frame:frame)
         let navigationItem = UINavigationItem()
         navigationItem.title = title
@@ -33,7 +33,7 @@ public struct ViewControllerItems {
         return navigationBar
     }
     
-    static func createNavigationBar(frame: CGRect, title: String) -> UINavigationBar {
+    static func createNavigationBar(_ frame: CGRect, title: String) -> UINavigationBar {
         let navigationBar = UINavigationBar(frame:frame)
         let navigationItem = UINavigationItem()
         navigationItem.title = title
@@ -43,39 +43,39 @@ public struct ViewControllerItems {
     }
     
     
-    static func createBarButtonItemWithImage(onClick: Selector, frame: CGRect, image: UIImage, target: AnyObject) -> UIBarButtonItem {
-        let barButtonItem: UIButton = UIButton(type:UIButtonType.Custom)
-        barButtonItem.addTarget(target, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
+    static func createBarButtonItemWithImage(_ onClick: Selector, frame: CGRect, image: UIImage, target: AnyObject) -> UIBarButtonItem {
+        let barButtonItem: UIButton = UIButton(type:UIButtonType.custom)
+        barButtonItem.addTarget(target, action: onClick, for: UIControlEvents.touchUpInside)
         barButtonItem.frame = frame
-        barButtonItem.setImage(image, forState: UIControlState.Normal)
+        barButtonItem.setImage(image, for: UIControlState())
         
         let barButton = UIBarButtonItem(customView: barButtonItem)
-        barButton.tintColor = UIColor.darkGrayColor()
+        barButton.tintColor = UIColor.darkGray
         
         return barButton
     }
     
-    static func createButton(title: String, onClick: Selector, frame: CGRect, target: AnyObject ) -> UIButton {
-        let button = UIButton(type: UIButtonType.System)
-        button.setTitle(title, forState: UIControlState.Normal)
+    static func createButton(_ title: String, onClick: Selector, frame: CGRect, target: AnyObject ) -> UIButton {
+        let button = UIButton(type: UIButtonType.system)
+        button.setTitle(title, for: UIControlState())
         button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 16)
         button.tintColor = lightColor
         button.backgroundColor = darkColor
-        button.addTarget(target, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(target, action: onClick, for: UIControlEvents.touchUpInside)
         button.frame = frame
         
         return button
     }
     // DONT NEED THESE
-    static func createBarButtonItem(title: String, onClick: Selector, frame: CGRect, target: AnyObject, image: UIImage) -> UIBarButtonItem {
-        let barButtonItem: UIButton = UIButton(type:UIButtonType.Custom)
-        barButtonItem.setTitle(title, forState: UIControlState.Normal)
-        barButtonItem.addTarget(target, action: onClick, forControlEvents: UIControlEvents.TouchUpInside)
+    static func createBarButtonItem(_ title: String, onClick: Selector, frame: CGRect, target: AnyObject, image: UIImage) -> UIBarButtonItem {
+        let barButtonItem: UIButton = UIButton(type:UIButtonType.custom)
+        barButtonItem.setTitle(title, for: UIControlState())
+        barButtonItem.addTarget(target, action: onClick, for: UIControlEvents.touchUpInside)
         barButtonItem.frame = frame
-        barButtonItem.setImage(image, forState: UIControlState.Normal)
+        barButtonItem.setImage(image, for: UIControlState())
         
         let barButton = UIBarButtonItem(customView: barButtonItem)
-        barButton.tintColor = UIColor.darkGrayColor()
+        barButton.tintColor = UIColor.darkGray
         
         return barButton
     }

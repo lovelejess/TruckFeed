@@ -1,5 +1,11 @@
 language: objective-c
 osx_image: xcode8
+xcode_workspace: TruckFeed.xcworkspace
+podfile: TruckFeed/Podfile
+before_install:
+- gem install cocoapods # Since Travis is not always on latest version
+- pod repo update
+- pod install --project-directory=TruckFeed
 script:
-  - xcodebuild -project Truckfeed/TruckFeed.xcodeproj -scheme TruckFeed -sdk iphonesimulator 
-  - xcodebuild -project Truckfeed/TruckFeed.xcodeproj -scheme TruckFeedTests -sdk iphonesimulator 
+  - xcodebuild -workspace TruckFeed/TruckFeed.xcworkspace -scheme TruckFeed -sdk iphonesimulator 
+  - xcodebuild -workspace TruckFeed/TruckFeed.xcworkspace -scheme TruckFeedTests -sdk iphonesimulator 

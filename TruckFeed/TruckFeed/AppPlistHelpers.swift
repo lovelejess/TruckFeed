@@ -11,20 +11,20 @@ import Foundation
 public struct AppPlistHelpers
 {
     static func getAppPlistDictionary() -> NSMutableDictionary {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
-        let documentsDirectory = paths.objectAtIndex(0) as! NSString
-        let path = documentsDirectory.stringByAppendingPathComponent("App.plist")
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
+        let documentsDirectory = paths.object(at: 0) as! NSString
+        let path = documentsDirectory.appendingPathComponent("App.plist")
         var dict = NSMutableDictionary()
         dict = NSMutableDictionary(contentsOfFile: path)!
         
-        let fileManager = NSFileManager.defaultManager()
+        let fileManager = FileManager.default
         
-        if(!fileManager.fileExistsAtPath(path)) {
-            if let bundlePath = NSBundle.mainBundle().pathForResource("App", ofType: "plist") {
+        if(!fileManager.fileExists(atPath: path)) {
+            if let bundlePath = Bundle.main.path(forResource: "App", ofType: "plist") {
                 let resultDictionary = NSMutableDictionary(contentsOfFile: bundlePath)
                 NSLog("getAppPlistDictionary - Bundle App.plist file is --> \(resultDictionary?.description)")
                 do {
-                    try fileManager.copyItemAtPath(bundlePath, toPath: path)
+                    try fileManager.copyItem(atPath: bundlePath, toPath: path)
                 }
                 catch {
                     NSLog("getAppPlistDictionary - App.plist not found. Please, make sure it is part of the bundle.")

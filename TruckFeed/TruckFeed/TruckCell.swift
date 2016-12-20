@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class TruckCell: UITableViewCell {
+open class TruckCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!

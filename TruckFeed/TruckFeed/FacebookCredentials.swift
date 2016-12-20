@@ -13,7 +13,7 @@ public struct FacebookCredentials
 {
     
     static func isLoggedIn() -> Bool {
-        if let loggedIn = AppPlistHelpers.getAppPlistDictionary().objectForKey("LoggedIn") as? Bool {
+        if let loggedIn = AppPlistHelpers.getAppPlistDictionary().object(forKey: "LoggedIn") as? Bool {
             NSLog("LoggedIn value from App.plist is : \(loggedIn)")
             return loggedIn
         }
@@ -22,32 +22,32 @@ public struct FacebookCredentials
     
     static func setIsLoggedIn()
     {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
-        let documentsDirectory = paths.objectAtIndex(0) as! NSString
-        let path = documentsDirectory.stringByAppendingPathComponent("App.plist")
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
+        let documentsDirectory = paths.object(at: 0) as! NSString
+        let path = documentsDirectory.appendingPathComponent("App.plist")
         let dict = NSMutableDictionary(contentsOfFile: path)
         dict?.setValue(true, forKey: "LoggedIn")
-        dict?.writeToFile(path, atomically: false)
+        dict?.write(toFile: path, atomically: false)
         NSLog("Setting App.plist file to :\(NSMutableDictionary(contentsOfFile: path)))")
     }
     
     static func facebookLogout(){
-        FBSDKAccessToken.setCurrentAccessToken(nil)
+        FBSDKAccessToken.setCurrent(nil)
         let truckOwner = TruckOwner.sharedInstance
         truckOwner.setFBAccessToken("")
         
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
-        let documentsDirectory = paths.objectAtIndex(0) as! NSString
-        let path = documentsDirectory.stringByAppendingPathComponent("App.plist")
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
+        let documentsDirectory = paths.object(at: 0) as! NSString
+        let path = documentsDirectory.appendingPathComponent("App.plist")
         let dict = NSMutableDictionary(contentsOfFile: path)
         dict?.setValue(false, forKey: "LoggedIn")
-        dict?.writeToFile(path, atomically: false)
+        dict?.write(toFile: path, atomically: false)
         NSLog("facebookLogout - Setting App.plist file to :\(NSMutableDictionary(contentsOfFile: path)))")
     }
 
     
-    static func setFacebookRequestOperationsQueue(facebookRequestOperation: NSBlockOperation, presentUserViewOperation: NSBlockOperation ) {
-        let queue = NSOperationQueue()
+    static func setFacebookRequestOperationsQueue(_ facebookRequestOperation: BlockOperation, presentUserViewOperation: BlockOperation ) {
+        let queue = OperationQueue()
         presentUserViewOperation.addDependency(facebookRequestOperation)
         queue.addOperation(facebookRequestOperation)
         queue.addOperation(presentUserViewOperation)

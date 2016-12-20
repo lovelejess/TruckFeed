@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class MenuListItemCell: UITableViewCell {
+open class MenuListItemCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
 }

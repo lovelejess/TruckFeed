@@ -8,11 +8,11 @@
 
 import UIKit
 
-public class ScheduleDataProvider: NSObject, ScheduleDataProviderProtocol {
-    public var truckScheduleList = [TruckSchedule]()
-    weak public var tableView: UITableView!
+open class ScheduleDataProvider: NSObject, ScheduleDataProviderProtocol {
+    open var truckScheduleList = [TruckSchedule]()
+    weak open var tableView: UITableView!
     
-    public func getScheduleForTruck(truckName: String) -> [TruckSchedule]
+    open func getScheduleForTruck(_ truckName: String) -> [TruckSchedule]
     {
         let truckScheduleListUrl = self.createURLWithEndPoint(truckName)
         self.generateSessionDataWithURL(truckScheduleListUrl)
@@ -25,45 +25,45 @@ public class ScheduleDataProvider: NSObject, ScheduleDataProviderProtocol {
         return self.truckScheduleList
     }
     
-    func createURLWithEndPoint(endpoint: String) -> NSURL
+    func createURLWithEndPoint(_ endpoint: String) -> URL
     {
         
-        let queryItems = [NSURLQueryItem(name: "truck_name", value: endpoint)]
-        if let urlComps = NSURLComponents(string: "https://damp-escarpment-86736.herokuapp.com/truck/schedules?"){
+        let queryItems = [URLQueryItem(name: "truck_name", value: endpoint)]
+        if var urlComps = URLComponents(string: "https://damp-escarpment-86736.herokuapp.com/truck/schedules?"){
             urlComps.queryItems = queryItems
-            let truckScheduleListUrl = urlComps.URL
+            let truckScheduleListUrl = urlComps.url
             return truckScheduleListUrl!
         }
-        return NSURL()
+        return URL(string: "")! // TODO: never return Url!
     }
     
-    func generateSessionDataWithURL(url: NSURL) {
+    func generateSessionDataWithURL(_ url: URL) {
         
-        let request = NSURLRequest(URL:url)
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        let request = URLRequest(url:url)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {
             response, data, error in
             if let error = error {
                 NSLog("getTruckScheduleList\(error.localizedDescription)")
-            } else if let httpResponse = response as? NSHTTPURLResponse {
+            } else if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
                     self.truckScheduleList = self.parseJSON(data!)
-                    dispatch_async(dispatch_get_main_queue(),{
+                    DispatchQueue.main.async(execute: {
                         self.tableView.reloadData()
                     });
                 }
             }
         }
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
-    func parseJSON(data: NSData) -> [TruckSchedule]
+    func parseJSON(_ data: Data) -> [TruckSchedule]
     {
         var json: AnyObject?
         var mappedJson = [TruckSchedule]()
         do {
-            json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! [AnyObject]
+            json = try JSONSerialization.jsonObject(with: data, options: []) as! [AnyObject] as AnyObject?
             NSLog("parseJSON - json : \(json)")
             let scheduleArray = json as! [AnyObject]
             for schedule in scheduleArray {
@@ -76,7 +76,7 @@ public class ScheduleDataProvider: NSObject, ScheduleDataProviderProtocol {
         return mappedJson
     }
     
-    func translateToTruckScheduleObject(json: AnyObject) -> TruckSchedule
+    func translateToTruckScheduleObject(_ json: AnyObject) -> TruckSchedule
     {
         NSLog("translateToTruckObject - : \(json)")
         let truckId = NSInteger(json["truck_id"] as! String)!
@@ -97,23 +97,23 @@ public class ScheduleDataProvider: NSObject, ScheduleDataProviderProtocol {
 // MARK: - Table view data source
 extension ScheduleDataProvider: UITableViewDataSource {
     
-    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return truckScheduleList.count
     }
 
-    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let truckScheduleCell = tableView.dequeueReusableCellWithIdentifier("TruckSchedule")
+        let truckScheduleCell = tableView.dequeueReusableCell(withIdentifier: "TruckSchedule")
         self.configureCell(truckScheduleCell!, atIndexPath: indexPath)
         
         return truckScheduleCell!
     }
     
-    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
+    func configureCell(_ cell: UITableViewCell, atIndexPath indexPath: IndexPath) {
         if let truckScheduleCell = cell as? TruckScheduleCell {
             let truckSchedule = self.truckScheduleList[indexPath.row] as TruckSchedule
             truckScheduleCell.weekDay.text = truckSchedule.weekDay

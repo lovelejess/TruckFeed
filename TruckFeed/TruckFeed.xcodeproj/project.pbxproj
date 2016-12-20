@@ -26,14 +26,11 @@
 		100E15671D05038400B3BC9A /* MasterTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B71CDAC67700984B35 /* MasterTabViewController.swift */; };
 		100E15681D05038A00B3BC9A /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */; };
 		101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
-		1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; };
+		1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; settings = {ASSET_TAGS = (0, ); }; };
 		1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1010794E1B8FF5E300B3AADB /* Assets.xcassets */; };
 		101079781B90008300B3AADB /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079771B90008300B3AADB /* Truck.swift */; };
 		1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
 		1010797E1B92776F00B3AADB /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010797D1B92776F00B3AADB /* Palette.swift */; };
-		10674DE21C45CE92000D3E4C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DDF1C45CE92000D3E4C /* FBSDKCoreKit.framework */; };
-		10674DE31C45CE92000D3E4C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DE01C45CE92000D3E4C /* FBSDKLoginKit.framework */; };
-		10674DE41C45CE92000D3E4C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10674DE11C45CE92000D3E4C /* FBSDKShareKit.framework */; };
 		106C8A0E1D406049007DD2CF /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
 		106C8A0F1D406049007DD2CF /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
 		106C8A101D40604C007DD2CF /* TruckFeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */; };
@@ -101,11 +98,14 @@
 		10D950551BFD7D4E00EC435B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1010794E1B8FF5E300B3AADB /* Assets.xcassets */; };
 		10D950561BFD7D4E00EC435B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */; };
 		10D950571BFD7D4E00EC435B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
-		10D950591BFD7D4E00EC435B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; };
+		10D950591BFD7D4E00EC435B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; settings = {ASSET_TAGS = (0, ); }; };
 		10D9505C1BFD7D4E00EC435B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10DC618A1BE863A60021B2D3 /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
 		10DC618C1BE8661E0021B2D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */; };
 		10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */; };
+		44D63DB9063710BCE67F05E1 /* Pods_TruckFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36258BF9B8CA7A7C35A7DAE5 /* Pods_TruckFeed.framework */; };
+		6E5C8BD15E6B684B87C16D04 /* Pods_TruckFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0737B45AD6EC6786801F3788 /* Pods_TruckFeedTests.framework */; };
+		C14A5E6605F8ED3358BABF6C /* Pods_TruckFeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09739683405C05FC5F7B6416 /* Pods_TruckFeedUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +120,8 @@
 
 /* Begin PBXFileReference section */
 		03B62D40F32CB1BCC4A95A16 /* Pods-TruckFeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeed.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeed/Pods-TruckFeed.release.xcconfig"; sourceTree = "<group>"; };
+		0737B45AD6EC6786801F3788 /* Pods_TruckFeedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruckFeedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09739683405C05FC5F7B6416 /* Pods_TruckFeedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruckFeedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		100055B31CCD790300984B35 /* ViewControllerItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerItems.swift; sourceTree = "<group>"; };
 		100055B51CD04F6800984B35 /* AppPlistHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPlistHelpers.swift; sourceTree = "<group>"; };
 		100055B71CDAC67700984B35 /* MasterTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTabViewController.swift; sourceTree = "<group>"; };
@@ -140,9 +142,6 @@
 		101079771B90008300B3AADB /* Truck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Truck.swift; sourceTree = "<group>"; };
 		101079791B912B7A00B3AADB /* TruckCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckCell.swift; sourceTree = "<group>"; };
 		1010797D1B92776F00B3AADB /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
-		10674DDF1C45CE92000D3E4C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = TruckFeed/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		10674DE01C45CE92000D3E4C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = TruckFeed/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		10674DE11C45CE92000D3E4C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = TruckFeed/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		10674DE51C45CF97000D3E4C /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		106C8A1F1D485531007DD2CF /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		10738F4A1CB5FC1800BAC3CE /* MainLoginScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLoginScreenController.swift; sourceTree = "<group>"; };
@@ -171,11 +170,12 @@
 		10DC61891BE863A60021B2D3 /* TruckFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedController.swift; sourceTree = "<group>"; };
 		10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckOwner.swift; sourceTree = "<group>"; };
-		443B0851ABEFCC1B086F9EDA /* libPods-TruckFeed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruckFeed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BFE01AD295980BDA0F76D75 /* Pods-TruckFeedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedUITests/Pods-TruckFeedUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		36258BF9B8CA7A7C35A7DAE5 /* Pods_TruckFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruckFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C62C7E9AF29DD8AC8BC09B /* Pods-TruckFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedTests/Pods-TruckFeedTests.release.xcconfig"; sourceTree = "<group>"; };
 		6321F900B9B42BD32201CE2A /* Pods-TruckFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeed/Pods-TruckFeed.debug.xcconfig"; sourceTree = "<group>"; };
 		66F26F82831BFDA08FB17A79 /* Pods-TruckFeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedTests/Pods-TruckFeedTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AAA919C40A5A01A525B1FE52 /* libPods-TruckFeedTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruckFeedTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8DC0365D70B1F7570085A08 /* Pods-TruckFeedUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedUITests/Pods-TruckFeedUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,9 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10674DE31C45CE92000D3E4C /* FBSDKLoginKit.framework in Frameworks */,
-				10674DE21C45CE92000D3E4C /* FBSDKCoreKit.framework in Frameworks */,
-				10674DE41C45CE92000D3E4C /* FBSDKShareKit.framework in Frameworks */,
+				44D63DB9063710BCE67F05E1 /* Pods_TruckFeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E5C8BD15E6B684B87C16D04 /* Pods_TruckFeedTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C14A5E6605F8ED3358BABF6C /* Pods_TruckFeedUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +215,7 @@
 				101079431B8FF5E300B3AADB /* Products */,
 				3C37454694ADD4529A0A74F2 /* Pods */,
 				10D950641BFD7D4F00EC435B /* TruckFeed copy-Info.plist */,
-				AA7DC550C5D9247F9BEF5586 /* Frameworks */,
+				B6A12D82396D951C8C79A9F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -341,18 +341,18 @@
 				03B62D40F32CB1BCC4A95A16 /* Pods-TruckFeed.release.xcconfig */,
 				66F26F82831BFDA08FB17A79 /* Pods-TruckFeedTests.debug.xcconfig */,
 				60C62C7E9AF29DD8AC8BC09B /* Pods-TruckFeedTests.release.xcconfig */,
+				2BFE01AD295980BDA0F76D75 /* Pods-TruckFeedUITests.debug.xcconfig */,
+				D8DC0365D70B1F7570085A08 /* Pods-TruckFeedUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		AA7DC550C5D9247F9BEF5586 /* Frameworks */ = {
+		B6A12D82396D951C8C79A9F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				10674DDF1C45CE92000D3E4C /* FBSDKCoreKit.framework */,
-				10674DE01C45CE92000D3E4C /* FBSDKLoginKit.framework */,
-				10674DE11C45CE92000D3E4C /* FBSDKShareKit.framework */,
-				443B0851ABEFCC1B086F9EDA /* libPods-TruckFeed.a */,
-				AAA919C40A5A01A525B1FE52 /* libPods-TruckFeedTests.a */,
+				36258BF9B8CA7A7C35A7DAE5 /* Pods_TruckFeed.framework */,
+				0737B45AD6EC6786801F3788 /* Pods_TruckFeedTests.framework */,
+				09739683405C05FC5F7B6416 /* Pods_TruckFeedUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -364,12 +364,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1010796C1B8FF5E300B3AADB /* Build configuration list for PBXNativeTarget "TruckFeed" */;
 			buildPhases = (
-				71C7D52F32A6BB92BBD80CB3 /* Check Pods Manifest.lock */,
+				71C7D52F32A6BB92BBD80CB3 /* [CP] Check Pods Manifest.lock */,
 				1010793E1B8FF5E300B3AADB /* Sources */,
 				1010793F1B8FF5E300B3AADB /* Frameworks */,
 				101079401B8FF5E300B3AADB /* Resources */,
-				EFCF0B3058DAE13A3B7E15F2 /* Copy Pods Resources */,
-				5DBE45EFEF988F7890B339F6 /* Embed Pods Frameworks */,
+				EFCF0B3058DAE13A3B7E15F2 /* [CP] Copy Pods Resources */,
+				5DBE45EFEF988F7890B339F6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -384,12 +384,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1010796F1B8FF5E300B3AADB /* Build configuration list for PBXNativeTarget "TruckFeedTests" */;
 			buildPhases = (
-				107A3A1321B889BE1520052F /* Check Pods Manifest.lock */,
+				107A3A1321B889BE1520052F /* [CP] Check Pods Manifest.lock */,
 				101079541B8FF5E300B3AADB /* Sources */,
 				101079551B8FF5E300B3AADB /* Frameworks */,
 				101079561B8FF5E300B3AADB /* Resources */,
-				890D4D8482ADED5AC35AF382 /* Copy Pods Resources */,
-				5ADA9FD613BE37F814ABD85E /* Embed Pods Frameworks */,
+				890D4D8482ADED5AC35AF382 /* [CP] Copy Pods Resources */,
+				5ADA9FD613BE37F814ABD85E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,12 +405,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10D950601BFD7D4E00EC435B /* Build configuration list for PBXNativeTarget "TruckFeedUITests" */;
 			buildPhases = (
-				10D950471BFD7D4E00EC435B /* Check Pods Manifest.lock */,
+				10D950471BFD7D4E00EC435B /* [CP] Check Pods Manifest.lock */,
 				10D950481BFD7D4E00EC435B /* Sources */,
 				10D9504F1BFD7D4E00EC435B /* Frameworks */,
 				10D950501BFD7D4E00EC435B /* Resources */,
-				10D9505E1BFD7D4E00EC435B /* Copy Pods Resources */,
-				10D9505F1BFD7D4E00EC435B /* Embed Pods Frameworks */,
+				10D9505E1BFD7D4E00EC435B /* [CP] Copy Pods Resources */,
+				10D9505F1BFD7D4E00EC435B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -427,23 +427,26 @@
 		1010793A1B8FF5E300B3AADB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				KnownAssetTags = (
+					0,
+				);
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = LoveLeJess;
 				TargetAttributes = {
 					101079411B8FF5E300B3AADB = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = N993RX34M3;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					101079571B8FF5E300B3AADB = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = N993RX34M3;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 						TestTargetID = 101079411B8FF5E300B3AADB;
 					};
 					10D950461BFD7D4E00EC435B = {
 						DevelopmentTeam = N993RX34M3;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -513,146 +516,139 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		107A3A1321B889BE1520052F /* Check Pods Manifest.lock */ = {
+		107A3A1321B889BE1520052F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		10D950471BFD7D4E00EC435B /* Check Pods Manifest.lock */ = {
+		10D950471BFD7D4E00EC435B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		10D9505E1BFD7D4E00EC435B /* Copy Pods Resources */ = {
+		10D9505E1BFD7D4E00EC435B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TruckFeedUITests/Pods-TruckFeedUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		10D9505F1BFD7D4E00EC435B /* Embed Pods Frameworks */ = {
+		10D9505F1BFD7D4E00EC435B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TruckFeedUITests/Pods-TruckFeedUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5ADA9FD613BE37F814ABD85E /* Embed Pods Frameworks */ = {
+		5ADA9FD613BE37F814ABD85E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TruckFeedTests/Pods-TruckFeedTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5DBE45EFEF988F7890B339F6 /* Embed Pods Frameworks */ = {
+		5DBE45EFEF988F7890B339F6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TruckFeed/Pods-TruckFeed-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		71C7D52F32A6BB92BBD80CB3 /* Check Pods Manifest.lock */ = {
+		71C7D52F32A6BB92BBD80CB3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		890D4D8482ADED5AC35AF382 /* Copy Pods Resources */ = {
+		890D4D8482ADED5AC35AF382 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TruckFeedTests/Pods-TruckFeedTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EFCF0B3058DAE13A3B7E15F2 /* Copy Pods Resources */ = {
+		EFCF0B3058DAE13A3B7E15F2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TruckFeed/Pods-TruckFeed-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -814,7 +810,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -854,7 +850,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -864,7 +860,9 @@
 		};
 		1010796D1B8FF5E300B3AADB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6321F900B9B42BD32201CE2A /* Pods-TruckFeed.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N993RX34M3;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -874,19 +872,21 @@
 					/Users/jessicale,
 				);
 				INFOPLIST_FILE = TruckFeed/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		1010796E1B8FF5E300B3AADB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03B62D40F32CB1BCC4A95A16 /* Pods-TruckFeed.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N993RX34M3;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -896,18 +896,19 @@
 					/Users/jessicale,
 				);
 				INFOPLIST_FILE = TruckFeed/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		101079701B8FF5E300B3AADB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66F26F82831BFDA08FB17A79 /* Pods-TruckFeedTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = N993RX34M3;
@@ -921,13 +922,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TruckFeed.app/TruckFeed";
 			};
 			name = Debug;
 		};
 		101079711B8FF5E300B3AADB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60C62C7E9AF29DD8AC8BC09B /* Pods-TruckFeedTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = N993RX34M3;
@@ -941,13 +943,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TruckFeed.app/TruckFeed";
 			};
 			name = Release;
 		};
 		10D950611BFD7D4E00EC435B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BFE01AD295980BDA0F76D75 /* Pods-TruckFeedUITests.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N993RX34M3;
@@ -958,18 +961,19 @@
 					/Users/jessicale,
 				);
 				INFOPLIST_FILE = "TruckFeed copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		10D950621BFD7D4E00EC435B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8DC0365D70B1F7570085A08 /* Pods-TruckFeedUITests.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N993RX34M3;
@@ -980,13 +984,13 @@
 					/Users/jessicale,
 				);
 				INFOPLIST_FILE = "TruckFeed copy-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lovelejess.TruckFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -8,18 +8,19 @@
 
 import UIKit
 
-class UserView: UIView {
+class UserView: UIScrollView {
+    
+    
+    var truckOwner = TruckOwner.sharedInstance
+    
+    // MARK: Initialization
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
 
-    override init (frame : CGRect) {
-        super.init(frame : frame)
     }
     
-    convenience init () {
-        self.init(frame:CGRect.zero)
-    }
     
-    required init(coder aDecoder: NSCoder) {
-        fatalError("This class does not support NSCoding")
-    }
     
+  
 }

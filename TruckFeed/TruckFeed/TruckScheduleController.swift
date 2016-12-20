@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class TruckScheduleController: UIViewController {
+open class TruckScheduleController: UIViewController {
     
     @IBOutlet var tableView: UITableView?
-    private var dataProvider: ScheduleDataProviderProtocol?
-    private var truckScheduleList = [TruckSchedule]()
-    public var foodTruckName: String?
-    public var foodTruckTitleName: String?
+    fileprivate var dataProvider: ScheduleDataProviderProtocol?
+    fileprivate var truckScheduleList = [TruckSchedule]()
+    open var foodTruckName: String?
+    open var foodTruckTitleName: String?
     
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         dataProvider = ScheduleDataProvider()
         tableView!.delegate = self
@@ -25,21 +25,21 @@ public class TruckScheduleController: UIViewController {
         self.truckScheduleList = dataProvider!.getScheduleForTruck(foodTruckName!);
         dataProvider?.tableView = tableView
         
-        let frame = CGRectMake(0, 0, self.view.frame.size.width, 54)
-        let leftBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRectMake(0, 0, 30, 30), image: UIImage(named: "back.png")!, target: self)
+        let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 55)
+        let leftBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRect(x: 0, y: 0, width: 30, height: 30), image: UIImage(named: "back.png")!, target: self)
         let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: foodTruckTitleName!, leftBarButton: leftBarButtonItem)
         self.view.addSubview(navigationBar)
     }
     
-    func dismissViewController(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {});
+    func dismissViewController(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: {});
     }
 }
 
 extension TruckScheduleController: UITableViewDelegate
 {
     
-    public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 120.0;
     }
