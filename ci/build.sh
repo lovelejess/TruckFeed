@@ -1,3 +1,6 @@
 #!/bin/bash --login -e
-xcodebuild -workspace Truckfeed/TruckFeed.xcworkspace -scheme TruckFeed -sdk iphonesimulator 
-xcodebuild -workspace Truckfeed/TruckFeed.xcworkspace -scheme TruckFeedTests -sdk iphonesimulator 
+cd TruckFeed 
+pod install
+xcodebuild -workspace TruckFeed.xcworkspace -scheme TruckFeed -sdk iphonesimulator 
+xcodebuild -workspace TruckFeed.xcworkspace -scheme TruckFeedTests -sdk iphonesimulator 
+cd - 
