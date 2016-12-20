@@ -14,12 +14,15 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
     fileprivate var truckOwner = TruckOwner.sharedInstance
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var startDateView: UIView!
-    @IBOutlet weak var endDateView: UIView!
+    @IBOutlet weak var startDatePickerView: UIStackView!
+    @IBOutlet weak var endDatePickerView: UIStackView!
+    @IBOutlet weak var startDateSwitchView: UIStackView!
+    @IBOutlet weak var endDateSwitchView: UIStackView!
     @IBOutlet weak var addressView: UIView!
     @IBOutlet weak var startTime: UIDatePicker!
     @IBOutlet weak var startTimeSwitch: UISwitch!
-    @IBOutlet weak var endTimeView: UIView!
+    @IBOutlet weak var startDateView: UIView!
+    @IBOutlet weak var endDateView: UIView!
     @IBOutlet weak var endTimeSwitch: UISwitch!
     @IBOutlet weak var endTime: UIDatePicker!
     @IBOutlet weak var location: UITextField!
@@ -41,20 +44,21 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         self.view.isOpaque = false
         self.view.tintColor = mainColor
         
-        
-        location.delegate = self
-        address.delegate = self
-        city.delegate = self
+//        
+//        location.delegate = self
+//        address.delegate = self
+//        city.delegate = self
         self.scrollView.delegate = self
         self.hideKeyboard()
         
         submit.addTarget(self, action: #selector(onSubmit), for: UIControlEvents.touchUpInside)
         startTimeSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), for: UIControlEvents.valueChanged)
         endTimeSwitch.addTarget(self, action: #selector(endTimeSwitchToggled), for: UIControlEvents.valueChanged)
-        startTimeSwitchToggled(self.startTimeSwitch)
-        endTimeSwitchToggled(self.endTimeSwitch)
+        startDatePickerView.isHidden = true
+        endDatePickerView.isHidden = true
         
-        self.scrollView.addSubview(addressView)
+        self.scrollView.addSubview(startDateSwitchView)
+        self.scrollView.addSubview(endDateSwitchView)
         self.view.addSubview(scrollView)
         self.view.addSubview(navigationBar)
         
@@ -204,34 +208,25 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
     
     func startTimeSwitchToggled(_ sender: UISwitch){
         if (sender.isOn && self.endTimeSwitch.isOn){
-            self.addressView.frame = CGRect(x: 0, y: 395, width: self.view.frame.size.width, height: self.addressView.frame.size.height)
-            self.startDateView.isHidden = false
+            self.startDatePickerView.isHidden = false
         }
         else if(sender.isOn && !self.endTimeSwitch.isOn){
-            self.addressView.frame = CGRect(x: 0, y: 265, width: self.view.frame.size.width, height: self.addressView.frame.size.height)
-            self.startDateView.isHidden = false
+            self.startDatePickerView.isHidden = false
         }
         else {
-            let startViewFrame = self.startDateView.frame
-            self.startDateView.isHidden = true
-            self.addressView.frame = startViewFrame
+            self.startDatePickerView.isHidden = true
         }
     }
     
     func endTimeSwitchToggled(_ sender: UISwitch){
         if (sender.isOn && self.startTimeSwitch.isOn){
-            self.addressView.frame = CGRect(x: 0, y: 395, width: self.view.frame.size.width, height: self.addressView.frame.size.height)
-            self.endDateView.isHidden = false
+            self.endDatePickerView.isHidden = false
         }
         else if(sender.isOn && !self.startTimeSwitch.isOn){
-            self.endTimeView.frame = CGRect(x: 0, y: 90, width: self.view.frame.size.width, height: self.addressView.frame.size.height)
-            self.addressView.frame = CGRect(x: 0, y: 240, width: self.view.frame.size.width, height: self.addressView.frame.size.height)
-            self.endDateView.isHidden = false
+            self.endDatePickerView.isHidden = false
         }
         else {
-            let endViewFrame = self.endDateView.frame
-            self.endDateView.isHidden = true
-            self.addressView.frame = endViewFrame
+            self.endDatePickerView.isHidden = true
         }
     }
 
