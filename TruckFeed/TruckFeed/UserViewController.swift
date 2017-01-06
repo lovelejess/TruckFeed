@@ -14,17 +14,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
     fileprivate var truckOwner = TruckOwner.sharedInstance
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var startDatePickerView: UIStackView!
-    @IBOutlet weak var endDatePickerView: UIStackView!
-    @IBOutlet weak var startDateSwitchView: UIStackView!
-    @IBOutlet weak var endDateSwitchView: UIStackView!
-    @IBOutlet weak var addressView: UIView!
-    @IBOutlet weak var startTime: UIDatePicker!
-    @IBOutlet weak var startTimeSwitch: UISwitch!
-    @IBOutlet weak var startDateView: UIView!
-    @IBOutlet weak var endDateView: UIView!
-    @IBOutlet weak var endTimeSwitch: UISwitch!
-    @IBOutlet weak var endTime: UIDatePicker!
+    @IBOutlet var tableView: UITableView?
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var address: UITextField!
     @IBOutlet weak var city: UITextField!
@@ -34,6 +24,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
     var newTruckScheduleAddress: String?
     var newTruckScheduleLocation: String?
     var newTruckScheduleCity: String?
+    fileprivate var dataProvider: TableDataProviderProtocol?
 
 
     override open func viewDidLoad() {
@@ -43,22 +34,21 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
         self.view.isOpaque = false
         self.view.tintColor = mainColor
+        dataProvider = AddScheduleDataProvider()
+        tableView!.delegate = self
+        tableView!.dataSource = dataProvider
+        dataProvider?.tableView = tableView
         
-//        
+//
 //        location.delegate = self
 //        address.delegate = self
 //        city.delegate = self
         self.scrollView.delegate = self
         self.hideKeyboard()
         
-        submit.addTarget(self, action: #selector(onSubmit), for: UIControlEvents.touchUpInside)
-        startTimeSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), for: UIControlEvents.valueChanged)
-        endTimeSwitch.addTarget(self, action: #selector(endTimeSwitchToggled), for: UIControlEvents.valueChanged)
-        startDatePickerView.isHidden = true
-        endDatePickerView.isHidden = true
         
-        self.scrollView.addSubview(startDateSwitchView)
-        self.scrollView.addSubview(endDateSwitchView)
+//        startDateSwitchCell.startDateSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), for: UIControlEvents.valueChanged)
+        submit.addTarget(self, action: #selector(onSubmit), for: UIControlEvents.touchUpInside)
         self.view.addSubview(scrollView)
         self.view.addSubview(navigationBar)
         
@@ -168,6 +158,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         case cityTag = 2
     }
    
+     
 
     /*
     // MARK: - Navigation
@@ -206,30 +197,10 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         presentSubmitAlert("Truck Schedule Submitted", message:"Successfully!")
     }
     
-    func startTimeSwitchToggled(_ sender: UISwitch){
-        if (sender.isOn && self.endTimeSwitch.isOn){
-            self.startDatePickerView.isHidden = false
-        }
-        else if(sender.isOn && !self.endTimeSwitch.isOn){
-            self.startDatePickerView.isHidden = false
-        }
-        else {
-            self.startDatePickerView.isHidden = true
-        }
+    func startTimeSwitchToggled(_sender: UISwitch)
+    {
+        presentSubmitAlert("switch",message: "yes")
     }
-    
-    func endTimeSwitchToggled(_ sender: UISwitch){
-        if (sender.isOn && self.startTimeSwitch.isOn){
-            self.endDatePickerView.isHidden = false
-        }
-        else if(sender.isOn && !self.startTimeSwitch.isOn){
-            self.endDatePickerView.isHidden = false
-        }
-        else {
-            self.endDatePickerView.isHidden = true
-        }
-    }
-
     
 }
 
@@ -249,3 +220,14 @@ extension UIViewController
         view.endEditing(true)
     }
 }
+
+extension UserViewController: UITableViewDelegate
+{
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 100.0;
+    }
+}
+
+

@@ -31,6 +31,14 @@
 		101079781B90008300B3AADB /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079771B90008300B3AADB /* Truck.swift */; };
 		1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
 		1010797E1B92776F00B3AADB /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010797D1B92776F00B3AADB /* Palette.swift */; };
+		1046C6C61E0A24380075ACD5 /* StartDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateSwitchCell.swift */; };
+		1046C6C81E0A25F10075ACD5 /* StartDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */; };
+		1046C6CA1E0A28550075ACD5 /* AddScheduleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C91E0A28550075ACD5 /* AddScheduleDataProvider.swift */; };
+		1046C6CC1E0A296A0075ACD5 /* TableDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6CB1E0A296A0075ACD5 /* TableDataProviderProtocol.swift */; };
+		1046C6CD1E0B7ADF0075ACD5 /* AddScheduleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C91E0A28550075ACD5 /* AddScheduleDataProvider.swift */; };
+		1046C6CE1E0B7AE00075ACD5 /* AddScheduleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C91E0A28550075ACD5 /* AddScheduleDataProvider.swift */; };
+		1046C6CF1E0B7AE30075ACD5 /* TableDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6CB1E0A296A0075ACD5 /* TableDataProviderProtocol.swift */; };
+		1046C6D01E0B7AE40075ACD5 /* TableDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6CB1E0A296A0075ACD5 /* TableDataProviderProtocol.swift */; };
 		106C8A0E1D406049007DD2CF /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
 		106C8A0F1D406049007DD2CF /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
 		106C8A101D40604C007DD2CF /* TruckFeedDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */; };
@@ -142,6 +150,10 @@
 		101079771B90008300B3AADB /* Truck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Truck.swift; sourceTree = "<group>"; };
 		101079791B912B7A00B3AADB /* TruckCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckCell.swift; sourceTree = "<group>"; };
 		1010797D1B92776F00B3AADB /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		1046C6C51E0A24380075ACD5 /* StartDateSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartDateSwitchCell.swift; sourceTree = "<group>"; };
+		1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartDatePickerCell.swift; sourceTree = "<group>"; };
+		1046C6C91E0A28550075ACD5 /* AddScheduleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddScheduleDataProvider.swift; sourceTree = "<group>"; };
+		1046C6CB1E0A296A0075ACD5 /* TableDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataProviderProtocol.swift; sourceTree = "<group>"; };
 		10674DE51C45CF97000D3E4C /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		106C8A1F1D485531007DD2CF /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		10738F4A1CB5FC1800BAC3CE /* MainLoginScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLoginScreenController.swift; sourceTree = "<group>"; };
@@ -294,6 +306,8 @@
 				100CE6791D2F415C00E2F53C /* ScheduleDataProvider.swift */,
 				10A5E1131D8CE72100B79702 /* MenuDataProviderProtocol.swift */,
 				10A5E1171D8CE7B500B79702 /* MenuDataProvider.swift */,
+				1046C6C91E0A28550075ACD5 /* AddScheduleDataProvider.swift */,
+				1046C6CB1E0A296A0075ACD5 /* TableDataProviderProtocol.swift */,
 			);
 			name = DataProvider;
 			sourceTree = "<group>";
@@ -321,6 +335,8 @@
 				10C4E1591D64090500C9E756 /* TruckSchedule.swift */,
 				10A5E11B1D8CF14F00B79702 /* MenuListItemCell.swift */,
 				10A5E11F1D8CF16F00B79702 /* MenuListItem.swift */,
+				1046C6C51E0A24380075ACD5 /* StartDateSwitchCell.swift */,
+				1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -658,14 +674,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1046C6C61E0A24380075ACD5 /* StartDateSwitchCell.swift in Sources */,
 				10C4E1561D6405C600C9E756 /* TruckScheduleCell.swift in Sources */,
 				10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */,
+				1046C6CA1E0A28550075ACD5 /* AddScheduleDataProvider.swift in Sources */,
 				100055B81CDAC67700984B35 /* MasterTabViewController.swift in Sources */,
 				100055B41CCD790300984B35 /* ViewControllerItems.swift in Sources */,
 				100055B61CD04F6800984B35 /* AppPlistHelpers.swift in Sources */,
 				10AED1DD1BC1BE4C004FD47B /* UserViewController.swift in Sources */,
 				101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */,
 				10A5E1141D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
+				1046C6CC1E0A296A0075ACD5 /* TableDataProviderProtocol.swift in Sources */,
 				10DC618A1BE863A60021B2D3 /* TruckFeedController.swift in Sources */,
 				10B1E5FE1CFE59D700C7FBE4 /* UserView.swift in Sources */,
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
@@ -682,6 +701,7 @@
 				10AD73FE1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */,
 				10A5E1081D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				10738F4B1CB5FC1800BAC3CE /* MainLoginScreenController.swift in Sources */,
+				1046C6C81E0A25F10075ACD5 /* StartDatePickerCell.swift in Sources */,
 				101079781B90008300B3AADB /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,8 +713,10 @@
 				10C4E1571D64080200C9E756 /* TruckScheduleCell.swift in Sources */,
 				106C8A121D406052007DD2CF /* TruckScheduleController.swift in Sources */,
 				106F519A1C022FD100DA30C6 /* UserViewController.swift in Sources */,
+				1046C6CF1E0B7AE30075ACD5 /* TableDataProviderProtocol.swift in Sources */,
 				100E155F1D05036100B3BC9A /* MainLoginScreenController.swift in Sources */,
 				100E15641D05037B00B3BC9A /* TruckOwner.swift in Sources */,
+				1046C6CD1E0B7ADF0075ACD5 /* AddScheduleDataProvider.swift in Sources */,
 				106C8A0F1D406049007DD2CF /* TruckFeedController.swift in Sources */,
 				106C8A161D40605A007DD2CF /* ScheduleDataProvider.swift in Sources */,
 				10A5E1151D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
@@ -725,8 +747,10 @@
 				10C4E1581D64086E00C9E756 /* TruckScheduleCell.swift in Sources */,
 				106C8A131D406052007DD2CF /* TruckScheduleController.swift in Sources */,
 				10D950491BFD7D4E00EC435B /* UserViewController.swift in Sources */,
+				1046C6D01E0B7AE40075ACD5 /* TableDataProviderProtocol.swift in Sources */,
 				106C8A171D40605A007DD2CF /* ScheduleDataProvider.swift in Sources */,
 				106C8A0E1D406049007DD2CF /* TruckFeedController.swift in Sources */,
+				1046C6CE1E0B7AE00075ACD5 /* AddScheduleDataProvider.swift in Sources */,
 				106C8A111D40604F007DD2CF /* TruckFeedDataProviderProtocol.swift in Sources */,
 				106C8A101D40604C007DD2CF /* TruckFeedDataProvider.swift in Sources */,
 				10A5E1161D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
