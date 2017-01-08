@@ -38,16 +38,10 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         tableView!.delegate = self
         tableView!.dataSource = dataProvider
         dataProvider?.tableView = tableView
-        
-//
-//        location.delegate = self
-//        address.delegate = self
-//        city.delegate = self
+
         self.scrollView.delegate = self
         self.hideKeyboard()
         
-        
-//        startDateSwitchCell.startDateSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), for: UIControlEvents.valueChanged)
         submit.addTarget(self, action: #selector(onSubmit), for: UIControlEvents.touchUpInside)
         self.view.addSubview(scrollView)
         self.view.addSubview(navigationBar)
@@ -82,95 +76,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         self .viewDidLayoutSubviews()
     }
 
-    
-    // MARK: UITextFieldDelegate
-    
-    open func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // Hide the keyboard.
-        textField.resignFirstResponder()
-        determineTextFieldToFocus(textField)
-        return true
-    }
-    
-    open func textFieldDidBeginEditing(_ textField: UITextField) {
-        switch textField.tag {
-            case TruckScheduleTextFieldTags.locationTag.rawValue:
-                scrollView.contentOffset = textField.frame.origin
-            
-            case TruckScheduleTextFieldTags.addressTag.rawValue:
-                scrollView.contentOffset = textField.frame.origin
-            
-            case TruckScheduleTextFieldTags.cityTag.rawValue:
-                scrollView.contentOffset = textField.frame.origin
-            default:
-                print("did not match")
-            }
-        
-    }
-    
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        view.endEditing(true)
-        super.touchesBegan(touches, with: event)
-    }
-    
-    open func textFieldDidEndEditing(_ textField: UITextField) {
-        switch textField.tag {
-            case TruckScheduleTextFieldTags.locationTag.rawValue:
-                setAutoScrollFocus(CGPoint(x: 0, y: 0))
-                newTruckScheduleLocation = textField.text
-                    
-            case TruckScheduleTextFieldTags.addressTag.rawValue:
-                setAutoScrollFocus(CGPoint(x: 0, y: 0))
-                newTruckScheduleAddress = textField.text
 
-            case TruckScheduleTextFieldTags.cityTag.rawValue:
-                setAutoScrollFocus(CGPoint(x: 0, y: 0))
-                newTruckScheduleCity = textField.text
-            
-            default:
-                print("did not match")
-        }
-    }
-    
-    fileprivate func determineTextFieldToFocus(_ textField: UITextField) {
-        switch textField.tag {
-            case TruckScheduleTextFieldTags.locationTag.rawValue:
-                textField.becomeFirstResponder()
-                
-            case TruckScheduleTextFieldTags.addressTag.rawValue:
-                textField.becomeFirstResponder()
-                
-            case TruckScheduleTextFieldTags.cityTag.rawValue:
-                textField.becomeFirstResponder()
-            setAutoScrollFocus(CGPoint(x: 0, y: -100))
-            
-        default:
-            print("did not match")
-        }
-
-    }
-    
-    // MARK: TextField Tag Enum
-    
-    enum TruckScheduleTextFieldTags : Int {
-        case locationTag = 0
-        case addressTag = 1
-        case cityTag = 2
-    }
-   
-     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    
     // MARK: - PRIVATE METHODS
     func presentSubmitAlert(_ title: String, message: String) {
         if let _: AnyClass = NSClassFromString("UIAlertController") { // iOS 8
@@ -226,7 +132,12 @@ extension UserViewController: UITableViewDelegate
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 100.0;
+        if (indexPath.row == 0) {
+            return 50.0;
+        }
+        else {
+            return 100.0
+        }
     }
 }
 

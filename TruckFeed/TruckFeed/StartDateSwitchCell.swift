@@ -11,4 +11,14 @@ import UIKit
 class StartDateSwitchCell: UITableViewCell {
 
     @IBOutlet weak var startDateSwitch: UISwitch!
+    
+    public var delegate: AddScheduleDataProvider?
+    
+    override func awakeFromNib() {
+        startDateSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), for: UIControlEvents.valueChanged)
+    }
+    
+    func startTimeSwitchToggled(){
+        delegate!.reloadTableData()
+    }
 }
