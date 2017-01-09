@@ -60,6 +60,12 @@
 		10738F4B1CB5FC1800BAC3CE /* MainLoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738F4A1CB5FC1800BAC3CE /* MainLoginScreenController.swift */; };
 		10738F571CB8781800BAC3CE /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 10738F561CB8781800BAC3CE /* gear.png */; };
 		10738F5B1CBF290900BAC3CE /* App.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10738F5A1CBF290900BAC3CE /* App.plist */; };
+		109BCD231E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD221E231EA50028BC9B /* EndDateSwitchCell.swift */; };
+		109BCD241E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD221E231EA50028BC9B /* EndDateSwitchCell.swift */; };
+		109BCD251E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD221E231EA50028BC9B /* EndDateSwitchCell.swift */; };
+		109BCD271E2325070028BC9B /* EndDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD261E2325070028BC9B /* EndDatePickerCell.swift */; };
+		109BCD281E2325070028BC9B /* EndDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD261E2325070028BC9B /* EndDatePickerCell.swift */; };
+		109BCD291E2325070028BC9B /* EndDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD261E2325070028BC9B /* EndDatePickerCell.swift */; };
 		10A5E1081D8B875300B79702 /* FacebookCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* FacebookCredentials.swift */; };
 		10A5E1091D8B875300B79702 /* FacebookCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* FacebookCredentials.swift */; };
 		10A5E10A1D8B875300B79702 /* FacebookCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* FacebookCredentials.swift */; };
@@ -159,6 +165,8 @@
 		10738F4A1CB5FC1800BAC3CE /* MainLoginScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLoginScreenController.swift; sourceTree = "<group>"; };
 		10738F561CB8781800BAC3CE /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		10738F5A1CBF290900BAC3CE /* App.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = App.plist; sourceTree = "<group>"; };
+		109BCD221E231EA50028BC9B /* EndDateSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDateSwitchCell.swift; sourceTree = "<group>"; };
+		109BCD261E2325070028BC9B /* EndDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDatePickerCell.swift; sourceTree = "<group>"; };
 		10A5E1071D8B875300B79702 /* FacebookCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookCredentials.swift; sourceTree = "<group>"; };
 		10A5E10B1D8CDE3900B79702 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		10A5E10F1D8CE56F00B79702 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -337,6 +345,8 @@
 				10A5E11F1D8CF16F00B79702 /* MenuListItem.swift */,
 				1046C6C51E0A24380075ACD5 /* StartDateSwitchCell.swift */,
 				1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */,
+				109BCD221E231EA50028BC9B /* EndDateSwitchCell.swift */,
+				109BCD261E2325070028BC9B /* EndDatePickerCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -681,10 +691,12 @@
 				100055B81CDAC67700984B35 /* MasterTabViewController.swift in Sources */,
 				100055B41CCD790300984B35 /* ViewControllerItems.swift in Sources */,
 				100055B61CD04F6800984B35 /* AppPlistHelpers.swift in Sources */,
+				109BCD231E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */,
 				10AED1DD1BC1BE4C004FD47B /* UserViewController.swift in Sources */,
 				101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */,
 				10A5E1141D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
 				1046C6CC1E0A296A0075ACD5 /* TableDataProviderProtocol.swift in Sources */,
+				109BCD271E2325070028BC9B /* EndDatePickerCell.swift in Sources */,
 				10DC618A1BE863A60021B2D3 /* TruckFeedController.swift in Sources */,
 				10B1E5FE1CFE59D700C7FBE4 /* UserView.swift in Sources */,
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
@@ -719,6 +731,7 @@
 				1046C6CD1E0B7ADF0075ACD5 /* AddScheduleDataProvider.swift in Sources */,
 				106C8A0F1D406049007DD2CF /* TruckFeedController.swift in Sources */,
 				106C8A161D40605A007DD2CF /* ScheduleDataProvider.swift in Sources */,
+				109BCD241E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */,
 				10A5E1151D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
 				106C8A141D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */,
 				100E15631D05037400B3BC9A /* TruckCell.swift in Sources */,
@@ -733,6 +746,7 @@
 				100E15601D05036800B3BC9A /* AppDelegate.swift in Sources */,
 				100E15681D05038A00B3BC9A /* UserView.swift in Sources */,
 				10AD74021D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */,
+				109BCD281E2325070028BC9B /* EndDatePickerCell.swift in Sources */,
 				10AD73FF1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */,
 				10A5E1091D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				100E15671D05038400B3BC9A /* MasterTabViewController.swift in Sources */,
@@ -753,6 +767,7 @@
 				1046C6CE1E0B7AE00075ACD5 /* AddScheduleDataProvider.swift in Sources */,
 				106C8A111D40604F007DD2CF /* TruckFeedDataProviderProtocol.swift in Sources */,
 				106C8A101D40604C007DD2CF /* TruckFeedDataProvider.swift in Sources */,
+				109BCD251E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */,
 				10A5E1161D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
 				106C8A191D406073007DD2CF /* TruckOwner.swift in Sources */,
 				106C8A1B1D406079007DD2CF /* AppPlistHelpers.swift in Sources */,
@@ -767,6 +782,7 @@
 				106C8A1A1D406076007DD2CF /* ViewControllerItems.swift in Sources */,
 				10D9504C1BFD7D4E00EC435B /* TruckCell.swift in Sources */,
 				106C8A1D1D406080007DD2CF /* UserView.swift in Sources */,
+				109BCD291E2325070028BC9B /* EndDatePickerCell.swift in Sources */,
 				10D9504D1BFD7D4E00EC435B /* Palette.swift in Sources */,
 				10A5E10A1D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */,

@@ -11,7 +11,8 @@ import UIKit
 open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
 
     weak open var tableView: UITableView!
-    private var switchValue: Bool?
+    private var startDateSwitchValue: Bool?
+    private var endDateSwitchValue: Bool?
 
 
 // MARK: - Table view data source
@@ -21,7 +22,7 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -29,14 +30,31 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
         if indexPath.row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "startDateSwitch") as? StartDateSwitchCell {
                 cell.delegate = self
-                switchValue = cell.startDateSwitch.isOn
+                startDateSwitchValue = cell.startDateSwitch.isOn
                 return cell
             }
             return UITableViewCell()
             
         }
-        else if indexPath.row == 1 && switchValue == true {
+        else if indexPath.row == 1 && startDateSwitchValue == true {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "startDatePicker") as? StartDatePickerCell {
+                return cell
+                
+            }
+            return UITableViewCell()
+        }
+        else if indexPath.row == 2 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "endDateSwitch") as? EndDateSwitchCell {
+                cell.delegate = self
+                endDateSwitchValue = cell.endDateSwitch.isOn
+                return cell
+                
+            }
+            return UITableViewCell()
+        }
+        
+        else if indexPath.row == 3 && endDateSwitchValue == true {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "endDatePicker") as? EndDatePickerCell {
                 return cell
                 
             }
