@@ -35,9 +35,13 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         self.view.isOpaque = false
         self.view.tintColor = mainColor
         dataProvider = AddScheduleDataProvider()
-        tableView!.delegate = self
-        tableView!.dataSource = dataProvider
+        self.tableView!.delegate = self
+        self.tableView!.dataSource = dataProvider
         dataProvider?.tableView = tableView
+        self.tableView!.estimatedRowHeight = 100
+        self.tableView!.rowHeight = UITableViewAutomaticDimension
+        self.tableView!.setNeedsLayout()
+        self.tableView!.layoutIfNeeded()
 
         self.scrollView.delegate = self
         self.hideKeyboard()
@@ -132,13 +136,9 @@ extension UserViewController: UITableViewDelegate
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        if (indexPath.row == 0) {
-            return 50.0;
-        }
-        else {
-            return 100.0
-        }
+        return UITableViewAutomaticDimension
     }
+
 }
 
 
