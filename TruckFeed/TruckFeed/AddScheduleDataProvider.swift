@@ -37,6 +37,7 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
         
         if (indexPath.row ==  1 && startDateSwitchValue == true) {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "startDatePicker") as? StartDatePickerCell {
+                
                 return cell
             }
         }

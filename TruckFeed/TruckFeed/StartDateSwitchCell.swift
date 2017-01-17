@@ -21,4 +21,17 @@ class StartDateSwitchCell: UITableViewCell {
     func startTimeSwitchToggled(){
         delegate!.reloadTableData()
     }
+    
+    public var date: String?
+    
+    public func getCurrentDateTime() -> String {
+        let currentDateTime = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        dateFormatter.dateStyle = .short
+        date = dateFormatter.string(from: currentDateTime)
+        print("CURRENT DATE: \(date)")
+        return date!
+        
+    }
 }
