@@ -11,11 +11,14 @@ import UIKit
 class StartDateSwitchCell: UITableViewCell {
 
     @IBOutlet weak var startDateSwitch: UISwitch!
+    @IBOutlet weak var startDateLabel: UILabel!
     
     public var delegate: AddScheduleDataProvider?
     
     override func awakeFromNib() {
+        startDateLabel.text = getCurrentDateTime()
         startDateSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), for: UIControlEvents.valueChanged)
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "com.lovelejess.startDateLabelSelected"), object: nil, queue: nil, using: updateStartDateLabel)
     }
     
     func startTimeSwitchToggled(){
@@ -27,11 +30,18 @@ class StartDateSwitchCell: UITableViewCell {
     public func getCurrentDateTime() -> String {
         let currentDateTime = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = .short
-        dateFormatter.dateStyle = .short
+        dateFormatter.dateFormat = "MM/dd/yy hh:mm a"
+        dateFormatter.amSymbol = "AM"
+        dateFormatter.pmSymbol = "PM"
         date = dateFormatter.string(from: currentDateTime)
-        print("CURRENT DATE: \(date)")
         return date!
-        
+    }
+    
+    private func updateStartDateLabel(notification: Notification) -> Void {
+        if let userInfo = notification.userInfo {
+            if let date = userInfo["date"]  as? String {
+                startDateLabel.text = date
+            }
+        }
     }
 }
