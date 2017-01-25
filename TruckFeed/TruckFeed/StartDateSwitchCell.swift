@@ -25,16 +25,14 @@ class StartDateSwitchCell: UITableViewCell {
         delegate!.reloadTableData()
     }
     
-    public var date: String?
-    
     public func getCurrentDateTime() -> String {
         let currentDateTime = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yy hh:mm a"
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
-        date = dateFormatter.string(from: currentDateTime)
-        return date!
+        let date = dateFormatter.string(from: currentDateTime)
+        return date
     }
     
     private func updateStartDateLabel(notification: Notification) -> Void {

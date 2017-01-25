@@ -196,6 +196,7 @@
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="endDateLabel" destination="Xmr-wO-o4E" id="Jen-A2-Mjg"/>
                                                     <outlet property="endDateSwitch" destination="gf9-BZ-mXg" id="Cw6-8l-YCF"/>
                                                 </connections>
                                             </tableViewCell>
