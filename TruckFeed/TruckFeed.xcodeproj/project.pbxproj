@@ -116,6 +116,9 @@
 		10D9505C1BFD7D4E00EC435B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10DC618A1BE863A60021B2D3 /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
 		10DC618C1BE8661E0021B2D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */; };
+		10ED6CB41E3999430059DCBA /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED6CB31E3999430059DCBA /* DateUtility.swift */; };
+		10ED6CB51E3999A10059DCBA /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED6CB31E3999430059DCBA /* DateUtility.swift */; };
+		10ED6CB61E3999A20059DCBA /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED6CB31E3999430059DCBA /* DateUtility.swift */; };
 		10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */; };
 		44D63DB9063710BCE67F05E1 /* Pods_TruckFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36258BF9B8CA7A7C35A7DAE5 /* Pods_TruckFeed.framework */; };
 		6E5C8BD15E6B684B87C16D04 /* Pods_TruckFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0737B45AD6EC6786801F3788 /* Pods_TruckFeedTests.framework */; };
@@ -189,6 +192,7 @@
 		10D950641BFD7D4F00EC435B /* TruckFeed copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TruckFeed copy-Info.plist"; path = "/Users/jessicale/Repositories/TruckFeed/TruckFeed/TruckFeed copy-Info.plist"; sourceTree = "<absolute>"; };
 		10DC61891BE863A60021B2D3 /* TruckFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedController.swift; sourceTree = "<group>"; };
 		10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		10ED6CB31E3999430059DCBA /* DateUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 		10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckOwner.swift; sourceTree = "<group>"; };
 		2BFE01AD295980BDA0F76D75 /* Pods-TruckFeedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedUITests/Pods-TruckFeedUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		36258BF9B8CA7A7C35A7DAE5 /* Pods_TruckFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruckFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +256,7 @@
 		101079441B8FF5E300B3AADB /* TruckFeed */ = {
 			isa = PBXGroup;
 			children = (
+				10ED6CB71E399BA00059DCBA /* Utilities */,
 				10C368311D7DFA0600D6831C /* View */,
 				10C368301D7DF9B800D6831C /* Model */,
 				10C3682F1D7DF99C00D6831C /* Controller */,
@@ -259,14 +264,11 @@
 				101079801B929C2300B3AADB /* Resources */,
 				101079451B8FF5E300B3AADB /* AppDelegate.swift */,
 				1010794B1B8FF5E300B3AADB /* Main.storyboard */,
-				1010797D1B92776F00B3AADB /* Palette.swift */,
 				1010794E1B8FF5E300B3AADB /* Assets.xcassets */,
 				101079531B8FF5E300B3AADB /* Info.plist */,
 				10738F5A1CBF290900BAC3CE /* App.plist */,
 				10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */,
 				10674DE51C45CF97000D3E4C /* Bridging-Header.h */,
-				100055B51CD04F6800984B35 /* AppPlistHelpers.swift */,
-				10A5E1071D8B875300B79702 /* FacebookCredentials.swift */,
 			);
 			path = TruckFeed;
 			sourceTree = "<group>";
@@ -358,6 +360,17 @@
 				10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		10ED6CB71E399BA00059DCBA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				10A5E1071D8B875300B79702 /* FacebookCredentials.swift */,
+				1010797D1B92776F00B3AADB /* Palette.swift */,
+				10ED6CB31E3999430059DCBA /* DateUtility.swift */,
+				100055B51CD04F6800984B35 /* AppPlistHelpers.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		3C37454694ADD4529A0A74F2 /* Pods */ = {
@@ -714,6 +727,7 @@
 				10A5E1081D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				10738F4B1CB5FC1800BAC3CE /* MainLoginScreenController.swift in Sources */,
 				1046C6C81E0A25F10075ACD5 /* StartDatePickerCell.swift in Sources */,
+				10ED6CB41E3999430059DCBA /* DateUtility.swift in Sources */,
 				101079781B90008300B3AADB /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -732,6 +746,7 @@
 				106C8A0F1D406049007DD2CF /* TruckFeedController.swift in Sources */,
 				106C8A161D40605A007DD2CF /* ScheduleDataProvider.swift in Sources */,
 				109BCD241E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */,
+				10ED6CB51E3999A10059DCBA /* DateUtility.swift in Sources */,
 				10A5E1151D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
 				106C8A141D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */,
 				100E15631D05037400B3BC9A /* TruckCell.swift in Sources */,
@@ -768,6 +783,7 @@
 				106C8A111D40604F007DD2CF /* TruckFeedDataProviderProtocol.swift in Sources */,
 				106C8A101D40604C007DD2CF /* TruckFeedDataProvider.swift in Sources */,
 				109BCD251E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */,
+				10ED6CB61E3999A20059DCBA /* DateUtility.swift in Sources */,
 				10A5E1161D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
 				106C8A191D406073007DD2CF /* TruckOwner.swift in Sources */,
 				106C8A1B1D406079007DD2CF /* AppPlistHelpers.swift in Sources */,
