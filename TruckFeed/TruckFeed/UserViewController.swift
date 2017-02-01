@@ -30,26 +30,11 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
     override open func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "com.lovelejess.scheduleSubmitted"), object: nil, queue: nil, using: scheduleSubmittedSuccessfully)
-        let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 54)
-        let navigationBar = ViewControllerItems.createNavigationBar(frame, title: self.truckOwner.getTruckOwnerName())
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
-        self.view.isOpaque = false
-        self.view.tintColor = mainColor
-        dataProvider = AddScheduleDataProvider()
-        self.tableView!.delegate = self
-        self.tableView!.dataSource = dataProvider
-        dataProvider?.tableView = tableView
-        self.tableView!.estimatedRowHeight = 100
-        self.tableView!.rowHeight = UITableViewAutomaticDimension
-        self.tableView!.setNeedsLayout()
-        self.tableView!.layoutIfNeeded()
-
-        self.scrollView.delegate = self
-        self.hideKeyboard()
-        
         submit.addTarget(self, action: #selector(submitSchedule), for: UIControlEvents.touchUpInside)
-        self.view.addSubview(scrollView)
-        self.view.addSubview(navigationBar)
+        
+        self.hideKeyboard()
+        setUpTableView()
+        setUpView()
         
     }
     
@@ -97,6 +82,31 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
             
             alert.show()
         }
+    }
+    
+    
+    func setUpTableView()
+    {
+        self.tableView!.delegate = self
+        dataProvider = AddScheduleDataProvider()
+        self.tableView!.dataSource = dataProvider
+        dataProvider?.tableView = tableView
+        self.tableView!.estimatedRowHeight = 100
+        self.tableView!.rowHeight = UITableViewAutomaticDimension
+        self.tableView!.setNeedsLayout()
+        self.tableView!.layoutIfNeeded()
+
+    }
+    
+    func setUpView() {
+        self.view.isOpaque = false
+        self.view.tintColor = mainColor
+        self.scrollView.delegate = self
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
+        self.view.addSubview(scrollView)
+        let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 54)
+        let navigationBar = ViewControllerItems.createNavigationBar(frame, title: self.truckOwner.getTruckOwnerName())
+        self.view.addSubview(navigationBar)
     }
 
     func submitSchedule() {

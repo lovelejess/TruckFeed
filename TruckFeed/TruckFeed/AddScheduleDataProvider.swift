@@ -17,11 +17,13 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
     public func postSchedule() {
         let postURL = createURLWithEndPoint("truck/schedules")
         let httpBody = serializeJSONData()
-        postToURLWithData(postURL, httpBody: httpBody)
+        let request = createRequest(method: "POST", url: postURL, httpBody: httpBody)
+        sendRequestWithData(postURL, request)
     }
     
     func createURLWithEndPoint(_ endpoint: String) -> URL
     {
+        //TO DO: SWITCH URL WHEN GOING TO PROD
 //        let kServerUrl = "https://damp-escarpment-86736.herokuapp.com/"
         let kServerUrl = "https://truck-server-dev.herokuapp.com"
         var truckListUrl = URL(string: kServerUrl)
@@ -30,19 +32,23 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
         return truckListUrl!
     }
 
-    func serializeJSONData() -> NSData {
+    func serializeJSONData() -> Data {
         let json: [String :Any] = ["truck_id":"3","truck_name":"The Spot","month":"January","week_day":"Saturday","date_number":"28","start_time":"9:00AM","end_time":"5:00PM","location":"Iowa Tap Room","street_address":"215 E 3rd St #100","city_state":"Des Moines, IA"]
         if let jsonData = try? JSONSerialization.data(withJSONObject: json)
         {
-            return jsonData as NSData
+            return jsonData as Data
         }
-        return NSData()
+        return Data()
     }
     
-    func postToURLWithData(_ url: URL, httpBody: NSData){
+    func createRequest(method: String, url: URL, httpBody:Data) -> URLRequest{
         var request = URLRequest(url:url)
         request.httpBody = httpBody as Data
         request.httpMethod = "POST"
+        return request
+    }
+    
+    func sendRequestWithData(_ url: URL, request: URLRequest){
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {
