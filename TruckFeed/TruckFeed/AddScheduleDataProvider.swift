@@ -18,7 +18,7 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
         let postURL = createURLWithEndPoint("truck/schedules")
         let httpBody = serializeJSONData()
         let request = createRequest(method: "POST", url: postURL, httpBody: httpBody)
-        sendRequestWithData(postURL, request)
+        sendRequestWithData(postURL, request: request)
     }
     
     func createURLWithEndPoint(_ endpoint: String) -> URL
@@ -55,18 +55,27 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
             response, data, error in
             if let error = error {
                 NSLog("postTruckSchedule\(error.localizedDescription)")
+                let message = "Truck Schedule was submitted successfully"
+                self.sendSubmitAlertMessage(message: message)
             } else if let httpResponse = response as? HTTPURLResponse {
                 if httpResponse.statusCode == 200 {
                     DispatchQueue.main.async(execute: {
-                        let userInfo = ["message": "Truck Schedule was submitted successfully"] as [String :String]
-                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "com.lovelejess.scheduleSubmitted"), object: self, userInfo: userInfo)
+                        let message = "Truck Schedule was submitted successfully"
+                        self.sendSubmitAlertMessage(message: message)
+                        
                     });
                 }
             }
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
-
+    
+    func sendSubmitAlertMessage(message: String) {
+        let userInfo = ["message": message] as [String :String]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "com.lovelejess.scheduleSubmitted"), object: self, userInfo: userInfo)
+        
+    }
+    
 
 // MARK: - Table view data source
 
@@ -123,13 +132,9 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
         }
         return UITableViewCell()
     }
-
     
     public func reloadTableData() {
         self.tableView.reloadData()
     }
 
-    func configureCell(_ cell: UITableViewCell, atIndexPath indexPath: IndexPath) {
-       
-    }
 }
