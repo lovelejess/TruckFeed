@@ -111,16 +111,17 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
 
     func submitSchedule() {
         print("submitSchedule pressed")
+        let dateTime = getDateTimeFromLabel()
+        
         dataProvider?.postSchedule()
     }
     
-    func scheduleSubmittedSuccessfully(notification: Notification) -> Void {
+    private func scheduleSubmittedSuccessfully(notification: Notification) -> Void {
         if let userInfo = notification.userInfo {
             if let message = userInfo["message"]  as? String {
                 presentSubmitAlert("Submitting Truck Schedule", message: message)
             }
         }
-        
     }
     
     func startTimeSwitchToggled(_sender: UISwitch)
@@ -128,6 +129,13 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         presentSubmitAlert("switch",message: "yes")
     }
     
+    private func getDateTimeFromLabel() {
+        let startDateSwitchCell = self.tableView?.visibleCells[0] as? StartDateSwitchCell
+        if let dateFromLabel = startDateSwitchCell?.startDateLabel.text {
+            let dateTime = dateFromLabel.components(separatedBy: " ")
+            return dateTime
+        }
+    }
 }
 
 extension UIViewController

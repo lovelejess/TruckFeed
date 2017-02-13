@@ -17,6 +17,7 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
     public func postSchedule() {
         let postURL = createURLWithEndPoint("truck/schedules")
         let httpBody = serializeJSONData()
+
         let request = createRequest(method: "POST", url: postURL, httpBody: httpBody)
         sendRequestWithData(postURL, request: request)
     }
@@ -31,7 +32,7 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
         NSLog("postSchedule - url: \(truckListUrl)")
         return truckListUrl!
     }
-
+    
     func serializeJSONData() -> Data {
         let json: [String :Any] = ["truck_id":"3","truck_name":"The Spot","month":"January","week_day":"Saturday","date_number":"28","start_time":"9:00AM","end_time":"5:00PM","location":"Iowa Tap Room","street_address":"215 E 3rd St #100","city_state":"Des Moines, IA"]
         if let jsonData = try? JSONSerialization.data(withJSONObject: json)
@@ -51,22 +52,25 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
     func sendRequestWithData(_ url: URL, request: URLRequest){
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {
-            response, data, error in
-            if let error = error {
-                NSLog("postTruckSchedule\(error.localizedDescription)")
-                let message = "Truck Schedule was submitted successfully"
-                self.sendSubmitAlertMessage(message: message)
-            } else if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    DispatchQueue.main.async(execute: {
-                        let message = "Truck Schedule was submitted successfully"
-                        self.sendSubmitAlertMessage(message: message)
-                        
-                    });
-                }
-            }
-        }
+//        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {
+//            response, data, error in
+//            if let error = error {
+//                NSLog("postTruckSchedule\(error.localizedDescription)")
+//                let message = "Truck Schedule was submitted successfully"
+//                self.sendSubmitAlertMessage(message: message)
+//            } else if let httpResponse = response as? HTTPURLResponse {
+//                if httpResponse.statusCode == 200 {
+//                    DispatchQueue.main.async(execute: {
+//                        let message = "Truck Schedule was submitted successfully"
+//                        self.sendSubmitAlertMessage(message: message)
+//                        
+//                    });
+//                }
+//            }
+//        }
+        
+        let message = "Truck Schedule was submitted successfully"
+        self.sendSubmitAlertMessage(message: message)
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
