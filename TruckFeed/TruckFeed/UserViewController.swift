@@ -62,7 +62,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
     
     fileprivate func setAutoScrollFocus(_ offset: CGPoint) {
         self.scrollView .setContentOffset(offset, animated: true)
-        self .viewDidLayoutSubviews()
+        self.viewDidLayoutSubviews()
     }
 
 
@@ -111,9 +111,10 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
 
     func submitSchedule() {
         print("submitSchedule pressed")
-        let dateTime = getDateTimeFromLabel()
+        let start_date_time = getDateTimeFromLabel()
+        // TODO: post the date time
         
-        dataProvider?.postSchedule()
+        dataProvider?.postSchedule(date_time: start_date_time)
     }
     
     private func scheduleSubmittedSuccessfully(notification: Notification) -> Void {
@@ -126,15 +127,17 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
     
     func startTimeSwitchToggled(_sender: UISwitch)
     {
-        presentSubmitAlert("switch",message: "yes")
+        presentSubmitAlert("switch", message: "yes")
     }
     
-    private func getDateTimeFromLabel() {
+    private func getDateTimeFromLabel() -> [String] {
         let startDateSwitchCell = self.tableView?.visibleCells[0] as? StartDateSwitchCell
         if let dateFromLabel = startDateSwitchCell?.startDateLabel.text {
             let dateTime = dateFromLabel.components(separatedBy: " ")
+            NSLog("UserViewController: getDateTimeFromLabel dateTime \(dateTime)")
             return dateTime
         }
+        return DateUtility.getCurrentDateTime().components(separatedBy: " ")
     }
 }
 

@@ -14,9 +14,9 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
     private var startDateSwitchValue: Bool?
     private var endDateSwitchValue: Bool?
     
-    public func postSchedule() {
+    public func postSchedule(date_time: [String]) {
         let postURL = createURLWithEndPoint("truck/schedules")
-        let httpBody = serializeJSONData()
+        let httpBody = serializeJSONData(date_time: date_time)
 
         let request = createRequest(method: "POST", url: postURL, httpBody: httpBody)
         sendRequestWithData(postURL, request: request)
@@ -27,14 +27,19 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
         //TO DO: SWITCH URL WHEN GOING TO PROD
 //        let kServerUrl = "https://damp-escarpment-86736.herokuapp.com/"
         let kServerUrl = "https://truck-server-dev.herokuapp.com"
+//        let kServerUrl = "https://damp-escarpment-86736-pr-20.herokuapp.com"
         var truckListUrl = URL(string: kServerUrl)
         truckListUrl = truckListUrl?.appendingPathComponent(endpoint)
-        NSLog("postSchedule - url: \(truckListUrl)")
+        NSLog("postSchedule - url: \(String(describing: truckListUrl))")
         return truckListUrl!
     }
     
-    func serializeJSONData() -> Data {
-        let json: [String :Any] = ["truck_id":"3","truck_name":"The Spot","month":"January","week_day":"Saturday","date_number":"28","start_time":"9:00AM","end_time":"5:00PM","location":"Iowa Tap Room","street_address":"215 E 3rd St #100","city_state":"Des Moines, IA"]
+    func serializeJSONData(date_time: [String]) -> Data {
+        let date = date_time[0]
+        let start_time = date_time[1] + date_time[2]
+
+        let json: [String: Any] = ["truck_id":"3","truck_name":"Gastro Grub","date": date, "start_time": start_time, "end_time":"8:00PM", "location":"Des Moines Social Club", "street_address":"11 Cherry Street", "city_state":"Des Moines, IA"]
+
         if let jsonData = try? JSONSerialization.data(withJSONObject: json)
         {
             return jsonData as Data
@@ -52,22 +57,22 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
     func sendRequestWithData(_ url: URL, request: URLRequest){
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-//        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {
-//            response, data, error in
-//            if let error = error {
-//                NSLog("postTruckSchedule\(error.localizedDescription)")
-//                let message = "Truck Schedule was submitted successfully"
-//                self.sendSubmitAlertMessage(message: message)
-//            } else if let httpResponse = response as? HTTPURLResponse {
-//                if httpResponse.statusCode == 200 {
-//                    DispatchQueue.main.async(execute: {
-//                        let message = "Truck Schedule was submitted successfully"
-//                        self.sendSubmitAlertMessage(message: message)
-//                        
-//                    });
-//                }
-//            }
-//        }
+        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) {
+            response, data, error in
+            if let error = error {
+                NSLog("postTruckSchedule\(error.localizedDescription)")
+                let message = "Truck Schedule was submitted successfully"
+                self.sendSubmitAlertMessage(message: message)
+            } else if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    DispatchQueue.main.async(execute: {
+                        let message = "Truck Schedule was submitted successfully"
+                        self.sendSubmitAlertMessage(message: message)
+                        
+                    });
+                }
+            }
+        }
         
         let message = "Truck Schedule was submitted successfully"
         self.sendSubmitAlertMessage(message: message)
