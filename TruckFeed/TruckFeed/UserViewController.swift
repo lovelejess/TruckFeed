@@ -111,10 +111,11 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
 
     func submitSchedule() {
         print("submitSchedule pressed")
-        let start_date_time = getDateTimeFromLabel()
+        let start_date_time = getStartDateTimeFromLabel()
+        let end_date_time = getEndDateTimeFromLabel()
         // TODO: post the date time
         
-        dataProvider?.postSchedule(date_time: start_date_time)
+        dataProvider?.postSchedule(start_date_time: start_date_time, end_date_time: end_date_time)
     }
     
     private func scheduleSubmittedSuccessfully(notification: Notification) -> Void {
@@ -130,15 +131,26 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         presentSubmitAlert("switch", message: "yes")
     }
     
-    private func getDateTimeFromLabel() -> [String] {
+    private func getStartDateTimeFromLabel() -> [String] {
         let startDateSwitchCell = self.tableView?.visibleCells[0] as? StartDateSwitchCell
         if let dateFromLabel = startDateSwitchCell?.startDateLabel.text {
             let dateTime = dateFromLabel.components(separatedBy: " ")
-            NSLog("UserViewController: getDateTimeFromLabel dateTime \(dateTime)")
+            NSLog("UserViewController: getStartDateTimeFromLabel dateTime \(dateTime)")
             return dateTime
         }
         return DateUtility.getCurrentDateTime().components(separatedBy: " ")
     }
+    
+    private func getEndDateTimeFromLabel() -> [String] {
+        let endDateSwitchCell = self.tableView?.visibleCells[1] as? EndDateSwitchCell
+        if let dateFromLabel = endDateSwitchCell?.endDateLabel.text {
+            let dateTime = dateFromLabel.components(separatedBy: " ")
+            NSLog("UserViewController: getEndDateTimeFromLabel dateTime \(dateTime)")
+            return dateTime
+        }
+        return DateUtility.getCurrentDateTime().components(separatedBy: " ")
+    }
+
 }
 
 extension UIViewController

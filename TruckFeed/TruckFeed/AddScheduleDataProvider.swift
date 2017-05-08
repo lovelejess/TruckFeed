@@ -14,9 +14,9 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
     private var startDateSwitchValue: Bool?
     private var endDateSwitchValue: Bool?
     
-    public func postSchedule(date_time: [String]) {
+    public func postSchedule(start_date_time: [String], end_date_time: [String]) {
         let postURL = createURLWithEndPoint("truck/schedules")
-        let httpBody = serializeJSONData(date_time: date_time)
+        let httpBody = serializeJSONData(start_date_time: start_date_time, end_date_time: end_date_time)
 
         let request = createRequest(method: "POST", url: postURL, httpBody: httpBody)
         sendRequestWithData(postURL, request: request)
@@ -25,20 +25,21 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
     func createURLWithEndPoint(_ endpoint: String) -> URL
     {
         //TO DO: SWITCH URL WHEN GOING TO PROD
-//        let kServerUrl = "https://damp-escarpment-86736.herokuapp.com/"
-        let kServerUrl = "https://truck-server-dev.herokuapp.com"
-//        let kServerUrl = "https://damp-escarpment-86736-pr-20.herokuapp.com"
+        let kServerUrl = "https://damp-escarpment-86736.herokuapp.com/"
+//        let kServerUrl = "https://truck-server-dev.herokuapp.com"
         var truckListUrl = URL(string: kServerUrl)
         truckListUrl = truckListUrl?.appendingPathComponent(endpoint)
         NSLog("postSchedule - url: \(String(describing: truckListUrl))")
         return truckListUrl!
     }
     
-    func serializeJSONData(date_time: [String]) -> Data {
-        let date = date_time[0]
-        let start_time = date_time[1] + date_time[2]
+    func serializeJSONData(start_date_time: [String], end_date_time: [String]) -> Data {
+        let start_date = start_date_time[0]
+        let start_time = start_date_time[1] + start_date_time[2]
+        let end_date = end_date_time[0]
+        let end_time = end_date_time[1] + end_date_time[2]
 
-        let json: [String: Any] = ["truck_id":"3","truck_name":"Gastro Grub","date": date, "start_time": start_time, "end_time":"8:00PM", "location":"Des Moines Social Club", "street_address":"11 Cherry Street", "city_state":"Des Moines, IA"]
+        let json: [String: Any] = ["truck_id":"3","truck_name":"Gastro Grub","start_date": start_date, "start_time": start_time, "end_date": end_date, "end_time": end_time, "location":"Des Moines Social Club", "street_address":"11 Cherry Street", "city_state":"Des Moines, IA"]
 
         if let jsonData = try? JSONSerialization.data(withJSONObject: json)
         {
