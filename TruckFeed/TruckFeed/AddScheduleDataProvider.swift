@@ -25,8 +25,9 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
     func createURLWithEndPoint(_ endpoint: String) -> URL
     {
         //TO DO: SWITCH URL WHEN GOING TO PROD
-        let kServerUrl = "https://damp-escarpment-86736.herokuapp.com/"
-//        let kServerUrl = "https://truck-server-dev.herokuapp.com"
+//        let kServerUrl = "https://damp-escarpment-86736.herokuapp.com/"
+        let kServerUrl = "https://truck-server-dev.herokuapp.com"
+//        let kServerUrl = "https://damp-escarpment-86736-pr-21.herokuapp.com"
         var truckListUrl = URL(string: kServerUrl)
         truckListUrl = truckListUrl?.appendingPathComponent(endpoint)
         NSLog("postSchedule - url: \(String(describing: truckListUrl))")
