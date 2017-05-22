@@ -105,7 +105,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
         self.view.addSubview(scrollView)
         let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 54)
-        let navigationBar = ViewControllerItems.createNavigationBar(frame, title: self.truckOwner.getTruckOwnerName())
+        let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "Add Truck Schedule")
         self.view.addSubview(navigationBar)
     }
 
@@ -113,7 +113,6 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         print("submitSchedule pressed")
         let start_date_time = getStartDateTimeFromLabel()
         let end_date_time = getEndDateTimeFromLabel()
-        // TODO: post the date time
         
         dataProvider?.postSchedule(start_date_time: start_date_time, end_date_time: end_date_time)
     }

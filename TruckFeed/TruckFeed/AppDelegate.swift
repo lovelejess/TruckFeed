@@ -18,10 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FBSDKApplicationDelegate.sharedInstance();
         
-        UINavigationBar.appearance().backgroundColor = mainColor
-        UINavigationBar.appearance().barTintColor = mainColor
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        
+        UINavigationBar.appearance().titleTextAttributes =  [NSFontAttributeName: UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20)!, NSForegroundColorAttributeName : greyColor]
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = self.determineUIViewToPresent()
         self.window?.makeKeyAndVisible()
