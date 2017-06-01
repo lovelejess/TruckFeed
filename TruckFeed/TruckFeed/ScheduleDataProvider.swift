@@ -117,14 +117,26 @@ extension ScheduleDataProvider: UITableViewDataSource {
         if let truckScheduleCell = cell as? TruckScheduleCell {
             let truckSchedule = self.truckScheduleList[indexPath.row] as TruckSchedule
             truckScheduleCell.weekDay.text = truckSchedule.weekDay
+            truckScheduleCell.weekDay.font  = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 17)
             truckScheduleCell.weekDay.textColor = secondaryColor
             truckScheduleCell.dateNumber.text = truckSchedule.dateNumber
+            truckScheduleCell.dateNumber.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 17)
             truckScheduleCell.dateNumber.textColor = darkColor
             truckScheduleCell.startTime.text = truckSchedule.startTime
+            truckScheduleCell.startTime.textColor = darkColor
+            truckScheduleCell.startTime.font =  UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
             truckScheduleCell.endTime.text = truckSchedule.endTime
+            truckScheduleCell.endTime.textColor = darkColor
+            truckScheduleCell.endTime.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
             truckScheduleCell.location.text = truckSchedule.location
+            truckScheduleCell.location.textColor = mainColor
+            truckScheduleCell.location.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 17)
             truckScheduleCell.streetAddress.text = truckSchedule.streetAddress
+            truckScheduleCell.streetAddress.textColor = greyColor
+            truckScheduleCell.streetAddress.font = UIFont(name: "AppleSDGothicNeo", size: 15)
             truckScheduleCell.cityState.text = truckSchedule.cityState
+            truckScheduleCell.cityState.textColor = greyColor
+            truckScheduleCell.cityState.font = UIFont(name: "AppleSDGothicNeo", size: 15)
         }
         else {
             NSLog("ScheduleDataProvider - unable to configure cell")

@@ -112,10 +112,10 @@ extension TruckFeedDataProvider: UITableViewDataSource {
             let truck = truckList[indexPath.row] as Truck
             truckCell.nameLabel.text = truck.name
             truckCell.nameLabel.textColor = secondaryColor
-            truckCell.nameLabel.font =  UIFont.boldSystemFont(ofSize: 17)
+            truckCell.nameLabel.font =  UIFont(name: "AppleSDGothicNeo-SemiBold", size: 17)
             truckCell.typeLabel.text = truck.type
             truckCell.typeLabel.textColor = mainColor
-            truckCell.typeLabel.font =  UIFont.italicSystemFont(ofSize: 15)
+            truckCell.typeLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
             truckCell.imageView?.image = resizeImageView(truckCell, truck: truck)
         }
         else {

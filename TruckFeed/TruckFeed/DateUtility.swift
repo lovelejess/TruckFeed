@@ -16,8 +16,18 @@ class DateUtility {
         dateFormatter.dateFormat = "MM/dd/yy hh:mm a"
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
-        let date = dateFormatter.string(from: currentDateTime)
+        let currentDate = dateFormatter.string(from: currentDateTime)
+        return currentDate
+    }
+    
+    class func formatDate(unformattedDate: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy hh:mm a"
+        dateFormatter.amSymbol = "AM"
+        dateFormatter.pmSymbol = "PM"
+        let date = dateFormatter.string(from: unformattedDate)
         return date
     }
+
 
 }

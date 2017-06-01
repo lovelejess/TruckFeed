@@ -24,31 +24,17 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
     var newTruckScheduleAddress: String?
     var newTruckScheduleLocation: String?
     var newTruckScheduleCity: String?
-    fileprivate var dataProvider: TableDataProviderProtocol?
+    fileprivate var dataProvider: AddScheduleDataProvider?
 
 
     override open func viewDidLoad() {
         super.viewDidLoad()
-        let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 54)
-        let navigationBar = ViewControllerItems.createNavigationBar(frame, title: self.truckOwner.getTruckOwnerName())
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
-        self.view.isOpaque = false
-        self.view.tintColor = mainColor
-        dataProvider = AddScheduleDataProvider()
-        self.tableView!.delegate = self
-        self.tableView!.dataSource = dataProvider
-        dataProvider?.tableView = tableView
-        self.tableView!.estimatedRowHeight = 100
-        self.tableView!.rowHeight = UITableViewAutomaticDimension
-        self.tableView!.setNeedsLayout()
-        self.tableView!.layoutIfNeeded()
-
-        self.scrollView.delegate = self
-        self.hideKeyboard()
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "com.lovelejess.scheduleSubmitted"), object: nil, queue: nil, using: scheduleSubmittedSuccessfully)
+        submit.addTarget(self, action: #selector(submitSchedule), for: UIControlEvents.touchUpInside)
         
-        submit.addTarget(self, action: #selector(onSubmit), for: UIControlEvents.touchUpInside)
-        self.view.addSubview(scrollView)
-        self.view.addSubview(navigationBar)
+        self.hideKeyboard()
+        setUpTableView()
+        setUpView()
         
     }
     
@@ -72,12 +58,11 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
     }
     
     
-    
     // MARK: UIScroll
     
     fileprivate func setAutoScrollFocus(_ offset: CGPoint) {
         self.scrollView .setContentOffset(offset, animated: true)
-        self .viewDidLayoutSubviews()
+        self.viewDidLayoutSubviews()
     }
 
 
@@ -99,19 +84,72 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         }
     }
     
-    func onSubmit(_ sender: UIButton) {
-        print("submitButton pressed")
-        print("newTruckScheduleLocation: \(newTruckScheduleLocation)")
-        print("TruckScheduleTextFieldTags \(newTruckScheduleAddress)")
-        print("newTruckScheduleCity \(newTruckScheduleCity)")
-        presentSubmitAlert("Truck Schedule Submitted", message:"Successfully!")
+    
+    func setUpTableView()
+    {
+        self.tableView!.delegate = self
+        dataProvider = AddScheduleDataProvider()
+        self.tableView!.dataSource = dataProvider
+        dataProvider?.tableView = tableView
+        self.tableView!.estimatedRowHeight = 100
+        self.tableView!.rowHeight = UITableViewAutomaticDimension
+        self.tableView!.setNeedsLayout()
+        self.tableView!.layoutIfNeeded()
+
+    }
+    
+    func setUpView() {
+        self.view.isOpaque = false
+        self.view.tintColor = mainColor
+        self.scrollView.delegate = self
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
+        self.view.addSubview(scrollView)
+        let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 54)
+        let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "Add Truck Schedule")
+        self.view.addSubview(navigationBar)
+    }
+
+    func submitSchedule() {
+        print("submitSchedule pressed")
+        let start_date_time = getStartDateTimeFromLabel()
+        let end_date_time = getEndDateTimeFromLabel()
+        
+        dataProvider?.postSchedule(start_date_time: start_date_time, end_date_time: end_date_time)
+    }
+    
+    private func scheduleSubmittedSuccessfully(notification: Notification) -> Void {
+        if let userInfo = notification.userInfo {
+            if let message = userInfo["message"]  as? String {
+                presentSubmitAlert("Submitting Truck Schedule", message: message)
+            }
+        }
     }
     
     func startTimeSwitchToggled(_sender: UISwitch)
     {
-        presentSubmitAlert("switch",message: "yes")
+        presentSubmitAlert("switch", message: "yes")
     }
     
+    private func getStartDateTimeFromLabel() -> [String] {
+        let startDateSwitchCell = self.tableView?.visibleCells[0] as? StartDateSwitchCell
+        if let dateFromLabel = startDateSwitchCell?.startDateLabel.text {
+            let dateTime = dateFromLabel.components(separatedBy: " ")
+            NSLog("UserViewController: getStartDateTimeFromLabel dateTime \(dateTime)")
+            return dateTime
+        }
+        return DateUtility.getCurrentDateTime().components(separatedBy: " ")
+    }
+    
+    private func getEndDateTimeFromLabel() -> [String] {
+        let endDateSwitchCell = self.tableView?.visibleCells[1] as? EndDateSwitchCell
+        if let dateFromLabel = endDateSwitchCell?.endDateLabel.text {
+            let dateTime = dateFromLabel.components(separatedBy: " ")
+            NSLog("UserViewController: getEndDateTimeFromLabel dateTime \(dateTime)")
+            return dateTime
+        }
+        return DateUtility.getCurrentDateTime().components(separatedBy: " ")
+    }
+
 }
 
 extension UIViewController
@@ -138,7 +176,6 @@ extension UserViewController: UITableViewDelegate
     {
         return UITableViewAutomaticDimension
     }
-
 }
 
 
