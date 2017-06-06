@@ -93,6 +93,9 @@
 		10B1E5FA1CF544B100C7FBE4 /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B1E5F91CF544B100C7FBE4 /* people.png */; };
 		10B1E5FE1CFE59D700C7FBE4 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */; };
 		10BAB6B01EDE5C08002F9EBD /* left-arrow-key.png in Resources */ = {isa = PBXBuildFile; fileRef = 10BAB6AF1EDE5C08002F9EBD /* left-arrow-key.png */; };
+		10BAB6B21EDFA9A8002F9EBD /* TruckLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAB6B11EDFA9A8002F9EBD /* TruckLocationCell.swift */; };
+		10BAB6B31EDFA9A8002F9EBD /* TruckLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAB6B11EDFA9A8002F9EBD /* TruckLocationCell.swift */; };
+		10BAB6B41EDFA9A8002F9EBD /* TruckLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BAB6B11EDFA9A8002F9EBD /* TruckLocationCell.swift */; };
 		10C04E4E1ED2693C0034A6FC /* submit_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C04E4D1ED2693C0034A6FC /* submit_large.png */; };
 		10C04E541ED284190034A6FC /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C04E531ED284190034A6FC /* back_button.png */; };
 		10C04E561ED285A30034A6FC /* list_bar_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C04E551ED285A30034A6FC /* list_bar_small.png */; };
@@ -183,6 +186,7 @@
 		10B1E5F91CF544B100C7FBE4 /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
 		10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		10BAB6AF1EDE5C08002F9EBD /* left-arrow-key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow-key.png"; sourceTree = "<group>"; };
+		10BAB6B11EDFA9A8002F9EBD /* TruckLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckLocationCell.swift; sourceTree = "<group>"; };
 		10C04E4D1ED2693C0034A6FC /* submit_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submit_large.png; sourceTree = "<group>"; };
 		10C04E531ED284190034A6FC /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button.png; sourceTree = "<group>"; };
 		10C04E551ED285A30034A6FC /* list_bar_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_bar_small.png; sourceTree = "<group>"; };
@@ -353,6 +357,7 @@
 				1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */,
 				109BCD221E231EA50028BC9B /* EndDateSwitchCell.swift */,
 				109BCD261E2325070028BC9B /* EndDatePickerCell.swift */,
+				10BAB6B11EDFA9A8002F9EBD /* TruckLocationCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -717,6 +722,7 @@
 				10DC618A1BE863A60021B2D3 /* TruckFeedController.swift in Sources */,
 				10B1E5FE1CFE59D700C7FBE4 /* UserView.swift in Sources */,
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
+				10BAB6B21EDFA9A8002F9EBD /* TruckLocationCell.swift in Sources */,
 				10A5E1101D8CE56F00B79702 /* MenuViewController.swift in Sources */,
 				100CE6761D2F40B000E2F53C /* TruckScheduleController.swift in Sources */,
 				10A5E1181D8CE7B500B79702 /* MenuDataProvider.swift in Sources */,
@@ -751,6 +757,7 @@
 				106C8A161D40605A007DD2CF /* ScheduleDataProvider.swift in Sources */,
 				109BCD241E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */,
 				10ED6CB51E3999A10059DCBA /* DateUtility.swift in Sources */,
+				10BAB6B31EDFA9A8002F9EBD /* TruckLocationCell.swift in Sources */,
 				10A5E1151D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
 				106C8A141D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */,
 				100E15631D05037400B3BC9A /* TruckCell.swift in Sources */,
@@ -788,6 +795,7 @@
 				106C8A101D40604C007DD2CF /* TruckFeedDataProvider.swift in Sources */,
 				109BCD251E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */,
 				10ED6CB61E3999A20059DCBA /* DateUtility.swift in Sources */,
+				10BAB6B41EDFA9A8002F9EBD /* TruckLocationCell.swift in Sources */,
 				10A5E1161D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
 				106C8A191D406073007DD2CF /* TruckOwner.swift in Sources */,
 				106C8A1B1D406079007DD2CF /* AppPlistHelpers.swift in Sources */,
