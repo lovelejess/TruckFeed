@@ -95,7 +95,7 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -160,8 +160,27 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
             }
         }
         
-        if (indexPath.row ==  4 && startDateSwitchValue == true && endDateSwitchValue == true)  {
+        else if (indexPath.row ==  3 && (startDateSwitchValue == false && endDateSwitchValue == false)) {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "spotLocationSearchBar") as? TruckLocationSearchBarCell {
+                return cell
+            }
+        }
+        
+        if (indexPath.row ==  4 && (startDateSwitchValue == true && endDateSwitchValue == false) || (startDateSwitchValue == false && endDateSwitchValue == true))  {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "spotLocationSearchBar") as? TruckLocationSearchBarCell {
+                return cell
+            }
+        }
+
+        
+        else if (indexPath.row ==  4 && startDateSwitchValue == true && endDateSwitchValue == true)  {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "spotLocation") as? TruckLocationCell {
+                return cell
+            }
+        }
+        
+        if (indexPath.row ==  5 && startDateSwitchValue == true && endDateSwitchValue == true)  {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "spotLocationSearchBar") as? TruckLocationSearchBarCell {
                 return cell
             }
         }

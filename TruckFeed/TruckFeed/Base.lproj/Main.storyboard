@@ -237,7 +237,7 @@
                                                             <color key="textColor" red="0.08235294118" green="0.67450980390000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyW-iB-NPh" userLabel="End Date">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyW-iB-NPh" userLabel="locationLabel">
                                                             <rect key="frame" x="86" y="12" width="210" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
@@ -250,6 +250,26 @@
                                                     <outlet property="truckLocationLabel" destination="iyW-iB-NPh" id="VwO-OZ-gpp"/>
                                                 </connections>
                                             </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="spotLocationSearchBar" id="tWW-wX-3SL" userLabel="spotLocationSearchBar" customClass="TruckLocationSearchBarCell" customModule="TruckFeed" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="366" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tWW-wX-3SL" id="16z-ZF-CXK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address 101010 street" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxm-uI-7zb" userLabel="searchBar">
+                                                            <rect key="frame" x="86" y="12" width="210" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="searchBar" destination="jxm-uI-7zb" id="pvx-nC-pT5"/>
+                                                </connections>
+                                            </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                 </subviews>
@@ -260,11 +280,20 @@
                     <tabBarItem key="tabBarItem" title="Item 1" id="fdg-Qi-TCq"/>
                     <connections>
                         <outlet property="scrollView" destination="BQR-yN-2L0" id="B5e-1C-3lQ"/>
+                        <outlet property="searchDisplayController" destination="LRo-9t-1JB" id="J0U-JC-dMi"/>
                         <outlet property="submit" destination="LeZ-M0-b9b" id="S6x-s6-Hzh"/>
                         <outlet property="tableView" destination="jKO-7t-Ole" id="cT0-rQ-egZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sow-WK-5ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="LRo-9t-1JB">
+                    <connections>
+                        <outlet property="delegate" destination="9bv-wC-U2D" id="HFA-lI-ZPQ"/>
+                        <outlet property="searchContentsController" destination="9bv-wC-U2D" id="5AX-xh-GcL"/>
+                        <outlet property="searchResultsDataSource" destination="9bv-wC-U2D" id="kV4-4L-dEG"/>
+                        <outlet property="searchResultsDelegate" destination="9bv-wC-U2D" id="HeP-Xn-apm"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-1135.2" y="-864.01799100449784"/>
         </scene>
