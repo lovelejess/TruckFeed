@@ -16,7 +16,7 @@ class TruckLocationSearchBarCell: UITableViewCell {
     public var delegate: AddScheduleDataProvider?
     
     override func awakeFromNib() {
-        searchBar.text = "123 candy Lane"
+        searchBar.text = "-------"
         //        startDateSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), for: UIControlEvents.valueChanged)
         //        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "com.lovelejess.startDateLabelSelected"), object: nil, queue: nil, using: updateStartDateLabel)
     }

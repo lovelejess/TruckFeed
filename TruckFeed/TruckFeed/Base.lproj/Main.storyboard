@@ -244,10 +244,16 @@
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="j71-0n-pPX">
+                                                            <rect key="frame" x="304" y="5" width="51" height="31"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="onTintColor" red="0.08235294118" green="0.67450980390000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </switch>
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="truckLocationLabel" destination="iyW-iB-NPh" id="VwO-OZ-gpp"/>
+                                                    <outlet property="truckLocationSwitch" destination="j71-0n-pPX" id="xy2-jh-9If"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="spotLocationSearchBar" id="tWW-wX-3SL" userLabel="spotLocationSearchBar" customClass="TruckLocationSearchBarCell" customModule="TruckFeed" customModuleProvider="target">
