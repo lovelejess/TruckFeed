@@ -11,7 +11,7 @@ import UIKit
 class TruckLocationSearchBarCell: UITableViewCell {
     
     //    @IBOutlet weak var startDateSwitch: UISwitch!
-    @IBOutlet weak var searchBar: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     public var delegate: AddScheduleDataProvider?
     

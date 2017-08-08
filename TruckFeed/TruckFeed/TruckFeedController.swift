@@ -52,10 +52,11 @@ open class TruckFeedController: UIViewController, UINavigationBarDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DisplayTruckSchedule" {
             if let destination = segue.destination as? TruckScheduleController {
-                NSLog("Presenting \(destination.title)")
+                NSLog("PresentiString(describing: destination.title)title)")
                 if let index = self.tableView?.indexPathForSelectedRow {
                     let navigationBarTitleHeader = "Spotted: "
                     if let cell = self.tableView?.cellForRow(at: index)

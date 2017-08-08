@@ -13,6 +13,7 @@ open class TruckScheduleController: UIViewController {
     @IBOutlet var tableView: UITableView?
     fileprivate var dataProvider: ScheduleDataProviderProtocol?
     fileprivate var truckScheduleList = [TruckSchedule]()
+    private var searchController: UISearchController?
     open var foodTruckName: String?
     open var foodTruckTitleName: String?
     
@@ -29,6 +30,16 @@ open class TruckScheduleController: UIViewController {
         let leftBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRect(x: 0, y: 0, width: 30, height: 30), image: UIImage(named: "left-arrow-key.png")!, target: self)
         let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: "Add Truck Schedule", leftBarButton: leftBarButtonItem)
         self.view.addSubview(navigationBar)
+        
+        
+        let locationSearchResultsController = LocationSearchResultsViewController()
+        searchController = UISearchController(searchResultsController: locationSearchResultsController)
+        searchController!.dimsBackgroundDuringPresentation = false
+        searchController!.hidesNavigationBarDuringPresentation = false
+        searchController!.dimsBackgroundDuringPresentation = false
+        searchController!.searchBar.searchBarStyle = .minimal
+        searchController!.searchBar.sizeToFit()
+        definesPresentationContext = true
     }
     
     func dismissViewController(_ sender: AnyObject) {
