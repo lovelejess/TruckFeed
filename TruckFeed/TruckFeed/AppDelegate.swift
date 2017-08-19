@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = self.determineUIViewToPresent()
         self.window?.makeKeyAndVisible()
+        
+        GMSPlacesClient.provideAPIKey("AIzaSyBmx4Z1P6x5A1dhDOThG1wwHnYUbAu3bak")
         
         return true
     }
