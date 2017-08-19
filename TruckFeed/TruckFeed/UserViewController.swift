@@ -67,26 +67,29 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
 
 
     // MARK: - PRIVATE METHODS
+    func createAlert(message: String, title: String) -> UIAlertView {
+        let alert: UIAlertView = UIAlertView()
+        alert.delegate = self
+        
+        alert.title = title
+        alert.message = message
+        alert.addButton(withTitle: "OK")
+        return alert;
+    }
+    
     func presentSubmitAlert(_ title: String, message: String) {
-        if let _: AnyClass = NSClassFromString("UIAlertController") { // iOS 8
-            let myAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            myAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(myAlert, animated: true, completion: nil)
-        } else { // iOS 7
-            let alert: UIAlertView = UIAlertView()
-            alert.delegate = self
-            
-            alert.title = title
-            alert.message = message
-            alert.addButton(withTitle: "OK")
-            
+        if let _: AnyClass = NSClassFromString("UIAlertController") {
+            let alertController: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            let alert = createAlert(message: message, title: title)
             alert.show()
         }
     }
     
     
-    func setUpTableView()
-    {
+    func setUpTableView() {
         self.tableView!.delegate = self
         dataProvider = AddScheduleDataProvider()
         self.tableView!.dataSource = dataProvider
@@ -125,8 +128,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         }
     }
     
-    func startTimeSwitchToggled(_sender: UISwitch)
-    {
+    func startTimeSwitchToggled(_sender: UISwitch) {
         presentSubmitAlert("switch", message: "yes")
     }
     
@@ -152,8 +154,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
 
 }
 
-extension UIViewController
-{
+extension UIViewController {
     func hideKeyboard()
     {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
@@ -169,8 +170,7 @@ extension UIViewController
     }
 }
 
-extension UserViewController: UITableViewDelegate
-{
+extension UserViewController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {

@@ -56,7 +56,7 @@ open class TruckFeedController: UIViewController, UINavigationBarDelegate {
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DisplayTruckSchedule" {
             if let destination = segue.destination as? TruckScheduleController {
-                NSLog("PresentiString(describing: destination.title)title)")
+                NSLog("presentMenuViewController - entering DisplayTruckSchedule ")
                 if let index = self.tableView?.indexPathForSelectedRow {
                     let navigationBarTitleHeader = "Spotted: "
                     if let cell = self.tableView?.cellForRow(at: index)
