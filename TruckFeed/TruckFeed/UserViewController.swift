@@ -8,8 +8,9 @@
 
 import UIKit
 import FBSDKLoginKit
+import GooglePlaces
 
-open class UserViewController: UIViewController, UINavigationBarDelegate, UITextFieldDelegate, UIScrollViewDelegate {
+open class UserViewController: UIViewController, UINavigationBarDelegate, UITextFieldDelegate, UIScrollViewDelegate, GMSAutocompleteViewControllerDelegate {
 
     fileprivate var truckOwner = TruckOwner.sharedInstance
     
@@ -128,10 +129,6 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         }
     }
     
-    func startTimeSwitchToggled(_sender: UISwitch) {
-        presentSubmitAlert("switch", message: "yes")
-    }
-    
     private func getStartDateTimeFromLabel() -> [String] {
         let startDateSwitchCell = self.tableView?.visibleCells[0] as? StartDateSwitchCell
         if let dateFromLabel = startDateSwitchCell?.startDateLabel.text {
@@ -151,7 +148,22 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         }
         return DateUtility.getCurrentDateTime().components(separatedBy: " ")
     }
-
+    
+    public func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    public func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: \(error)")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // User cancelled the operation.
+    public func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        print("Autocomplete was cancelled.")
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension UIViewController {
@@ -176,6 +188,7 @@ extension UserViewController: UITableViewDelegate {
     {
         return UITableViewAutomaticDimension
     }
+
 }
 
 

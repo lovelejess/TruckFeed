@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GooglePlaces
 
-open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
+open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol, TruckLocationCellProtocol {
 
     weak open var tableView: UITableView!
     private var startDateSwitchValue: Bool?
@@ -167,18 +168,21 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
         
         else if (indexPath.row ==  3 && startDateSwitchValue == false && endDateSwitchValue == false && truckLocationSwitchValue == true) {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "spotLocationSearchBar") as? TruckLocationSearchBarCell {
+                cell.truckLocationDelegate = self
                 return cell
             }
         }
         
         if (indexPath.row ==  4 && startDateSwitchValue == true && endDateSwitchValue == false && truckLocationSwitchValue == true)  {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "spotLocationSearchBar") as? TruckLocationSearchBarCell {
+                cell.truckLocationDelegate = self
                 return cell
             }
         }
             
         else if (indexPath.row ==  4 && startDateSwitchValue == false && endDateSwitchValue == true && truckLocationSwitchValue == true)  {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "spotLocationSearchBar") as? TruckLocationSearchBarCell {
+                cell.truckLocationDelegate = self
                 return cell
             }
         }
@@ -194,6 +198,7 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
         
         if (indexPath.row ==  5 && startDateSwitchValue == true && endDateSwitchValue == true && truckLocationSwitchValue == true)  {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "spotLocationSearchBar") as? TruckLocationSearchBarCell {
+                cell.truckLocationDelegate = self
                 return cell
             }
         }
@@ -201,8 +206,23 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
         return UITableViewCell()
     }
     
+    public func presentGooglePlacesAutoComplete() {
+        let acController = GMSAutocompleteViewController()
+        var rootViewController = getPresentedViewController()
+        acController.delegate = rootViewController as! GMSAutocompleteViewControllerDelegate
+        rootViewController?.present(acController, animated: true, completion: nil)
+    }
+    
     public func reloadTableData() {
         self.tableView.reloadData()
+    }
+    
+    func getPresentedViewController() -> UIViewController? {
+        var rootViewController = UIApplication.shared.keyWindow?.rootViewController
+        if let masterTabViewController = rootViewController as? MasterTabViewController {
+            rootViewController = masterTabViewController.selectedViewController
+        }
+        return rootViewController
     }
 
 }

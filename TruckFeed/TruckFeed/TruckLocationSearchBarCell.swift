@@ -7,29 +7,23 @@
 //
 
 import UIKit
+import GooglePlaces
 
-class TruckLocationSearchBarCell: UITableViewCell {
+class TruckLocationSearchBarCell: UITableViewCell, UISearchBarDelegate {
     
-    //    @IBOutlet weak var startDateSwitch: UISwitch!
     @IBOutlet weak var searchBar: UISearchBar!
     
     public var delegate: AddScheduleDataProvider?
+    public var truckLocationDelegate: TruckLocationCellProtocol?
     
     override func awakeFromNib() {
         searchBar.text = "-------"
-        //        startDateSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), for: UIControlEvents.valueChanged)
-        //        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "com.lovelejess.startDateLabelSelected"), object: nil, queue: nil, using: updateStartDateLabel)
+        searchBar.delegate = self
     }
     
-    func startTimeSwitchToggled(){
-        delegate!.reloadTableData()
+    func searchBarTextDidBeginEditing(_: UISearchBar) {
+        print("TruckLocationSearchBarCell - searchBarTextDidBeginEditing")
+        self.truckLocationDelegate?.presentGooglePlacesAutoComplete()
     }
-    
-    //    private func truckLocationLabel(notification: Notification) -> Void {
-    //        if let userInfo = notification.userInfo {
-    //            if let date = userInfo["date"]  as? String {
-    //                startDateLabel.text = date
-    //            }
-    //        }
-    //    }
+
 }
