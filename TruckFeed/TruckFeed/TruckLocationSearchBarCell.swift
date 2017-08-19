@@ -17,7 +17,7 @@ class TruckLocationSearchBarCell: UITableViewCell, UISearchBarDelegate {
     public var truckLocationDelegate: TruckLocationCellProtocol?
     
     override func awakeFromNib() {
-        searchBar.text = "-------"
+        searchBar.text = "my truck location"
         searchBar.delegate = self
     }
     
