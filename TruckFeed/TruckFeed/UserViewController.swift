@@ -146,21 +146,24 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
 
 extension UserViewController: GMSAutocompleteViewControllerDelegate {
     public func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        
+        let name = place.name
+        print("Name is: \(name)")
+        print("Address is: \(String(describing: place.formattedAddress))")
+        
         dismiss(animated: true, completion: nil)
     }
     
     public func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        // TODO: handle the error.
+    
         print("Error: \(error)")
         dismiss(animated: true, completion: nil)
     }
     
-    // User cancelled the operation.
     public func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         print("Autocomplete was cancelled.")
         dismiss(animated: true, completion: nil)
     }
-
 }
 
 extension UIViewController {
