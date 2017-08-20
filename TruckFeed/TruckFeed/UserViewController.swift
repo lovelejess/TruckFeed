@@ -16,15 +16,8 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var tableView: UITableView?
-    @IBOutlet weak var location: UITextField!
-    @IBOutlet weak var address: UITextField!
-    @IBOutlet weak var city: UITextField!
-    @IBOutlet weak var state: UIPickerView!
     @IBOutlet weak var submit: UIButton!
     
-    var newTruckScheduleAddress: String?
-    var newTruckScheduleLocation: String?
-    var newTruckScheduleCity: String?
     fileprivate var dataProvider: AddScheduleDataProvider?
 
 
