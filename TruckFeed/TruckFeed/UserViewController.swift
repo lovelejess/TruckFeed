@@ -10,7 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import GooglePlaces
 
-open class UserViewController: UIViewController, UINavigationBarDelegate, UITextFieldDelegate, UIScrollViewDelegate, GMSAutocompleteViewControllerDelegate {
+open class UserViewController: UIViewController, UINavigationBarDelegate, UITextFieldDelegate, UIScrollViewDelegate {
 
     fileprivate var truckOwner = TruckOwner.sharedInstance
     
@@ -149,6 +149,9 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         return DateUtility.getCurrentDateTime().components(separatedBy: " ")
     }
     
+    }
+
+extension UserViewController: GMSAutocompleteViewControllerDelegate {
     public func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         dismiss(animated: true, completion: nil)
     }
@@ -164,6 +167,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
         print("Autocomplete was cancelled.")
         dismiss(animated: true, completion: nil)
     }
+
 }
 
 extension UIViewController {

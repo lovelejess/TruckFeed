@@ -208,7 +208,7 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol, TruckLo
     
     public func presentGooglePlacesAutoComplete() {
         let acController = GMSAutocompleteViewController()
-        var rootViewController = getPresentedViewController()
+        let rootViewController = getPresentedViewController()
         acController.delegate = rootViewController as! GMSAutocompleteViewControllerDelegate
         rootViewController?.present(acController, animated: true, completion: nil)
     }
