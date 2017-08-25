@@ -237,44 +237,17 @@
                                                             <color key="textColor" red="0.08235294118" green="0.67450980390000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyW-iB-NPh" userLabel="locationLabel">
-                                                            <rect key="frame" x="86" y="12" width="210" height="21"/>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Spot Location" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="djx-RW-nEW">
+                                                            <rect key="frame" x="149" y="8" width="204" height="30"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="j71-0n-pPX">
-                                                            <rect key="frame" x="304" y="5" width="51" height="31"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="onTintColor" red="0.08235294118" green="0.67450980390000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </switch>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="truckLocationLabel" destination="iyW-iB-NPh" id="VwO-OZ-gpp"/>
-                                                    <outlet property="truckLocationSwitch" destination="j71-0n-pPX" id="xy2-jh-9If"/>
-                                                </connections>
-                                            </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="spotLocationSearchBar" id="tWW-wX-3SL" userLabel="spotLocationSearchBar" customClass="TruckLocationSearchBarCell" customModule="TruckFeed" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="366" width="375" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tWW-wX-3SL" id="16z-ZF-CXK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFj-Er-JOe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
-                                                            <connections>
-                                                                <outlet property="delegate" destination="9bv-wC-U2D" id="x5A-gE-3KE"/>
-                                                            </connections>
-                                                        </searchBar>
+                                                        </textField>
                                                     </subviews>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="searchBar" destination="rFj-Er-JOe" id="skR-vD-ef7"/>
+                                                    <outlet property="truckLocationTextField" destination="djx-RW-nEW" id="B56-VB-4Sp"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

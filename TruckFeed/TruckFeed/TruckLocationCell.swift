@@ -8,19 +8,24 @@
 
 import UIKit
 
-class TruckLocationCell: UITableViewCell {
+class TruckLocationCell: UITableViewCell, UITextFieldDelegate {
 
-    @IBOutlet weak var truckLocationSwitch: UISwitch!
-    @IBOutlet weak var truckLocationLabel: UILabel!
+    @IBOutlet weak var truckLocationTextField: UITextField!
     
     public var delegate: AddScheduleDataProvider?
+    public var truckLocationDelegate: TruckLocationCellProtocol?
     
     override func awakeFromNib() {
-        truckLocationLabel.text = "-------"
-        truckLocationSwitch.addTarget(self, action: #selector(truckLocationSwitchToggled), for: UIControlEvents.valueChanged)
+        truckLocationTextField.delegate = self
+//        truckLocationTextField.addTarget(self, action: #selector(getLocationName), for: UIControlEvents.valueChanged)
     }
     
-    func truckLocationSwitchToggled(){
-        delegate!.reloadTableData()
+    func getLocationName(){
+        
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("TruckLocationCell - searchBarTextDidBeginEditing")
+        self.truckLocationDelegate?.presentGooglePlacesAutoComplete()
     }
 }
