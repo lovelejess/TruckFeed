@@ -122,6 +122,10 @@
 		10ED6CB51E3999A10059DCBA /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED6CB31E3999430059DCBA /* DateUtility.swift */; };
 		10ED6CB61E3999A20059DCBA /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED6CB31E3999430059DCBA /* DateUtility.swift */; };
 		10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */; };
+		16B8D6C71F51E5CC005718AC /* StartDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateSwitchCell.swift */; };
+		16B8D6C81F51E5CD005718AC /* StartDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateSwitchCell.swift */; };
+		16B8D6C91F51E633005718AC /* StartDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */; };
+		16B8D6CA1F51E633005718AC /* StartDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */; };
 		44D63DB9063710BCE67F05E1 /* Pods_TruckFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36258BF9B8CA7A7C35A7DAE5 /* Pods_TruckFeed.framework */; };
 		6E5C8BD15E6B684B87C16D04 /* Pods_TruckFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0737B45AD6EC6786801F3788 /* Pods_TruckFeedTests.framework */; };
 		C14A5E6605F8ED3358BABF6C /* Pods_TruckFeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09739683405C05FC5F7B6416 /* Pods_TruckFeedUITests.framework */; };
@@ -573,13 +577,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TruckFeedTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		10D950471BFD7D4E00EC435B /* [CP] Check Pods Manifest.lock */ = {
@@ -588,13 +595,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TruckFeedUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		10D9505E1BFD7D4E00EC435B /* [CP] Copy Pods Resources */ = {
@@ -648,9 +658,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TruckFeed/Pods-TruckFeed-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -663,13 +688,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TruckFeed-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		890D4D8482ADED5AC35AF382 /* [CP] Copy Pods Resources */ = {
@@ -762,6 +790,7 @@
 				10A5E1151D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
 				106C8A141D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */,
 				100E15631D05037400B3BC9A /* TruckCell.swift in Sources */,
+				16B8D6C71F51E5CC005718AC /* StartDateSwitchCell.swift in Sources */,
 				100E15651D05037E00B3BC9A /* ViewControllerItems.swift in Sources */,
 				10A5E1111D8CE56F00B79702 /* MenuViewController.swift in Sources */,
 				100E15661D05038100B3BC9A /* AppPlistHelpers.swift in Sources */,
@@ -777,6 +806,7 @@
 				10AD73FF1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */,
 				10A5E1091D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				100E15671D05038400B3BC9A /* MasterTabViewController.swift in Sources */,
+				16B8D6C91F51E633005718AC /* StartDatePickerCell.swift in Sources */,
 				100E15621D05037000B3BC9A /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -799,6 +829,7 @@
 				10A5E1161D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
 				106C8A191D406073007DD2CF /* TruckOwner.swift in Sources */,
 				106C8A1B1D406079007DD2CF /* AppPlistHelpers.swift in Sources */,
+				16B8D6C81F51E5CD005718AC /* StartDateSwitchCell.swift in Sources */,
 				106C8A181D406061007DD2CF /* MainLoginScreenController.swift in Sources */,
 				10A5E1121D8CE56F00B79702 /* MenuViewController.swift in Sources */,
 				10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */,
@@ -814,6 +845,7 @@
 				10D9504D1BFD7D4E00EC435B /* Palette.swift in Sources */,
 				10A5E10A1D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */,
+				16B8D6CA1F51E633005718AC /* StartDatePickerCell.swift in Sources */,
 				106C8A151D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
