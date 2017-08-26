@@ -84,16 +84,17 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "com.lovelejess.scheduleSubmitted"), object: self, userInfo: userInfo)
         
     }
-    
+}
 
-// MARK: - Table view data source
+extension AddScheduleDataProvider: UITableViewDataSource {
+
 
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 2
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,9 +115,4 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol {
         
         return UITableViewCell()
     }
-    
-    public func reloadTableData() {
-        self.tableView.reloadData()
-    }
-
 }

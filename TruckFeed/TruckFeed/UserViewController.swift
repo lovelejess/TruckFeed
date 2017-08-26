@@ -9,21 +9,14 @@
 import UIKit
 import FBSDKLoginKit
 
-open class UserViewController: UIViewController, UINavigationBarDelegate, UITextFieldDelegate, UIScrollViewDelegate {
+open class UserViewController: UIViewController, UINavigationBarDelegate, UIScrollViewDelegate {
 
     fileprivate var truckOwner = TruckOwner.sharedInstance
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var tableView: UITableView?
-    @IBOutlet weak var location: UITextField!
-    @IBOutlet weak var address: UITextField!
-    @IBOutlet weak var city: UITextField!
-    @IBOutlet weak var state: UIPickerView!
     @IBOutlet weak var submit: UIButton!
     
-    var newTruckScheduleAddress: String?
-    var newTruckScheduleLocation: String?
-    var newTruckScheduleCity: String?
     fileprivate var dataProvider: AddScheduleDataProvider?
 
 
@@ -87,8 +80,8 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
     
     func setUpTableView()
     {
-        self.tableView!.delegate = self
         dataProvider = AddScheduleDataProvider()
+        self.tableView!.delegate = self
         self.tableView!.dataSource = dataProvider
         dataProvider?.tableView = tableView
         self.tableView!.estimatedRowHeight = 100
@@ -170,6 +163,12 @@ extension UserViewController: UITableViewDelegate
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return UITableViewAutomaticDimension
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        NSLog("UserViewController: You selected cell #\(indexPath.row)!")
+        NSLog("UserViewController: Presenting DisplayPickerController")
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

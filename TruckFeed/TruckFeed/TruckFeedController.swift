@@ -85,8 +85,9 @@ extension TruckFeedController: UITableViewDelegate
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         NSLog("You selected cell #\(indexPath.row)!")
+        NSLog("TruckFeedController: Presenting TruckScheduleController")
         tableView.deselectRow(at: indexPath, animated: true)
-        self.performSegue(withIdentifier: "DisplayTruckSchedule", sender: indexPath)
+        
     }
 }
 
