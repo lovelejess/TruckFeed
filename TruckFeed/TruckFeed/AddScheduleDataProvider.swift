@@ -14,7 +14,8 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol, TruckLo
     weak open var tableView: UITableView!
     private var startDateSwitchValue: Bool?
     private var endDateSwitchValue: Bool?
-    
+    public var truckLocationName: String?
+
     public func postSchedule(start_date_time: [String], end_date_time: [String]) {
         let postURL = createURLWithEndPoint("truck/schedules")
         let httpBody = serializeJSONData(start_date_time: start_date_time, end_date_time: end_date_time)
@@ -141,6 +142,7 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol, TruckLo
             if let cell = tableView.dequeueReusableCell(withIdentifier: "spotLocation") as? TruckLocationCell {
                 cell.delegate = self
                 cell.truckLocationDelegate = self
+                cell.truckLocationTextField.text = truckLocationName
                 return cell
             }
         }
@@ -155,6 +157,7 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol, TruckLo
             if let cell = tableView.dequeueReusableCell(withIdentifier: "spotLocation") as? TruckLocationCell {
                 cell.delegate = self
                 cell.truckLocationDelegate = self
+                cell.truckLocationTextField.text = truckLocationName
                 return cell
             }
         }
@@ -163,6 +166,7 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol, TruckLo
             if let cell = tableView.dequeueReusableCell(withIdentifier: "spotLocation") as? TruckLocationCell {
                 cell.delegate = self
                 cell.truckLocationDelegate = self
+                cell.truckLocationTextField.text = truckLocationName
                 return cell
             }
         }
@@ -171,6 +175,7 @@ open class AddScheduleDataProvider: NSObject, TableDataProviderProtocol, TruckLo
             if let cell = tableView.dequeueReusableCell(withIdentifier: "spotLocation") as? TruckLocationCell {
                 cell.delegate = self
                 cell.truckLocationDelegate = self
+                cell.truckLocationTextField.text = truckLocationName
                 return cell
             }
         }

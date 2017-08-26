@@ -150,6 +150,7 @@ extension UserViewController: GMSAutocompleteViewControllerDelegate {
         let name = place.name
         print("Name is: \(name)")
         print("Address is: \(String(describing: place.formattedAddress))")
+        dataProvider?.truckLocationName = name
         
         dismiss(animated: true, completion: nil)
     }

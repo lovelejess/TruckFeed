@@ -17,11 +17,17 @@ class TruckLocationCell: UITableViewCell, UITextFieldDelegate {
     
     override func awakeFromNib() {
         truckLocationTextField.delegate = self
-//        truckLocationTextField.addTarget(self, action: #selector(getLocationName), for: UIControlEvents.valueChanged)
+        truckLocationTextField.placeholder = "Spotted Location"
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "com.lovelejess.truckLocationSelected"), object: nil, queue: nil, using: getLocationName)
+    
     }
     
-    func getLocationName(){
-        
+    func getLocationName(notification: Notification) -> Void {
+        if let userInfo = notification.userInfo {
+            if let name = userInfo["name"]  as? String {
+                truckLocationTextField.text = name
+            }
+        }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
