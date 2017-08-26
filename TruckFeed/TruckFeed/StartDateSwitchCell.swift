@@ -10,7 +10,6 @@ import UIKit
 
 class StartDateSwitchCell: UITableViewCell {
 
-    @IBOutlet weak var startDateSwitch: UISwitch!
     @IBOutlet weak var startDateLabel: UILabel!
     
     public var delegate: AddScheduleDataProvider?

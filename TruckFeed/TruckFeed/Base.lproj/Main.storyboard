@@ -116,11 +116,6 @@
                                                             <color key="textColor" red="0.08235294118" green="0.67450980390000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YNd-FP-H96">
-                                                            <rect key="frame" x="304" y="6" width="51" height="31"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="onTintColor" red="0.08235294118" green="0.67450980390000004" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </switch>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/20 08:08 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-sa-Kr0" userLabel="Start Date">
                                                             <rect key="frame" x="86" y="11" width="210" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -133,7 +128,6 @@
                                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <connections>
                                                     <outlet property="startDateLabel" destination="eY9-sa-Kr0" id="SrQ-ip-rFO"/>
-                                                    <outlet property="startDateSwitch" destination="YNd-FP-H96" id="4c3-kP-fg7"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="startDatePicker" rowHeight="100" id="XWV-YJ-AHA" customClass="StartDatePickerCell" customModule="TruckFeed" customModuleProvider="target">
@@ -239,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sow-WK-5ch" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1135.2" y="-864.01799100449784"/>
+            <point key="canvasLocation" x="-1134" y="-867"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="ny8-Wh-jWC">
