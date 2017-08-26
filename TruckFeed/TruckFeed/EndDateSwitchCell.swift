@@ -10,7 +10,6 @@ import UIKit
 
 class EndDateSwitchCell: UITableViewCell {
 
-    @IBOutlet weak var endDateSwitch: UISwitch!
     @IBOutlet weak var endDateLabel:UILabel!
     
     public var delegate: AddScheduleDataProvider?
