@@ -17,14 +17,9 @@ class StartDateSwitchCell: UITableViewCell {
     
     override func awakeFromNib() {
         startDateLabel.text = DateUtility.getCurrentDateTime()
-        startDateSwitch.addTarget(self, action: #selector(startTimeSwitchToggled), for: UIControlEvents.valueChanged)
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "com.lovelejess.startDateLabelSelected"), object: nil, queue: nil, using: updateStartDateLabel)
     }
-    
-    func startTimeSwitchToggled(){
-        delegate!.reloadTableData()
-    }
-    
+
     private func updateStartDateLabel(notification: Notification) -> Void {
         if let userInfo = notification.userInfo {
             if let date = userInfo["date"]  as? String {

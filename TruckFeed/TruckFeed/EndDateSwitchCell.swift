@@ -17,12 +17,7 @@ class EndDateSwitchCell: UITableViewCell {
     
     override func awakeFromNib() {
         endDateLabel.text = DateUtility.getCurrentDateTime()
-        endDateSwitch.addTarget(self, action: #selector(endTimeSwitchToggled), for: UIControlEvents.valueChanged)
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "com.lovelejess.endDateLabelSelected"), object: nil, queue: nil, using: updateEndDateLabel)
-    }
-    
-    func endTimeSwitchToggled(){
-        delegate!.reloadTableData()
     }
     
     private func updateEndDateLabel(notification: Notification) -> Void {

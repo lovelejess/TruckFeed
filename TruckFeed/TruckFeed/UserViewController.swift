@@ -124,12 +124,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
             }
         }
     }
-    
-    func startTimeSwitchToggled(_sender: UISwitch)
-    {
-        presentSubmitAlert("switch", message: "yes")
-    }
-    
+
     private func getStartDateTimeFromLabel() -> [String] {
         let startDateSwitchCell = self.tableView?.visibleCells[0] as? StartDateSwitchCell
         if let dateFromLabel = startDateSwitchCell?.startDateLabel.text {
