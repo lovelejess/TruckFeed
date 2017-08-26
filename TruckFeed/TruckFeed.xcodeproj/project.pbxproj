@@ -124,6 +124,8 @@
 		10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */; };
 		16B8D6C71F51E5CC005718AC /* StartDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateSwitchCell.swift */; };
 		16B8D6C81F51E5CD005718AC /* StartDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateSwitchCell.swift */; };
+		16B8D6C91F51E633005718AC /* StartDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */; };
+		16B8D6CA1F51E633005718AC /* StartDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */; };
 		44D63DB9063710BCE67F05E1 /* Pods_TruckFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36258BF9B8CA7A7C35A7DAE5 /* Pods_TruckFeed.framework */; };
 		6E5C8BD15E6B684B87C16D04 /* Pods_TruckFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0737B45AD6EC6786801F3788 /* Pods_TruckFeedTests.framework */; };
 		C14A5E6605F8ED3358BABF6C /* Pods_TruckFeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09739683405C05FC5F7B6416 /* Pods_TruckFeedUITests.framework */; };
@@ -804,6 +806,7 @@
 				10AD73FF1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */,
 				10A5E1091D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				100E15671D05038400B3BC9A /* MasterTabViewController.swift in Sources */,
+				16B8D6C91F51E633005718AC /* StartDatePickerCell.swift in Sources */,
 				100E15621D05037000B3BC9A /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -842,6 +845,7 @@
 				10D9504D1BFD7D4E00EC435B /* Palette.swift in Sources */,
 				10A5E10A1D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */,
+				16B8D6CA1F51E633005718AC /* StartDatePickerCell.swift in Sources */,
 				106C8A151D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
