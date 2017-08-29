@@ -9,11 +9,10 @@
 import UIKit
 import FBSDKLoginKit
 
-open class UserViewController: UIViewController, UINavigationBarDelegate, UIScrollViewDelegate {
+open class UserViewController: UIViewController, UINavigationBarDelegate {
 
     fileprivate var truckOwner = TruckOwner.sharedInstance
     
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var tableView: UITableView?
     @IBOutlet weak var submit: UIButton!
     
@@ -48,14 +47,6 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIScro
                     NSLog("facebookLogout - Presenting MainLoginScreen")
             })
         }
-    }
-    
-    
-    // MARK: UIScroll
-    
-    fileprivate func setAutoScrollFocus(_ offset: CGPoint) {
-        self.scrollView .setContentOffset(offset, animated: true)
-        self.viewDidLayoutSubviews()
     }
 
 
@@ -94,9 +85,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIScro
     func setUpView() {
         self.view.isOpaque = false
         self.view.tintColor = mainColor
-        self.scrollView.delegate = self
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
-        self.view.addSubview(scrollView)
+        
         let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 54)
         let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "Add Truck Schedule")
         self.view.addSubview(navigationBar)
