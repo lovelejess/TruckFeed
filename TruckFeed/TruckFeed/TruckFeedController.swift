@@ -90,4 +90,3 @@ extension TruckFeedController: UITableViewDelegate
         
     }
 }
-

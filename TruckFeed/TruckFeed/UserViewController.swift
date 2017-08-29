@@ -14,17 +14,15 @@ open class UserViewController: UIViewController, UINavigationBarDelegate {
     fileprivate var truckOwner = TruckOwner.sharedInstance
     
     @IBOutlet var tableView: UITableView?
+    fileprivate var dataProvider: AddScheduleDataProvider?
     @IBOutlet weak var submit: UIButton!
     
-    fileprivate var dataProvider: AddScheduleDataProvider?
-
 
     override open func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "com.lovelejess.scheduleSubmitted"), object: nil, queue: nil, using: scheduleSubmittedSuccessfully)
         submit.addTarget(self, action: #selector(submitSchedule), for: UIControlEvents.touchUpInside)
         
-        self.hideKeyboard()
         setUpTableView()
         setUpView()
         
@@ -79,7 +77,6 @@ open class UserViewController: UIViewController, UINavigationBarDelegate {
         self.tableView!.rowHeight = UITableViewAutomaticDimension
         self.tableView!.setNeedsLayout()
         self.tableView!.layoutIfNeeded()
-
     }
     
     func setUpView() {
@@ -129,23 +126,6 @@ open class UserViewController: UIViewController, UINavigationBarDelegate {
 
 }
 
-extension UIViewController
-{
-    func hideKeyboard()
-    {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(UIViewController.dismissKeyboard))
-        
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard()
-    {
-        view.endEditing(true)
-    }
-}
-
 extension UserViewController: UITableViewDelegate
 {
     
@@ -160,5 +140,3 @@ extension UserViewController: UITableViewDelegate
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-
-
