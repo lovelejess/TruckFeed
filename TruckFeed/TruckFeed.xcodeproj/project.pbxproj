@@ -130,6 +130,9 @@
 		16B8D6CD1F5230EB005718AC /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6CB1F5230EB005718AC /* DatePickerController.swift */; };
 		16B8D6CE1F5230EB005718AC /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6CB1F5230EB005718AC /* DatePickerController.swift */; };
 		16B8D6CF1F523140005718AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; settings = {ASSET_TAGS = (0, ); }; };
+		16B8D6D11F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */; };
+		16B8D6D21F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */; };
+		16B8D6D31F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */; };
 		44D63DB9063710BCE67F05E1 /* Pods_TruckFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36258BF9B8CA7A7C35A7DAE5 /* Pods_TruckFeed.framework */; };
 		6E5C8BD15E6B684B87C16D04 /* Pods_TruckFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0737B45AD6EC6786801F3788 /* Pods_TruckFeedTests.framework */; };
 		C14A5E6605F8ED3358BABF6C /* Pods_TruckFeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09739683405C05FC5F7B6416 /* Pods_TruckFeedUITests.framework */; };
@@ -209,6 +212,7 @@
 		10ED6CB31E3999430059DCBA /* DateUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 		10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckOwner.swift; sourceTree = "<group>"; };
 		16B8D6CB1F5230EB005718AC /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
+		16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDatePickerProtocol.swift; sourceTree = "<group>"; };
 		2BFE01AD295980BDA0F76D75 /* Pods-TruckFeedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedUITests/Pods-TruckFeedUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		36258BF9B8CA7A7C35A7DAE5 /* Pods_TruckFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruckFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C62C7E9AF29DD8AC8BC09B /* Pods-TruckFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedTests/Pods-TruckFeedTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 				10A5E1171D8CE7B500B79702 /* MenuDataProvider.swift */,
 				1046C6C91E0A28550075ACD5 /* AddScheduleDataProvider.swift */,
 				1046C6CB1E0A296A0075ACD5 /* TableDataProviderProtocol.swift */,
+				16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */,
 			);
 			name = DataProvider;
 			sourceTree = "<group>";
@@ -758,6 +763,7 @@
 				1046C6CC1E0A296A0075ACD5 /* TableDataProviderProtocol.swift in Sources */,
 				16B8D6CC1F5230EB005718AC /* DatePickerController.swift in Sources */,
 				109BCD271E2325070028BC9B /* EndDatePickerCell.swift in Sources */,
+				16B8D6D11F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */,
 				10DC618A1BE863A60021B2D3 /* TruckFeedController.swift in Sources */,
 				10B1E5FE1CFE59D700C7FBE4 /* UserView.swift in Sources */,
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
@@ -798,6 +804,7 @@
 				10A5E1151D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
 				16B8D6CD1F5230EB005718AC /* DatePickerController.swift in Sources */,
 				106C8A141D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */,
+				16B8D6D21F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */,
 				100E15631D05037400B3BC9A /* TruckCell.swift in Sources */,
 				16B8D6C71F51E5CC005718AC /* StartDateSwitchCell.swift in Sources */,
 				100E15651D05037E00B3BC9A /* ViewControllerItems.swift in Sources */,
@@ -838,6 +845,7 @@
 				10A5E1161D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
 				16B8D6CE1F5230EB005718AC /* DatePickerController.swift in Sources */,
 				106C8A191D406073007DD2CF /* TruckOwner.swift in Sources */,
+				16B8D6D31F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */,
 				106C8A1B1D406079007DD2CF /* AppPlistHelpers.swift in Sources */,
 				16B8D6C81F51E5CD005718AC /* StartDateSwitchCell.swift in Sources */,
 				106C8A181D406061007DD2CF /* MainLoginScreenController.swift in Sources */,

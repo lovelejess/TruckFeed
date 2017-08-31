@@ -10,6 +10,7 @@ import UIKit
 
 class DatePickerController: UIViewController {
     @IBOutlet weak var startDatePicker: UIDatePicker!
+    var scheduleDatePickerDelegate: ScheduleDatePickerProtocol?
     
     
     override open func viewDidLoad() {
@@ -21,7 +22,18 @@ class DatePickerController: UIViewController {
     }
     
     func dismissViewController(_ sender: AnyObject) {
+        self.scheduleDatePickerDelegate?.updateDateLabel(date: getSelectedDate());
         self.dismiss(animated: true, completion: {});
     }
+    
+    func getSelectedDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy hh:mm a"
+        dateFormatter.amSymbol = "AM"
+        dateFormatter.pmSymbol = "PM"
+        let date = dateFormatter.string(from: startDatePicker.date)
+        return date
+    }
+
 
 }

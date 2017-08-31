@@ -8,13 +8,14 @@
 
 import UIKit
 
-class StartDateSwitchCell: UITableViewCell {
+class StartDateSwitchCell: UITableViewCell, ScheduleDatePickerProtocol {
 
     @IBOutlet weak var startDateLabel: UILabel!
     
     public var delegate: AddScheduleDataProvider?
     
     override func awakeFromNib() {
+        
         startDateLabel.text = DateUtility.getCurrentDateTime()
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "com.lovelejess.startDateLabelSelected"), object: nil, queue: nil, using: updateStartDateLabel)
     }
@@ -25,5 +26,9 @@ class StartDateSwitchCell: UITableViewCell {
                 startDateLabel.text = date
             }
         }
+    }
+    
+    func updateDateLabel(date: String) {
+        startDateLabel.text = date
     }
 }
