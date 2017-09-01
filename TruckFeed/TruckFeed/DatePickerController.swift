@@ -22,7 +22,8 @@ class DatePickerController: UIViewController {
     }
     
     func dismissViewController(_ sender: AnyObject) {
-        self.scheduleDatePickerDelegate?.updateDateLabel(date: getSelectedDate());
+        let userInfo = ["date": self.getSelectedDate()] as [String :String]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "com.lovelejess.startDateLabelSelected"), object: self, userInfo: userInfo)
         self.dismiss(animated: true, completion: {});
     }
     

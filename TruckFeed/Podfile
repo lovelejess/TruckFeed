@@ -7,8 +7,9 @@ target 'TruckFeed' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
+  pod 'RealmSwift'  
   
-  # Pods for TruckFeed
+# Pods for TruckFeed
 
   target 'TruckFeedTests' do
     inherit! :search_paths
