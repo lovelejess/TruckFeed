@@ -17,13 +17,18 @@ class DatePickerController: UIViewController {
         super.viewDidLoad()
         let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 55)
         let leftBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRect(x: 0, y: 0, width: 30, height: 30), image: UIImage(named: "back_button_small.png")!, target: self)
-        let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: "Add Start Date", leftBarButton: leftBarButtonItem)
+        let rightBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.cancelDateSelection), frame:CGRect(x: 0, y: 0, width: 30, height: 30), image: UIImage(named: "back_button_small.png")!, target: self)
+        let navigationBar = ViewControllerItems.createNavigationBarWithButtons(frame, title: "Add Start Date", leftBarButton: leftBarButtonItem, rightBarButton: rightBarButtonItem)
         self.view.addSubview(navigationBar)
     }
     
     func dismissViewController(_ sender: AnyObject) {
         let userInfo = ["date": self.getSelectedDate()] as [String :String]
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "com.lovelejess.startDateLabelSelected"), object: self, userInfo: userInfo)
+        self.dismiss(animated: true, completion: {});
+    }
+    
+    func cancelDateSelection() {
         self.dismiss(animated: true, completion: {});
     }
     
