@@ -10,8 +10,7 @@ import UIKit
 
 class DatePickerController: UIViewController {
     @IBOutlet weak var startDatePicker: UIDatePicker!
-    var scheduleDatePickerDelegate: ScheduleDatePickerProtocol?
-    
+    public var notificationToPost: String?    
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,7 @@ class DatePickerController: UIViewController {
     
     func dismissViewController(_ sender: AnyObject) {
         let userInfo = ["date": self.getSelectedDate()] as [String :String]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "com.lovelejess.startDateLabelSelected"), object: self, userInfo: userInfo)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationToPost!), object: self, userInfo: userInfo)
         self.dismiss(animated: true, completion: {});
     }
     

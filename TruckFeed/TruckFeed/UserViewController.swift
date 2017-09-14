@@ -138,5 +138,20 @@ extension UserViewController: UITableViewDelegate
         NSLog("UserViewController: You selected cell #\(indexPath.row)!")
         NSLog("UserViewController: Presenting DisplayPickerController")
         tableView.deselectRow(at: indexPath, animated: true)
+        self.presentDatePickerController(self, indexPath: indexPath)
+    }
+    
+    func presentDatePickerController(_ sender: AnyObject, indexPath: IndexPath){
+        NSLog("presentDatePickerController")
+        if let DatePickerController = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerController") as? DatePickerController {
+            
+            if (indexPath.row == 0) {
+                DatePickerController.notificationToPost = "com.lovelejess.startDateLabelSelected"
+            }
+            else if (indexPath.row == 1) {
+                DatePickerController.notificationToPost = "com.lovelejess.endDateLabelSelected"
+            }
+            self.present(DatePickerController, animated: true, completion: {})
+        }
     }
 }
