@@ -9,15 +9,16 @@
 import UIKit
 
 class DatePickerController: UIViewController {
-    @IBOutlet weak var startDatePicker: UIDatePicker!
-    public var notificationToPost: String?    
+    @IBOutlet weak var datePicker: UIDatePicker?
+    public var notificationToPost: String?
+    public var navigationTitle: String?
     
     override open func viewDidLoad() {
         super.viewDidLoad()
         let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 55)
         let leftBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRect(x: 0, y: 0, width: 30, height: 30), image: UIImage(named: "back_button_small.png")!, target: self)
         let rightBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.cancelDateSelection), frame:CGRect(x: 0, y: 0, width: 30, height: 30), image: UIImage(named: "back_button_small.png")!, target: self)
-        let navigationBar = ViewControllerItems.createNavigationBarWithButtons(frame, title: "Add Start Date", leftBarButton: leftBarButtonItem, rightBarButton: rightBarButtonItem)
+        let navigationBar = ViewControllerItems.createNavigationBarWithButtons(frame, title: navigationTitle!, leftBarButton: leftBarButtonItem, rightBarButton: rightBarButtonItem)
         self.view.addSubview(navigationBar)
     }
     
@@ -36,7 +37,7 @@ class DatePickerController: UIViewController {
         dateFormatter.dateFormat = "MM/dd/yy hh:mm a"
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
-        let date = dateFormatter.string(from: startDatePicker.date)
+        let date = dateFormatter.string(from: datePicker!.date)
         return date
     }
 
