@@ -133,6 +133,9 @@
 		16B8D6D11F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */; };
 		16B8D6D21F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */; };
 		16B8D6D31F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */; };
+		16FE3DD51F6A24EC003C46ED /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE3DD41F6A24EC003C46ED /* Schedule.swift */; };
+		16FE3DD61F6A24EC003C46ED /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE3DD41F6A24EC003C46ED /* Schedule.swift */; };
+		16FE3DD71F6A24EC003C46ED /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE3DD41F6A24EC003C46ED /* Schedule.swift */; };
 		44D63DB9063710BCE67F05E1 /* Pods_TruckFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36258BF9B8CA7A7C35A7DAE5 /* Pods_TruckFeed.framework */; };
 		6E5C8BD15E6B684B87C16D04 /* Pods_TruckFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0737B45AD6EC6786801F3788 /* Pods_TruckFeedTests.framework */; };
 		C14A5E6605F8ED3358BABF6C /* Pods_TruckFeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09739683405C05FC5F7B6416 /* Pods_TruckFeedUITests.framework */; };
@@ -213,6 +216,7 @@
 		10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckOwner.swift; sourceTree = "<group>"; };
 		16B8D6CB1F5230EB005718AC /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDatePickerProtocol.swift; sourceTree = "<group>"; };
+		16FE3DD41F6A24EC003C46ED /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		2BFE01AD295980BDA0F76D75 /* Pods-TruckFeedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedUITests/Pods-TruckFeedUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		36258BF9B8CA7A7C35A7DAE5 /* Pods_TruckFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruckFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C62C7E9AF29DD8AC8BC09B /* Pods-TruckFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedTests/Pods-TruckFeedTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -275,6 +279,7 @@
 		101079441B8FF5E300B3AADB /* TruckFeed */ = {
 			isa = PBXGroup;
 			children = (
+				16FE3DD81F6A250C003C46ED /* Realm */,
 				10ED6CB71E399BA00059DCBA /* Utilities */,
 				10C368311D7DFA0600D6831C /* View */,
 				10C368301D7DF9B800D6831C /* Model */,
@@ -396,6 +401,14 @@
 				100055B51CD04F6800984B35 /* AppPlistHelpers.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		16FE3DD81F6A250C003C46ED /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				16FE3DD41F6A24EC003C46ED /* Schedule.swift */,
+			);
+			name = Realm;
 			sourceTree = "<group>";
 		};
 		3C37454694ADD4529A0A74F2 /* Pods */ = {
@@ -786,6 +799,7 @@
 				10738F4B1CB5FC1800BAC3CE /* MainLoginScreenController.swift in Sources */,
 				1046C6C81E0A25F10075ACD5 /* StartDatePickerCell.swift in Sources */,
 				10ED6CB41E3999430059DCBA /* DateUtility.swift in Sources */,
+				16FE3DD51F6A24EC003C46ED /* Schedule.swift in Sources */,
 				101079781B90008300B3AADB /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -827,6 +841,7 @@
 				10A5E1091D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				100E15671D05038400B3BC9A /* MasterTabViewController.swift in Sources */,
 				16B8D6C91F51E633005718AC /* StartDatePickerCell.swift in Sources */,
+				16FE3DD61F6A24EC003C46ED /* Schedule.swift in Sources */,
 				100E15621D05037000B3BC9A /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -868,6 +883,7 @@
 				10A5E10A1D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */,
 				16B8D6CA1F51E633005718AC /* StartDatePickerCell.swift in Sources */,
+				16FE3DD71F6A24EC003C46ED /* Schedule.swift in Sources */,
 				106C8A151D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

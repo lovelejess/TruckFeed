@@ -13,6 +13,7 @@ class StartDateSwitchCell: UITableViewCell {
 
     @IBOutlet weak var startDateLabel: UILabel!
     public var delegate: AddScheduleDataProvider?
+    lazy var realm = try? Realm()
     
     override func awakeFromNib() {
         self.updateDateLabel()
@@ -28,8 +29,7 @@ class StartDateSwitchCell: UITableViewCell {
     }
     
     func updateDateLabel() {
-        let realm = try? Realm()
-        if let scheduleRealm = realm?.objects(Schedule.self) {
+        if let scheduleRealm = self.realm?.objects(Schedule.self) {
             let schedule = scheduleRealm.first
             startDateLabel.text = schedule?.startDate
         }
@@ -37,9 +37,8 @@ class StartDateSwitchCell: UITableViewCell {
     }
     
     func saveDateLabel(date:String) {
-        let realm = try? Realm()
         if let schedule = realm?.objects(Schedule.self).first {
-            try? realm?.write {
+            try? self.realm?.write {
                 schedule.startDate = date
             }
         }
@@ -49,19 +48,12 @@ class StartDateSwitchCell: UITableViewCell {
     }
     
     private func addSchedule(date: String) {
-        let realm = try? Realm()
         let schedule = Schedule()
         schedule.startDate = DateUtility.getCurrentDateTime()
-        try! realm?.write {
+        try! self.realm?.write {
             realm?.add(schedule)
         }
 
     }
-}
-
-
-class Schedule: Object {
-    dynamic var startDate: String = DateUtility.getCurrentDateTime()
-    dynamic var endDate: String = DateUtility.getCurrentDateTime()
 }
 

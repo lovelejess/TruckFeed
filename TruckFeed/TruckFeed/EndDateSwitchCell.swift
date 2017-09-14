@@ -13,9 +13,10 @@ class EndDateSwitchCell: UITableViewCell {
 
     @IBOutlet weak var endDateLabel:UILabel!
     public var delegate: AddScheduleDataProvider?
+    lazy var realm = try? Realm()
     
     override func awakeFromNib() {
-        endDateLabel.text = DateUtility.getCurrentDateTime()
+        self.updateDateLabel()
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "com.lovelejess.endDateLabelSelected"), object: nil, queue: nil, using: updateEndDateLabel)
     }
     
@@ -28,7 +29,6 @@ class EndDateSwitchCell: UITableViewCell {
     }
     
     func updateDateLabel() {
-        let realm = try? Realm()
         if let scheduleRealm = realm?.objects(Schedule.self) {
             let schedule = scheduleRealm.first
             endDateLabel.text = schedule?.endDate
@@ -36,11 +36,8 @@ class EndDateSwitchCell: UITableViewCell {
     }
     
     func saveDateLabel(date:String) {
-        let realm = try? Realm()
-        let allobjects = realm?.objects(Schedule.self)
-        
         if let schedule = realm?.objects(Schedule.self).first {
-            try? realm?.write {
+            try! self.realm?.write {
                 schedule.endDate = date
             }
         }
@@ -50,10 +47,9 @@ class EndDateSwitchCell: UITableViewCell {
     }
     
     private func addSchedule(date: String) {
-        let realm = try? Realm()
         let schedule = Schedule()
         schedule.endDate = DateUtility.getCurrentDateTime()
-        try! realm?.write {
+        try! self.realm?.write {
             realm?.add(schedule)
         }
     }

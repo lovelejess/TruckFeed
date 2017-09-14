@@ -151,7 +151,7 @@ extension UserViewController: UITableViewDelegate
             }
             else if (indexPath.row == 1) {
                 DatePickerController.notificationToPost = "com.lovelejess.endDateLabelSelected"
-                DatePickerController.navigationTitle = "Add Start Date"
+                DatePickerController.navigationTitle = "Add End Date"
             }
             self.present(DatePickerController, animated: true, completion: {})
         }
