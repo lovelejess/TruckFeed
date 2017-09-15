@@ -11,7 +11,12 @@ import RealmSwift
 
 class DateLabel {
     
+    private var isStartDate: Bool?
     lazy var realm = try? Realm()
+    
+    init(isStartDate: Bool) {
+        self.isStartDate = isStartDate
+    }
     
     public func updateEndDateLabel(notification: Notification) -> Void {
         if let userInfo = notification.userInfo {
@@ -33,7 +38,12 @@ class DateLabel {
     public func saveDateLabel(date:String) {
         if let schedule = realm?.objects(Schedule.self).first {
             try! self.realm?.write {
-                schedule.endDate = date
+                if(self.isStartDate)! {
+                    schedule.startDate = date
+                }
+                else {
+                    schedule.endDate = date
+                }
             }
         }
         else {

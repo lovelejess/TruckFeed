@@ -17,7 +17,7 @@ class EndDateSwitchCell: UITableViewCell {
     lazy var realm = try? Realm()
     
     override func awakeFromNib() {
-        self.dateLabel = DateLabel()
+        self.dateLabel = DateLabel(isStartDate: false)
         let schedule = self.dateLabel?.getDateFromSchedule()
         endDateLabel.text = schedule?.endDate
     
