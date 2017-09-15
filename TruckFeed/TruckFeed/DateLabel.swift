@@ -18,14 +18,6 @@ class DateLabel {
         self.isStartDate = isStartDate
     }
     
-    public func updateEndDateLabel(notification: Notification) -> Void {
-        if let userInfo = notification.userInfo {
-            if let date = userInfo["date"]  as? String {
-                self.saveDateLabel(date: date)
-            }
-        }
-    }
-    
     public func getDateFromSchedule() -> Schedule {
         if let scheduleRealm = realm?.objects(Schedule.self) {
             if let schedule = scheduleRealm.first {
