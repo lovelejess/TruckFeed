@@ -9,30 +9,20 @@
 import UIKit
 import FBSDKLoginKit
 
-open class UserViewController: UIViewController, UINavigationBarDelegate, UITextFieldDelegate, UIScrollViewDelegate {
+open class UserViewController: UIViewController, UINavigationBarDelegate {
 
     fileprivate var truckOwner = TruckOwner.sharedInstance
     
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var tableView: UITableView?
-    @IBOutlet weak var location: UITextField!
-    @IBOutlet weak var address: UITextField!
-    @IBOutlet weak var city: UITextField!
-    @IBOutlet weak var state: UIPickerView!
+    fileprivate var dataProvider: AddScheduleDataProvider?
     @IBOutlet weak var submit: UIButton!
     
-    var newTruckScheduleAddress: String?
-    var newTruckScheduleLocation: String?
-    var newTruckScheduleCity: String?
-    fileprivate var dataProvider: AddScheduleDataProvider?
-
 
     override open func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "com.lovelejess.scheduleSubmitted"), object: nil, queue: nil, using: scheduleSubmittedSuccessfully)
         submit.addTarget(self, action: #selector(submitSchedule), for: UIControlEvents.touchUpInside)
         
-        self.hideKeyboard()
         setUpTableView()
         setUpView()
         
@@ -55,14 +45,6 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
                     NSLog("facebookLogout - Presenting MainLoginScreen")
             })
         }
-    }
-    
-    
-    // MARK: UIScroll
-    
-    fileprivate func setAutoScrollFocus(_ offset: CGPoint) {
-        self.scrollView .setContentOffset(offset, animated: true)
-        self.viewDidLayoutSubviews()
     }
 
 
@@ -87,23 +69,20 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
     
     func setUpTableView()
     {
-        self.tableView!.delegate = self
         dataProvider = AddScheduleDataProvider()
+        self.tableView!.delegate = self
         self.tableView!.dataSource = dataProvider
         dataProvider?.tableView = tableView
         self.tableView!.estimatedRowHeight = 100
         self.tableView!.rowHeight = UITableViewAutomaticDimension
         self.tableView!.setNeedsLayout()
         self.tableView!.layoutIfNeeded()
-
     }
     
     func setUpView() {
         self.view.isOpaque = false
         self.view.tintColor = mainColor
-        self.scrollView.delegate = self
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height+100)
-        self.view.addSubview(scrollView)
+        
         let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 54)
         let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "Add Truck Schedule")
         self.view.addSubview(navigationBar)
@@ -124,14 +103,9 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
             }
         }
     }
-    
-    func startTimeSwitchToggled(_sender: UISwitch)
-    {
-        presentSubmitAlert("switch", message: "yes")
-    }
-    
+
     private func getStartDateTimeFromLabel() -> [String] {
-        let startDateSwitchCell = self.tableView?.visibleCells[0] as? StartDateSwitchCell
+        let startDateSwitchCell = self.tableView?.visibleCells[0] as? StartDateCell
         if let dateFromLabel = startDateSwitchCell?.startDateLabel.text {
             let dateTime = dateFromLabel.components(separatedBy: " ")
             NSLog("UserViewController: getStartDateTimeFromLabel dateTime \(dateTime)")
@@ -141,7 +115,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
     }
     
     private func getEndDateTimeFromLabel() -> [String] {
-        let endDateSwitchCell = self.tableView?.visibleCells[1] as? EndDateSwitchCell
+        let endDateSwitchCell = self.tableView?.visibleCells[1] as? EndDateCell
         if let dateFromLabel = endDateSwitchCell?.endDateLabel.text {
             let dateTime = dateFromLabel.components(separatedBy: " ")
             NSLog("UserViewController: getEndDateTimeFromLabel dateTime \(dateTime)")
@@ -152,23 +126,6 @@ open class UserViewController: UIViewController, UINavigationBarDelegate, UIText
 
 }
 
-extension UIViewController
-{
-    func hideKeyboard()
-    {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(UIViewController.dismissKeyboard))
-        
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard()
-    {
-        view.endEditing(true)
-    }
-}
-
 extension UserViewController: UITableViewDelegate
 {
     
@@ -176,6 +133,27 @@ extension UserViewController: UITableViewDelegate
     {
         return UITableViewAutomaticDimension
     }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        NSLog("UserViewController: You selected cell #\(indexPath.row)!")
+        NSLog("UserViewController: Presenting DisplayPickerController")
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.presentDatePickerController(self, indexPath: indexPath)
+    }
+    
+    func presentDatePickerController(_ sender: AnyObject, indexPath: IndexPath){
+        NSLog("presentDatePickerController")
+        if let DatePickerController = self.storyboard?.instantiateViewController(withIdentifier: "DatePickerController") as? DatePickerController {
+            
+            if (indexPath.row == 0) {
+                DatePickerController.notificationToPost = "com.lovelejess.startDateLabelSelected"
+                DatePickerController.navigationTitle = "Add Start Date"
+            }
+            else if (indexPath.row == 1) {
+                DatePickerController.notificationToPost = "com.lovelejess.endDateLabelSelected"
+                DatePickerController.navigationTitle = "Add End Date"
+            }
+            self.present(DatePickerController, animated: true, completion: {})
+        }
+    }
 }
-
-

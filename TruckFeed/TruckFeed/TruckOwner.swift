@@ -81,7 +81,10 @@ open class TruckOwner: NSObject {
     }
     
     open func getUserAccessInfo() -> String {
-        return userDefaults.value(forKey: "fbAccessUserID") as! String
+        if let userAccessInfo = userDefaults.value(forKey: "fbAccessUserID") as? String {
+            return userAccessInfo
+        }
+        return ""
     }
     
     open func setFBAccessToken(_ accessToken:String){

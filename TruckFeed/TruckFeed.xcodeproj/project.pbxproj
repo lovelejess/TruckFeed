@@ -31,7 +31,7 @@
 		101079781B90008300B3AADB /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079771B90008300B3AADB /* Truck.swift */; };
 		1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
 		1010797E1B92776F00B3AADB /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1010797D1B92776F00B3AADB /* Palette.swift */; };
-		1046C6C61E0A24380075ACD5 /* StartDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateSwitchCell.swift */; };
+		1046C6C61E0A24380075ACD5 /* StartDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateCell.swift */; };
 		1046C6C81E0A25F10075ACD5 /* StartDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */; };
 		1046C6CA1E0A28550075ACD5 /* AddScheduleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C91E0A28550075ACD5 /* AddScheduleDataProvider.swift */; };
 		1046C6CC1E0A296A0075ACD5 /* TableDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6CB1E0A296A0075ACD5 /* TableDataProviderProtocol.swift */; };
@@ -60,9 +60,9 @@
 		10738F4B1CB5FC1800BAC3CE /* MainLoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738F4A1CB5FC1800BAC3CE /* MainLoginScreenController.swift */; };
 		10738F571CB8781800BAC3CE /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 10738F561CB8781800BAC3CE /* gear.png */; };
 		10738F5B1CBF290900BAC3CE /* App.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10738F5A1CBF290900BAC3CE /* App.plist */; };
-		109BCD231E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD221E231EA50028BC9B /* EndDateSwitchCell.swift */; };
-		109BCD241E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD221E231EA50028BC9B /* EndDateSwitchCell.swift */; };
-		109BCD251E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD221E231EA50028BC9B /* EndDateSwitchCell.swift */; };
+		109BCD231E231EA60028BC9B /* EndDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD221E231EA50028BC9B /* EndDateCell.swift */; };
+		109BCD241E231EA60028BC9B /* EndDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD221E231EA50028BC9B /* EndDateCell.swift */; };
+		109BCD251E231EA60028BC9B /* EndDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD221E231EA50028BC9B /* EndDateCell.swift */; };
 		109BCD271E2325070028BC9B /* EndDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD261E2325070028BC9B /* EndDatePickerCell.swift */; };
 		109BCD281E2325070028BC9B /* EndDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD261E2325070028BC9B /* EndDatePickerCell.swift */; };
 		109BCD291E2325070028BC9B /* EndDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD261E2325070028BC9B /* EndDatePickerCell.swift */; };
@@ -122,10 +122,23 @@
 		10ED6CB51E3999A10059DCBA /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED6CB31E3999430059DCBA /* DateUtility.swift */; };
 		10ED6CB61E3999A20059DCBA /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED6CB31E3999430059DCBA /* DateUtility.swift */; };
 		10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */; };
-		16B8D6C71F51E5CC005718AC /* StartDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateSwitchCell.swift */; };
-		16B8D6C81F51E5CD005718AC /* StartDateSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateSwitchCell.swift */; };
+		16B8D6C71F51E5CC005718AC /* StartDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateCell.swift */; };
+		16B8D6C81F51E5CD005718AC /* StartDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateCell.swift */; };
 		16B8D6C91F51E633005718AC /* StartDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */; };
 		16B8D6CA1F51E633005718AC /* StartDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */; };
+		16B8D6CC1F5230EB005718AC /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6CB1F5230EB005718AC /* DatePickerController.swift */; };
+		16B8D6CD1F5230EB005718AC /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6CB1F5230EB005718AC /* DatePickerController.swift */; };
+		16B8D6CE1F5230EB005718AC /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6CB1F5230EB005718AC /* DatePickerController.swift */; };
+		16B8D6CF1F523140005718AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; settings = {ASSET_TAGS = (0, ); }; };
+		16B8D6D11F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */; };
+		16B8D6D21F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */; };
+		16B8D6D31F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */; };
+		16FE3DD51F6A24EC003C46ED /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE3DD41F6A24EC003C46ED /* Schedule.swift */; };
+		16FE3DD61F6A24EC003C46ED /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE3DD41F6A24EC003C46ED /* Schedule.swift */; };
+		16FE3DD71F6A24EC003C46ED /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE3DD41F6A24EC003C46ED /* Schedule.swift */; };
+		16FE3DDE1F6B62CF003C46ED /* DateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE3DDD1F6B62CF003C46ED /* DateLabel.swift */; };
+		16FE3DDF1F6B62CF003C46ED /* DateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE3DDD1F6B62CF003C46ED /* DateLabel.swift */; };
+		16FE3DE01F6B62CF003C46ED /* DateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE3DDD1F6B62CF003C46ED /* DateLabel.swift */; };
 		44D63DB9063710BCE67F05E1 /* Pods_TruckFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36258BF9B8CA7A7C35A7DAE5 /* Pods_TruckFeed.framework */; };
 		6E5C8BD15E6B684B87C16D04 /* Pods_TruckFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0737B45AD6EC6786801F3788 /* Pods_TruckFeedTests.framework */; };
 		C14A5E6605F8ED3358BABF6C /* Pods_TruckFeedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09739683405C05FC5F7B6416 /* Pods_TruckFeedUITests.framework */; };
@@ -165,7 +178,7 @@
 		101079771B90008300B3AADB /* Truck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Truck.swift; sourceTree = "<group>"; };
 		101079791B912B7A00B3AADB /* TruckCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckCell.swift; sourceTree = "<group>"; };
 		1010797D1B92776F00B3AADB /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
-		1046C6C51E0A24380075ACD5 /* StartDateSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartDateSwitchCell.swift; sourceTree = "<group>"; };
+		1046C6C51E0A24380075ACD5 /* StartDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartDateCell.swift; sourceTree = "<group>"; };
 		1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartDatePickerCell.swift; sourceTree = "<group>"; };
 		1046C6C91E0A28550075ACD5 /* AddScheduleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddScheduleDataProvider.swift; sourceTree = "<group>"; };
 		1046C6CB1E0A296A0075ACD5 /* TableDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataProviderProtocol.swift; sourceTree = "<group>"; };
@@ -174,7 +187,7 @@
 		10738F4A1CB5FC1800BAC3CE /* MainLoginScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLoginScreenController.swift; sourceTree = "<group>"; };
 		10738F561CB8781800BAC3CE /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		10738F5A1CBF290900BAC3CE /* App.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = App.plist; sourceTree = "<group>"; };
-		109BCD221E231EA50028BC9B /* EndDateSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDateSwitchCell.swift; sourceTree = "<group>"; };
+		109BCD221E231EA50028BC9B /* EndDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDateCell.swift; sourceTree = "<group>"; };
 		109BCD261E2325070028BC9B /* EndDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDatePickerCell.swift; sourceTree = "<group>"; };
 		10A5E1071D8B875300B79702 /* FacebookCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookCredentials.swift; sourceTree = "<group>"; };
 		10A5E10F1D8CE56F00B79702 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +217,10 @@
 		10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		10ED6CB31E3999430059DCBA /* DateUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 		10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckOwner.swift; sourceTree = "<group>"; };
+		16B8D6CB1F5230EB005718AC /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
+		16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDatePickerProtocol.swift; sourceTree = "<group>"; };
+		16FE3DD41F6A24EC003C46ED /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		16FE3DDD1F6B62CF003C46ED /* DateLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateLabel.swift; sourceTree = "<group>"; };
 		2BFE01AD295980BDA0F76D75 /* Pods-TruckFeedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedUITests/Pods-TruckFeedUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		36258BF9B8CA7A7C35A7DAE5 /* Pods_TruckFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruckFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60C62C7E9AF29DD8AC8BC09B /* Pods-TruckFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedTests/Pods-TruckFeedTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +283,7 @@
 		101079441B8FF5E300B3AADB /* TruckFeed */ = {
 			isa = PBXGroup;
 			children = (
+				16FE3DD81F6A250C003C46ED /* Realm */,
 				10ED6CB71E399BA00059DCBA /* Utilities */,
 				10C368311D7DFA0600D6831C /* View */,
 				10C368301D7DF9B800D6831C /* Model */,
@@ -279,6 +297,7 @@
 				10738F5A1CBF290900BAC3CE /* App.plist */,
 				10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */,
 				10674DE51C45CF97000D3E4C /* Bridging-Header.h */,
+				16FE3DDD1F6B62CF003C46ED /* DateLabel.swift */,
 			);
 			path = TruckFeed;
 			sourceTree = "<group>";
@@ -332,6 +351,7 @@
 				10A5E1171D8CE7B500B79702 /* MenuDataProvider.swift */,
 				1046C6C91E0A28550075ACD5 /* AddScheduleDataProvider.swift */,
 				1046C6CB1E0A296A0075ACD5 /* TableDataProviderProtocol.swift */,
+				16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */,
 			);
 			name = DataProvider;
 			sourceTree = "<group>";
@@ -345,6 +365,7 @@
 				100055B71CDAC67700984B35 /* MasterTabViewController.swift */,
 				100CE6751D2F40B000E2F53C /* TruckScheduleController.swift */,
 				10A5E10F1D8CE56F00B79702 /* MenuViewController.swift */,
+				16B8D6CB1F5230EB005718AC /* DatePickerController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -359,9 +380,9 @@
 				10C4E1591D64090500C9E756 /* TruckSchedule.swift */,
 				10A5E11B1D8CF14F00B79702 /* MenuListItemCell.swift */,
 				10A5E11F1D8CF16F00B79702 /* MenuListItem.swift */,
-				1046C6C51E0A24380075ACD5 /* StartDateSwitchCell.swift */,
+				1046C6C51E0A24380075ACD5 /* StartDateCell.swift */,
 				1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */,
-				109BCD221E231EA50028BC9B /* EndDateSwitchCell.swift */,
+				109BCD221E231EA50028BC9B /* EndDateCell.swift */,
 				109BCD261E2325070028BC9B /* EndDatePickerCell.swift */,
 			);
 			name = Model;
@@ -385,6 +406,14 @@
 				100055B51CD04F6800984B35 /* AppPlistHelpers.swift */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		16FE3DD81F6A250C003C46ED /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				16FE3DD41F6A24EC003C46ED /* Schedule.swift */,
+			);
+			name = Realm;
 			sourceTree = "<group>";
 		};
 		3C37454694ADD4529A0A74F2 /* Pods */ = {
@@ -553,6 +582,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16B8D6CF1F523140005718AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +696,8 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -676,6 +708,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -737,19 +771,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1046C6C61E0A24380075ACD5 /* StartDateSwitchCell.swift in Sources */,
+				1046C6C61E0A24380075ACD5 /* StartDateCell.swift in Sources */,
 				10C4E1561D6405C600C9E756 /* TruckScheduleCell.swift in Sources */,
 				10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */,
 				1046C6CA1E0A28550075ACD5 /* AddScheduleDataProvider.swift in Sources */,
 				100055B81CDAC67700984B35 /* MasterTabViewController.swift in Sources */,
 				100055B41CCD790300984B35 /* ViewControllerItems.swift in Sources */,
 				100055B61CD04F6800984B35 /* AppPlistHelpers.swift in Sources */,
-				109BCD231E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */,
+				109BCD231E231EA60028BC9B /* EndDateCell.swift in Sources */,
 				10AED1DD1BC1BE4C004FD47B /* UserViewController.swift in Sources */,
 				101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */,
 				10A5E1141D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
 				1046C6CC1E0A296A0075ACD5 /* TableDataProviderProtocol.swift in Sources */,
+				16B8D6CC1F5230EB005718AC /* DatePickerController.swift in Sources */,
 				109BCD271E2325070028BC9B /* EndDatePickerCell.swift in Sources */,
+				16B8D6D11F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */,
 				10DC618A1BE863A60021B2D3 /* TruckFeedController.swift in Sources */,
 				10B1E5FE1CFE59D700C7FBE4 /* UserView.swift in Sources */,
 				1010797A1B912B7A00B3AADB /* TruckCell.swift in Sources */,
@@ -759,6 +795,7 @@
 				10A5E1201D8CF16F00B79702 /* MenuListItem.swift in Sources */,
 				10A5E11C1D8CF14F00B79702 /* MenuListItemCell.swift in Sources */,
 				10C4E15A1D64090500C9E756 /* TruckSchedule.swift in Sources */,
+				16FE3DDE1F6B62CF003C46ED /* DateLabel.swift in Sources */,
 				100CE6781D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift in Sources */,
 				1010797E1B92776F00B3AADB /* Palette.swift in Sources */,
 				100CE67A1D2F415C00E2F53C /* ScheduleDataProvider.swift in Sources */,
@@ -768,6 +805,7 @@
 				10738F4B1CB5FC1800BAC3CE /* MainLoginScreenController.swift in Sources */,
 				1046C6C81E0A25F10075ACD5 /* StartDatePickerCell.swift in Sources */,
 				10ED6CB41E3999430059DCBA /* DateUtility.swift in Sources */,
+				16FE3DD51F6A24EC003C46ED /* Schedule.swift in Sources */,
 				101079781B90008300B3AADB /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -785,12 +823,14 @@
 				1046C6CD1E0B7ADF0075ACD5 /* AddScheduleDataProvider.swift in Sources */,
 				106C8A0F1D406049007DD2CF /* TruckFeedController.swift in Sources */,
 				106C8A161D40605A007DD2CF /* ScheduleDataProvider.swift in Sources */,
-				109BCD241E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */,
+				109BCD241E231EA60028BC9B /* EndDateCell.swift in Sources */,
 				10ED6CB51E3999A10059DCBA /* DateUtility.swift in Sources */,
 				10A5E1151D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
+				16B8D6CD1F5230EB005718AC /* DatePickerController.swift in Sources */,
 				106C8A141D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */,
+				16B8D6D21F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */,
 				100E15631D05037400B3BC9A /* TruckCell.swift in Sources */,
-				16B8D6C71F51E5CC005718AC /* StartDateSwitchCell.swift in Sources */,
+				16B8D6C71F51E5CC005718AC /* StartDateCell.swift in Sources */,
 				100E15651D05037E00B3BC9A /* ViewControllerItems.swift in Sources */,
 				10A5E1111D8CE56F00B79702 /* MenuViewController.swift in Sources */,
 				100E15661D05038100B3BC9A /* AppPlistHelpers.swift in Sources */,
@@ -798,6 +838,7 @@
 				10A5E1211D8CF16F00B79702 /* MenuListItem.swift in Sources */,
 				10A5E11D1D8CF14F00B79702 /* MenuListItemCell.swift in Sources */,
 				10C4E15B1D64090500C9E756 /* TruckSchedule.swift in Sources */,
+				16FE3DDF1F6B62CF003C46ED /* DateLabel.swift in Sources */,
 				100E15611D05036D00B3BC9A /* Palette.swift in Sources */,
 				100E15601D05036800B3BC9A /* AppDelegate.swift in Sources */,
 				100E15681D05038A00B3BC9A /* UserView.swift in Sources */,
@@ -807,6 +848,7 @@
 				10A5E1091D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				100E15671D05038400B3BC9A /* MasterTabViewController.swift in Sources */,
 				16B8D6C91F51E633005718AC /* StartDatePickerCell.swift in Sources */,
+				16FE3DD61F6A24EC003C46ED /* Schedule.swift in Sources */,
 				100E15621D05037000B3BC9A /* Truck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -824,12 +866,14 @@
 				1046C6CE1E0B7AE00075ACD5 /* AddScheduleDataProvider.swift in Sources */,
 				106C8A111D40604F007DD2CF /* TruckFeedDataProviderProtocol.swift in Sources */,
 				106C8A101D40604C007DD2CF /* TruckFeedDataProvider.swift in Sources */,
-				109BCD251E231EA60028BC9B /* EndDateSwitchCell.swift in Sources */,
+				109BCD251E231EA60028BC9B /* EndDateCell.swift in Sources */,
 				10ED6CB61E3999A20059DCBA /* DateUtility.swift in Sources */,
 				10A5E1161D8CE72100B79702 /* MenuDataProviderProtocol.swift in Sources */,
+				16B8D6CE1F5230EB005718AC /* DatePickerController.swift in Sources */,
 				106C8A191D406073007DD2CF /* TruckOwner.swift in Sources */,
+				16B8D6D31F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */,
 				106C8A1B1D406079007DD2CF /* AppPlistHelpers.swift in Sources */,
-				16B8D6C81F51E5CD005718AC /* StartDateSwitchCell.swift in Sources */,
+				16B8D6C81F51E5CD005718AC /* StartDateCell.swift in Sources */,
 				106C8A181D406061007DD2CF /* MainLoginScreenController.swift in Sources */,
 				10A5E1121D8CE56F00B79702 /* MenuViewController.swift in Sources */,
 				10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */,
@@ -837,6 +881,7 @@
 				10A5E1221D8CF16F00B79702 /* MenuListItem.swift in Sources */,
 				10A5E11E1D8CF14F00B79702 /* MenuListItemCell.swift in Sources */,
 				10C4E15C1D64090500C9E756 /* TruckSchedule.swift in Sources */,
+				16FE3DE01F6B62CF003C46ED /* DateLabel.swift in Sources */,
 				106C8A1C1D40607C007DD2CF /* MasterTabViewController.swift in Sources */,
 				106C8A1A1D406076007DD2CF /* ViewControllerItems.swift in Sources */,
 				10D9504C1BFD7D4E00EC435B /* TruckCell.swift in Sources */,
@@ -846,6 +891,7 @@
 				10A5E10A1D8B875300B79702 /* FacebookCredentials.swift in Sources */,
 				10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */,
 				16B8D6CA1F51E633005718AC /* StartDatePickerCell.swift in Sources */,
+				16FE3DD71F6A24EC003C46ED /* Schedule.swift in Sources */,
 				106C8A151D406056007DD2CF /* ScheduleDataProviderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
