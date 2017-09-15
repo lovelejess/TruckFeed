@@ -105,7 +105,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate {
     }
 
     private func getStartDateTimeFromLabel() -> [String] {
-        let startDateSwitchCell = self.tableView?.visibleCells[0] as? StartDateSwitchCell
+        let startDateSwitchCell = self.tableView?.visibleCells[0] as? StartDateCell
         if let dateFromLabel = startDateSwitchCell?.startDateLabel.text {
             let dateTime = dateFromLabel.components(separatedBy: " ")
             NSLog("UserViewController: getStartDateTimeFromLabel dateTime \(dateTime)")
@@ -115,7 +115,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate {
     }
     
     private func getEndDateTimeFromLabel() -> [String] {
-        let endDateSwitchCell = self.tableView?.visibleCells[1] as? EndDateSwitchCell
+        let endDateSwitchCell = self.tableView?.visibleCells[1] as? EndDateCell
         if let dateFromLabel = endDateSwitchCell?.endDateLabel.text {
             let dateTime = dateFromLabel.components(separatedBy: " ")
             NSLog("UserViewController: getEndDateTimeFromLabel dateTime \(dateTime)")

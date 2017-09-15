@@ -100,14 +100,14 @@ extension AddScheduleDataProvider: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if (indexPath.row == 0) {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "startDateSwitch") as? StartDateSwitchCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "startDateSwitch") as? StartDateCell {
                 cell.delegate = self
                 return cell
             }
         }
         
         else if (indexPath.row == 1) {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "endDateSwitch") as? EndDateSwitchCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "endDateSwitch") as? EndDateCell {
                 cell.delegate = self
                 return cell
             }

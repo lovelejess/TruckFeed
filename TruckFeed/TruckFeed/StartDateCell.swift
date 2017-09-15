@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class StartDateSwitchCell: UITableViewCell {
+class StartDateCell: UITableViewCell {
 
     @IBOutlet weak var startDateLabel: UILabel!
     public var delegate: AddScheduleDataProvider?

@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class EndDateSwitchCell: UITableViewCell {
+class EndDateCell: UITableViewCell {
 
     @IBOutlet weak var endDateLabel:UILabel!
     public var delegate: AddScheduleDataProvider?

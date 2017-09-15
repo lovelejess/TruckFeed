@@ -90,7 +90,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="startDateSwitch" id="h9r-qv-5Oh" userLabel="Start Date Switch View Cell" customClass="StartDateSwitchCell" customModule="TruckFeed" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="startDateSwitch" id="h9r-qv-5Oh" userLabel="Start Date View Cell" customClass="StartDateCell" customModule="TruckFeed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h9r-qv-5Oh" id="kgL-8h-130">
@@ -115,10 +115,10 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="startDateLabel" destination="eY9-sa-Kr0" id="SrQ-ip-rFO"/>
+                                            <outlet property="startDateLabel" destination="eY9-sa-Kr0" id="bdF-hR-mdC"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="endDateSwitch" rowHeight="50" id="zWF-NP-zVI" userLabel="End Date Switch View Cell" customClass="EndDateSwitchCell" customModule="TruckFeed" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="endDateSwitch" rowHeight="50" id="zWF-NP-zVI" userLabel="End Date View Cell" customClass="EndDateCell" customModule="TruckFeed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zWF-NP-zVI" id="pDb-hf-7u9">
@@ -143,7 +143,7 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="endDateLabel" destination="Xmr-wO-o4E" id="Jen-A2-Mjg"/>
+                                            <outlet property="endDateLabel" destination="Xmr-wO-o4E" id="gGF-DA-SiQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
