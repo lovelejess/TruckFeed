@@ -15,7 +15,7 @@ public struct AppPlistHelpers
         let documentsDirectory = paths.object(at: 0) as! NSString
         let path = documentsDirectory.appendingPathComponent("App.plist")
         var dict = NSMutableDictionary()
-        dict = NSMutableDictionary(contentsOfFile: path)!
+        if let dict = NSMutableDictionary(contentsOfFile: path) {}
         
         let fileManager = FileManager.default
         
