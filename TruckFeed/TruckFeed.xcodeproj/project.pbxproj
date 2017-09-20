@@ -114,6 +114,7 @@
 		10ED6CB51E3999A10059DCBA /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED6CB31E3999430059DCBA /* DateUtility.swift */; };
 		10ED6CB61E3999A20059DCBA /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED6CB31E3999430059DCBA /* DateUtility.swift */; };
 		10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */; };
+		161677521F7212DB006D1AD2 /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = 161677511F7212DB006D1AD2 /* people.png */; };
 		16B8D6C71F51E5CC005718AC /* StartDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateCell.swift */; };
 		16B8D6C81F51E5CD005718AC /* StartDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateCell.swift */; };
 		16B8D6C91F51E633005718AC /* StartDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */; };
@@ -128,6 +129,7 @@
 		16BDCB801F7208BD0044D872 /* cancel_button_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 16BDCB7F1F7208BD0044D872 /* cancel_button_64.png */; };
 		16BDCB841F720B3A0044D872 /* back_button_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 16BDCB831F720B3A0044D872 /* back_button_64.png */; };
 		16BDCB861F720BC60044D872 /* menu_button_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 16BDCB851F720BC60044D872 /* menu_button_64.png */; };
+		16BDCB881F720F040044D872 /* truck_icon_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 16BDCB871F720F040044D872 /* truck_icon_64.png */; };
 		16FE3DD51F6A24EC003C46ED /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE3DD41F6A24EC003C46ED /* Schedule.swift */; };
 		16FE3DD61F6A24EC003C46ED /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE3DD41F6A24EC003C46ED /* Schedule.swift */; };
 		16FE3DD71F6A24EC003C46ED /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE3DD41F6A24EC003C46ED /* Schedule.swift */; };
@@ -204,11 +206,13 @@
 		10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		10ED6CB31E3999430059DCBA /* DateUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 		10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckOwner.swift; sourceTree = "<group>"; };
+		161677511F7212DB006D1AD2 /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
 		16B8D6CB1F5230EB005718AC /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDatePickerProtocol.swift; sourceTree = "<group>"; };
 		16BDCB7F1F7208BD0044D872 /* cancel_button_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cancel_button_64.png; path = ../../../../Downloads/cancel_button_64.png; sourceTree = "<group>"; };
 		16BDCB831F720B3A0044D872 /* back_button_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back_button_64.png; path = ../../../../Downloads/back_button_64.png; sourceTree = "<group>"; };
 		16BDCB851F720BC60044D872 /* menu_button_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_button_64.png; path = ../../../../Downloads/menu_button_64.png; sourceTree = "<group>"; };
+		16BDCB871F720F040044D872 /* truck_icon_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = truck_icon_64.png; path = ../../../../Downloads/truck_icon_64.png; sourceTree = "<group>"; };
 		16FE3DD41F6A24EC003C46ED /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		16FE3DDD1F6B62CF003C46ED /* DateLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateLabel.swift; sourceTree = "<group>"; };
 		2BFE01AD295980BDA0F76D75 /* Pods-TruckFeedUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruckFeedUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TruckFeedUITests/Pods-TruckFeedUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -312,6 +316,8 @@
 		101079801B929C2300B3AADB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				161677511F7212DB006D1AD2 /* people.png */,
+				16BDCB871F720F040044D872 /* truck_icon_64.png */,
 				16BDCB851F720BC60044D872 /* menu_button_64.png */,
 				16BDCB831F720B3A0044D872 /* back_button_64.png */,
 				16BDCB7F1F7208BD0044D872 /* cancel_button_64.png */,
@@ -548,8 +554,10 @@
 				1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */,
 				10DC618C1BE8661E0021B2D3 /* Default-568h@2x.png in Resources */,
 				10AED1D71BC0C478004FD47B /* truck.png in Resources */,
+				16BDCB881F720F040044D872 /* truck_icon_64.png in Resources */,
 				1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */,
 				10738F5B1CBF290900BAC3CE /* App.plist in Resources */,
+				161677521F7212DB006D1AD2 /* people.png in Resources */,
 				16BDCB861F720BC60044D872 /* menu_button_64.png in Resources */,
 				10C4E1541D5EA78A00C9E756 /* the_spot.jpg in Resources */,
 				16BDCB841F720B3A0044D872 /* back_button_64.png in Resources */,

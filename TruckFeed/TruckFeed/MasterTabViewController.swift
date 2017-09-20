@@ -36,7 +36,7 @@ class MasterTabViewController : UITabBarController, UITabBarControllerDelegate {
     {
         let truckFeedController: TruckFeedController = mainStoryboard.instantiateViewController(withIdentifier: "TruckFeedController") as! TruckFeedController
         
-        let truckFeedIcon = UITabBarItem(title: "TruckFeed", image: UIImage(named: "truck.png")?.withRenderingMode(.alwaysTemplate), selectedImage: UIImage(named: "truck.png")?.withRenderingMode(.alwaysTemplate))
+        let truckFeedIcon = UITabBarItem(title: "TruckFeed", image: UIImage(named: "truck.png")?.withRenderingMode(.alwaysTemplate), selectedImage: UIImage(named: "truck")?.withRenderingMode(.alwaysTemplate))
         truckFeedIcon.setTitleTextAttributes([NSForegroundColorAttributeName: mainColor], for: UIControlState())
         
         truckFeedController.tabBarItem = truckFeedIcon

@@ -26,7 +26,7 @@ open class MenuViewController: UIViewController, UINavigationBarDelegate {
         
         
         let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 54)
-        let lefttBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRect(x: 0, y: 0, width: 30, height: 30), image: UIImage(named: "back_button_64.png")!, target: self)
+        let lefttBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRect(x: 0, y: 0, width: 25, height: 25), image: UIImage(named: "back_button_64.png")!, target: self)
         let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: "Settings", leftBarButton: lefttBarButtonItem)
         self.view.addSubview(navigationBar)
     }
