@@ -28,7 +28,7 @@ public struct FacebookCredentials
         let dict = NSMutableDictionary(contentsOfFile: path)
         dict?.setValue(true, forKey: "LoggedIn")
         dict?.write(toFile: path, atomically: false)
-        NSLog("Setting App.plist file to :\(NSMutableDictionary(contentsOfFile: path)))")
+        NSLog("Setting App.plist file to :\(String(describing: NSMutableDictionary(contentsOfFile: path))))")
     }
     
     static func facebookLogout(){
@@ -42,7 +42,7 @@ public struct FacebookCredentials
         let dict = NSMutableDictionary(contentsOfFile: path)
         dict?.setValue(false, forKey: "LoggedIn")
         dict?.write(toFile: path, atomically: false)
-        NSLog("facebookLogout - Setting App.plist file to :\(NSMutableDictionary(contentsOfFile: path)))")
+        NSLog("facebookLogout - Setting App.plist file to :\(String(describing: NSMutableDictionary(contentsOfFile: path))))")
     }
 
     
