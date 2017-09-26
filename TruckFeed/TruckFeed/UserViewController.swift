@@ -83,7 +83,7 @@ open class UserViewController: UIViewController, UINavigationBarDelegate {
         self.view.isOpaque = false
         self.view.tintColor = mainColor
         
-        let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 54)
+        let frame = CGRect(x: 0, y: 15, width: self.view.frame.size.width, height: 55)
         let navigationBar = ViewControllerItems.createNavigationBar(frame, title: "Add Truck Schedule")
         self.view.addSubview(navigationBar)
     }
