@@ -26,8 +26,8 @@ open class TruckFeedController: UIViewController, UINavigationBarDelegate {
         dataProvider?.tableView = tableView
         
         
-        let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 54)
-        let lefttBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.presentMenuViewController), frame:CGRect(x: 0, y: 0, width: 43, height: 31), image: UIImage(named: "list_bar_small.png")!, target: self)
+        let frame = CGRect(x: 0, y: 15, width: self.view.frame.size.width, height: 55)
+        let lefttBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.presentMenuViewController), frame:CGRect(x: 0, y: 15, width: 20, height: 10), image: UIImage(named: "menu_button")!, target: self)
         let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: "TruckFeed", leftBarButton: lefttBarButtonItem)
         self.view.addSubview(navigationBar)
 

@@ -25,8 +25,8 @@ open class TruckScheduleController: UIViewController {
         self.truckScheduleList = dataProvider!.getScheduleForTruck(foodTruckName!);
         dataProvider?.tableView = tableView
         
-        let frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 55)
-        let leftBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRect(x: 0, y: 0, width: 30, height: 30), image: UIImage(named: "back_button_small.png")!, target: self)
+        let frame = CGRect(x: 0, y: 15, width: self.view.frame.size.width, height: 55)
+        let leftBarButtonItem = ViewControllerItems.createBarButtonItemWithImage(#selector(self.dismissViewController), frame:CGRect(x: 0, y: 15, width: 20, height: 20), image: UIImage(named: "back_button")!, target: self)
         let navigationBar = ViewControllerItems.createNavigationBarWithLeftButton(frame, title: "Add Truck Schedule", leftBarButton: leftBarButtonItem)
         self.view.addSubview(navigationBar)
     }

@@ -10,8 +10,6 @@
 		100055B41CCD790300984B35 /* ViewControllerItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B31CCD790300984B35 /* ViewControllerItems.swift */; };
 		100055B61CD04F6800984B35 /* AppPlistHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B51CD04F6800984B35 /* AppPlistHelpers.swift */; };
 		100055B81CDAC67700984B35 /* MasterTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B71CDAC67700984B35 /* MasterTabViewController.swift */; };
-		100055BC1CDAE17600984B35 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 100055B91CDAE17600984B35 /* home.png */; };
-		100055BD1CDAE17600984B35 /* map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 100055BA1CDAE17600984B35 /* map-marker.png */; };
 		100CE6761D2F40B000E2F53C /* TruckScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6751D2F40B000E2F53C /* TruckScheduleController.swift */; };
 		100CE6781D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6771D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift */; };
 		100CE67A1D2F415C00E2F53C /* ScheduleDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6791D2F415C00E2F53C /* ScheduleDataProvider.swift */; };
@@ -55,10 +53,8 @@
 		106C8A1B1D406079007DD2CF /* AppPlistHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B51CD04F6800984B35 /* AppPlistHelpers.swift */; };
 		106C8A1C1D40607C007DD2CF /* MasterTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B71CDAC67700984B35 /* MasterTabViewController.swift */; };
 		106C8A1D1D406080007DD2CF /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */; };
-		106C8A201D485532007DD2CF /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 106C8A1F1D485531007DD2CF /* back.png */; };
 		106F519A1C022FD100DA30C6 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */; };
 		10738F4B1CB5FC1800BAC3CE /* MainLoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738F4A1CB5FC1800BAC3CE /* MainLoginScreenController.swift */; };
-		10738F571CB8781800BAC3CE /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 10738F561CB8781800BAC3CE /* gear.png */; };
 		10738F5B1CBF290900BAC3CE /* App.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10738F5A1CBF290900BAC3CE /* App.plist */; };
 		109BCD231E231EA60028BC9B /* EndDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD221E231EA50028BC9B /* EndDateCell.swift */; };
 		109BCD241E231EA60028BC9B /* EndDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD221E231EA50028BC9B /* EndDateCell.swift */; };
@@ -89,15 +85,9 @@
 		10AD74011D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */; };
 		10AD74021D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */; };
 		10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
-		10AED1D71BC0C478004FD47B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
 		10AED1DD1BC1BE4C004FD47B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */; };
-		10B1E5FA1CF544B100C7FBE4 /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = 10B1E5F91CF544B100C7FBE4 /* people.png */; };
 		10B1E5FE1CFE59D700C7FBE4 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */; };
 		10C04E4E1ED2693C0034A6FC /* submit_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C04E4D1ED2693C0034A6FC /* submit_large.png */; };
-		10C04E521ED2834B0034A6FC /* menu_list_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C04E511ED2834B0034A6FC /* menu_list_bar.png */; };
-		10C04E541ED284190034A6FC /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C04E531ED284190034A6FC /* back_button.png */; };
-		10C04E561ED285A30034A6FC /* list_bar_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C04E551ED285A30034A6FC /* list_bar_small.png */; };
-		10C04E581ED285B10034A6FC /* back_button_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 10C04E571ED285B10034A6FC /* back_button_small.png */; };
 		10C4E1531D5EA78A00C9E756 /* outside_scoop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E1511D5EA78A00C9E756 /* outside_scoop.jpg */; };
 		10C4E1541D5EA78A00C9E756 /* the_spot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10C4E1521D5EA78A00C9E756 /* the_spot.jpg */; };
 		10C4E1561D6405C600C9E756 /* TruckScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C4E1551D6405C600C9E756 /* TruckScheduleCell.swift */; };
@@ -113,7 +103,6 @@
 		10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079771B90008300B3AADB /* Truck.swift */; };
 		10D950551BFD7D4E00EC435B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1010794E1B8FF5E300B3AADB /* Assets.xcassets */; };
 		10D950561BFD7D4E00EC435B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */; };
-		10D950571BFD7D4E00EC435B /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1D61BC0C478004FD47B /* truck.png */; };
 		10D950591BFD7D4E00EC435B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1010794B1B8FF5E300B3AADB /* Main.storyboard */; settings = {ASSET_TAGS = (0, ); }; };
 		10D9505C1BFD7D4E00EC435B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */; };
 		10DC618A1BE863A60021B2D3 /* TruckFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DC61891BE863A60021B2D3 /* TruckFeedController.swift */; };
@@ -122,6 +111,19 @@
 		10ED6CB51E3999A10059DCBA /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED6CB31E3999430059DCBA /* DateUtility.swift */; };
 		10ED6CB61E3999A20059DCBA /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ED6CB31E3999430059DCBA /* DateUtility.swift */; };
 		10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */; };
+		160253B01F7B385C004EC690 /* back_button_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253A41F7B385B004EC690 /* back_button_2x.png */; };
+		160253B11F7B385C004EC690 /* truck_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253A51F7B385B004EC690 /* truck_1x.png */; };
+		160253B21F7B385C004EC690 /* menu_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253A61F7B385B004EC690 /* menu_2x.png */; };
+		160253B31F7B385C004EC690 /* back_button_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253A71F7B385B004EC690 /* back_button_3x.png */; };
+		160253B41F7B385C004EC690 /* back_button_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253A81F7B385B004EC690 /* back_button_1x.png */; };
+		160253B51F7B385C004EC690 /* cancel_button_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253A91F7B385B004EC690 /* cancel_button_3x.png */; };
+		160253B61F7B385C004EC690 /* cancel_button_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253AA1F7B385C004EC690 /* cancel_button_2x.png */; };
+		160253B71F7B385C004EC690 /* menu_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253AB1F7B385C004EC690 /* menu_1x.png */; };
+		160253B81F7B385C004EC690 /* menu_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253AC1F7B385C004EC690 /* menu_3x.png */; };
+		160253B91F7B385C004EC690 /* truck_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253AD1F7B385C004EC690 /* truck_2x.png */; };
+		160253BA1F7B385C004EC690 /* truck_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253AE1F7B385C004EC690 /* truck_3x.png */; };
+		160253BB1F7B385C004EC690 /* cancel_button_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253AF1F7B385C004EC690 /* cancel_button_1x.png */; };
+		161677521F7212DB006D1AD2 /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = 161677511F7212DB006D1AD2 /* people.png */; };
 		16B8D6C71F51E5CC005718AC /* StartDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateCell.swift */; };
 		16B8D6C81F51E5CD005718AC /* StartDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateCell.swift */; };
 		16B8D6C91F51E633005718AC /* StartDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */; };
@@ -161,8 +163,6 @@
 		100055B31CCD790300984B35 /* ViewControllerItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerItems.swift; sourceTree = "<group>"; };
 		100055B51CD04F6800984B35 /* AppPlistHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPlistHelpers.swift; sourceTree = "<group>"; };
 		100055B71CDAC67700984B35 /* MasterTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTabViewController.swift; sourceTree = "<group>"; };
-		100055B91CDAE17600984B35 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
-		100055BA1CDAE17600984B35 /* map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-marker.png"; sourceTree = "<group>"; };
 		100CE6751D2F40B000E2F53C /* TruckScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckScheduleController.swift; sourceTree = "<group>"; };
 		100CE6771D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDataProviderProtocol.swift; sourceTree = "<group>"; };
 		100CE6791D2F415C00E2F53C /* ScheduleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDataProvider.swift; sourceTree = "<group>"; };
@@ -183,9 +183,7 @@
 		1046C6C91E0A28550075ACD5 /* AddScheduleDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddScheduleDataProvider.swift; sourceTree = "<group>"; };
 		1046C6CB1E0A296A0075ACD5 /* TableDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDataProviderProtocol.swift; sourceTree = "<group>"; };
 		10674DE51C45CF97000D3E4C /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		106C8A1F1D485531007DD2CF /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		10738F4A1CB5FC1800BAC3CE /* MainLoginScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLoginScreenController.swift; sourceTree = "<group>"; };
-		10738F561CB8781800BAC3CE /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		10738F5A1CBF290900BAC3CE /* App.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = App.plist; sourceTree = "<group>"; };
 		109BCD221E231EA50028BC9B /* EndDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDateCell.swift; sourceTree = "<group>"; };
 		109BCD261E2325070028BC9B /* EndDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDatePickerCell.swift; sourceTree = "<group>"; };
@@ -198,15 +196,9 @@
 		10AD73FD1D18CA5000CDE2AF /* TruckFeedDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedDataProvider.swift; sourceTree = "<group>"; };
 		10AD74001D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckFeedDataProviderProtocol.swift; sourceTree = "<group>"; };
 		10AED1CE1BC0B9AF004FD47B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		10AED1D61BC0C478004FD47B /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
 		10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		10B1E5F91CF544B100C7FBE4 /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
 		10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		10C04E4D1ED2693C0034A6FC /* submit_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submit_large.png; sourceTree = "<group>"; };
-		10C04E511ED2834B0034A6FC /* menu_list_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_list_bar.png; sourceTree = "<group>"; };
-		10C04E531ED284190034A6FC /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button.png; sourceTree = "<group>"; };
-		10C04E551ED285A30034A6FC /* list_bar_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_bar_small.png; sourceTree = "<group>"; };
-		10C04E571ED285B10034A6FC /* back_button_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button_small.png; sourceTree = "<group>"; };
 		10C4E1511D5EA78A00C9E756 /* outside_scoop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = outside_scoop.jpg; sourceTree = "<group>"; };
 		10C4E1521D5EA78A00C9E756 /* the_spot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = the_spot.jpg; sourceTree = "<group>"; };
 		10C4E1551D6405C600C9E756 /* TruckScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckScheduleCell.swift; sourceTree = "<group>"; };
@@ -217,6 +209,19 @@
 		10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		10ED6CB31E3999430059DCBA /* DateUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 		10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckOwner.swift; sourceTree = "<group>"; };
+		160253A41F7B385B004EC690 /* back_button_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button_2x.png; sourceTree = "<group>"; };
+		160253A51F7B385B004EC690 /* truck_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck_1x.png; sourceTree = "<group>"; };
+		160253A61F7B385B004EC690 /* menu_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_2x.png; sourceTree = "<group>"; };
+		160253A71F7B385B004EC690 /* back_button_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button_3x.png; sourceTree = "<group>"; };
+		160253A81F7B385B004EC690 /* back_button_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button_1x.png; sourceTree = "<group>"; };
+		160253A91F7B385B004EC690 /* cancel_button_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_button_3x.png; sourceTree = "<group>"; };
+		160253AA1F7B385C004EC690 /* cancel_button_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_button_2x.png; sourceTree = "<group>"; };
+		160253AB1F7B385C004EC690 /* menu_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_1x.png; sourceTree = "<group>"; };
+		160253AC1F7B385C004EC690 /* menu_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_3x.png; sourceTree = "<group>"; };
+		160253AD1F7B385C004EC690 /* truck_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck_2x.png; sourceTree = "<group>"; };
+		160253AE1F7B385C004EC690 /* truck_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck_3x.png; sourceTree = "<group>"; };
+		160253AF1F7B385C004EC690 /* cancel_button_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_button_1x.png; sourceTree = "<group>"; };
+		161677511F7212DB006D1AD2 /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
 		16B8D6CB1F5230EB005718AC /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDatePickerProtocol.swift; sourceTree = "<group>"; };
 		16FE3DD41F6A24EC003C46ED /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -322,20 +327,23 @@
 		101079801B929C2300B3AADB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				10C04E571ED285B10034A6FC /* back_button_small.png */,
-				10C04E551ED285A30034A6FC /* list_bar_small.png */,
-				10C04E531ED284190034A6FC /* back_button.png */,
-				10C04E511ED2834B0034A6FC /* menu_list_bar.png */,
+				160253A81F7B385B004EC690 /* back_button_1x.png */,
+				160253A41F7B385B004EC690 /* back_button_2x.png */,
+				160253A71F7B385B004EC690 /* back_button_3x.png */,
+				160253AF1F7B385C004EC690 /* cancel_button_1x.png */,
+				160253AA1F7B385C004EC690 /* cancel_button_2x.png */,
+				160253A91F7B385B004EC690 /* cancel_button_3x.png */,
+				160253AB1F7B385C004EC690 /* menu_1x.png */,
+				160253A61F7B385B004EC690 /* menu_2x.png */,
+				160253AC1F7B385C004EC690 /* menu_3x.png */,
+				160253A51F7B385B004EC690 /* truck_1x.png */,
+				160253AD1F7B385C004EC690 /* truck_2x.png */,
+				160253AE1F7B385C004EC690 /* truck_3x.png */,
+				161677511F7212DB006D1AD2 /* people.png */,
 				10C04E4D1ED2693C0034A6FC /* submit_large.png */,
 				10C4E1511D5EA78A00C9E756 /* outside_scoop.jpg */,
 				10C4E1521D5EA78A00C9E756 /* the_spot.jpg */,
-				106C8A1F1D485531007DD2CF /* back.png */,
-				10B1E5F91CF544B100C7FBE4 /* people.png */,
-				100055B91CDAE17600984B35 /* home.png */,
-				100055BA1CDAE17600984B35 /* map-marker.png */,
-				10738F561CB8781800BAC3CE /* gear.png */,
 				10DC618B1BE8661E0021B2D3 /* Default-568h@2x.png */,
-				10AED1D61BC0C478004FD47B /* truck.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -557,24 +565,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160253B21F7B385C004EC690 /* menu_2x.png in Resources */,
+				160253B61F7B385C004EC690 /* cancel_button_2x.png in Resources */,
+				160253B91F7B385C004EC690 /* truck_2x.png in Resources */,
+				160253B41F7B385C004EC690 /* back_button_1x.png in Resources */,
+				160253B51F7B385C004EC690 /* cancel_button_3x.png in Resources */,
 				10C4E1531D5EA78A00C9E756 /* outside_scoop.jpg in Resources */,
 				10C04E4E1ED2693C0034A6FC /* submit_large.png in Resources */,
-				100055BD1CDAE17600984B35 /* map-marker.png in Resources */,
-				100055BC1CDAE17600984B35 /* home.png in Resources */,
 				1010794F1B8FF5E300B3AADB /* Assets.xcassets in Resources */,
+				160253B71F7B385C004EC690 /* menu_1x.png in Resources */,
 				10DC618C1BE8661E0021B2D3 /* Default-568h@2x.png in Resources */,
-				10AED1D71BC0C478004FD47B /* truck.png in Resources */,
 				1010794D1B8FF5E300B3AADB /* Main.storyboard in Resources */,
-				10C04E581ED285B10034A6FC /* back_button_small.png in Resources */,
-				106C8A201D485532007DD2CF /* back.png in Resources */,
-				10C04E561ED285A30034A6FC /* list_bar_small.png in Resources */,
-				10B1E5FA1CF544B100C7FBE4 /* people.png in Resources */,
+				160253B11F7B385C004EC690 /* truck_1x.png in Resources */,
 				10738F5B1CBF290900BAC3CE /* App.plist in Resources */,
+				160253B31F7B385C004EC690 /* back_button_3x.png in Resources */,
+				160253BA1F7B385C004EC690 /* truck_3x.png in Resources */,
+				161677521F7212DB006D1AD2 /* people.png in Resources */,
 				10C4E1541D5EA78A00C9E756 /* the_spot.jpg in Resources */,
-				10738F571CB8781800BAC3CE /* gear.png in Resources */,
+				160253BB1F7B385C004EC690 /* cancel_button_1x.png in Resources */,
+				160253B81F7B385C004EC690 /* menu_3x.png in Resources */,
+				160253B01F7B385C004EC690 /* back_button_2x.png in Resources */,
 				10AED1CF1BC0B9AF004FD47B /* LaunchScreen.xib in Resources */,
-				10C04E541ED284190034A6FC /* back_button.png in Resources */,
-				10C04E521ED2834B0034A6FC /* menu_list_bar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,7 +603,6 @@
 			files = (
 				10D950551BFD7D4E00EC435B /* Assets.xcassets in Resources */,
 				10D950561BFD7D4E00EC435B /* Default-568h@2x.png in Resources */,
-				10D950571BFD7D4E00EC435B /* truck.png in Resources */,
 				10D950591BFD7D4E00EC435B /* Main.storyboard in Resources */,
 				10D9505C1BFD7D4E00EC435B /* LaunchScreen.xib in Resources */,
 			);
