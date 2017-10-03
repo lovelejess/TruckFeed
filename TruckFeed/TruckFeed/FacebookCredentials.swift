@@ -13,22 +13,18 @@ public struct FacebookCredentials
 {
     
     static func isLoggedIn() -> Bool {
-        if let loggedIn = AppPlistHelpers.getAppPlistDictionary().object(forKey: "LoggedIn") as? Bool {
-            NSLog("LoggedIn value from App.plist is : \(loggedIn)")
-            return loggedIn
-        }
-        return false
+        let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
+        print("isLoggedIn: \(isLoggedIn)")
+        return isLoggedIn
+        
     }
     
-    static func setIsLoggedIn()
+    static func setIsLoggedIn(isLoggedIn: Bool)
     {
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
-        let documentsDirectory = paths.object(at: 0) as! NSString
-        let path = documentsDirectory.appendingPathComponent("App.plist")
-        let dict = NSMutableDictionary(contentsOfFile: path)
-        dict?.setValue(true, forKey: "LoggedIn")
-        dict?.write(toFile: path, atomically: false)
-        NSLog("Setting App.plist file to :\(String(describing: NSMutableDictionary(contentsOfFile: path))))")
+        print("setting isLoggedIn to: \(isLoggedIn)")
+        let defaults = UserDefaults.standard
+        defaults.set(isLoggedIn, forKey: "isLoggedIn")
+        defaults.synchronize()
     }
     
     static func facebookLogout(){
@@ -36,13 +32,8 @@ public struct FacebookCredentials
         let truckOwner = TruckOwner.sharedInstance
         truckOwner.setFBAccessToken("")
         
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
-        let documentsDirectory = paths.object(at: 0) as! NSString
-        let path = documentsDirectory.appendingPathComponent("App.plist")
-        let dict = NSMutableDictionary(contentsOfFile: path)
-        dict?.setValue(false, forKey: "LoggedIn")
-        dict?.write(toFile: path, atomically: false)
-        NSLog("facebookLogout - Setting App.plist file to :\(String(describing: NSMutableDictionary(contentsOfFile: path))))")
+        setIsLoggedIn(isLoggedIn: false)
+        NSLog("facebookLogout - )")
     }
 
     

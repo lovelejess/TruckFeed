@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		100055B41CCD790300984B35 /* ViewControllerItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B31CCD790300984B35 /* ViewControllerItems.swift */; };
-		100055B61CD04F6800984B35 /* AppPlistHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B51CD04F6800984B35 /* AppPlistHelpers.swift */; };
 		100055B81CDAC67700984B35 /* MasterTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B71CDAC67700984B35 /* MasterTabViewController.swift */; };
 		100CE6761D2F40B000E2F53C /* TruckScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6751D2F40B000E2F53C /* TruckScheduleController.swift */; };
 		100CE6781D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CE6771D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift */; };
@@ -20,7 +19,6 @@
 		100E15631D05037400B3BC9A /* TruckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079791B912B7A00B3AADB /* TruckCell.swift */; };
 		100E15641D05037B00B3BC9A /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */; };
 		100E15651D05037E00B3BC9A /* ViewControllerItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B31CCD790300984B35 /* ViewControllerItems.swift */; };
-		100E15661D05038100B3BC9A /* AppPlistHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B51CD04F6800984B35 /* AppPlistHelpers.swift */; };
 		100E15671D05038400B3BC9A /* MasterTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B71CDAC67700984B35 /* MasterTabViewController.swift */; };
 		100E15681D05038A00B3BC9A /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */; };
 		101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101079451B8FF5E300B3AADB /* AppDelegate.swift */; };
@@ -50,7 +48,6 @@
 		106C8A181D406061007DD2CF /* MainLoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10738F4A1CB5FC1800BAC3CE /* MainLoginScreenController.swift */; };
 		106C8A191D406073007DD2CF /* TruckOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */; };
 		106C8A1A1D406076007DD2CF /* ViewControllerItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B31CCD790300984B35 /* ViewControllerItems.swift */; };
-		106C8A1B1D406079007DD2CF /* AppPlistHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B51CD04F6800984B35 /* AppPlistHelpers.swift */; };
 		106C8A1C1D40607C007DD2CF /* MasterTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100055B71CDAC67700984B35 /* MasterTabViewController.swift */; };
 		106C8A1D1D406080007DD2CF /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */; };
 		106F519A1C022FD100DA30C6 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AED1DC1BC1BE4C004FD47B /* UserViewController.swift */; };
@@ -161,7 +158,6 @@
 		0737B45AD6EC6786801F3788 /* Pods_TruckFeedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruckFeedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09739683405C05FC5F7B6416 /* Pods_TruckFeedUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruckFeedUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		100055B31CCD790300984B35 /* ViewControllerItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerItems.swift; sourceTree = "<group>"; };
-		100055B51CD04F6800984B35 /* AppPlistHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPlistHelpers.swift; sourceTree = "<group>"; };
 		100055B71CDAC67700984B35 /* MasterTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTabViewController.swift; sourceTree = "<group>"; };
 		100CE6751D2F40B000E2F53C /* TruckScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruckScheduleController.swift; sourceTree = "<group>"; };
 		100CE6771D2F40EF00E2F53C /* ScheduleDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDataProviderProtocol.swift; sourceTree = "<group>"; };
@@ -411,7 +407,6 @@
 				10A5E1071D8B875300B79702 /* FacebookCredentials.swift */,
 				1010797D1B92776F00B3AADB /* Palette.swift */,
 				10ED6CB31E3999430059DCBA /* DateUtility.swift */,
-				100055B51CD04F6800984B35 /* AppPlistHelpers.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -787,7 +782,6 @@
 				1046C6CA1E0A28550075ACD5 /* AddScheduleDataProvider.swift in Sources */,
 				100055B81CDAC67700984B35 /* MasterTabViewController.swift in Sources */,
 				100055B41CCD790300984B35 /* ViewControllerItems.swift in Sources */,
-				100055B61CD04F6800984B35 /* AppPlistHelpers.swift in Sources */,
 				109BCD231E231EA60028BC9B /* EndDateCell.swift in Sources */,
 				10AED1DD1BC1BE4C004FD47B /* UserViewController.swift in Sources */,
 				101079461B8FF5E300B3AADB /* AppDelegate.swift in Sources */,
@@ -843,7 +837,6 @@
 				16B8D6C71F51E5CC005718AC /* StartDateCell.swift in Sources */,
 				100E15651D05037E00B3BC9A /* ViewControllerItems.swift in Sources */,
 				10A5E1111D8CE56F00B79702 /* MenuViewController.swift in Sources */,
-				100E15661D05038100B3BC9A /* AppPlistHelpers.swift in Sources */,
 				10A5E1191D8CE7B500B79702 /* MenuDataProvider.swift in Sources */,
 				10A5E1211D8CF16F00B79702 /* MenuListItem.swift in Sources */,
 				10A5E11D1D8CF14F00B79702 /* MenuListItemCell.swift in Sources */,
@@ -882,7 +875,6 @@
 				16B8D6CE1F5230EB005718AC /* DatePickerController.swift in Sources */,
 				106C8A191D406073007DD2CF /* TruckOwner.swift in Sources */,
 				16B8D6D31F550621005718AC /* ScheduleDatePickerProtocol.swift in Sources */,
-				106C8A1B1D406079007DD2CF /* AppPlistHelpers.swift in Sources */,
 				16B8D6C81F51E5CD005718AC /* StartDateCell.swift in Sources */,
 				106C8A181D406061007DD2CF /* MainLoginScreenController.swift in Sources */,
 				10A5E1121D8CE56F00B79702 /* MenuViewController.swift in Sources */,
