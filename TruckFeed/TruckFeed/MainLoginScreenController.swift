@@ -55,7 +55,7 @@ class MainLoginScreenController: UIViewController {
                 self.presentMasterViewController(self)
             })
             
-            User.setFacebookRequestOperationsQueue(facebookRequestOperation, presentUserViewOperation: presentUserViewOperation )
+            FacebookAPI.setFacebookRequestOperationsQueue(facebookRequestOperation, presentUserViewOperation: presentUserViewOperation )
             User.setIsLoggedIn(isLoggedIn: true)
         }
     }

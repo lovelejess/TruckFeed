@@ -16,7 +16,6 @@ public struct User
         let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
         print("isLoggedIn: \(isLoggedIn)")
         return isLoggedIn
-        
     }
     
     static func setIsLoggedIn(isLoggedIn: Bool)
@@ -35,14 +34,4 @@ public struct User
         setIsLoggedIn(isLoggedIn: false)
         NSLog("facebookLogout - )")
     }
-
-    
-    static func setFacebookRequestOperationsQueue(_ facebookRequestOperation: BlockOperation, presentUserViewOperation: BlockOperation ) {
-        let queue = OperationQueue()
-        presentUserViewOperation.addDependency(facebookRequestOperation)
-        queue.addOperation(facebookRequestOperation)
-        queue.addOperation(presentUserViewOperation)
-    }
-
-
 }

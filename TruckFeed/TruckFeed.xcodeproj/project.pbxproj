@@ -121,6 +121,9 @@
 		160253BA1F7B385C004EC690 /* truck_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253AE1F7B385C004EC690 /* truck_3x.png */; };
 		160253BB1F7B385C004EC690 /* cancel_button_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253AF1F7B385C004EC690 /* cancel_button_1x.png */; };
 		161677521F7212DB006D1AD2 /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = 161677511F7212DB006D1AD2 /* people.png */; };
+		169AB7181F8329410037481D /* FacebookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AB7171F8329410037481D /* FacebookAPI.swift */; };
+		169AB7191F8329410037481D /* FacebookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AB7171F8329410037481D /* FacebookAPI.swift */; };
+		169AB71A1F8329410037481D /* FacebookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AB7171F8329410037481D /* FacebookAPI.swift */; };
 		16B8D6C71F51E5CC005718AC /* StartDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateCell.swift */; };
 		16B8D6C81F51E5CD005718AC /* StartDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C51E0A24380075ACD5 /* StartDateCell.swift */; };
 		16B8D6C91F51E633005718AC /* StartDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046C6C71E0A25F10075ACD5 /* StartDatePickerCell.swift */; };
@@ -218,6 +221,7 @@
 		160253AE1F7B385C004EC690 /* truck_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck_3x.png; sourceTree = "<group>"; };
 		160253AF1F7B385C004EC690 /* cancel_button_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_button_1x.png; sourceTree = "<group>"; };
 		161677511F7212DB006D1AD2 /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
+		169AB7171F8329410037481D /* FacebookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAPI.swift; sourceTree = "<group>"; };
 		16B8D6CB1F5230EB005718AC /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDatePickerProtocol.swift; sourceTree = "<group>"; };
 		16FE3DD41F6A24EC003C46ED /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -407,6 +411,7 @@
 			children = (
 				1010797D1B92776F00B3AADB /* Palette.swift */,
 				10ED6CB31E3999430059DCBA /* DateUtility.swift */,
+				169AB7171F8329410037481D /* FacebookAPI.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -796,6 +801,7 @@
 				10A5E1101D8CE56F00B79702 /* MenuViewController.swift in Sources */,
 				100CE6761D2F40B000E2F53C /* TruckScheduleController.swift in Sources */,
 				10A5E1181D8CE7B500B79702 /* MenuDataProvider.swift in Sources */,
+				169AB7181F8329410037481D /* FacebookAPI.swift in Sources */,
 				10A5E1201D8CF16F00B79702 /* MenuListItem.swift in Sources */,
 				10A5E11C1D8CF14F00B79702 /* MenuListItemCell.swift in Sources */,
 				10C4E15A1D64090500C9E756 /* TruckSchedule.swift in Sources */,
@@ -838,6 +844,7 @@
 				100E15651D05037E00B3BC9A /* ViewControllerItems.swift in Sources */,
 				10A5E1111D8CE56F00B79702 /* MenuViewController.swift in Sources */,
 				10A5E1191D8CE7B500B79702 /* MenuDataProvider.swift in Sources */,
+				169AB7191F8329410037481D /* FacebookAPI.swift in Sources */,
 				10A5E1211D8CF16F00B79702 /* MenuListItem.swift in Sources */,
 				10A5E11D1D8CF14F00B79702 /* MenuListItemCell.swift in Sources */,
 				10C4E15B1D64090500C9E756 /* TruckSchedule.swift in Sources */,
@@ -880,6 +887,7 @@
 				10A5E1121D8CE56F00B79702 /* MenuViewController.swift in Sources */,
 				10D9504A1BFD7D4E00EC435B /* AppDelegate.swift in Sources */,
 				10A5E11A1D8CE7B500B79702 /* MenuDataProvider.swift in Sources */,
+				169AB71A1F8329410037481D /* FacebookAPI.swift in Sources */,
 				10A5E1221D8CF16F00B79702 /* MenuListItem.swift in Sources */,
 				10A5E11E1D8CF14F00B79702 /* MenuListItemCell.swift in Sources */,
 				10C4E15C1D64090500C9E756 /* TruckSchedule.swift in Sources */,
