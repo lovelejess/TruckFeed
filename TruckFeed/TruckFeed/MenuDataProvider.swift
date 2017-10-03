@@ -13,7 +13,7 @@ open class MenuDataProvider: NSObject, MenuDataProviderProtocol {
     weak open var tableView: UITableView!
     
     open func getMenuList() -> [MenuListItem] {
-        if(FacebookCredentials.isLoggedIn())
+        if(User.isLoggedIn())
         {
             self.menuList = [MenuListItem(name: "Logout")]
         }
