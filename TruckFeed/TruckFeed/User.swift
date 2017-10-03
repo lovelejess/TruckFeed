@@ -9,7 +9,7 @@
 import CoreData
 import FBSDKLoginKit
 
-public struct FacebookCredentials
+public struct User
 {
     
     static func isLoggedIn() -> Bool {

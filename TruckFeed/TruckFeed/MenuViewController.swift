@@ -63,9 +63,9 @@ extension MenuViewController: UITableViewDelegate
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         NSLog("You selected cell #\(indexPath.row)!")
         tableView.deselectRow(at: indexPath, animated: true)
-        if(FacebookCredentials.isLoggedIn())
+        if(User.isLoggedIn())
         {
-            FacebookCredentials.facebookLogout()
+            User.facebookLogout()
         }
         self.presentMainLoginViewController(self )
     }

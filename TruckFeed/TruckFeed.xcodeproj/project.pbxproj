@@ -59,9 +59,9 @@
 		109BCD271E2325070028BC9B /* EndDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD261E2325070028BC9B /* EndDatePickerCell.swift */; };
 		109BCD281E2325070028BC9B /* EndDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD261E2325070028BC9B /* EndDatePickerCell.swift */; };
 		109BCD291E2325070028BC9B /* EndDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109BCD261E2325070028BC9B /* EndDatePickerCell.swift */; };
-		10A5E1081D8B875300B79702 /* FacebookCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* FacebookCredentials.swift */; };
-		10A5E1091D8B875300B79702 /* FacebookCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* FacebookCredentials.swift */; };
-		10A5E10A1D8B875300B79702 /* FacebookCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* FacebookCredentials.swift */; };
+		10A5E1081D8B875300B79702 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* User.swift */; };
+		10A5E1091D8B875300B79702 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* User.swift */; };
+		10A5E10A1D8B875300B79702 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E1071D8B875300B79702 /* User.swift */; };
 		10A5E1101D8CE56F00B79702 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E10F1D8CE56F00B79702 /* MenuViewController.swift */; };
 		10A5E1111D8CE56F00B79702 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E10F1D8CE56F00B79702 /* MenuViewController.swift */; };
 		10A5E1121D8CE56F00B79702 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A5E10F1D8CE56F00B79702 /* MenuViewController.swift */; };
@@ -183,7 +183,7 @@
 		10738F5A1CBF290900BAC3CE /* App.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = App.plist; sourceTree = "<group>"; };
 		109BCD221E231EA50028BC9B /* EndDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDateCell.swift; sourceTree = "<group>"; };
 		109BCD261E2325070028BC9B /* EndDatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDatePickerCell.swift; sourceTree = "<group>"; };
-		10A5E1071D8B875300B79702 /* FacebookCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookCredentials.swift; sourceTree = "<group>"; };
+		10A5E1071D8B875300B79702 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		10A5E10F1D8CE56F00B79702 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		10A5E1131D8CE72100B79702 /* MenuDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDataProviderProtocol.swift; sourceTree = "<group>"; };
 		10A5E1171D8CE7B500B79702 /* MenuDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDataProvider.swift; sourceTree = "<group>"; };
@@ -377,6 +377,7 @@
 		10C368301D7DF9B800D6831C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				10A5E1071D8B875300B79702 /* User.swift */,
 				101079791B912B7A00B3AADB /* TruckCell.swift */,
 				10FBA3AF1C8533A1001862A7 /* TruckOwner.swift */,
 				101079771B90008300B3AADB /* Truck.swift */,
@@ -404,7 +405,6 @@
 		10ED6CB71E399BA00059DCBA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				10A5E1071D8B875300B79702 /* FacebookCredentials.swift */,
 				1010797D1B92776F00B3AADB /* Palette.swift */,
 				10ED6CB31E3999430059DCBA /* DateUtility.swift */,
 			);
@@ -805,7 +805,7 @@
 				100CE67A1D2F415C00E2F53C /* ScheduleDataProvider.swift in Sources */,
 				10AD74011D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */,
 				10AD73FE1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */,
-				10A5E1081D8B875300B79702 /* FacebookCredentials.swift in Sources */,
+				10A5E1081D8B875300B79702 /* User.swift in Sources */,
 				10738F4B1CB5FC1800BAC3CE /* MainLoginScreenController.swift in Sources */,
 				1046C6C81E0A25F10075ACD5 /* StartDatePickerCell.swift in Sources */,
 				10ED6CB41E3999430059DCBA /* DateUtility.swift in Sources */,
@@ -848,7 +848,7 @@
 				10AD74021D18CFA100CDE2AF /* TruckFeedDataProviderProtocol.swift in Sources */,
 				109BCD281E2325070028BC9B /* EndDatePickerCell.swift in Sources */,
 				10AD73FF1D18CA5000CDE2AF /* TruckFeedDataProvider.swift in Sources */,
-				10A5E1091D8B875300B79702 /* FacebookCredentials.swift in Sources */,
+				10A5E1091D8B875300B79702 /* User.swift in Sources */,
 				100E15671D05038400B3BC9A /* MasterTabViewController.swift in Sources */,
 				16B8D6C91F51E633005718AC /* StartDatePickerCell.swift in Sources */,
 				16FE3DD61F6A24EC003C46ED /* Schedule.swift in Sources */,
@@ -890,7 +890,7 @@
 				106C8A1D1D406080007DD2CF /* UserView.swift in Sources */,
 				109BCD291E2325070028BC9B /* EndDatePickerCell.swift in Sources */,
 				10D9504D1BFD7D4E00EC435B /* Palette.swift in Sources */,
-				10A5E10A1D8B875300B79702 /* FacebookCredentials.swift in Sources */,
+				10A5E10A1D8B875300B79702 /* User.swift in Sources */,
 				10D9504E1BFD7D4E00EC435B /* Truck.swift in Sources */,
 				16B8D6CA1F51E633005718AC /* StartDatePickerCell.swift in Sources */,
 				16FE3DD71F6A24EC003C46ED /* Schedule.swift in Sources */,

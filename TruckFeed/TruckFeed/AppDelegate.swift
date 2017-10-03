@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func determineUIViewToPresent() -> UIViewController
     {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        if(FacebookCredentials.isLoggedIn())
+        if(User.isLoggedIn())
         {
             let masterTabViewController: MasterTabViewController = mainStoryboard.instantiateViewController(withIdentifier: "MasterTabViewController") as! MasterTabViewController
             return masterTabViewController
