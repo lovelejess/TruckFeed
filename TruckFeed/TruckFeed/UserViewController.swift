@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FBSDKLoginKit
 
 open class UserViewController: UIViewController, UINavigationBarDelegate {
 

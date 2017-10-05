@@ -48,7 +48,12 @@ class MainLoginScreenController: UIViewController {
             self.truckOwner.setFBAccessToken(accessToken)
             
             let facebookRequestOperation = BlockOperation(block: {
-                self.truckOwner.requestFacebookCredentials()
+                let fbAccessToken:String = FacebookAPI.requestFacebookCredentials()
+                NSLog("retrieveUserAccessInfoFromFBRequest - retrieved result successfully. ID:  \(fbAccessToken)")
+                self.truckOwner.setUserAccessInfoFromFBRequest(fbAccessToken)
+                let facebookPageResponse = FacebookAPI.retrieveFBPageIDFromFBRequest(userAccessInfo: self.truckOwner.getFBAccessToken())
+                self.truckOwner.setFBPageID(self.parsePageIDFromResponse(facebookPageResponse: facebookPageResponse))
+                self.truckOwner.setTruckOwnerName(self.parseNameFromResponse(facebookPageResponse: facebookPageResponse))
                 NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner.fbAccessUserID) :: \(self.truckOwner.getUserAccessInfo())")
             })
             let presentUserViewOperation = BlockOperation(block: {
@@ -76,6 +81,28 @@ class MainLoginScreenController: UIViewController {
                     NSLog("Presenting Master View Controller")
             })
         }
+    }
+    
+    private func parseNameFromResponse(facebookPageResponse: NSArray) -> String {
+        var name = ""
+        if let data = facebookPageResponse.firstObject as AnyObject? {
+            if let parsedName = data.value(forKey: "name") as? String {
+                NSLog("getFBPageID - retrieved name successfully. name:  \(parsedName)")
+                name = parsedName
+            }
+        }
+        return name
+    }
+    
+    private func parsePageIDFromResponse(facebookPageResponse: NSArray) -> String {
+        var id = ""
+        if let data = facebookPageResponse.firstObject as AnyObject? {
+            if let parsedID = data.value(forKey: "id") as? String {
+                NSLog("getFBPageID - retrieved id successfully. ID:  \(id)")
+                id = parsedID
+            }
+        }
+        return id
     }
     
 }

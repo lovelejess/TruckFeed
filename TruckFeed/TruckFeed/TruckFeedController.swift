@@ -15,7 +15,6 @@ open class TruckFeedController: UIViewController, UINavigationBarDelegate {
     @IBOutlet var tableView: UITableView?
     fileprivate var dataProvider: TruckFeedDataProviderProtocol?
     fileprivate var truckList = [Truck]()
-    let FBLoginManager = FBSDKLoginManager()
     
     override open func viewDidLoad() {
         super.viewDidLoad()
