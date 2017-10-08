@@ -87,27 +87,6 @@ class MainLoginScreenController: UIViewController {
             })
         }
     }
-    
-    private func parseNameFromResponse(facebookPageResponse: NSArray) -> String {
-        var name = ""
-        if let data = facebookPageResponse.firstObject as AnyObject? {
-            if let parsedName = data.value(forKey: "name") as? String {
-                NSLog("parseNameFromResponse - name: \(parsedName)")
-                name = parsedName
-            }
-        }
-        return name
-    }
-    
-    private func parsePageIDFromResponse(facebookPageResponse: NSArray) -> String {
-        var id = ""
-        if let data = facebookPageResponse.firstObject as AnyObject? {
-            if let parsedID = data.value(forKey: "id") as? String {
-                NSLog("parsePageIDFromResponse - ID:  \(id)")
-                id = parsedID
-            }
-        }
-        return id
-    }
+
     
 }

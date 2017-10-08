@@ -121,6 +121,9 @@
 		160253BA1F7B385C004EC690 /* truck_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253AE1F7B385C004EC690 /* truck_3x.png */; };
 		160253BB1F7B385C004EC690 /* cancel_button_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 160253AF1F7B385C004EC690 /* cancel_button_1x.png */; };
 		161677521F7212DB006D1AD2 /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = 161677511F7212DB006D1AD2 /* people.png */; };
+		167878051F89E081009EB8FE /* DictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167878041F89E081009EB8FE /* DictionaryParser.swift */; };
+		167878061F89E081009EB8FE /* DictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167878041F89E081009EB8FE /* DictionaryParser.swift */; };
+		167878071F89E081009EB8FE /* DictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167878041F89E081009EB8FE /* DictionaryParser.swift */; };
 		169AB7181F8329410037481D /* FacebookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AB7171F8329410037481D /* FacebookAPI.swift */; };
 		169AB7191F8329410037481D /* FacebookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AB7171F8329410037481D /* FacebookAPI.swift */; };
 		169AB71A1F8329410037481D /* FacebookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AB7171F8329410037481D /* FacebookAPI.swift */; };
@@ -221,6 +224,7 @@
 		160253AE1F7B385C004EC690 /* truck_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck_3x.png; sourceTree = "<group>"; };
 		160253AF1F7B385C004EC690 /* cancel_button_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_button_1x.png; sourceTree = "<group>"; };
 		161677511F7212DB006D1AD2 /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
+		167878041F89E081009EB8FE /* DictionaryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryParser.swift; sourceTree = "<group>"; };
 		169AB7171F8329410037481D /* FacebookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAPI.swift; sourceTree = "<group>"; };
 		16B8D6CB1F5230EB005718AC /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDatePickerProtocol.swift; sourceTree = "<group>"; };
@@ -412,6 +416,7 @@
 				1010797D1B92776F00B3AADB /* Palette.swift */,
 				10ED6CB31E3999430059DCBA /* DateUtility.swift */,
 				169AB7171F8329410037481D /* FacebookAPI.swift */,
+				167878041F89E081009EB8FE /* DictionaryParser.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -786,6 +791,7 @@
 				10FBA3B01C8533A1001862A7 /* TruckOwner.swift in Sources */,
 				1046C6CA1E0A28550075ACD5 /* AddScheduleDataProvider.swift in Sources */,
 				100055B81CDAC67700984B35 /* MasterTabViewController.swift in Sources */,
+				167878051F89E081009EB8FE /* DictionaryParser.swift in Sources */,
 				100055B41CCD790300984B35 /* ViewControllerItems.swift in Sources */,
 				109BCD231E231EA60028BC9B /* EndDateCell.swift in Sources */,
 				10AED1DD1BC1BE4C004FD47B /* UserViewController.swift in Sources */,
@@ -829,6 +835,7 @@
 				106F519A1C022FD100DA30C6 /* UserViewController.swift in Sources */,
 				1046C6CF1E0B7AE30075ACD5 /* TableDataProviderProtocol.swift in Sources */,
 				100E155F1D05036100B3BC9A /* MainLoginScreenController.swift in Sources */,
+				167878061F89E081009EB8FE /* DictionaryParser.swift in Sources */,
 				100E15641D05037B00B3BC9A /* TruckOwner.swift in Sources */,
 				1046C6CD1E0B7ADF0075ACD5 /* AddScheduleDataProvider.swift in Sources */,
 				106C8A0F1D406049007DD2CF /* TruckFeedController.swift in Sources */,
@@ -872,6 +879,7 @@
 				10D950491BFD7D4E00EC435B /* UserViewController.swift in Sources */,
 				1046C6D01E0B7AE40075ACD5 /* TableDataProviderProtocol.swift in Sources */,
 				106C8A171D40605A007DD2CF /* ScheduleDataProvider.swift in Sources */,
+				167878071F89E081009EB8FE /* DictionaryParser.swift in Sources */,
 				106C8A0E1D406049007DD2CF /* TruckFeedController.swift in Sources */,
 				1046C6CE1E0B7AE00075ACD5 /* AddScheduleDataProvider.swift in Sources */,
 				106C8A111D40604F007DD2CF /* TruckFeedDataProviderProtocol.swift in Sources */,

@@ -32,7 +32,7 @@ class FacebookAPI: NSObject {
                 if let response = result as! NSDictionary? {
                     NSLog("getFBUserInfo - response: \(response)")
                     fbUserInfoResponse = response
-                    User.setFirstName(firstName: parseKeyFromResponse(key: "first_name", response: fbUserInfoResponse))
+                    User.setFirstName(firstName: DictionaryParser.parseKeyFromResponse(key: "first_name", response: fbUserInfoResponse))
                     
                 }
             }
@@ -63,14 +63,6 @@ class FacebookAPI: NSObject {
         })
         connection.start()
         return facebookPageData
-    }
-    
-    static func parseKeyFromResponse(key: String, response: NSDictionary) -> String {
-        var value = ""
-        if let parsedValue = response.value(forKey: key) as! String? {
-            value = parsedValue
-        }
-        return value
     }
 
 }
