@@ -46,21 +46,26 @@ class MainLoginScreenController: UIViewController {
         if let accessToken = FBSDKAccessToken.current().tokenString {
             NSLog("Retrieving access token: \(accessToken)")
             self.truckOwner.setFBAccessToken(accessToken)
+            var unserializedUserInfo: Any = ""
             
-            let facebookRequestOperation = BlockOperation(block: {
-                let fbAccessToken:String = FacebookAPI.requestFacebookCredentials()
-                NSLog("retrieveUserAccessInfoFromFBRequest - retrieved result successfully. ID:  \(fbAccessToken)")
-                self.truckOwner.setUserAccessInfoFromFBRequest(fbAccessToken)
-                let facebookPageResponse = FacebookAPI.retrieveFBPageIDFromFBRequest(userAccessInfo: self.truckOwner.getFBAccessToken())
-                self.truckOwner.setFBPageID(self.parsePageIDFromResponse(facebookPageResponse: facebookPageResponse))
-                self.truckOwner.setTruckOwnerName(self.parseNameFromResponse(facebookPageResponse: facebookPageResponse))
-                NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner.fbAccessUserID) :: \(self.truckOwner.getUserAccessInfo())")
+            let setFBUserInfoOperation = BlockOperation(block: {
+                unserializedUserInfo = FacebookAPI.setFBUserInfo()
+            })
+            
+            let deserializeUserInfo = BlockOperation(block: {
+                
+//                let fbUserAccessToken = self.truckOwner.getFBAccessToken()
+//                NSLog("setFBUserInfoOperation - setting fbUserAccessToken:  \(fbUserAccessToken)")
+//                let facebookPageResponse = FacebookAPI.retrieveFBPageIDFromFBRequest(userAccessInfo: self.truckOwner.getFBAccessToken())
+//                self.truckOwner.setFBPageID(self.parsePageIDFromResponse(facebookPageResponse: facebookPageResponse))
+//                self.truckOwner.setTruckOwnerName(self.parseNameFromResponse(facebookPageResponse: facebookPageResponse))
+//                NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner.fbAccessUserID) :: \(self.truckOwner.getUserAccessInfo())")
             })
             let presentUserViewOperation = BlockOperation(block: {
                 self.presentMasterViewController(self)
             })
             
-            FacebookAPI.setFacebookRequestOperationsQueue(facebookRequestOperation, presentUserViewOperation: presentUserViewOperation )
+            FacebookAPI.setFacebookRequestOperationsQueue(setFBUserInfoOperation: setFBUserInfoOperation, presentUserViewOperation: presentUserViewOperation )
             User.setIsLoggedIn(isLoggedIn: true)
         }
     }
@@ -87,7 +92,7 @@ class MainLoginScreenController: UIViewController {
         var name = ""
         if let data = facebookPageResponse.firstObject as AnyObject? {
             if let parsedName = data.value(forKey: "name") as? String {
-                NSLog("getFBPageID - retrieved name successfully. name:  \(parsedName)")
+                NSLog("parseNameFromResponse - name: \(parsedName)")
                 name = parsedName
             }
         }
@@ -98,7 +103,7 @@ class MainLoginScreenController: UIViewController {
         var id = ""
         if let data = facebookPageResponse.firstObject as AnyObject? {
             if let parsedID = data.value(forKey: "id") as? String {
-                NSLog("getFBPageID - retrieved id successfully. ID:  \(id)")
+                NSLog("parsePageIDFromResponse - ID:  \(id)")
                 id = parsedID
             }
         }

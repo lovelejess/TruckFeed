@@ -14,13 +14,13 @@ public struct User
     
     static func isLoggedIn() -> Bool {
         let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
-        print("isLoggedIn: \(isLoggedIn)")
+        print("user: isLoggedIn: \(isLoggedIn)")
         return isLoggedIn
     }
     
     static func setIsLoggedIn(isLoggedIn: Bool)
     {
-        print("setting isLoggedIn to: \(isLoggedIn)")
+        print("user: setting isLoggedIn to: \(isLoggedIn)")
         let defaults = UserDefaults.standard
         defaults.set(isLoggedIn, forKey: "isLoggedIn")
         defaults.synchronize()
@@ -32,6 +32,13 @@ public struct User
         truckOwner.setFBAccessToken("")
         
         setIsLoggedIn(isLoggedIn: false)
-        NSLog("facebookLogout - )")
+        NSLog("user: facebookLogout")
+    }
+    
+    static func setFirstName(firstName: String) {
+        print("user: setting name to: \(firstName)")
+        let defaults = UserDefaults.standard
+        defaults.set(firstName, forKey: "firstName")
+        defaults.synchronize()
     }
 }

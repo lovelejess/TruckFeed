@@ -11,33 +11,34 @@ import FBSDKCoreKit.FBSDKGraphRequest
 
 
 class FacebookAPI: NSObject {
-    static func setFacebookRequestOperationsQueue(_ facebookRequestOperation: BlockOperation, presentUserViewOperation: BlockOperation ) {
+    static func setFacebookRequestOperationsQueue(setFBUserInfoOperation: BlockOperation, presentUserViewOperation: BlockOperation ) {
         let queue = OperationQueue()
-        presentUserViewOperation.addDependency(facebookRequestOperation)
-        queue.addOperation(facebookRequestOperation)
+        presentUserViewOperation.addDependency(setFBUserInfoOperation)
+        queue.addOperation(setFBUserInfoOperation)
         queue.addOperation(presentUserViewOperation)
     }
     
-    static func requestFacebookCredentials() -> String {
-        NSLog("requestFacebookCredentials - getting facebook user access info")
-        var fbAccessUserID = String()
+    static func setFBUserInfo() -> NSDictionary {
+        NSLog("getFBUserInfo - getting facebook user access info")
+        var fbUserInfoResponse = NSDictionary()
         let request = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "id,first_name,last_name,email"] , httpMethod: "GET")
         let connection = FBSDKGraphRequestConnection()
         connection.add(request, completionHandler: {
             (connection, result, error) in
             if(error != nil){
-                NSLog("requestFacebookCredentials - Error retrieving fb graph request:  \(error!.localizedDescription)")
+                NSLog("getFBUserInfo - Error retrieving fb graph request:  \(error!.localizedDescription)")
             }
             else {
-                if let response = result as AnyObject? {
-                    NSLog("requestFacebookCredentials - response: \(response)")
-                    fbAccessUserID = response.value(forKey: "id") as! String
-                    NSLog("requestFacebookCredentials - fbAccessUserId: \(fbAccessUserID)")
+                if let response = result as! NSDictionary? {
+                    NSLog("getFBUserInfo - response: \(response)")
+                    fbUserInfoResponse = response
+                    User.setFirstName(firstName: parseKeyFromResponse(key: "first_name", response: fbUserInfoResponse))
+                    
                 }
             }
         })
         connection.start()
-        return fbAccessUserID
+        return fbUserInfoResponse
     }
     
     static func retrieveFBPageIDFromFBRequest(userAccessInfo: String) -> NSArray {
@@ -62,6 +63,14 @@ class FacebookAPI: NSObject {
         })
         connection.start()
         return facebookPageData
+    }
+    
+    static func parseKeyFromResponse(key: String, response: NSDictionary) -> String {
+        var value = ""
+        if let parsedValue = response.value(forKey: key) as! String? {
+            value = parsedValue
+        }
+        return value
     }
 
 }
