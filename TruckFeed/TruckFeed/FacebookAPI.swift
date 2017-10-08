@@ -18,7 +18,7 @@ class FacebookAPI: NSObject {
         queue.addOperation(presentUserViewOperation)
     }
     
-    static func setFBUserInfo() -> NSDictionary {
+    static func setFBUserInfo() {
         NSLog("getFBUserInfo - getting facebook user access info")
         var fbUserInfoResponse = NSDictionary()
         let request = FBSDKGraphRequest(graphPath:"me", parameters: ["fields": "id,first_name,last_name,email"] , httpMethod: "GET")
@@ -33,12 +33,14 @@ class FacebookAPI: NSObject {
                     NSLog("getFBUserInfo - response: \(response)")
                     fbUserInfoResponse = response
                     User.setFirstName(firstName: DictionaryParser.parseKeyFromResponse(key: "first_name", response: fbUserInfoResponse))
+                    User.setLastName(lastName: DictionaryParser.parseKeyFromResponse(key: "last_name", response: fbUserInfoResponse))
+                    User.setEmail(email: DictionaryParser.parseKeyFromResponse(key: "email", response: fbUserInfoResponse))
+                    User.setId(id: DictionaryParser.parseKeyFromResponse(key: "id", response: fbUserInfoResponse))
                     
                 }
             }
         })
         connection.start()
-        return fbUserInfoResponse
     }
     
     static func retrieveFBPageIDFromFBRequest(userAccessInfo: String) -> NSArray {

@@ -46,13 +46,14 @@ class MainLoginScreenController: UIViewController {
         if let accessToken = FBSDKAccessToken.current().tokenString {
             NSLog("Retrieving access token: \(accessToken)")
             self.truckOwner.setFBAccessToken(accessToken)
-            var unserializedUserInfo: Any = ""
             
             let setFBUserInfoOperation = BlockOperation(block: {
-                unserializedUserInfo = FacebookAPI.setFBUserInfo()
+                FacebookAPI.setFBUserInfo()
             })
             
-            let deserializeUserInfo = BlockOperation(block: {
+            let getFBPageInfoOperation = BlockOperation(block: {
+                
+                // TODO: get facebook page info, if there are facebook pages, then display in user view controller in order to select the facebook page
                 
 //                let fbUserAccessToken = self.truckOwner.getFBAccessToken()
 //                NSLog("setFBUserInfoOperation - setting fbUserAccessToken:  \(fbUserAccessToken)")

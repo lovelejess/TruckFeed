@@ -9,7 +9,7 @@
 import CoreData
 import FBSDKLoginKit
 
-public struct User
+public struct User // TODO: Convert to realm??
 {
     
     static func isLoggedIn() -> Bool {
@@ -36,9 +36,30 @@ public struct User
     }
     
     static func setFirstName(firstName: String) {
-        print("user: setting name to: \(firstName)")
+        print("user: setting firstName to: \(firstName)")
         let defaults = UserDefaults.standard
         defaults.set(firstName, forKey: "firstName")
+        defaults.synchronize()
+    }
+    
+    static func setLastName(lastName: String) {
+        print("user: setting lastName to: \(lastName)")
+        let defaults = UserDefaults.standard
+        defaults.set(lastName, forKey: "lastName")
+        defaults.synchronize()
+    }
+    
+    static func setEmail(email: String) {
+        print("user: setting email to: \(email)")
+        let defaults = UserDefaults.standard
+        defaults.set(email, forKey: "email")
+        defaults.synchronize()
+    }
+    
+    static func setId(id: String) {
+        print("user: setting id to: \(id)")
+        let defaults = UserDefaults.standard
+        defaults.set(id, forKey: "id")
         defaults.synchronize()
     }
 }
