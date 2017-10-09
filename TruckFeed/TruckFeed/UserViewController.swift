@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FBSDKLoginKit
 
 open class UserViewController: UIViewController, UINavigationBarDelegate {
 
@@ -50,19 +49,10 @@ open class UserViewController: UIViewController, UINavigationBarDelegate {
 
     // MARK: - PRIVATE METHODS
     func presentSubmitAlert(_ title: String, message: String) {
-        if let _: AnyClass = NSClassFromString("UIAlertController") { // iOS 8
+        if let _: AnyClass = NSClassFromString("UIAlertController") {
             let myAlert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             myAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(myAlert, animated: true, completion: nil)
-        } else { // iOS 7
-            let alert: UIAlertView = UIAlertView()
-            alert.delegate = self
-            
-            alert.title = title
-            alert.message = message
-            alert.addButton(withTitle: "OK")
-            
-            alert.show()
         }
     }
     

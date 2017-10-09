@@ -30,7 +30,7 @@ class MainLoginScreenController: UIViewController {
             
             { (result, error) in
                 if(error != nil){
-                    NSLog("An error occured logging in: \(error)")
+                    NSLog("An error occured logging in: \(error!)")
                 }
                 else if(result! as FBSDKLoginManagerLoginResult).isCancelled == true {
                     NSLog("Facebook Login was cancelled")
@@ -44,19 +44,19 @@ class MainLoginScreenController: UIViewController {
     func handleLogin()
     {
         if let accessToken = FBSDKAccessToken.current().tokenString {
-            NSLog("Retrieving access token: \(accessToken)")
+            NSLog("handleLogin - Retrieved user access token: \(accessToken)")
             self.truckOwner.setFBAccessToken(accessToken)
             
-            let facebookRequestOperation = BlockOperation(block: {
-                self.truckOwner.requestFacebookCredentials()
-                NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner.fbAccessUserID) :: \(self.truckOwner.getUserAccessInfo())")
+            let setFBUserInfoOperation = BlockOperation(block: {
+                FacebookAPI.setFBUserInfo()
             })
+            
             let presentUserViewOperation = BlockOperation(block: {
                 self.presentMasterViewController(self)
             })
             
-            FacebookAPI.setFacebookRequestOperationsQueue(facebookRequestOperation, presentUserViewOperation: presentUserViewOperation )
-            User.setIsLoggedIn(isLoggedIn: true)
+            FacebookAPI.setFacebookRequestOperationsQueue(setFBUserInfoOperation: setFBUserInfoOperation, presentUserViewOperation: presentUserViewOperation )
+            
         }
     }
     
@@ -77,5 +77,6 @@ class MainLoginScreenController: UIViewController {
             })
         }
     }
+
     
 }
