@@ -30,7 +30,7 @@ class MainLoginScreenController: UIViewController {
             
             { (result, error) in
                 if(error != nil){
-                    NSLog("An error occured logging in: \(error)")
+                    NSLog("An error occured logging in: \(error!)")
                 }
                 else if(result! as FBSDKLoginManagerLoginResult).isCancelled == true {
                     NSLog("Facebook Login was cancelled")
@@ -44,24 +44,13 @@ class MainLoginScreenController: UIViewController {
     func handleLogin()
     {
         if let accessToken = FBSDKAccessToken.current().tokenString {
-            NSLog("Retrieving access token: \(accessToken)")
+            NSLog("handleLogin - Retrieved user access token: \(accessToken)")
             self.truckOwner.setFBAccessToken(accessToken)
             
             let setFBUserInfoOperation = BlockOperation(block: {
                 FacebookAPI.setFBUserInfo()
             })
             
-            let getFBPageInfoOperation = BlockOperation(block: {
-                
-                // TODO: get facebook page info, if there are facebook pages, then display in user view controller in order to select the facebook page
-                
-//                let fbUserAccessToken = self.truckOwner.getFBAccessToken()
-//                NSLog("setFBUserInfoOperation - setting fbUserAccessToken:  \(fbUserAccessToken)")
-//                let facebookPageResponse = FacebookAPI.retrieveFBPageIDFromFBRequest(userAccessInfo: self.truckOwner.getFBAccessToken())
-//                self.truckOwner.setFBPageID(self.parsePageIDFromResponse(facebookPageResponse: facebookPageResponse))
-//                self.truckOwner.setTruckOwnerName(self.parseNameFromResponse(facebookPageResponse: facebookPageResponse))
-//                NSLog("presentFacebookLoginWebView - fbAccessUserId: \(self.truckOwner.fbAccessUserID) :: \(self.truckOwner.getUserAccessInfo())")
-            })
             let presentUserViewOperation = BlockOperation(block: {
                 self.presentMasterViewController(self)
             })

@@ -32,12 +32,7 @@ class FacebookAPI: NSObject {
                 if let response = result as! NSDictionary? {
                     NSLog("getFBUserInfo - response: \(response)")
                     fbUserInfoResponse = response
-                    User.setIsLoggedIn(isLoggedIn: true)
-                    User.setFirstName(firstName: DictionaryParser.parseKeyFromResponse(key: "first_name", response: fbUserInfoResponse))
-                    User.setLastName(lastName: DictionaryParser.parseKeyFromResponse(key: "last_name", response: fbUserInfoResponse))
-                    User.setEmail(email: DictionaryParser.parseKeyFromResponse(key: "email", response: fbUserInfoResponse))
-                    User.setId(id: DictionaryParser.parseKeyFromResponse(key: "id", response: fbUserInfoResponse))
-                    
+                    FacebookAPI.setUserInfoFromResponse(response: fbUserInfoResponse)
                 }
             }
         })
@@ -66,6 +61,14 @@ class FacebookAPI: NSObject {
         })
         connection.start()
         return facebookPageData
+    }
+    
+     static func setUserInfoFromResponse(response: NSDictionary) {
+        User.setIsLoggedIn(isLoggedIn: true)
+        User.setFirstName(firstName: DictionaryParser.parseKeyFromResponse(key: "first_name", response: response))
+        User.setLastName(lastName: DictionaryParser.parseKeyFromResponse(key: "last_name", response: response))
+        User.setEmail(email: DictionaryParser.parseKeyFromResponse(key: "email", response: response))
+        User.setId(id: DictionaryParser.parseKeyFromResponse(key: "id", response: response))
     }
 
 }
