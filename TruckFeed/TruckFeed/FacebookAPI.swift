@@ -65,10 +65,6 @@ class FacebookAPI: NSObject {
     
      static func setUserInfoFromResponse(response: NSDictionary) {
         User.setIsLoggedIn(isLoggedIn: true)
-        User.setFirstName(firstName: DictionaryParser.parseKeyFromResponse(key: "first_name", response: response))
-        User.setLastName(lastName: DictionaryParser.parseKeyFromResponse(key: "last_name", response: response))
-        User.setEmail(email: DictionaryParser.parseKeyFromResponse(key: "email", response: response))
-        User.setId(id: DictionaryParser.parseKeyFromResponse(key: "id", response: response))
     }
 
 }
