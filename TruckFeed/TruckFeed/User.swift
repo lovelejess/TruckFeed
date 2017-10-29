@@ -11,7 +11,6 @@ import FBSDKLoginKit
 
 public struct User
 {
-    
     static func isLoggedIn() -> Bool {
         let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
         NSLog("user: isLoggedIn: \(isLoggedIn)")
@@ -34,4 +33,12 @@ public struct User
         setIsLoggedIn(isLoggedIn: false)
         NSLog("user: facebookLogout")
     }
+    
+    static func setFBAccessToken(_ accessToken:String){
+        NSLog("user: setting setFBAccessToken to: \(accessToken)")
+        let defaults = UserDefaults.standard
+        defaults.set(accessToken, forKey: "accessToken")
+        defaults.synchronize()
+    }
+
 }
