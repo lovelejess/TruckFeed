@@ -25,13 +25,13 @@ public struct User
         defaults.synchronize()
     }
     
-    static func facebookLogout(){
+    static func logOut(){
         FBSDKAccessToken.setCurrent(nil)
-        let truckOwner = TruckOwner.sharedInstance
-        truckOwner.setFBAccessToken("")
+        User.setFBAccessToken("")
+        
         
         setIsLoggedIn(isLoggedIn: false)
-        NSLog("user: facebookLogout")
+        NSLog("user: logOut")
     }
     
     static func setFBAccessToken(_ accessToken:String){

@@ -40,11 +40,11 @@ open class MenuViewController: UIViewController, UINavigationBarDelegate {
     }
 
     func presentMainLoginViewController(_ sender: AnyObject){
-        NSLog(" facebookLogout - entering presentMainLoginScreen")
+        NSLog("presentMainLoginViewController - user requests to be logged out")
         if let MainLoginScreenController = self.storyboard?.instantiateViewController(withIdentifier: "MainLoginScreen") as? MainLoginScreenController {
             self.present(MainLoginScreenController, animated: true, completion:
                 {
-                    NSLog("facebookLogout - Presenting MainLoginScreen")
+                    NSLog("presentMainLoginViewController - Presenting MainLoginScreen")
             })
         }
     }
@@ -65,7 +65,7 @@ extension MenuViewController: UITableViewDelegate
         tableView.deselectRow(at: indexPath, animated: true)
         if(User.isLoggedIn())
         {
-            User.facebookLogout()
+            User.logOut()
         }
         self.presentMainLoginViewController(self )
     }
