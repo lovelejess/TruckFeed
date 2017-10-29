@@ -9,8 +9,6 @@
 import UIKit
 
 open class UserViewController: UIViewController, UINavigationBarDelegate {
-
-    fileprivate var truckOwner = TruckOwner.sharedInstance
     
     @IBOutlet var tableView: UITableView?
     fileprivate var dataProvider: AddScheduleDataProvider?

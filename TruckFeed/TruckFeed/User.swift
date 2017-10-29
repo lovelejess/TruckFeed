@@ -9,9 +9,8 @@
 import CoreData
 import FBSDKLoginKit
 
-public struct User // TODO: Convert to realm??
+public struct User
 {
-    
     static func isLoggedIn() -> Bool {
         let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
         NSLog("user: isLoggedIn: \(isLoggedIn)")
@@ -26,40 +25,20 @@ public struct User // TODO: Convert to realm??
         defaults.synchronize()
     }
     
-    static func facebookLogout(){
+    static func logOut(){
         FBSDKAccessToken.setCurrent(nil)
-        let truckOwner = TruckOwner.sharedInstance
-        truckOwner.setFBAccessToken("")
+        User.setFBAccessToken("")
+        
         
         setIsLoggedIn(isLoggedIn: false)
-        NSLog("user: facebookLogout")
+        NSLog("user: logOut")
     }
     
-    static func setFirstName(firstName: String) {
-        NSLog("user: setting firstName to: \(firstName)")
+    static func setFBAccessToken(_ accessToken:String){
+        NSLog("user: setting setFBAccessToken to: \(accessToken)")
         let defaults = UserDefaults.standard
-        defaults.set(firstName, forKey: "firstName")
+        defaults.set(accessToken, forKey: "accessToken")
         defaults.synchronize()
     }
-    
-    static func setLastName(lastName: String) {
-        NSLog("user: setting lastName to: \(lastName)")
-        let defaults = UserDefaults.standard
-        defaults.set(lastName, forKey: "lastName")
-        defaults.synchronize()
-    }
-    
-    static func setEmail(email: String) {
-        NSLog("user: setting email to: \(email)")
-        let defaults = UserDefaults.standard
-        defaults.set(email, forKey: "email")
-        defaults.synchronize()
-    }
-    
-    static func setId(id: String) {
-        NSLog("user: setting id to: \(id)")
-        let defaults = UserDefaults.standard
-        defaults.set(id, forKey: "id")
-        defaults.synchronize()
-    }
+
 }

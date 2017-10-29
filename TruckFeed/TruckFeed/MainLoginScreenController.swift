@@ -11,8 +11,6 @@ import CoreData
 import FBSDKLoginKit
 
 class MainLoginScreenController: UIViewController {
-    
-    var truckOwner = TruckOwner.sharedInstance
     let FBLoginManager = FBSDKLoginManager()
     
     override func viewDidLoad() {
@@ -45,7 +43,7 @@ class MainLoginScreenController: UIViewController {
     {
         if let accessToken = FBSDKAccessToken.current().tokenString {
             NSLog("handleLogin - Retrieved user access token: \(accessToken)")
-            self.truckOwner.setFBAccessToken(accessToken)
+            User.setFBAccessToken(accessToken)
             
             let setFBUserInfoOperation = BlockOperation(block: {
                 FacebookAPI.setFBUserInfo()

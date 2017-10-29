@@ -10,9 +10,6 @@ import UIKit
 
 class UserView: UIScrollView {
     
-    
-    var truckOwner = TruckOwner.sharedInstance
-    
     // MARK: Initialization
     
     required init?(coder aDecoder: NSCoder) {

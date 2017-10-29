@@ -13,7 +13,6 @@ import FBSDKCoreKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     @IBOutlet var window: UIWindow?
-    let truckOwner = TruckOwner.sharedInstance;
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FBSDKApplicationDelegate.sharedInstance();
