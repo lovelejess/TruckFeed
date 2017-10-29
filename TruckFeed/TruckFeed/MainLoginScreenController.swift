@@ -11,8 +11,6 @@ import CoreData
 import FBSDKLoginKit
 
 class MainLoginScreenController: UIViewController {
-    
-    var truckOwner = TruckOwner.sharedInstance
     let FBLoginManager = FBSDKLoginManager()
     
     override func viewDidLoad() {
