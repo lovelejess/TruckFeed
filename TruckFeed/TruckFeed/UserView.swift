@@ -16,8 +16,4 @@ class UserView: UIScrollView {
         super.init(coder: aDecoder)
 
     }
-    
-    
-    
-  
 }

@@ -121,6 +121,12 @@
 		167878051F89E081009EB8FE /* DictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167878041F89E081009EB8FE /* DictionaryParser.swift */; };
 		167878061F89E081009EB8FE /* DictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167878041F89E081009EB8FE /* DictionaryParser.swift */; };
 		167878071F89E081009EB8FE /* DictionaryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167878041F89E081009EB8FE /* DictionaryParser.swift */; };
+		167FFAB01FA6B57C00A83AD6 /* VerifyTruckOwnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167FFAAF1FA6B57C00A83AD6 /* VerifyTruckOwnerController.swift */; };
+		167FFAB11FA6B57C00A83AD6 /* VerifyTruckOwnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167FFAAF1FA6B57C00A83AD6 /* VerifyTruckOwnerController.swift */; };
+		167FFAB21FA6B57C00A83AD6 /* VerifyTruckOwnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167FFAAF1FA6B57C00A83AD6 /* VerifyTruckOwnerController.swift */; };
+		167FFAB41FA6B73200A83AD6 /* VerifyTruckOwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167FFAB31FA6B73200A83AD6 /* VerifyTruckOwnerView.swift */; };
+		167FFAB51FA6B73200A83AD6 /* VerifyTruckOwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167FFAB31FA6B73200A83AD6 /* VerifyTruckOwnerView.swift */; };
+		167FFAB61FA6B73200A83AD6 /* VerifyTruckOwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167FFAB31FA6B73200A83AD6 /* VerifyTruckOwnerView.swift */; };
 		169AB7181F8329410037481D /* FacebookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AB7171F8329410037481D /* FacebookAPI.swift */; };
 		169AB7191F8329410037481D /* FacebookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AB7171F8329410037481D /* FacebookAPI.swift */; };
 		169AB71A1F8329410037481D /* FacebookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AB7171F8329410037481D /* FacebookAPI.swift */; };
@@ -221,6 +227,8 @@
 		160253AF1F7B385C004EC690 /* cancel_button_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_button_1x.png; sourceTree = "<group>"; };
 		161677511F7212DB006D1AD2 /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
 		167878041F89E081009EB8FE /* DictionaryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryParser.swift; sourceTree = "<group>"; };
+		167FFAAF1FA6B57C00A83AD6 /* VerifyTruckOwnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyTruckOwnerController.swift; sourceTree = "<group>"; };
+		167FFAB31FA6B73200A83AD6 /* VerifyTruckOwnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyTruckOwnerView.swift; sourceTree = "<group>"; };
 		169AB7171F8329410037481D /* FacebookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAPI.swift; sourceTree = "<group>"; };
 		16B8D6CB1F5230EB005718AC /* DatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		16B8D6D01F550621005718AC /* ScheduleDatePickerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDatePickerProtocol.swift; sourceTree = "<group>"; };
@@ -374,6 +382,7 @@
 				100CE6751D2F40B000E2F53C /* TruckScheduleController.swift */,
 				10A5E10F1D8CE56F00B79702 /* MenuViewController.swift */,
 				16B8D6CB1F5230EB005718AC /* DatePickerController.swift */,
+				167FFAAF1FA6B57C00A83AD6 /* VerifyTruckOwnerController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -401,6 +410,7 @@
 			children = (
 				100055B31CCD790300984B35 /* ViewControllerItems.swift */,
 				10B1E5FD1CFE59D700C7FBE4 /* UserView.swift */,
+				167FFAB31FA6B73200A83AD6 /* VerifyTruckOwnerView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -781,8 +791,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				167FFAB01FA6B57C00A83AD6 /* VerifyTruckOwnerController.swift in Sources */,
 				1046C6C61E0A24380075ACD5 /* StartDateCell.swift in Sources */,
 				10C4E1561D6405C600C9E756 /* TruckScheduleCell.swift in Sources */,
+				167FFAB41FA6B73200A83AD6 /* VerifyTruckOwnerView.swift in Sources */,
 				1046C6CA1E0A28550075ACD5 /* AddScheduleDataProvider.swift in Sources */,
 				100055B81CDAC67700984B35 /* MasterTabViewController.swift in Sources */,
 				167878051F89E081009EB8FE /* DictionaryParser.swift in Sources */,
@@ -824,8 +836,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				167FFAB11FA6B57C00A83AD6 /* VerifyTruckOwnerController.swift in Sources */,
 				10C4E1571D64080200C9E756 /* TruckScheduleCell.swift in Sources */,
 				106C8A121D406052007DD2CF /* TruckScheduleController.swift in Sources */,
+				167FFAB51FA6B73200A83AD6 /* VerifyTruckOwnerView.swift in Sources */,
 				106F519A1C022FD100DA30C6 /* UserViewController.swift in Sources */,
 				1046C6CF1E0B7AE30075ACD5 /* TableDataProviderProtocol.swift in Sources */,
 				100E155F1D05036100B3BC9A /* MainLoginScreenController.swift in Sources */,
@@ -867,8 +881,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				167FFAB21FA6B57C00A83AD6 /* VerifyTruckOwnerController.swift in Sources */,
 				10C4E1581D64086E00C9E756 /* TruckScheduleCell.swift in Sources */,
 				106C8A131D406052007DD2CF /* TruckScheduleController.swift in Sources */,
+				167FFAB61FA6B73200A83AD6 /* VerifyTruckOwnerView.swift in Sources */,
 				10D950491BFD7D4E00EC435B /* UserViewController.swift in Sources */,
 				1046C6D01E0B7AE40075ACD5 /* TableDataProviderProtocol.swift in Sources */,
 				106C8A171D40605A007DD2CF /* ScheduleDataProvider.swift in Sources */,

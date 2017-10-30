@@ -16,8 +16,8 @@ class MainLoginScreenController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "TruckFeed"
-        self.view.addSubview(ViewControllerItems.createButton("LOG IN WITH FACEBOOK", onClick: #selector(MainLoginScreenController.loginWithFacebook), frame: CGRect(x: 90, y: 500, width: 200, height: 50), target: self))
-        self.view.addSubview(ViewControllerItems.createButton("CONTINUE AS A GUEST", onClick: #selector(MainLoginScreenController.presentTruckFeedController(_:)), frame: CGRect(x: 90, y: 570, width: 200, height: 50), target: self))
+        self.view.addSubview(ViewControllerItems.createButton("TRUCK OWNER", onClick: #selector(MainLoginScreenController.loginWithFacebook), frame: CGRect(x: 90, y: 500, width: 200, height: 50), target: self))
+        self.view.addSubview(ViewControllerItems.createButton("TRUCK CONSUMER", onClick: #selector(MainLoginScreenController.presentTruckFeedController(_:)), frame: CGRect(x: 90, y: 570, width: 200, height: 50), target: self))
     }
     
     func loginWithFacebook()
@@ -53,7 +53,11 @@ class MainLoginScreenController: UIViewController {
                 self.presentMasterViewController(self)
             })
             
-            FacebookAPI.setFacebookRequestOperationsQueue(setFBUserInfoOperation: setFBUserInfoOperation, presentUserViewOperation: presentUserViewOperation )
+            let presentVerifyTruckOwnerOperation = BlockOperation(block: {
+                self.presentVerifyTruckOwnerController(self)
+            })
+            
+            FacebookAPI.setFacebookRequestOperationsQueue(setFBUserInfoOperation: setFBUserInfoOperation, presentUserViewOperation: presentVerifyTruckOwnerOperation )
             
         }
     }
@@ -72,6 +76,15 @@ class MainLoginScreenController: UIViewController {
             self.present(viewController, animated: true, completion:
                 {
                     NSLog("Presenting Master View Controller")
+            })
+        }
+    }
+    
+    func presentVerifyTruckOwnerController(_ sender: AnyObject){
+        if let viewController = self.storyboard!.instantiateViewController(withIdentifier: "VerifyTruckOwnerController") as? VerifyTruckOwnerController {
+            self.present(viewController, animated: true, completion:
+                {
+                    NSLog("Presenting Verify Truck Owner Controller")
             })
         }
     }
