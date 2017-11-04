@@ -18,6 +18,7 @@ public struct ViewControllerItems {
         NSLog("createNavigationBarWithRightButton - Navigation Item Name: \(title)")
         navigationItem.rightBarButtonItem = rightBarButton
         navigationBar.items = [navigationItem]
+        navigationBar.barTintColor = lightColor
         
         return navigationBar
     }
@@ -29,6 +30,7 @@ public struct ViewControllerItems {
         NSLog("createNavigationBarWithLeftButton - Navigation Item Name: \(title)")
         navigationItem.leftBarButtonItem = leftBarButton
         navigationBar.items = [navigationItem]
+        navigationBar.barTintColor = lightColor
         
         return navigationBar
     }
@@ -41,6 +43,7 @@ public struct ViewControllerItems {
         navigationItem.leftBarButtonItem = leftBarButton
         navigationItem.rightBarButtonItem = rightBarButton
         navigationBar.items = [navigationItem]
+        navigationBar.barTintColor = lightColor
         
         return navigationBar
     }
@@ -51,6 +54,8 @@ public struct ViewControllerItems {
         navigationItem.title = title
         NSLog("createNavigationBarWithRightButton - Navigation Item Name: \(title)")
         navigationBar.items = [navigationItem]
+        navigationBar.barTintColor = lightColor
+        
         return navigationBar
     }
     
