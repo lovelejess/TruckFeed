@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -177,7 +177,7 @@
         <!--Verify Truck Owner Controller-->
         <scene sceneID="EsX-Lv-KIA">
             <objects>
-                <viewController storyboardIdentifier="VerifyTruckOwnerController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ae2-JD-nm2" customClass="VerifyTruckOwnerController" customModule="TruckFeed" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VerifyTruckOwnerController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ae2-JD-nm2" customClass="VerifyTruckOwnerController" customModule="TruckFeed" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MVr-La-5ZM"/>
                         <viewControllerLayoutGuide type="bottom" id="QMK-OY-lMw"/>
@@ -187,13 +187,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIn-uw-4r6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sTN-YP-qzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -303,7 +304,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiD-Kl-1bA">
-                                                    <rect key="frame" x="8" y="39" width="78" height="22"/>
+                                                    <rect key="frame" x="15" y="42" width="78" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="4hk-73-VqL"/>
                                                     </constraints>
@@ -311,13 +312,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="42" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7Y-5f-YHr">
-                                                    <rect key="frame" x="48" y="64" width="39" height="21"/>
+                                                    <rect key="frame" x="55" y="67" width="39" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36t-r8-gMt">
-                                                    <rect key="frame" x="95" y="39" width="67" height="21"/>
+                                                    <rect key="frame" x="102" y="42" width="67" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="67" id="OJw-qX-F3q"/>
                                                     </constraints>
@@ -326,13 +327,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4:00pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3By-bN-k7s">
-                                                    <rect key="frame" x="95" y="64" width="67" height="21"/>
+                                                    <rect key="frame" x="102" y="67" width="67" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sculpture Garden Park" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bg5-w3-ol0">
-                                                    <rect key="frame" x="178" y="38" width="173" height="21"/>
+                                                    <rect key="frame" x="185" y="41" width="173" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="173" id="GuE-km-wR2"/>
                                                     </constraints>
@@ -341,7 +342,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1420 Locust Street" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0N-iW-EH5">
-                                                    <rect key="frame" x="178" y="61" width="173" height="21"/>
+                                                    <rect key="frame" x="185" y="64" width="173" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
