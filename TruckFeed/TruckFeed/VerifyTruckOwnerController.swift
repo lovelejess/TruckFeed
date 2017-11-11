@@ -10,6 +10,9 @@ import UIKit
 
 class VerifyTruckOwnerController: UIViewController {
     
+    @IBOutlet var tableView: UITableView?
+    fileprivate var dataProvider: TruckFeedDataProviderProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let frame = CGRect(x: 0, y: 15, width: self.view.frame.size.width, height: 55)
